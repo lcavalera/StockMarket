@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEXCHANGE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EXCHANGE Code="AMEX" Name="American Stock Exchange" LastTradeDateTime="2024-11-05T15:00:03" Country="US" Currency="USD" Advances="5661" Declines="897" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="ASX" Name="Australian Securities Exchange" LastTradeDateTime="2024-11-05T00:00:00" Country="AU" Currency="AUD" Advances="17795" Declines="494" Suffix="AX" TimeZone="AUS Eastern Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="CFE" Name="Chicago Futures Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="US" Currency="USD" Advances="402" Declines="0" Suffix="" TimeZone="Central Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="EUREX" Name="EUREX Futures Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="CH" Currency="EUR" Advances="3398" Declines="0" Suffix="" TimeZone="GMT Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="FOREX" Name="Foreign Exchange" LastTradeDateTime="2024-11-05T20:04:57" Country="US" Currency="" Advances="2041" Declines="57" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="INDEX" Name="Global Indices" LastTradeDateTime="2024-11-05T15:00:03" Country="US" Currency="" Advances="4213" Declines="4" Suffix="IDX" TimeZone="Eastern Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="LIFFE" Name="LIFFE Futures and Options" LastTradeDateTime="2024-11-04T00:00:00" Country="US" Currency="USD" Advances="3228" Declines="0" Suffix="" TimeZone="GMT Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="LSE" Name="London Stock Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="UK" Currency="GBP" Advances="42234" Declines="2622" Suffix="L" TimeZone="GMT Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="MGEX" Name="Minneapolis Grain Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="US" Currency="USD" Advances="15398" Declines="96" Suffix="" TimeZone="Central Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="NASDAQ" Name="NASDAQ Stock Exchange" LastTradeDateTime="2024-11-05T15:00:10" Country="US" Currency="USD" Advances="9529" Declines="1837" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="NYBOT" Name="New York Board of Trade" LastTradeDateTime="2024-11-04T00:00:00" Country="US" Currency="USD" Advances="89673" Declines="207" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="NYSE" Name="New York Stock Exchange" LastTradeDateTime="2024-11-05T15:00:01" Country="US" Currency="USD" Advances="6894" Declines="1880" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="OTCBB" Name="OTC Bulletin Board" LastTradeDateTime="2024-11-05T15:00:03" Country="US" Currency="USD" Advances="42138" Declines="2112" Suffix="OB" TimeZone="Eastern Standard Time" IsIntraday="true" />
+  <EXCHANGE Code="SGX" Name="Singapore Stock Exchange" LastTradeDateTime="2024-11-05T00:00:00" Country="SG" Currency="SGD" Advances="15764" Declines="499" Suffix="SI" TimeZone="Singapore Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="TSX" Name="Toronto Stock Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="CA" Currency="CAD" Advances="6638" Declines="882" Suffix="TO" TimeZone="Mountain Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="TSXV" Name="Toronto Venture Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="CA" Currency="CAD" Advances="6311" Declines="562" Suffix="V" TimeZone="Mountain Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="USMF" Name="Mutual Funds" LastTradeDateTime="2024-11-01T00:00:00" Country="US" Currency="USD" Advances="37527" Declines="16958" Suffix="" TimeZone="Eastern Standard Time" IsIntraday="false" />
+  <EXCHANGE Code="WCE" Name="Winnipeg Commodity Exchange" LastTradeDateTime="2024-11-04T00:00:00" Country="US" Currency="USD" Advances="10028" Declines="1" Suffix="" TimeZone="Central Standard Time" IsIntraday="true" />
+</ArrayOfEXCHANGE>

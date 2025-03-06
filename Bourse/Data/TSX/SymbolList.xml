@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSYMBOL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SYMBOL Code="AAB" Name="Aberdeen International Inc" />
+  <SYMBOL Code="AAUC" Name="Allied Gold Corporation" />
+  <SYMBOL Code="AAV" Name="Advantage Oil &amp; Gas Ltd" />
+  <SYMBOL Code="AAV.DB" Name="Advantage Energy Ltd 5.00 Pct Debs" />
+  <SYMBOL Code="ABX" Name="Barrick Gold Corp" />
+  <SYMBOL Code="AC" Name="Air Canada" />
+  <SYMBOL Code="ACAA" Name="Arrow Canadian Advantage Alternative Class" />
+  <SYMBOL Code="ACB" Name="Aurora Cannabis Inc" />
+  <SYMBOL Code="ACD" Name="Accord Financial" />
+  <SYMBOL Code="ACD.DB" Name="Accord Financial Corp 7.00 Pct Debs" />
+  <SYMBOL Code="ACO.X" Name="Atco Ltd Cl I NV" />
+  <SYMBOL Code="ACO.Y" Name="Atco Ltd Cl II" />
+  <SYMBOL Code="ACQ" Name="Autocanada Inc" />
+  <SYMBOL Code="ACX" Name="Act Energy Technologies Ltd" />
+  <SYMBOL Code="AD.DB.A" Name="Alaris Eqty Part Inc Trust 6.25 Pct Debs" />
+  <SYMBOL Code="AD.UN" Name="Alaris Equity Partners Income Trust" />
+  <SYMBOL Code="ADCO" Name="Adcore Inc" />
+  <SYMBOL Code="ADEN" Name="Adentra Inc" />
+  <SYMBOL Code="ADN" Name="Acadian Timber Corp" />
+  <SYMBOL Code="ADW.A" Name="Andrew Peller Ltd Cl A" />
+  <SYMBOL Code="ADW.B" Name="Andrew Peller Ltd Cl B" />
+  <SYMBOL Code="AEG" Name="Aegis Brands Inc" />
+  <SYMBOL Code="AEM" Name="Agnico Eagle Mines Ltd" />
+  <SYMBOL Code="AFN" Name="Ag Growth International Inc" />
+  <SYMBOL Code="AFN.DB.G" Name="Ag Growth Intl Inc 5.25 Pct Debs" />
+  <SYMBOL Code="AFN.DB.H" Name="Ag Growth Intl Inc 5.25 Pct Debs" />
+  <SYMBOL Code="AFN.DB.J" Name="Ag Growth Intl Inc 5.20 Pct Debs" />
+  <SYMBOL Code="AG" Name="First Majestic Silver Corp" />
+  <SYMBOL Code="AGF.B" Name="AGF Management Ltd Cl B NV" />
+  <SYMBOL Code="AGG" Name="Evolve CDN Aggrgt Bond Enhd Yld Fund ETF" />
+  <SYMBOL Code="AGI" Name="Alamos Gold Inc Cls A" />
+  <SYMBOL Code="AI" Name="Atrium Mortgage Investment Corp" />
+  <SYMBOL Code="AI.DB.D" Name="Atrium Mortgage Inv Corp 5.50 Pct Debs" />
+  <SYMBOL Code="AI.DB.E" Name="Atrium Mortgage Inv Corp 5.60 Pct Debs" />
+  <SYMBOL Code="AI.DB.F" Name="Atrium Mortgage Inv Corp 5 Pct Debs" />
+  <SYMBOL Code="AI.DB.G" Name="Atrium Mortgage Inv Corp 5.10 Pct Debs" />
+  <SYMBOL Code="AIDX" Name="Healwell Ai Inc. Class A" />
+  <SYMBOL Code="AIF" Name="Altus Group Ltd" />
+  <SYMBOL Code="AIGO" Name="Global X Artificial Intelligence &amp; Techn" />
+  <SYMBOL Code="AII" Name="Almonty Industries Inc" />
+  <SYMBOL Code="AIM" Name="Aimia Inc" />
+  <SYMBOL Code="AIM.PR.A" Name="Aimia Inc Pref Ser 1" />
+  <SYMBOL Code="AIM.PR.C" Name="Aimia Inc Pref Ser 3" />
+  <SYMBOL Code="AKT.A" Name="Akita Drilling Ltd Cl A NV" />
+  <SYMBOL Code="ALA" Name="AltaGas Ltd" />
+  <SYMBOL Code="ALA.PR.A" Name="AltaGas Ltd Pref A" />
+  <SYMBOL Code="ALA.PR.B" Name="AltaGas Ltd Pref Ser B" />
+  <SYMBOL Code="ALA.PR.G" Name="AltaGas Ltd Pref G" />
+  <SYMBOL Code="ALC" Name="Algoma Central" />
+  <SYMBOL Code="ALS" Name="Altius Minerals Corp" />
+  <SYMBOL Code="ALYA" Name="Alithya Group" />
+  <SYMBOL Code="AMAX" Name="Hamilton Gold Producer Yld Maximizer ETF" />
+  <SYMBOL Code="AMC" Name="Arizona Metals Corp" />
+  <SYMBOL Code="AMHE" Name="Harvest Amazon Enhanced High Inc Shs ETF" />
+  <SYMBOL Code="AMHE.U" Name="Harvest Amazon Enhanced HI Shs ETF USD" />
+  <SYMBOL Code="AMM" Name="Almaden Minerals Ltd" />
+  <SYMBOL Code="AMZH" Name="Harvest Amazon High Income Shares ETF (C" />
+  <SYMBOL Code="AMZH.U" Name="Harvest Amazon High Income Shares ETF (C" />
+  <SYMBOL Code="AND" Name="Andlauer Healthcare Group Inc" />
+  <SYMBOL Code="ANRG" Name="Anaergia Inc" />
+  <SYMBOL Code="AOI" Name="Africa Oil Corp" />
+  <SYMBOL Code="AOT" Name="Ascot Resources Ltd" />
+  <SYMBOL Code="AP.UN" Name="Allied Properties Real Estate Inv Trust" />
+  <SYMBOL Code="APLI" Name="Appili Therapeutics Inc" />
+  <SYMBOL Code="APR.UN" Name="Automotive Properties REIT" />
+  <SYMBOL Code="APS" Name="Aptose Biosciences Inc" />
+  <SYMBOL Code="AQN" Name="Algonquin Power and Utilities Corp" />
+  <SYMBOL Code="AQN.PR.A" Name="Algonquin Power and Utilities Pref A" />
+  <SYMBOL Code="AQN.PR.D" Name="Algonquin Power and Utilities Pref D" />
+  <SYMBOL Code="ARA" Name="Aclara Resources Inc" />
+  <SYMBOL Code="ARE" Name="Aecon Group Inc" />
+  <SYMBOL Code="ARG" Name="Amerigo Resources Ltd" />
+  <SYMBOL Code="ARIS" Name="Aris Gold Corporation" />
+  <SYMBOL Code="ARIS.WT.A" Name="Aris Mining Corporation WT" />
+  <SYMBOL Code="ARR" Name="Altius Renewable Royalties Corp" />
+  <SYMBOL Code="ARTI" Name="Evolve Artificial Intelligence Fund" />
+  <SYMBOL Code="ARX" Name="Arc Resources Ltd" />
+  <SYMBOL Code="ASCU" Name="Arizona Sonoran Copper Company Inc" />
+  <SYMBOL Code="ASM" Name="Avino Silver and Gold Mines Ltd" />
+  <SYMBOL Code="ASND" Name="Ascendant Resources Inc" />
+  <SYMBOL Code="ASTL" Name="Algoma Steel Group Inc" />
+  <SYMBOL Code="ASTL.WT" Name="Algoma Steel Group Inc" />
+  <SYMBOL Code="ATCU" Name="Candente Copper Corp" />
+  <SYMBOL Code="ATD" Name="Alimentation Couche-Tard Inc." />
+  <SYMBOL Code="ATH" Name="Athabasca Oil Corp" />
+  <SYMBOL Code="ATRL" Name="Atkinsrealis Group Inc" />
+  <SYMBOL Code="ATS" Name="Ats Corp" />
+  <SYMBOL Code="ATZ" Name="Aritzia Inc" />
+  <SYMBOL Code="AUGB.F" Name="First Trst CBOE Vest US Eqty Buffer ETF" />
+  <SYMBOL Code="AUMN" Name="Golden Minerals Company" />
+  <SYMBOL Code="AVCN" Name="Avicanna Inc" />
+  <SYMBOL Code="AVL" Name="Avalon Advanced Materials Inc" />
+  <SYMBOL Code="AVNT" Name="Avant Brands Inc" />
+  <SYMBOL Code="AW" Name="A W Food Services of Canada Inc" />
+  <SYMBOL Code="AX.PR.E" Name="Artis REIT Pref Ser E" />
+  <SYMBOL Code="AX.PR.I" Name="Artis REIT Pref Series I" />
+  <SYMBOL Code="AX.UN" Name="Artis Real Estate Investment Trust Units" />
+  <SYMBOL Code="AXIS" Name="Axis Auto Finance Inc" />
+  <SYMBOL Code="AYA" Name="Aya Gold and Silver Inc" />
+  <SYMBOL Code="BABY" Name="Else Nutrition Holdings Inc" />
+  <SYMBOL Code="BAM" Name="Brookfield Asset Management Ltd" />
+  <SYMBOL Code="BANK" Name="Evolve CDN Banks Lifecos Enh Yld Idx ETF" />
+  <SYMBOL Code="BASE" Name="Evolve Glob Matls Mining Enh Yld Idx ETF" />
+  <SYMBOL Code="BASE.B" Name="Evolve Glob Matls Mining Enh Yld Unhgd" />
+  <SYMBOL Code="BB" Name="Blackberry Ltd" />
+  <SYMBOL Code="BBD.A" Name="Bombardier Inc Cl A Mv" />
+  <SYMBOL Code="BBD.B" Name="Bombardier Inc Cl B Sv" />
+  <SYMBOL Code="BBD.PR.B" Name="Bombardier 2 Pr" />
+  <SYMBOL Code="BBD.PR.C" Name="Bombardier Inc Pref Class C" />
+  <SYMBOL Code="BBD.PR.D" Name="Bombardier Inc Pref Ser 3" />
+  <SYMBOL Code="BBU.UN" Name="Brookfield Business Partners LP" />
+  <SYMBOL Code="BBUC" Name="Brookfield Business Corporation" />
+  <SYMBOL Code="BCE" Name="BCE Inc" />
+  <SYMBOL Code="BCE.PR.A" Name="BCE First Pr Shares Series AA" />
+  <SYMBOL Code="BCE.PR.B" Name="BCE Inc First Pr Shares Series Ab" />
+  <SYMBOL Code="BCE.PR.C" Name="BCE Inc Pr Shares Series AC" />
+  <SYMBOL Code="BCE.PR.D" Name="BCE Inc Pref Shares Series Ad" />
+  <SYMBOL Code="BCE.PR.E" Name="BCE 1st Pref Shares Series Ae" />
+  <SYMBOL Code="BCE.PR.F" Name="BCE 1st Pref Shares Series Af" />
+  <SYMBOL Code="BCE.PR.G" Name="BCE 1st Pref Shares Series Ag" />
+  <SYMBOL Code="BCE.PR.H" Name="BCE 1st Pref Shares Series Ah" />
+  <SYMBOL Code="BCE.PR.I" Name="BCE 1st Pref Shares Series Ai" />
+  <SYMBOL Code="BCE.PR.J" Name="BCE Inc Pref Sh Series Aj" />
+  <SYMBOL Code="BCE.PR.K" Name="BCE Inc Pref Ser AK" />
+  <SYMBOL Code="BCE.PR.L" Name="BCE Inc Pref Ser AL" />
+  <SYMBOL Code="BCE.PR.M" Name="BCE Inc Pref Shares Series Am" />
+  <SYMBOL Code="BCE.PR.N" Name="BCE Inc Pref Shares Series An" />
+  <SYMBOL Code="BCE.PR.Q" Name="BCE Inc Pref Shares Series Aq" />
+  <SYMBOL Code="BCE.PR.R" Name="BCE Inc Ser R" />
+  <SYMBOL Code="BCE.PR.S" Name="BCE Inc Ser S" />
+  <SYMBOL Code="BCE.PR.T" Name="BCE Inc First Pref Series T" />
+  <SYMBOL Code="BCE.PR.Y" Name="BCE Inc Ser Y Pr" />
+  <SYMBOL Code="BCE.PR.Z" Name="BCE Inc Series Z" />
+  <SYMBOL Code="BCHT" Name="Birchtech Corp" />
+  <SYMBOL Code="BCT" Name="Briacell Therapeutics Corp" />
+  <SYMBOL Code="BDGI" Name="Badger Infrastructure Solutions Ltd" />
+  <SYMBOL Code="BDI" Name="Black Diamond Group Ltd" />
+  <SYMBOL Code="BDIV" Name="Brompton Global Dividend Growth ETF" />
+  <SYMBOL Code="BDT" Name="Bird Construction Inc" />
+  <SYMBOL Code="BEI.UN" Name="Boardwalk Real Estate Investment Trust" />
+  <SYMBOL Code="BEK.B" Name="Becker Milk Company Ltd Cl B NV" />
+  <SYMBOL Code="BEP.PR.G" Name="Brookfield Renewable LP Pref Ser 7" />
+  <SYMBOL Code="BEP.PR.M" Name="Brookfield Renewable LP Pref Ser 13" />
+  <SYMBOL Code="BEP.PR.R" Name="Brookfield Renewable Partners LP" />
+  <SYMBOL Code="BEP.UN" Name="Brookfield Renewable Partners LP" />
+  <SYMBOL Code="BEPC" Name="Brookfield Renewable Corp" />
+  <SYMBOL Code="BEPR" Name="Brompton Flaherty &amp; Crumrine Enhanced IN" />
+  <SYMBOL Code="BEPR.U" Name="Brompton Flaherty Crumine Enh Pr ETF USD" />
+  <SYMBOL Code="BESG" Name="Invesco ESG CDN Core Plus Bond ETF" />
+  <SYMBOL Code="BFIN" Name="Brompton Na Financials Dividend ETF" />
+  <SYMBOL Code="BGC" Name="Bristol Gate Concentrated CDN Eqty ETF" />
+  <SYMBOL Code="BGI.UN" Name="Brookfield Glbl Infras Sec Inc Fd" />
+  <SYMBOL Code="BGU" Name="Bristol Gate Concentrated US Eqty ETF" />
+  <SYMBOL Code="BGU.U" Name="Bristol Gate Conc US Eqty ETF USD" />
+  <SYMBOL Code="BHC" Name="Bausch Health Companies Inc" />
+  <SYMBOL Code="BIK.PR.A" Name="Bip Investment Corp Pref Ser 1" />
+  <SYMBOL Code="BIP.PR.A" Name="Brookfield Infra Partners LP Pref Ser 1" />
+  <SYMBOL Code="BIP.PR.B" Name="Brookfield Infra Partners LP Pref Ser 3" />
+  <SYMBOL Code="BIP.PR.E" Name="Brookfield Infra Partners LP Pref Ser 9" />
+  <SYMBOL Code="BIP.PR.F" Name="Brookfield Infra Partners LP Pref Ser 11" />
+  <SYMBOL Code="BIP.UN" Name="Brookfield Infra Partners LP Units" />
+  <SYMBOL Code="BIPC" Name="Brookfield Infrastructure Corp" />
+  <SYMBOL Code="BIR" Name="Birchcliff Energy Ltd" />
+  <SYMBOL Code="BITF" Name="Bitfarms Ltd" />
+  <SYMBOL Code="BITI" Name="Betapro Inverse Bitcoin ETF" />
+  <SYMBOL Code="BITI.U" Name="Betapro Inverse Bitcoin ETF USD" />
+  <SYMBOL Code="BK" Name="Canadian Banc Corp" />
+  <SYMBOL Code="BK.PR.A" Name="Canadian Banc Corp Pref A" />
+  <SYMBOL Code="BKCC" Name="GX Equal Weight CDN Bank Cvrd Call ETF" />
+  <SYMBOL Code="BKCL" Name="GX Enhanced Equal Weight CDN Banks Cvrd Call ETF" />
+  <SYMBOL Code="BKI" Name="Black Iron Inc" />
+  <SYMBOL Code="BLCO" Name="Bausch Lomb Corporation" />
+  <SYMBOL Code="BLDP" Name="Ballard Power Systems Inc" />
+  <SYMBOL Code="BLN" Name="Blackline Safety Corp" />
+  <SYMBOL Code="BLX" Name="Boralex Inc" />
+  <SYMBOL Code="BMAX" Name="Brompton Enhanced Multi Asset Income ETF" />
+  <SYMBOL Code="BMO" Name="Bank of Montreal" />
+  <SYMBOL Code="BMO.PR.E" Name="BMO Pref Shares Series 44" />
+  <SYMBOL Code="BMO.PR.W" Name="BMO Cl B Pref Shares Ser 31" />
+  <SYMBOL Code="BMO.PR.Y" Name="Bank of Montreal Pref Ser 33" />
+  <SYMBOL Code="BN" Name="Brookfield Corporation" />
+  <SYMBOL Code="BN.PF.A" Name="Brookfield Corporation Pref Ser 32" />
+  <SYMBOL Code="BN.PF.B" Name="Brookfield Corporation Pref Ser 34" />
+  <SYMBOL Code="BN.PF.C" Name="Brookfield Corporation Pref Ser 36" />
+  <SYMBOL Code="BN.PF.D" Name="Brookfield Corporation Pref Ser 37" />
+  <SYMBOL Code="BN.PF.E" Name="Brookfield Corporation Pref Ser 38" />
+  <SYMBOL Code="BN.PF.F" Name="Brookfield Corporation Pref Ser 40" />
+  <SYMBOL Code="BN.PF.G" Name="Brookfield Corporation Pref Ser 42" />
+  <SYMBOL Code="BN.PF.H" Name="Brookfield Corporation Pref Ser 44" />
+  <SYMBOL Code="BN.PF.I" Name="Brookfield Corporation Pref Ser 46" />
+  <SYMBOL Code="BN.PF.J" Name="Brookfield Corporation Pref Ser 48" />
+  <SYMBOL Code="BN.PF.K" Name="Brookfield Corporation Pref Ser 51" />
+  <SYMBOL Code="BN.PF.L" Name="Brookfield Corporation Pref Ser 52" />
+  <SYMBOL Code="BN.PR.B" Name="Brookfield Corporation Pref Ser 2" />
+  <SYMBOL Code="BN.PR.C" Name="Brookfield Corporation Pref Ser 4" />
+  <SYMBOL Code="BN.PR.K" Name="Brookfield Corporation Pref Ser 13" />
+  <SYMBOL Code="BN.PR.M" Name="Brookfield Corporation Pref Ser 17" />
+  <SYMBOL Code="BN.PR.N" Name="Brookfield Corporation Pref Ser 18" />
+  <SYMBOL Code="BN.PR.R" Name="Brookfield Corporation Pref Ser 24" />
+  <SYMBOL Code="BN.PR.T" Name="Brookfield Corporation Pref Ser 26" />
+  <SYMBOL Code="BN.PR.X" Name="Brookfield Corporation Pref Ser 28" />
+  <SYMBOL Code="BN.PR.Z" Name="Brookfield Corporation Pref Ser 30" />
+  <SYMBOL Code="BNC" Name="Purpose CDN Financial Income Fund ETF" />
+  <SYMBOL Code="BND" Name="Purpose Tactical Inv Grade Bond ETF" />
+  <SYMBOL Code="BNE" Name="Bonterra Energy Corp" />
+  <SYMBOL Code="BNG" Name="Bengal Energy Ltd" />
+  <SYMBOL Code="BNK" Name="Big Banc Split Corp Cl A" />
+  <SYMBOL Code="BNK.PR.A" Name="Big Banc Split Corp" />
+  <SYMBOL Code="BNKL" Name="GX Enhanced Equal Weight Banks Idx ETF" />
+  <SYMBOL Code="BNS" Name="Bank of Nova Scotia" />
+  <SYMBOL Code="BNT" Name="Brookfield Wealth Solutions Ltd" />
+  <SYMBOL Code="BOND" Name="Evolve Enhanced Yield Bond Fund ETF" />
+  <SYMBOL Code="BOND.B" Name="Evolve Enhanced Yield Bond Fund" />
+  <SYMBOL Code="BOND.U" Name="Evolve Enhanced Yld Bd Fund Unhg ETF USD" />
+  <SYMBOL Code="BOS" Name="Airboss America J" />
+  <SYMBOL Code="BPF.UN" Name="Boston Pizza Royalties Income Fund" />
+  <SYMBOL Code="BPO.PR.A" Name="Brookfield Office Properties Pref Ser AA" />
+  <SYMBOL Code="BPO.PR.C" Name="Brookfield Office Properties Pref Ser CC" />
+  <SYMBOL Code="BPO.PR.E" Name="Brookfield Office Properties Pref Ser Ee" />
+  <SYMBOL Code="BPO.PR.G" Name="Brookfield Office Properties Pref Ser G" />
+  <SYMBOL Code="BPO.PR.I" Name="Brookfield Office Properties Pref Ser II" />
+  <SYMBOL Code="BPO.PR.N" Name="Brookfield Office Properties Pref Ser N" />
+  <SYMBOL Code="BPO.PR.P" Name="Brookfield Office Properties Pref Ser P" />
+  <SYMBOL Code="BPO.PR.R" Name="Brookfield Office Properties Pref Ser R" />
+  <SYMBOL Code="BPO.PR.T" Name="Brookfield Office Properties Pref Ser T" />
+  <SYMBOL Code="BPO.PR.W" Name="Brookfield Office Properties Pref Ser W" />
+  <SYMBOL Code="BPO.PR.X" Name="Brookfield Office Properties Pref Ser V" />
+  <SYMBOL Code="BPRF" Name="Bf and Crumrine Invest Grade Pref ETF" />
+  <SYMBOL Code="BPRF.U" Name="Bf and Crumrine Invgrade Pref ETF USD" />
+  <SYMBOL Code="BPS.PR.A" Name="Brookfield Property Split Pref Ser 2" />
+  <SYMBOL Code="BPS.PR.B" Name="Brookfield Property Split Pref Ser 3" />
+  <SYMBOL Code="BPS.PR.C" Name="Brookfield Property Split Pref Ser 4" />
+  <SYMBOL Code="BPYP.PR.A" Name="Brookfield Property Preferred L.P." />
+  <SYMBOL Code="BR" Name="Big Rock Brewery Inc" />
+  <SYMBOL Code="BRAG" Name="Bragg Gaming Group Inc" />
+  <SYMBOL Code="BRE" Name="Bridgemarq Real Estate Services Inc" />
+  <SYMBOL Code="BREA" Name="Brompton Global Real Assets Dividend ETF" />
+  <SYMBOL Code="BRF.PR.A" Name="Brookfield Renewable Pref Cl A Ser 1" />
+  <SYMBOL Code="BRF.PR.B" Name="Brookfield Renewable Pref Cl A Ser 2" />
+  <SYMBOL Code="BRF.PR.C" Name="Brookfield Renewable Power Pref Eqty Inc" />
+  <SYMBOL Code="BRF.PR.E" Name="Brookfield Renewable Power Pref Eqt Sr 5" />
+  <SYMBOL Code="BRF.PR.F" Name="Brookfield Renewable Power Pref Eqt Sr 6" />
+  <SYMBOL Code="BRMI" Name="Boat Rocker Media Inc" />
+  <SYMBOL Code="BRY" Name="Bri Chem Corp" />
+  <SYMBOL Code="BSKT" Name="Manulife Smart Core Bond ETF" />
+  <SYMBOL Code="BSX" Name="Belo Sun Mining Corp" />
+  <SYMBOL Code="BTB.DB.H" Name="Btb REIT 7.00 Pct Debs" />
+  <SYMBOL Code="BTB.UN" Name="Btb REIT Units" />
+  <SYMBOL Code="BTCC" Name="Purpose Bitcoin ETF Currency Hgd" />
+  <SYMBOL Code="BTCC.B" Name="Purpose Bitcoin ETF [Cad ETF Non-Currenc" />
+  <SYMBOL Code="BTCC.J" Name="Purpose Bitcoin Carbon Offset ETF" />
+  <SYMBOL Code="BTCC.U" Name="Purpose Bitcoin ETF [Usd ETF Non-Currenc" />
+  <SYMBOL Code="BTCQ" Name="3iQ Coinshares Bitcoin ETF" />
+  <SYMBOL Code="BTCQ.U" Name="3iQ Coinshares Bitcoin ETF USD" />
+  <SYMBOL Code="BTCX.B" Name="CI Galaxy Bitcoin ETF" />
+  <SYMBOL Code="BTCX.U" Name="CI Galaxy Bitcoin ETF USD" />
+  <SYMBOL Code="BTCY" Name="Purpose Bitcoin Yield ETF" />
+  <SYMBOL Code="BTCY.B" Name="Purpose Bitcoin Yield ETF" />
+  <SYMBOL Code="BTCY.U" Name="Purpose Bitcoin Yield ETF USD" />
+  <SYMBOL Code="BTE" Name="Baytex Energy Corp" />
+  <SYMBOL Code="BTO" Name="B2Gold Corp" />
+  <SYMBOL Code="BU" Name="Burcon Nutrascience Corp" />
+  <SYMBOL Code="BUI" Name="Buhler Ind" />
+  <SYMBOL Code="BXF" Name="CI 1 To 5 Yr Lad Gov Stp Bd ETF" />
+  <SYMBOL Code="BYD" Name="Boyd Group Services Inc" />
+  <SYMBOL Code="BYL" Name="Baylin Technologies Inc" />
+  <SYMBOL Code="CACB" Name="CIBC Active Invst Grade Corp Bond ETF" />
+  <SYMBOL Code="CAE" Name="Cae Inc" />
+  <SYMBOL Code="CAFR" Name="CIBC Act Invst Grade Float Rate Bond ETF" />
+  <SYMBOL Code="CAGG" Name="CI Yield Enh CDN Agrt Bond ETF" />
+  <SYMBOL Code="CAGS" Name="CI Yld Enh CDN ST Agg Bd Idx ETF" />
+  <SYMBOL Code="CALL" Name="Evolve US Banks Enhanced Yield ETF" />
+  <SYMBOL Code="CALL.B" Name="Evolve US Banks Enhanced Yield Unheg" />
+  <SYMBOL Code="CANL" Name="GX Enhanced S&amp;P/Tsx 60 Index ETF" />
+  <SYMBOL Code="CAPG" Name="Capital Group Global Equity Select ETF" />
+  <SYMBOL Code="CAPI" Name="Capital Group International Equity Selec" />
+  <SYMBOL Code="CAPM" Name="Group Multi-Sector Income Select ETF" />
+  <SYMBOL Code="CAR.UN" Name="CDN Apartment Un" />
+  <SYMBOL Code="CARB" Name="GX Carbon Credits ETF" />
+  <SYMBOL Code="CARS" Name="Evolve Automobile Innovation Idx Hgd ETF" />
+  <SYMBOL Code="CARS.B" Name="Evolve Automobile Innovation Idx Uh ETF" />
+  <SYMBOL Code="CAS" Name="Cascades Inc" />
+  <SYMBOL Code="CASH" Name="GX High Interest Savings ETF" />
+  <SYMBOL Code="CBCX" Name="CI Galaxy Blockchain ETF" />
+  <SYMBOL Code="CBGR" Name="CI Balanced Growth Asset Allocation ETF" />
+  <SYMBOL Code="CBH" Name="Ishares 1-10 Yr Laddered Corp Bond ETF" />
+  <SYMBOL Code="CBIL" Name="GX 0-3 Month T-Bill ETF" />
+  <SYMBOL Code="CBL" Name="Franklin Core ETF Portfolio" />
+  <SYMBOL Code="CBND" Name="Manulife Smart Corporate Bond ETF" />
+  <SYMBOL Code="CBNK" Name="Mulvihill Canadian Bank Enhanced Yield E" />
+  <SYMBOL Code="CBO" Name="Ishares 1-5Yr Laddered Corp Bond ETF" />
+  <SYMBOL Code="CBUG" Name="CI Digital Security ETF" />
+  <SYMBOL Code="CCA" Name="Cogeco Communications Inc" />
+  <SYMBOL Code="CCBI" Name="CIBC Canadian Bond Index ETF" />
+  <SYMBOL Code="CCEI" Name="CIBC Canadian Equity Index ETF" />
+  <SYMBOL Code="CCL.A" Name="Ccl Inc Cl A" />
+  <SYMBOL Code="CCL.B" Name="Ccl Industries Inc Cl B NV" />
+  <SYMBOL Code="CCM" Name="Canagold Resources Ltd" />
+  <SYMBOL Code="CCO" Name="Cameco Corp" />
+  <SYMBOL Code="CCOM" Name="CI Auspice Broad Commodity ETF" />
+  <SYMBOL Code="CCRE" Name="CIBC Core Fixed Income Pool ETF" />
+  <SYMBOL Code="CCS.PR.C" Name="Co-Operators Gen Ins Cl E Prf" />
+  <SYMBOL Code="CDEF" Name="Manulife Smart Defensive Equity ETF" />
+  <SYMBOL Code="CDIV" Name="Manulife Smart Dividend ETF" />
+  <SYMBOL Code="CDLB" Name="CI Doubleline Total Return Bnd US HD ETF" />
+  <SYMBOL Code="CDLB.B" Name="CI Doubleline Total Return Bnd US Uh ETF" />
+  <SYMBOL Code="CDLB.U" Name="CI Doubleline Total Retrn Bnd US ETF USD" />
+  <SYMBOL Code="CDR" Name="Condor Energies Inc" />
+  <SYMBOL Code="CDZ" Name="Ishares S&amp;P TSX CDN Dividend ETF" />
+  <SYMBOL Code="CEF" Name="Sprott Physical Gold Silver Trust" />
+  <SYMBOL Code="CEF.U" Name="Central Fund of Canada Ltd Cl U NV" />
+  <SYMBOL Code="CEMI" Name="CIBC Emerging Markets Equity Index ETF" />
+  <SYMBOL Code="CEMX" Name="Cematrix Corporation" />
+  <SYMBOL Code="CEU" Name="Ces Energy Solutions Corp" />
+  <SYMBOL Code="CEW" Name="Ishares Equal Weight Banc Lifeco ETF" />
+  <SYMBOL Code="CF" Name="Canaccord Genuity Group Inc" />
+  <SYMBOL Code="CF.PR.A" Name="Canaccord Genuity Group Inc Pref A" />
+  <SYMBOL Code="CF.PR.C" Name="Canaccord Genuity Group Inc Pref C" />
+  <SYMBOL Code="CFF" Name="Conifex Timber Inc" />
+  <SYMBOL Code="CFLX" Name="CIBC Flexible Yield ETF Hedged" />
+  <SYMBOL Code="CFP" Name="Canfor Corp" />
+  <SYMBOL Code="CFW" Name="Calfrac Well Services Ltd" />
+  <SYMBOL Code="CFX" Name="Canfor Pulp Products Inc" />
+  <SYMBOL Code="CG" Name="Centerra Gold Inc" />
+  <SYMBOL Code="CGAA" Name="CI Glb Asset Allocation ETF" />
+  <SYMBOL Code="CGBI" Name="CIBC Global Bond Ex Can Idx ETF" />
+  <SYMBOL Code="CGDV" Name="CI Global Min Downside Vol Index ETF" />
+  <SYMBOL Code="CGDV.B" Name="CI Global Min Downside Vol Index Uh ETF" />
+  <SYMBOL Code="CGG" Name="China Gold Int Resources Corp" />
+  <SYMBOL Code="CGHY" Name="CI Global High Yld Cdt Pvt Pool ETF" />
+  <SYMBOL Code="CGI" Name="CDN General Inv" />
+  <SYMBOL Code="CGIN" Name="CI Global Investment Grade ETF" />
+  <SYMBOL Code="CGL" Name="Ishares Gold Bullion ETF Hdg" />
+  <SYMBOL Code="CGL.C" Name="Ishares Gold Bullion ETF Non Hdg" />
+  <SYMBOL Code="CGLO" Name="CIBC Global Growth ETF" />
+  <SYMBOL Code="CGO" Name="Cogeco Inc Sv" />
+  <SYMBOL Code="CGR" Name="Ishares Global Real Estate ETF" />
+  <SYMBOL Code="CGRA" Name="CI Global Real Asset Private Pool ETF" />
+  <SYMBOL Code="CGRE" Name="CI Global REIT Private Pool ETF" />
+  <SYMBOL Code="CGRO" Name="CI Growth Asset Allocation ETF" />
+  <SYMBOL Code="CGX" Name="Cineplex Inc" />
+  <SYMBOL Code="CGXF" Name="CI Gld Giants Cvr Call ETF" />
+  <SYMBOL Code="CGXF.U" Name="CI Gld Giants Cvr Call ETF USD" />
+  <SYMBOL Code="CGY" Name="Calian Group Ltd" />
+  <SYMBOL Code="CHE.DB.E" Name="Chemtrade Logistics If 6.50 Pct Debs" />
+  <SYMBOL Code="CHE.DB.G" Name="Chemtrade Logistics Incme Fund 6.25 Debs" />
+  <SYMBOL Code="CHE.DB.H" Name="Chemtrade Logistics Incme Fd 7 Pct Debs" />
+  <SYMBOL Code="CHE.UN" Name="Chemtrade Logistics Income Fund" />
+  <SYMBOL Code="CHNA.B" Name="CI Icbccs SP China 500 Index ETF NH" />
+  <SYMBOL Code="CHP.UN" Name="Choice Properties REIT" />
+  <SYMBOL Code="CHPS" Name="GX Semiconductor Index ETF" />
+  <SYMBOL Code="CHPS.U" Name="GX Semiconductor Index ETF USD" />
+  <SYMBOL Code="CHR" Name="Chorus Aviation Inc" />
+  <SYMBOL Code="CHR.DB.A" Name="Chorus Aviation Inc 5.75 Pct Debs" />
+  <SYMBOL Code="CHR.DB.B" Name="Chorus Aviation Inc 6.00 Pct Debs" />
+  <SYMBOL Code="CIA" Name="Champion Iron Ltd" />
+  <SYMBOL Code="CIAI" Name="CI Global Artificial Intelligence ETF" />
+  <SYMBOL Code="CIBR" Name="First Trust Nasdaq Cybersecurity ETF" />
+  <SYMBOL Code="CIC" Name="CI Can Banks Cov Call Income Class ETF" />
+  <SYMBOL Code="CIEH" Name="CIBC International Equity Index ETF" />
+  <SYMBOL Code="CIEI" Name="CIBC International Equity Index ETF" />
+  <SYMBOL Code="CIEM" Name="CI Emerging Markets Alpha ETF" />
+  <SYMBOL Code="CIEM.U" Name="CI Emerging Markets Alpha Hg ETF USD" />
+  <SYMBOL Code="CIF" Name="Ishares Global Infrastructure Index ETF" />
+  <SYMBOL Code="CIGI" Name="Colliers International Group Inc" />
+  <SYMBOL Code="CINF" Name="CI Global Infrastructure Pvt Pool ETF" />
+  <SYMBOL Code="CINT" Name="CIBC International Equity ETF" />
+  <SYMBOL Code="CIU.PR.A" Name="Cu Inc Pref Shares" />
+  <SYMBOL Code="CIU.PR.C" Name="Cu Inc Pref Ser 4" />
+  <SYMBOL Code="CIX" Name="CI Financial Corp" />
+  <SYMBOL Code="CJ" Name="Cardinal Energy Ltd" />
+  <SYMBOL Code="CJR.B" Name="Corus Entertainment Inc Cl B NV" />
+  <SYMBOL Code="CJT" Name="Cargojet Inc" />
+  <SYMBOL Code="CJT.DB.E" Name="Cargojet Inc 5.75 Pct Debs" />
+  <SYMBOL Code="CJT.DB.F" Name="Cargojet Inc 5.25 Pct Debs" />
+  <SYMBOL Code="CKI" Name="Clarke Inc" />
+  <SYMBOL Code="CLF" Name="Ishares 1-5 Yr Ladder Govt Bond ETF" />
+  <SYMBOL Code="CLG" Name="Ishares 1-10 Yr Ladder Govt Bond ETF" />
+  <SYMBOL Code="CLML" Name="CI Global Climate Leaders Fund ETF" />
+  <SYMBOL Code="CLML.U" Name="CI Global Climate Leaders Fund ETF USD" />
+  <SYMBOL Code="CLS" Name="Celestica Inc Sv" />
+  <SYMBOL Code="CM" Name="Canadian Imperial Bank of Commerce" />
+  <SYMBOL Code="CM.PR.P" Name="CIBC Pref Ser 41" />
+  <SYMBOL Code="CM.PR.Q" Name="CIBC Pref Ser 43" />
+  <SYMBOL Code="CM.PR.S" Name="CIBC Pref Series 47" />
+  <SYMBOL Code="CMAG" Name="CI Munro Alt Global Growth Fund" />
+  <SYMBOL Code="CMAG.U" Name="CI Munro Alt Global Growth Fund USD" />
+  <SYMBOL Code="CMAR" Name="CI Marret Alt Absolute Return Bond Fund" />
+  <SYMBOL Code="CMCX.B" Name="CI Galaxy Multi Crypto ETF" />
+  <SYMBOL Code="CMCX.U" Name="CI Galaxy Multi Crypto Unhgd ETF USD" />
+  <SYMBOL Code="CMDO" Name="CI Alternative Diversified Opp ETF" />
+  <SYMBOL Code="CMDO.U" Name="CI Alternative Diversified Opp ETF USD" />
+  <SYMBOL Code="CMG" Name="Computer Modelling Group Ltd" />
+  <SYMBOL Code="CMGG" Name="CI Munro Global Gwth Equity Fund ETF CAD" />
+  <SYMBOL Code="CMNY" Name="CI Money Market ETF" />
+  <SYMBOL Code="CMR" Name="Ishares Premium Money Market ETF" />
+  <SYMBOL Code="CNCC" Name="GX S&amp;P/Tsx 60 Covered Call ETF" />
+  <SYMBOL Code="CNCL" Name="GX Enhanced S&amp;P/Tsx 60 Covered Call ETF" />
+  <SYMBOL Code="CNDX" Name="Global X S&amp;P/Tsx 60 Index ETF Class A Un" />
+  <SYMBOL Code="CNE" Name="Canacol Energy Ltd" />
+  <SYMBOL Code="CNL" Name="Collective Mining Ltd" />
+  <SYMBOL Code="CNQ" Name="Canadian Natural Resources Ltd." />
+  <SYMBOL Code="CNR" Name="Canadian National Railway Co." />
+  <SYMBOL Code="COG" Name="Condor Gold Plc" />
+  <SYMBOL Code="COMM" Name="BMO Global Communications Index ETF" />
+  <SYMBOL Code="COP.U" Name="Sprott Physical Copper Trust" />
+  <SYMBOL Code="COP.UN" Name="Sprott Physical Copper Trust" />
+  <SYMBOL Code="COPP" Name="GX Copper Producers Index ETF" />
+  <SYMBOL Code="COPR" Name="Coppernico Metals Inc." />
+  <SYMBOL Code="CORE" Name="Pimco Canadian Core Bond Fund" />
+  <SYMBOL Code="COW" Name="Ishares Global Agri Index ETF" />
+  <SYMBOL Code="CP" Name="Canadian Pacific Kansas City Ltd" />
+  <SYMBOL Code="CPD" Name="Ishares S&amp;P TSX CDN Pref ETF" />
+  <SYMBOL Code="CPH" Name="Cipher Pharmaceuticals Inc" />
+  <SYMBOL Code="CPLS" Name="CIBC Core Plus Fixed Income Pool ETF" />
+  <SYMBOL Code="CPX" Name="Capital Power Corp" />
+  <SYMBOL Code="CPX.PR.A" Name="Capital Power Corp Pref Ser 1" />
+  <SYMBOL Code="CPX.PR.C" Name="Capital Power Corp Pref Ser 3" />
+  <SYMBOL Code="CPX.PR.E" Name="Capital Power Corp Pref Ser 5" />
+  <SYMBOL Code="CRDL" Name="Cardiol Therapeutics Inc" />
+  <SYMBOL Code="CRED" Name="CI Lawrence Park Alt Invest Grd Crdt ETF" />
+  <SYMBOL Code="CRED.U" Name="CI Lawrence Park Alt Inv Grd Crt ETF USD" />
+  <SYMBOL Code="CRON" Name="Cronos Group Inc" />
+  <SYMBOL Code="CROP" Name="Purpose Credit Opportunities Fund ETF" />
+  <SYMBOL Code="CRP" Name="Ceres Global Ag Corp" />
+  <SYMBOL Code="CRR.UN" Name="Crombie Real Estate Investment Trust" />
+  <SYMBOL Code="CRRX" Name="Carerx Corp" />
+  <SYMBOL Code="CRT.UN" Name="CT Real Estate Investment Trust" />
+  <SYMBOL Code="CRWN" Name="Crown Capital Partners Inc" />
+  <SYMBOL Code="CS" Name="Capstone Mining Corp" />
+  <SYMBOL Code="CSAV" Name="CI High Interest Savings ETF" />
+  <SYMBOL Code="CSCI" Name="Cosciens Biopharma Inc" />
+  <SYMBOL Code="CSE.PR.A" Name="Capstone Infrastructure Corp Pref A" />
+  <SYMBOL Code="CSH.UN" Name="Chartwell Retirement Residences" />
+  <SYMBOL Code="CSU" Name="Constellation Software Inc" />
+  <SYMBOL Code="CSU.DB" Name="Constellation Software Inc Debs Ser 1" />
+  <SYMBOL Code="CSW.A" Name="Corby Spirit and Wine Ltd Class A" />
+  <SYMBOL Code="CSW.B" Name="Corby Spirit and Wine Ltd Class B" />
+  <SYMBOL Code="CTC.A" Name="Canadian Tire Corp Cl A NV" />
+  <SYMBOL Code="CTF.UN" Name="Citadel Income Fund" />
+  <SYMBOL Code="CTS" Name="Converge Technology Solutions Corp" />
+  <SYMBOL Code="CTX" Name="Crescita Therapeutics Inc" />
+  <SYMBOL Code="CU" Name="Canadian Utilities Ltd Cl A NV" />
+  <SYMBOL Code="CU.PR.C" Name="Canadian Utilities Ltd Pref Ser C" />
+  <SYMBOL Code="CU.PR.D" Name="Canadian Utilities Ltd Pr Series AA" />
+  <SYMBOL Code="CU.PR.E" Name="Canadian Utilities Ltd Pref Ser Bb" />
+  <SYMBOL Code="CU.PR.F" Name="Canadian Utilities Ltd Pref Ser CC" />
+  <SYMBOL Code="CU.PR.G" Name="Canadian Utilities Ltd Pref Ser Dd" />
+  <SYMBOL Code="CU.PR.H" Name="Canadian Utilities Ltd Pref Ser Ee" />
+  <SYMBOL Code="CU.PR.I" Name="Canadian Utilities Ltd Pref Ser Ff" />
+  <SYMBOL Code="CU.PR.J" Name="Canadian Utilities Cumulative Redeemable Second" />
+  <SYMBOL Code="CUBD" Name="CI Global Unconstrained Bond Fund ETF" />
+  <SYMBOL Code="CUD" Name="Ishares S&amp;P US Div Growers ETF" />
+  <SYMBOL Code="CUEH" Name="CIBC US Equity Index ETF" />
+  <SYMBOL Code="CUEI" Name="CIBC US Equity Index ETF" />
+  <SYMBOL Code="CUP.U" Name="Caribbean Util US" />
+  <SYMBOL Code="CURA" Name="Curaleaf Holdings Inc" />
+  <SYMBOL Code="CVD" Name="Ishares Convertible Bond Index ETF" />
+  <SYMBOL Code="CVE" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.PR.A" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.PR.B" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.PR.C" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.PR.E" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.PR.G" Name="Cenovus Energy Inc" />
+  <SYMBOL Code="CVE.WT" Name="Cenovus Energy Inc WT" />
+  <SYMBOL Code="CVG" Name="Clairvest Group" />
+  <SYMBOL Code="CVLU" Name="CI US Enhanced Val Indx Heg ETF" />
+  <SYMBOL Code="CVLU.B" Name="CI US Enhanced Val Indx Unheg ETF" />
+  <SYMBOL Code="CVO" Name="Coveo Solutions Inc" />
+  <SYMBOL Code="CWB" Name="CDN Western Bank" />
+  <SYMBOL Code="CWB.PR.B" Name="Canadian Western Bank Pref Ser 5" />
+  <SYMBOL Code="CWB.PR.D" Name="Canadian Western Bank Pref Series 9" />
+  <SYMBOL Code="CWEB" Name="Charlotte's Web Holdings Inc" />
+  <SYMBOL Code="CWL" Name="Caldwell Partners International Inc" />
+  <SYMBOL Code="CWW" Name="Ishares S&amp;P Global Water ETF" />
+  <SYMBOL Code="CXB" Name="Calibre Mining Corp" />
+  <SYMBOL Code="CXF" Name="CI CDN Convert Bond ETF" />
+  <SYMBOL Code="CXI" Name="Currency Exchange International Corp" />
+  <SYMBOL Code="CYB" Name="Cymbria Corp Cl A" />
+  <SYMBOL Code="CYBR" Name="Evolve Cyber Security Index Hgd ETF" />
+  <SYMBOL Code="CYBR.B" Name="Evolve Cyber Security Index Uh ETF" />
+  <SYMBOL Code="CYH" Name="Ishares Global Monthly Dividend ETF" />
+  <SYMBOL Code="D.UN" Name="Dream Office REIT" />
+  <SYMBOL Code="DAMG" Name="Desjardins Alt Long/Short Global Equity Markets" />
+  <SYMBOL Code="DANC" Name="Desjardins Lng Shrt Eqty Mkt Ntrl ETF" />
+  <SYMBOL Code="DATA" Name="Evolve Cloud Computing Index Fund Hg ETF" />
+  <SYMBOL Code="DATA.B" Name="Evolve Cloud Computing Indx Fund Uhg ETF" />
+  <SYMBOL Code="DAY" Name="Dayforce Inc" />
+  <SYMBOL Code="DBM" Name="Doman Building Materials Group Ltd." />
+  <SYMBOL Code="DBO" Name="Dbox Technologies Inc" />
+  <SYMBOL Code="DC.A" Name="Dundee Corp Cl A Sv" />
+  <SYMBOL Code="DCBC" Name="Desjardins Canadian Corp Bond Index ETF" />
+  <SYMBOL Code="DCBO" Name="Docebo Inc" />
+  <SYMBOL Code="DCC" Name="Desjardins 1To5 Yr Lad CDN Corp Bd ETF" />
+  <SYMBOL Code="DCG" Name="Desjardins 1To5 Yr Lad CDN Govt Bd ETF" />
+  <SYMBOL Code="DCM" Name="Data Communications Mgmt Corp" />
+  <SYMBOL Code="DCP" Name="Desjardins CDN Pref Share ETF" />
+  <SYMBOL Code="DCU" Name="Desjardins CDN Universe Bond Index ETF" />
+  <SYMBOL Code="DF" Name="Dividend 15 Split Corp II" />
+  <SYMBOL Code="DF.PR.A" Name="Dividend 15 Split Corp II Prf" />
+  <SYMBOL Code="DFN" Name="Dividend 15 Split Corp" />
+  <SYMBOL Code="DFN.PR.A" Name="Dividend 15 Split Corp" />
+  <SYMBOL Code="DFY" Name="Definity Financial Corporation" />
+  <SYMBOL Code="DGR" Name="CI Wisdomtree US Qty Div Gwth Idx ETF" />
+  <SYMBOL Code="DGR.B" Name="CI Wisdomtree US Qty Div Gwth Idx ETF NH" />
+  <SYMBOL Code="DGRC" Name="CI Wisdomtree CDN Qlty Div Grth Idx ETF" />
+  <SYMBOL Code="DGS" Name="Dividend Growth Split Corp Class A" />
+  <SYMBOL Code="DGS.PR.A" Name="Dividend Growth Split Corp Pref" />
+  <SYMBOL Code="DHT.U" Name="Dri Healthcare Trust USD" />
+  <SYMBOL Code="DHT.UN" Name="Dri Healthcare Trust" />
+  <SYMBOL Code="DIAM" Name="Star Diamond Corp" />
+  <SYMBOL Code="DII.B" Name="Dorel Industries Inc Cl B Sv" />
+  <SYMBOL Code="DIR.UN" Name="Dream Industrial REIT" />
+  <SYMBOL Code="DISC" Name="BMO Glb Consumer Disc Hgd To CAD ETF" />
+  <SYMBOL Code="DIV" Name="Diversified Royalty Corp" />
+  <SYMBOL Code="DIV.DB.A" Name="Diversified Royalty Corp 6.00 Pct Debs" />
+  <SYMBOL Code="DIVS" Name="Evolve Active CDN Pref Share ETF" />
+  <SYMBOL Code="DLCG" Name="Dominion Lending Centres Inc" />
+  <SYMBOL Code="DLR" Name="GX US Dollar Currency ETF" />
+  <SYMBOL Code="DLR.U" Name="GX US Dollar Currency ETF USD" />
+  <SYMBOL Code="DMEC" Name="Desjardins Canadian Equity Index ETF" />
+  <SYMBOL Code="DMEI" Name="Desjardins International Equity Index ETF" />
+  <SYMBOL Code="DMEU" Name="Desjardins American Equity Index ETF" />
+  <SYMBOL Code="DML" Name="Denison Mines Corp" />
+  <SYMBOL Code="DND" Name="Dye &amp; Durham Ltd" />
+  <SYMBOL Code="DNG" Name="Dynacor Gold Mines Inc" />
+  <SYMBOL Code="DNTL" Name="Dentalcorp Holdings Ltd" />
+  <SYMBOL Code="DOL" Name="Dollarama Inc" />
+  <SYMBOL Code="DOO" Name="Brp Inc" />
+  <SYMBOL Code="DPM" Name="Dundee Precious Metals Inc" />
+  <SYMBOL Code="DR" Name="Medical Facilities Corp" />
+  <SYMBOL Code="DRCU" Name="Desjardins RI Active Canadian Bond-Low C" />
+  <SYMBOL Code="DRFC" Name="Desjardins RI Cda Multi Low Co2 ETF" />
+  <SYMBOL Code="DRFD" Name="Desjardins RI Dev Ex USA Ex Cda Co2 ETF" />
+  <SYMBOL Code="DRFE" Name="Desjardins Emerging Mkts Low Co2 ETF" />
+  <SYMBOL Code="DRFG" Name="Desjardins Gbl Fossil Fuel Res Free ETF" />
+  <SYMBOL Code="DRFU" Name="Desjardins RI USA Multi Low Co2 ETF" />
+  <SYMBOL Code="DRM" Name="Dream Unlimited Corp" />
+  <SYMBOL Code="DRMC" Name="Desjardins RI Canada-Low Co2 Index ETF" />
+  <SYMBOL Code="DRMD" Name="Desjardins RI Dev Exusa Exca Low Co2 ETF" />
+  <SYMBOL Code="DRMU" Name="Desjardins RI USA Low Co2 Index ETF" />
+  <SYMBOL Code="DRR.U" Name="Dream Residential Real Estate Investment" />
+  <SYMBOL Code="DRR.UN" Name="Dream Residential REIT" />
+  <SYMBOL Code="DRT" Name="Dirtt Environmental Solutions Ltd" />
+  <SYMBOL Code="DRT.DB" Name="Dirtt Environmental Solns Ltd 6 Pct Debs" />
+  <SYMBOL Code="DRT.DB.A" Name="Dirtt Enviro Solutions Ltd 6.25 Pct Debs" />
+  <SYMBOL Code="DRX" Name="Adf Group Inc Sv" />
+  <SYMBOL Code="DS" Name="Dividend Select 15 Corp" />
+  <SYMBOL Code="DSAE" Name="Desjardins Societerra American Eqty ETF" />
+  <SYMBOL Code="DSG" Name="Descartes Sys" />
+  <SYMBOL Code="DSV" Name="Discovery Silver Corp" />
+  <SYMBOL Code="DTOL" Name="D2L Inc" />
+  <SYMBOL Code="DXAU" Name="Dynamic Active Global Gold ETF" />
+  <SYMBOL Code="DXB" Name="Dynamic Ishares Act Tactical Bond ETF" />
+  <SYMBOL Code="DXBB" Name="Dynamic Active Bond ETF" />
+  <SYMBOL Code="DXBC" Name="Dynamic Active Canadian Bond ETF" />
+  <SYMBOL Code="DXBU" Name="Dynamic Active U.S. Investment Grade Corporate B" />
+  <SYMBOL Code="DXC" Name="Dyn Ishares Active CDN Div ETF" />
+  <SYMBOL Code="DXCP" Name="Dynamic Short Term Credit Plus Fund ETF" />
+  <SYMBOL Code="DXDB" Name="Dynamic Active Discount Bond ETF" />
+  <SYMBOL Code="DXEM" Name="Dynamic Active Emerging Markets ETF" />
+  <SYMBOL Code="DXET" Name="Dynamic Active Energy Evolution ETF" />
+  <SYMBOL Code="DXF" Name="Dynamic Ishares Act Global Fin Ser ETF" />
+  <SYMBOL Code="DXG" Name="Dyn Ishares Active Global Div ETF" />
+  <SYMBOL Code="DXGE" Name="Dynamic Actv Glbl Eqty Income ETF" />
+  <SYMBOL Code="DXIF" Name="Dynamic Active International ETF" />
+  <SYMBOL Code="DXMO" Name="Dynamic Active Mining Opportunities ETF" />
+  <SYMBOL Code="DXN" Name="Dynamic Active Global Infrastructure ETF" />
+  <SYMBOL Code="DXO" Name="Dyn Ishares Act Crossover Bond ETF" />
+  <SYMBOL Code="DXP" Name="Dyn Ishares Active Pref Shares ETF" />
+  <SYMBOL Code="DXQ" Name="Dynamic Active Enh Yld Cov Opt ETF" />
+  <SYMBOL Code="DXR" Name="Dynamic Active Retirement Income+ ETF" />
+  <SYMBOL Code="DXRE" Name="Dynamic Active Real Estate ETF" />
+  <SYMBOL Code="DXT" Name="Dexterra Group Inc" />
+  <SYMBOL Code="DXU" Name="Dyn Ishares Active US Div ETF" />
+  <SYMBOL Code="DXUS" Name="Dynamic Actv US Eqty ETF" />
+  <SYMBOL Code="DXV" Name="Dyn Ishares Act Inv Grd Flot Rt ETF" />
+  <SYMBOL Code="DXW" Name="Dynamic Active Intl Dividend ETF" />
+  <SYMBOL Code="DXZ" Name="Dynamic Ishares Acitve US Mid Cap ETF" />
+  <SYMBOL Code="DYA" Name="Dynacert Inc" />
+  <SYMBOL Code="E" Name="Enterprise Group Inc" />
+  <SYMBOL Code="EAGR" Name="East Side Games Group" />
+  <SYMBOL Code="EBIT" Name="Bitcoin ETF" />
+  <SYMBOL Code="EBIT.U" Name="Bitcoin ETF USD" />
+  <SYMBOL Code="EBNK" Name="Evolve European Banks Enhanced Yield ETF" />
+  <SYMBOL Code="EBNK.B" Name="Evolve European Banks Enhanced Yield ETF" />
+  <SYMBOL Code="ECN" Name="Ecn Capital Corp" />
+  <SYMBOL Code="ECN.DB" Name="Ecn Capital Corp 6.0 Pct Debs" />
+  <SYMBOL Code="ECN.DB.A" Name="Ecn Capital Corp 6 Pct  Debs A" />
+  <SYMBOL Code="ECN.DB.B" Name="Ecn Capital Corp 6.25 Pct Debs" />
+  <SYMBOL Code="ECN.PR.C" Name="Ecn Capital Corp Pref Ser C" />
+  <SYMBOL Code="ECO" Name="Ecosynthetix Inc" />
+  <SYMBOL Code="ECOR" Name="Anglo Pacific Group Plc" />
+  <SYMBOL Code="EDGE" Name="Evolve Innovation Index ETF" />
+  <SYMBOL Code="EDGF" Name="Brompton European Div Growth ETF" />
+  <SYMBOL Code="EDR" Name="Endeavour Silver Corp" />
+  <SYMBOL Code="EDT" Name="Spectral Medical Inc" />
+  <SYMBOL Code="EDV" Name="Endeavour Mining Corp" />
+  <SYMBOL Code="EFN" Name="Element Fleet Management Corp" />
+  <SYMBOL Code="EFR" Name="Energy Fuels Inc" />
+  <SYMBOL Code="EFX" Name="Enerflex Ltd" />
+  <SYMBOL Code="EGLX" Name="Enthusiast Gaming Holdings Inc" />
+  <SYMBOL Code="EIF" Name="Exchange Income Corp" />
+  <SYMBOL Code="EIF.DB.J" Name="Exchange Income Corp 5.35 Pct Debs" />
+  <SYMBOL Code="EIF.DB.K" Name="Exchange Income Corp 5.75 Pct Debs" />
+  <SYMBOL Code="EIF.DB.L" Name="Exchange Income Corp 5.25 Pct Debs" />
+  <SYMBOL Code="EIF.DB.M" Name="Exchange Income Corp 5.25 Pct Debs" />
+  <SYMBOL Code="EIT.PR.A" Name="Canoe Eit Income Fund Pref Ser 1" />
+  <SYMBOL Code="EIT.PR.B" Name="Canoe Eit Income Fund Pref Ser 2" />
+  <SYMBOL Code="EIT.UN" Name="Canoe Eit Income Fund Units" />
+  <SYMBOL Code="ELD" Name="Eldorado Gold" />
+  <SYMBOL Code="ELEF" Name="Silver Elephant Mining Corp" />
+  <SYMBOL Code="ELF.PR.F" Name="E-L Financial Corp Ltd Pr Ser. 1" />
+  <SYMBOL Code="ELF.PR.G" Name="E- L Financial Corp Ltd" />
+  <SYMBOL Code="ELF.PR.H" Name="E - L Financial Corp Ltd Pref Ser 3" />
+  <SYMBOL Code="ELO" Name="Eloro Resources Ltd" />
+  <SYMBOL Code="ELR" Name="Eastern Platinum Ltd" />
+  <SYMBOL Code="ELVA" Name="Electrovaya Inc" />
+  <SYMBOL Code="EMA" Name="Emera Incorporated" />
+  <SYMBOL Code="EMA.PR.A" Name="Emera Inc Series A Pref" />
+  <SYMBOL Code="EMA.PR.B" Name="Emera Inc Pref Sh Series B" />
+  <SYMBOL Code="EMA.PR.C" Name="Emera Inc Pref Sh Series C" />
+  <SYMBOL Code="EMA.PR.E" Name="Emera Inc Pref Ser E" />
+  <SYMBOL Code="EMA.PR.F" Name="Emera Inc Series F Pref" />
+  <SYMBOL Code="EMA.PR.H" Name="Emera Inc Pref Series H" />
+  <SYMBOL Code="EMA.PR.J" Name="Emera Inc" />
+  <SYMBOL Code="EMA.PR.L" Name="Emera Inc." />
+  <SYMBOL Code="EMAX" Name="Hamilton Energy Yield Maximizer ETF" />
+  <SYMBOL Code="EMP.A" Name="Empire Company Ltd" />
+  <SYMBOL Code="EMV.B" Name="CI Wisdomtree Emerging Mkts Div Idx ETF" />
+  <SYMBOL Code="ENB" Name="Enbridge Inc" />
+  <SYMBOL Code="ENB.PF.A" Name="Enbridge Inc Pref Ser 9" />
+  <SYMBOL Code="ENB.PF.C" Name="Enbridge Inc Pref Ser 11" />
+  <SYMBOL Code="ENB.PF.E" Name="Enbridge Inc Pref Ser 13" />
+  <SYMBOL Code="ENB.PF.G" Name="Enbridge Inc Pref Ser 15" />
+  <SYMBOL Code="ENB.PF.K" Name="Enbridge Inc Pref Series 19" />
+  <SYMBOL Code="ENB.PF.U" Name="Enbridge Inc Pref Ser L" />
+  <SYMBOL Code="ENB.PF.V" Name="Enbridge Inc Pref Ser 5 USD" />
+  <SYMBOL Code="ENB.PR.A" Name="Enbridge Pr" />
+  <SYMBOL Code="ENB.PR.B" Name="Enbridge Inc Cum Redeem Pref Ser B" />
+  <SYMBOL Code="ENB.PR.D" Name="Enbridge Inc Pref Ser D" />
+  <SYMBOL Code="ENB.PR.F" Name="Enbridge Inc Pref Ser F" />
+  <SYMBOL Code="ENB.PR.H" Name="Enbridge Inc Pref Ser H" />
+  <SYMBOL Code="ENB.PR.I" Name="Enbridge Inc Preference Shares Series I" />
+  <SYMBOL Code="ENB.PR.J" Name="Enbridge Inc Pref Ser 7" />
+  <SYMBOL Code="ENB.PR.N" Name="Enbridge Inc Pref Ser N" />
+  <SYMBOL Code="ENB.PR.P" Name="Enbridge Inc Pref Ser P" />
+  <SYMBOL Code="ENB.PR.T" Name="Enbridge Inc Pref Ser R" />
+  <SYMBOL Code="ENB.PR.V" Name="Enbridge Inc Pref Ser 1" />
+  <SYMBOL Code="ENB.PR.Y" Name="Enbridge Inc Cum Red Pref Ser 3" />
+  <SYMBOL Code="ENB.PR.Z" Name="Enbridge Inc Pref Ser 4" />
+  <SYMBOL Code="ENCC" Name="GX Canadian Oil and Gas Eqty Cvrd Call ETF" />
+  <SYMBOL Code="ENCL" Name="GX Enhanced CDN Oil &amp; Gas Eqty Cvrd Call ETF" />
+  <SYMBOL Code="ENGH" Name="Enghouse Systems Ltd" />
+  <SYMBOL Code="ENI.UN" Name="Energy Income Fund" />
+  <SYMBOL Code="ENS" Name="E Split Corp" />
+  <SYMBOL Code="ENS.PR.A" Name="E Split Corp Pref Shares" />
+  <SYMBOL Code="EPRX" Name="Eupraxia Pharmaceuticals Inc" />
+  <SYMBOL Code="EQB" Name="EQB Inc" />
+  <SYMBOL Code="EQCC" Name="Global X All Eqty Asset Alloc Cvcl ETF" />
+  <SYMBOL Code="EQCL" Name="GX Enhanced All-Eqty Asset All Cvrd Call ETF" />
+  <SYMBOL Code="EQL" Name="Invesco S&amp;P 500 Eql Weight Idx ETF" />
+  <SYMBOL Code="EQL.F" Name="Invesco S&amp;P 500 Eql Weight Idx ETF Hgd" />
+  <SYMBOL Code="EQL.U" Name="Invesco S&amp;P 500 Eql Weight Idx ETF USD" />
+  <SYMBOL Code="EQLI" Name="Invesco SP 500 Eql Wght Income Advng ETF" />
+  <SYMBOL Code="EQX" Name="Equinox Gold Corp" />
+  <SYMBOL Code="ERD" Name="Erdene Resource Development Corp" />
+  <SYMBOL Code="ERE.UN" Name="European Residential Real Estate Invs. Trust" />
+  <SYMBOL Code="ERO" Name="Ero Copper Corp" />
+  <SYMBOL Code="ESG" Name="Invesco S&amp;P 500 ESG Index ETF" />
+  <SYMBOL Code="ESG.F" Name="Invesco S&amp;P 500 ESG Index ETF Hedged" />
+  <SYMBOL Code="ESGA" Name="BMO MSCI Canada ESG Leaders Index ETF" />
+  <SYMBOL Code="ESGB" Name="BMO ESG Corporate Bond Index ETF" />
+  <SYMBOL Code="ESGC" Name="Invesco SP TSX Composite ESG Index ETF" />
+  <SYMBOL Code="ESGE" Name="BMO MSCI EAFE ESG Leaders Index ETF" />
+  <SYMBOL Code="ESGG" Name="BMO MSCI Global ESG Leaders Index ETF" />
+  <SYMBOL Code="ESGH" Name="BMO ESG High Yld US Corp Bond Index ETF" />
+  <SYMBOL Code="ESGH.F" Name="BMO ESG Hgh Yld US Corp Bond Idx ETF Hgd" />
+  <SYMBOL Code="ESGY" Name="BMO MSCI USA ESG Leaders Index ETF" />
+  <SYMBOL Code="ESGY.F" Name="BMO MSCI USA ESG Leaders Index ETF" />
+  <SYMBOL Code="ESI" Name="Ensign Energy Services Inc" />
+  <SYMBOL Code="ESM" Name="Euro Sun Mining Inc" />
+  <SYMBOL Code="ESP" Name="Brompton Energy Split Corp. Class A Shares" />
+  <SYMBOL Code="ESP.PR.A" Name="Brompton Energy Split Corp Preferred" />
+  <SYMBOL Code="ESPX" Name="Evolve SP 500 Enhanced Yield Fund" />
+  <SYMBOL Code="ESPX.B" Name="Evolve SP 500 Enhanced Yield Fund Uh" />
+  <SYMBOL Code="ET" Name="Evertz Technologies Ltd" />
+  <SYMBOL Code="ETC" Name="Evolve Cryptocurrencies ETF" />
+  <SYMBOL Code="ETC.U" Name="Evolve Cryptocurrencies ETF USD" />
+  <SYMBOL Code="ETG" Name="Entree Resources Ltd" />
+  <SYMBOL Code="ETHH" Name="Purpose Ether CAD ETF" />
+  <SYMBOL Code="ETHH.B" Name="Purpose Ether Non-Cur Hedg ETF" />
+  <SYMBOL Code="ETHH.U" Name="Purpose Ether ETF USD" />
+  <SYMBOL Code="ETHI" Name="GX Global Sustainability Leaders Idx ETF" />
+  <SYMBOL Code="ETHQ" Name="3iQ Coinshares Ether ETF" />
+  <SYMBOL Code="ETHQ.U" Name="3iQ Coinshares Ether ETF USD" />
+  <SYMBOL Code="ETHR" Name="Ether Unhedg ETF" />
+  <SYMBOL Code="ETHR.U" Name="Ether ETF USD" />
+  <SYMBOL Code="ETHX.B" Name="CI Galaxy Ethereum ETF" />
+  <SYMBOL Code="ETHX.U" Name="CI Galaxy Ethereum ETF USD" />
+  <SYMBOL Code="ETHY" Name="Purpose Ether Yield ETF" />
+  <SYMBOL Code="ETHY.B" Name="Purpose Ether Yield ETF" />
+  <SYMBOL Code="ETHY.U" Name="Purpose Ether Yield ETF USD" />
+  <SYMBOL Code="ETSX" Name="Evolve SP Tsx60 Enhanced Yield Fund" />
+  <SYMBOL Code="EVO" Name="Evovest Global Equity ETF" />
+  <SYMBOL Code="EVT" Name="Economic Investment" />
+  <SYMBOL Code="EXE" Name="Extendicare Inc" />
+  <SYMBOL Code="EXE.DB.C" Name="Extendicare Inc 5 Pct Debs" />
+  <SYMBOL Code="EXN" Name="Excellon Resources Inc" />
+  <SYMBOL Code="EXRO" Name="Exro Technologies Inc" />
+  <SYMBOL Code="EXRO.WT" Name="Exro Technologies Inc" />
+  <SYMBOL Code="EXRO.WT.A" Name="Exro Technologies Inc. Purchase Warrants" />
+  <SYMBOL Code="FAP" Name="Aberdeen Asia-Pacific Income Invest Ltd" />
+  <SYMBOL Code="FAR" Name="Foraco International Sa" />
+  <SYMBOL Code="FBGO" Name="Franklin Brandywine Glbl Sust Act ETF" />
+  <SYMBOL Code="FBT" Name="First Trust NYSE Arca Biotechnology ETF" />
+  <SYMBOL Code="FBTC" Name="Fidelity Advantage Bitcoin ETF" />
+  <SYMBOL Code="FBTC.U" Name="Fidelity Advantage Bitcoin ETF USD" />
+  <SYMBOL Code="FC" Name="Firm Capital Mortgage Inv. Corp" />
+  <SYMBOL Code="FC.DB.I" Name="Firm Capital Mtg Inv Corp 5.40 Pct Debs" />
+  <SYMBOL Code="FC.DB.J" Name="Firm Capital Mtg Inv Corp 5.5 Pct Debs" />
+  <SYMBOL Code="FC.DB.K" Name="Firm Capital Mrtg Invest Corp 5 Pct Debs" />
+  <SYMBOL Code="FC.DB.L" Name="Firm Capital Mrtg Invest Corp 5 Pct Debs" />
+  <SYMBOL Code="FCCD" Name="Fidelity CDN High Div Index ETF" />
+  <SYMBOL Code="FCCQ" Name="Fidelity Canadian High Quality Index ETF" />
+  <SYMBOL Code="FCCV" Name="Fidelity Canadian Value Index ETF" />
+  <SYMBOL Code="FCD.UN" Name="Firm Capital Property Trust" />
+  <SYMBOL Code="FCEM" Name="Fidelity Emerging Markets Fund" />
+  <SYMBOL Code="FCGI" Name="Fidelity Global Monthly High Income ETF" />
+  <SYMBOL Code="FCID" Name="Fidelity Intl High Dividend Index ETF" />
+  <SYMBOL Code="FCII" Name="Franklin Clearbridge Sust Glbl Act ETF" />
+  <SYMBOL Code="FCIQ" Name="Fidelity Intl High Quality Index ETF" />
+  <SYMBOL Code="FCIQ.U" Name="Fidelity Intl High Quality Index ETF USD" />
+  <SYMBOL Code="FCIV" Name="Fidelity International Value Index ETF" />
+  <SYMBOL Code="FCMI" Name="Fidelity CDN Monthly High Income ETF" />
+  <SYMBOL Code="FCQH" Name="Fidelity US High Qlty Cur Ntrl Index ETF" />
+  <SYMBOL Code="FCR.UN" Name="First Capital REIT Units" />
+  <SYMBOL Code="FCRR" Name="Fidelity US Div For Rising Rates Idx ETF" />
+  <SYMBOL Code="FCU" Name="Fission Uranium Corp" />
+  <SYMBOL Code="FCUD" Name="Fidelity US High Div Index ETF" />
+  <SYMBOL Code="FCUD.U" Name="Fidelity US High Div Index ETF USD" />
+  <SYMBOL Code="FCUH" Name="Fidelity US High Div Cur Neu Idx ETF" />
+  <SYMBOL Code="FCUQ" Name="Fidelity US High Quality Index ETF" />
+  <SYMBOL Code="FCUQ.U" Name="Fidelity US High Quality Index ETF USD" />
+  <SYMBOL Code="FCUV" Name="Fidelity US Value Index ETF" />
+  <SYMBOL Code="FCUV.U" Name="Fidelity US Value Index ETF USD" />
+  <SYMBOL Code="FDL" Name="First Trust Morningstar Div Ldrs ETF Hgd" />
+  <SYMBOL Code="FDN" Name="First Trust Dow Jones Internet ETF" />
+  <SYMBOL Code="FDY" Name="Faraday Copper Corp" />
+  <SYMBOL Code="FEC" Name="Frontera Energy Corp" />
+  <SYMBOL Code="FETH" Name="Fidelity Advantage Ether ETF" />
+  <SYMBOL Code="FETH.U" Name="Fidelity Advantage Ether ETF" />
+  <SYMBOL Code="FF" Name="First Mining Gold Corp" />
+  <SYMBOL Code="FFH" Name="Fairfax Financial Holdings Ltd" />
+  <SYMBOL Code="FFH.PR.C" Name="Fairfax Fncl Holdings Ltd Pref Ser C" />
+  <SYMBOL Code="FFH.PR.D" Name="Fairfax Fncl Holdings Ltd Pref Ser D" />
+  <SYMBOL Code="FFH.PR.E" Name="Fairfax Financial Hldngs Pref Ser E" />
+  <SYMBOL Code="FFH.PR.F" Name="Fairfax Financial Holdings Pref Ser F" />
+  <SYMBOL Code="FFH.PR.G" Name="Fairfax Financial Hldngs Pref Ser G" />
+  <SYMBOL Code="FFH.PR.H" Name="Fairfax Fncl Holdings Ltd Pref Ser H" />
+  <SYMBOL Code="FFH.PR.I" Name="Fairfax Financial Holdings Series I Pref" />
+  <SYMBOL Code="FFH.PR.J" Name="Fairfax Fncl Holdings Ltd Pref Ser J" />
+  <SYMBOL Code="FFH.PR.K" Name="Fairfax Financial Holdings Pref Ser K" />
+  <SYMBOL Code="FFH.PR.M" Name="Fairfax Financial Holdings Pref Ser M" />
+  <SYMBOL Code="FFN" Name="North American Financial 15 Split Corp" />
+  <SYMBOL Code="FFN.PR.A" Name="North American Fin 15 Split Corp Pref" />
+  <SYMBOL Code="FGB" Name="CI Short Term Govt Bond Class ETF" />
+  <SYMBOL Code="FGEB" Name="Fidelity Global Equity Plus Balanced Fund" />
+  <SYMBOL Code="FGEP" Name="Fidelity Global Equity Plus Fund" />
+  <SYMBOL Code="FGGE" Name="Franklin Global Growth Active ETF" />
+  <SYMBOL Code="FGO" Name="CI Enhanced Govt Bond ETF" />
+  <SYMBOL Code="FGO.U" Name="CI Enhanced Govt Bond ETF USD" />
+  <SYMBOL Code="FGOV" Name="Franklin Canadian Government Bond Fund" />
+  <SYMBOL Code="FHG" Name="First Trust US Industrials ETF" />
+  <SYMBOL Code="FHH" Name="First Trust US Health Care ETF" />
+  <SYMBOL Code="FHI" Name="CI Hlth Care Giant Cov Call ETF" />
+  <SYMBOL Code="FHIS" Name="Franklin Bissett Ultra Shrt Bnd Actv ETF" />
+  <SYMBOL Code="FHQ" Name="First Trust US Technology ETF" />
+  <SYMBOL Code="FHQ.F" Name="First Trust Ad US Technology ETF" />
+  <SYMBOL Code="FIE" Name="Ishares CDN Fin Mthly Income ETF" />
+  <SYMBOL Code="FIG" Name="CI Investment Grade Bond ETF" />
+  <SYMBOL Code="FIG.U" Name="CI Investment Grade Bond ETF USD" />
+  <SYMBOL Code="FIH.U" Name="Fairfax India Holdings Corp USD" />
+  <SYMBOL Code="FIL" Name="Filo Mining Corp" />
+  <SYMBOL Code="FINO" Name="Franklin Innovation Active ETF" />
+  <SYMBOL Code="FLCI" Name="Franklin Liberty CDN Invest Grd Corp ETF" />
+  <SYMBOL Code="FLCP" Name="Franklin Liberty Core Plus Bond ETF" />
+  <SYMBOL Code="FLDM" Name="Franklin Libertyqt Intl Eqt Index ETF" />
+  <SYMBOL Code="FLGA" Name="Franklin Liberty Global Agg Bond ETF" />
+  <SYMBOL Code="FLGD" Name="Franklin Libertyqt Glb Dividend Idx ETF" />
+  <SYMBOL Code="FLI" Name="CI US Cda Lifeco Covered Call ETF" />
+  <SYMBOL Code="FLNT" Name="Flint Corp" />
+  <SYMBOL Code="FLOW" Name="Flow Beverage Corp" />
+  <SYMBOL Code="FLSD" Name="Franklin Liberty Short Duration Bond ETF" />
+  <SYMBOL Code="FLUS" Name="Franklin Libertyqt US Eqt Index ETF" />
+  <SYMBOL Code="FLX" Name="Purpose Glbl Flexible Credit Fnd ETF" />
+  <SYMBOL Code="FLX.B" Name="Purpose Glbl Flexible Credit Fnd ETF NH" />
+  <SYMBOL Code="FLX.U" Name="Purpose Glbl Flexible Credit Fnd ETF USD" />
+  <SYMBOL Code="FM" Name="First Quantum Minerals Ltd" />
+  <SYMBOL Code="FMAX" Name="Hamilton US Financials Yld Maximizer ETF" />
+  <SYMBOL Code="FN" Name="First National Financial Corp" />
+  <SYMBOL Code="FN.PR.A" Name="First National Financial Corp Pref A" />
+  <SYMBOL Code="FN.PR.B" Name="First National Financial Corp Pref B" />
+  <SYMBOL Code="FNV" Name="Franco-Nevada Corp" />
+  <SYMBOL Code="FOM" Name="Foran Mining Corp" />
+  <SYMBOL Code="FOOD" Name="Goodfood Market Corp" />
+  <SYMBOL Code="FORA" Name="Verticalscope Holdings Inc" />
+  <SYMBOL Code="FOUR" Name="GX Industry 4.0 Index ETF" />
+  <SYMBOL Code="FRU" Name="Freehold Royalties Ltd" />
+  <SYMBOL Code="FRX" Name="Fennec Pharmaceuticals Inc" />
+  <SYMBOL Code="FSB" Name="CI Enhanced Sh Dur Bond Fund" />
+  <SYMBOL Code="FSB.U" Name="CI Enhanced Sh Dur Bond Fund USD" />
+  <SYMBOL Code="FSF" Name="CI Global Financial Sector ETF" />
+  <SYMBOL Code="FSL" Name="First Trust Senior Loan ETF" />
+  <SYMBOL Code="FST" Name="First Trust CDN Capital Strength ETF" />
+  <SYMBOL Code="FSV" Name="Firstservice Corp" />
+  <SYMBOL Code="FSY" Name="Forsys Metals Corp" />
+  <SYMBOL Code="FSZ" Name="Fiera Capital Corp" />
+  <SYMBOL Code="FT" Name="Fortune Mnrl J" />
+  <SYMBOL Code="FTG" Name="Firan Technology Group Corp" />
+  <SYMBOL Code="FTHI" Name="Fidelity Tactical High Income Fund" />
+  <SYMBOL Code="FTN" Name="Financial 15 Split Corp" />
+  <SYMBOL Code="FTN.PR.A" Name="Financial 15 Split Corp" />
+  <SYMBOL Code="FTS" Name="Fortis Inc" />
+  <SYMBOL Code="FTS.PR.F" Name="Fortis Inc Pref Shares Series F" />
+  <SYMBOL Code="FTS.PR.G" Name="Fortis Inc First Pref Ser G" />
+  <SYMBOL Code="FTS.PR.H" Name="Fortis Inc Pref Ser H" />
+  <SYMBOL Code="FTS.PR.I" Name="Fortis Inc Pref Ser I" />
+  <SYMBOL Code="FTS.PR.J" Name="Fortis Inc Pref Ser J" />
+  <SYMBOL Code="FTS.PR.K" Name="Fortis Inc Pref Ser K" />
+  <SYMBOL Code="FTS.PR.M" Name="Fortis Inc Pref Ser M" />
+  <SYMBOL Code="FTT" Name="Finning Intl" />
+  <SYMBOL Code="FTU" Name="US Financial 15 Split Corp" />
+  <SYMBOL Code="FTU.PR.B" Name="US Finl 15 Split 2012 Pref Sh" />
+  <SYMBOL Code="FURY" Name="Fury Gold Mines Ltd" />
+  <SYMBOL Code="FVI" Name="Fortuna Silver Mines Inc" />
+  <SYMBOL Code="FVL" Name="Freegold Ventures Ltd" />
+  <SYMBOL Code="FWCP" Name="Franklin Western Asset Core Bnd Actv ETF" />
+  <SYMBOL Code="FXM" Name="CI Morningstar Cda Value Idx ETF" />
+  <SYMBOL Code="G" Name="Augusta Gold Corp" />
+  <SYMBOL Code="GATO" Name="Gatos Silver Inc" />
+  <SYMBOL Code="GAU" Name="Galiano Gold Inc" />
+  <SYMBOL Code="GBAL" Name="Ishares ESG Balanced ETF" />
+  <SYMBOL Code="GBT" Name="Bmtc Group Inc" />
+  <SYMBOL Code="GCBD" Name="Guardian Canadian Bond ETF" />
+  <SYMBOL Code="GCFE" Name="Guardian Canadian Focused Equity Fund" />
+  <SYMBOL Code="GCG" Name="Guardian Capital" />
+  <SYMBOL Code="GCG.A" Name="Guardian Capital Group Ltd Cl A NV" />
+  <SYMBOL Code="GCL" Name="Colabor Group Inc" />
+  <SYMBOL Code="GCNS" Name="Ishares ESG Conservative Balanced ETF" />
+  <SYMBOL Code="GCSC" Name="Guardian Canadian Sector Controlled Equi" />
+  <SYMBOL Code="GCTB" Name="Guardian Ultra-Short Canadian T-Bill Fund" />
+  <SYMBOL Code="GCU" Name="0Negold Canyon Resources Inc." />
+  <SYMBOL Code="GDC" Name="Genesis Land J" />
+  <SYMBOL Code="GDI" Name="Gdi Integrated Facility Services Inc" />
+  <SYMBOL Code="GDL" Name="Goodfellow Inc" />
+  <SYMBOL Code="GDPY" Name="Guardian Directed Premium Yield ETF" />
+  <SYMBOL Code="GDPY.B" Name="Guardian Directed Premium Yield ETF Uh" />
+  <SYMBOL Code="GDV" Name="Global Dividend Growth Split Corp" />
+  <SYMBOL Code="GDV.PR.A" Name="Global Dividend Growth Split Corp Pref A" />
+  <SYMBOL Code="GEC" Name="Global Education Communities Corp" />
+  <SYMBOL Code="GEI" Name="Gibson Energy Inc" />
+  <SYMBOL Code="GENM" Name="Generation Mining Ltd" />
+  <SYMBOL Code="GEO" Name="Geodrill Ltd" />
+  <SYMBOL Code="GEQT" Name="Ishares ESG Equity ETF" />
+  <SYMBOL Code="GFL" Name="Gfl Environmental Inc" />
+  <SYMBOL Code="GFP" Name="Greenfirst Forest Products Inc" />
+  <SYMBOL Code="GFP.RT" Name="Greenfirst Forest Products Inc RTS" />
+  <SYMBOL Code="GFR" Name="Greenfire Resources Ltd." />
+  <SYMBOL Code="GGD" Name="Gogold Resources Inc" />
+  <SYMBOL Code="GGRO" Name="Ishares ESG Growth ETF" />
+  <SYMBOL Code="GH" Name="Gamehost Inc" />
+  <SYMBOL Code="GIB.A" Name="CGI Group Inc Cl A Sv" />
+  <SYMBOL Code="GIES" Name="Guardian International Equity Select Fund" />
+  <SYMBOL Code="GIL" Name="Gildan Activewear Inc" />
+  <SYMBOL Code="GIQG" Name="Guardian I3 Global Quality Growth ETF" />
+  <SYMBOL Code="GIQG.B" Name="Guardian I3 Global Quality Growth ETF" />
+  <SYMBOL Code="GIQU" Name="Guardian I3 US Quality Growth Hedg ETF" />
+  <SYMBOL Code="GIQU.B" Name="Guardian I3 US Quality Growth Unhedg ETF" />
+  <SYMBOL Code="GLCC" Name="GX Gold Producer Equity Cvrd Call ETF" />
+  <SYMBOL Code="GLDX" Name="Global X Gold Producers Index ETF" />
+  <SYMBOL Code="GLO" Name="Global Atomic Corp" />
+  <SYMBOL Code="GLXY" Name="Galaxy Digital Holdings Ltd" />
+  <SYMBOL Code="GMIN" Name="G Mining Ventures Corp" />
+  <SYMBOL Code="GMTN" Name="Gold Mountain Mining Corp" />
+  <SYMBOL Code="GMX" Name="Globex Mining Enterprises Inc" />
+  <SYMBOL Code="GOLD" Name="Goldmining Inc" />
+  <SYMBOL Code="GOOS" Name="Canada Goose Holdings Inc" />
+  <SYMBOL Code="GPMD" Name="Guardpath Managed Decumulation 2042 ETF" />
+  <SYMBOL Code="GRA" Name="Nanoxplore Inc" />
+  <SYMBOL Code="GRC" Name="Gold Springs Resource Corp" />
+  <SYMBOL Code="GRCC" Name="GX Growth Asset Allocation Cvrd Call ETF" />
+  <SYMBOL Code="GRGD" Name="Groupe Dynamite Inc" />
+  <SYMBOL Code="GRID" Name="Tantalus Systems Holding Inc" />
+  <SYMBOL Code="GRN" Name="Greenlane Renewables Inc" />
+  <SYMBOL Code="GRNI" Name="BMO Brookfield Gbl Rnwbls Infra Fund ETF" />
+  <SYMBOL Code="GRT.UN" Name="Granite Real Estate Investment Trust" />
+  <SYMBOL Code="GSY" Name="Goeasy Ltd" />
+  <SYMBOL Code="GTE" Name="Gran Tierra Energy Inc" />
+  <SYMBOL Code="GTWO" Name="G2 Goldfields Inc" />
+  <SYMBOL Code="GUD" Name="Knight Therapeutics Inc" />
+  <SYMBOL Code="GURU" Name="Guru Organic Energy Corp" />
+  <SYMBOL Code="GUTB.U" Name="Guardian Ultra-Short U.S. T-Bill Fund" />
+  <SYMBOL Code="GVC" Name="Glacier Media Inc" />
+  <SYMBOL Code="GWO" Name="Great-West Lifeco Inc" />
+  <SYMBOL Code="GWO.PR.G" Name="Great-West Lifeco Inc Pr. G" />
+  <SYMBOL Code="GWO.PR.H" Name="Great-West Lifeco Inc 4.85 % Pr.Ser H" />
+  <SYMBOL Code="GWO.PR.I" Name="Great-West Lifeco Inc Prf Series I" />
+  <SYMBOL Code="GWO.PR.L" Name="Great-West Lifeco Inc Pref Ser L" />
+  <SYMBOL Code="GWO.PR.M" Name="Great West Lifeco Pref Ser M" />
+  <SYMBOL Code="GWO.PR.N" Name="Great West Lifeco Inc Pref Srs N" />
+  <SYMBOL Code="GWO.PR.P" Name="Great West Lifeco Inc 5.4 Pct Pref Sh" />
+  <SYMBOL Code="GWO.PR.Q" Name="Great West Lifeco Pref Ser Q" />
+  <SYMBOL Code="GWO.PR.R" Name="Great West Lifeco Inc Ser R" />
+  <SYMBOL Code="GWO.PR.S" Name="Great West Lifeco Pref Ser S" />
+  <SYMBOL Code="GWO.PR.T" Name="Great West Lifeco Pref Ser T" />
+  <SYMBOL Code="GWO.PR.Y" Name="Great-West Lifeco Inc." />
+  <SYMBOL Code="GXE" Name="Gear Energy Ltd" />
+  <SYMBOL Code="H" Name="Hydro One Ltd" />
+  <SYMBOL Code="HAB" Name="GX Active Corporate Bond ETF" />
+  <SYMBOL Code="HAC" Name="GX Seasonal Rotation ETF" />
+  <SYMBOL Code="HAD" Name="GX Active Canadian Bond ETF" />
+  <SYMBOL Code="HAF" Name="GX Active Global Fixed Income ETF" />
+  <SYMBOL Code="HAI" Name="Haivision Systems Inc" />
+  <SYMBOL Code="HAL" Name="GX Active Canadian Dividend ETF" />
+  <SYMBOL Code="HAZ" Name="GX Active Global Dividend ETF" />
+  <SYMBOL Code="HBA" Name="Hamilton Australian Banks Equal-Weight ETF" />
+  <SYMBOL Code="HBAL" Name="GX Balanced Asset Allocation ETF" />
+  <SYMBOL Code="HBB" Name="GX Canadian Select Univ Bond Idx Corp Cls ETF" />
+  <SYMBOL Code="HBD" Name="Betapro Gold Bullion 2X Daily Bear ETF" />
+  <SYMBOL Code="HBF" Name="Harvest Brand Leaders Plus Income ETF" />
+  <SYMBOL Code="HBF.B" Name="Harvest Brand Leaders Plus Inc ETF Unh" />
+  <SYMBOL Code="HBF.U" Name="Harvest Brand Leaders Plus Income ETF USD" />
+  <SYMBOL Code="HBGD" Name="GX Big Data &amp; Hardware Index ETF" />
+  <SYMBOL Code="HBIE" Name="Harvest Balanced Income and Grth Enh ETF" />
+  <SYMBOL Code="HBIG" Name="Harvest Balanced Income and Growth ETF" />
+  <SYMBOL Code="HBIL" Name="Hamilton U.S. T-Bill Yield Maximizer Tm ETF" />
+  <SYMBOL Code="HBIL.U" Name="Hamilton U.S. T-Bill Yield Maximizer Tm ETF" />
+  <SYMBOL Code="HBKD" Name="Betapro Eql Weight Cnd Bank 2X Bear ETF" />
+  <SYMBOL Code="HBKU" Name="Betapro Eql Weight Cnd Bank 2X Bull ETF" />
+  <SYMBOL Code="HBLK" Name="Blockchain Technologies ETF" />
+  <SYMBOL Code="HBM" Name="Hudbay Minerals Inc" />
+  <SYMBOL Code="HBND" Name="Hamilton U.S. Bond Yield Maximizer ETF" />
+  <SYMBOL Code="HBND.U" Name="Hamilton US Bond Yld Maximizer ETF USD" />
+  <SYMBOL Code="HBNK" Name="GX Equal Weight Canadian Banks Index ETF" />
+  <SYMBOL Code="HBP" Name="Helix Biopharm" />
+  <SYMBOL Code="HBU" Name="Betapro Gold Bullion 2X Daily Bull ETF" />
+  <SYMBOL Code="HCA" Name="Hamilton Canadian Bank Mean Reversion ETF" />
+  <SYMBOL Code="HCAL" Name="Hamilton Canadian Bank ETF" />
+  <SYMBOL Code="HCLN" Name="Harvest Clean Energy ETF" />
+  <SYMBOL Code="HCON" Name="GX Conservative Asset Allocation ETF" />
+  <SYMBOL Code="HCRE" Name="GX Equal Weight CDN Reits Idx Corp Cls ETF" />
+  <SYMBOL Code="HDGE" Name="Accelerate Absolute Return Hdg Fund ETF" />
+  <SYMBOL Code="HDIF" Name="Harvest Diversified Monthly Income ETF" />
+  <SYMBOL Code="HDIV" Name="Hamilton Enhanced Multi-Sector Covered Call ETF" />
+  <SYMBOL Code="HEB" Name="Hamilton CDN Bank Equal Weight Idx ETF" />
+  <SYMBOL Code="HED" Name="Betapro S&amp;P TSX Cap Engy 2X Dly Bear ETF" />
+  <SYMBOL Code="HEQL" Name="GX Enhanced All-Equity Asset Allocation ETF" />
+  <SYMBOL Code="HEQT" Name="GX All-Equity Asset Allocation ETF" />
+  <SYMBOL Code="HERO" Name="Evolve E Gaming Index ETF" />
+  <SYMBOL Code="HEU" Name="Betapro S&amp;P TSX Cap Engy 2X Dly Bull ETF" />
+  <SYMBOL Code="HEWB" Name="GX Equal Weight Canadian Banks Idx Corp ETF" />
+  <SYMBOL Code="HFD" Name="Betapro S&amp;P TSX Cap Fncl 2X Dly Bear ETF" />
+  <SYMBOL Code="HFG" Name="Hamilton Global Financials ETF" />
+  <SYMBOL Code="HFIN" Name="Hamilton Enhanced Canadian Financials Et" />
+  <SYMBOL Code="HFPC.U" Name="Helios Fairfax Partners Corp" />
+  <SYMBOL Code="HFR" Name="GX Active Ultra-Short Term Invt Grade Bond ETF" />
+  <SYMBOL Code="HFU" Name="Betapro S&amp;P TSX Cap Fncl 2X Dly Bull ETF" />
+  <SYMBOL Code="HGD" Name="Betapro CDN Gold Miners 2X Dly Bear ETF" />
+  <SYMBOL Code="HGGG" Name="Harvest Global Gold Giants Index ETF" />
+  <SYMBOL Code="HGR" Name="Harvest Global REIT Leaders Income ETF" />
+  <SYMBOL Code="HGRW" Name="GX Growth Asset Allocation ETF" />
+  <SYMBOL Code="HGU" Name="Betapro CDN Gold Miners 2X Dly Bull ETF" />
+  <SYMBOL Code="HGY" Name="GX Gold Yield ETF" />
+  <SYMBOL Code="HHL" Name="Harvest Healthcare Leaders Income ETF" />
+  <SYMBOL Code="HHL.B" Name="Harvest Healthcare Leaders Inc ETF Unh" />
+  <SYMBOL Code="HHL.U" Name="Harvest Healthcare Leaders Income ETF USD" />
+  <SYMBOL Code="HHLE" Name="Harvest Healthcare Ldrs Enh Income ETF" />
+  <SYMBOL Code="HIG" Name="Brompton Global Healthcare Inc &amp; Gth ETF" />
+  <SYMBOL Code="HIG.U" Name="Brompton Gbl Health Inc Growth ETF USD" />
+  <SYMBOL Code="HIND" Name="Harvest Industrial Leaders Income ETF" />
+  <SYMBOL Code="HISU.U" Name="US High Interest Savings Account Fnd ETF" />
+  <SYMBOL Code="HIU" Name="Betapro Sp500 Daily Inverse ETF" />
+  <SYMBOL Code="HIX" Name="Betapro S&amp;P TSX 60 Daily Inverse ETF" />
+  <SYMBOL Code="HLF" Name="High Liner" />
+  <SYMBOL Code="HLIF" Name="Harvest Canadian Equity Income Leaders E" />
+  <SYMBOL Code="HLIT" Name="GX Lithium Producers Index ETF" />
+  <SYMBOL Code="HLPR" Name="GX Laddered Canadian Prfd Share Idx Corp ETF" />
+  <SYMBOL Code="HLS" Name="Hls Therapeutics Inc" />
+  <SYMBOL Code="HMAX" Name="Hamilton CDN Financial Yld Maximizer ETF" />
+  <SYMBOL Code="HMM.A" Name="Hammond Manufacturing Co. Ltd Cl A. Sv" />
+  <SYMBOL Code="HMMJ" Name="GX Marijuana Life Sciences Index ETF" />
+  <SYMBOL Code="HMP" Name="GX Active Canadian Municipal Bond ETF" />
+  <SYMBOL Code="HND" Name="Betapro Nat Gas 2X Daily Bear ETF" />
+  <SYMBOL Code="HNU" Name="Betapro Nat Gas 2X Daily Bull ETF" />
+  <SYMBOL Code="HOD" Name="Betapro Crude Oil 2X Daily Bear ETF" />
+  <SYMBOL Code="HOM.DB.U" Name="Bsr REIT 5.0 Pct Debs USD" />
+  <SYMBOL Code="HOM.U" Name="Bsr Real Estate Investment Trust" />
+  <SYMBOL Code="HOM.UN" Name="Bsr Real Estate Investment Trust" />
+  <SYMBOL Code="HOT.DB.V" Name="American Hotel Income Prp REIT 6 Pct Deb" />
+  <SYMBOL Code="HOT.U" Name="American Hotel Income Properties REIT US" />
+  <SYMBOL Code="HOT.UN" Name="American Hotel Income Properties REIT LP" />
+  <SYMBOL Code="HOU" Name="Betapro Crude Oil 2X Daily Bull ETF" />
+  <SYMBOL Code="HPF" Name="Harvest Energy Leaders Plus Income ETF" />
+  <SYMBOL Code="HPF.U" Name="Harvest Energy Leaders Plus Income ETF USD" />
+  <SYMBOL Code="HPR" Name="GX Active Preferred Share ETF" />
+  <SYMBOL Code="HPS.A" Name="Hammond Power Solutions Inc Cl A. Sv" />
+  <SYMBOL Code="HPYM" Name="Harvest Premium Yield 7-10 Year Treasury ETF" />
+  <SYMBOL Code="HPYM.U" Name="Harvest Prem Yld 7 10 Yr Treasury US ETF" />
+  <SYMBOL Code="HPYT" Name="Harvest Premium Yield Treasury ETF" />
+  <SYMBOL Code="HPYT.B" Name="Harvest Premium Yield Treasury ETF Cl B" />
+  <SYMBOL Code="HPYT.U" Name="Harvest Prem Yield Treasury US ETF" />
+  <SYMBOL Code="HQD" Name="Betapro Nasdaq 100 2X Daily Bear ETF" />
+  <SYMBOL Code="HQU" Name="Betapro Nasdaq 100 2X Daily Bull ETF" />
+  <SYMBOL Code="HR.UN" Name="H&amp;R Real Estate Inv Trust" />
+  <SYMBOL Code="HRAA" Name="GX Resolve Adaptive Asset Allctn Corp Cls ETF" />
+  <SYMBOL Code="HREU" Name="Betapro Eql Wgt CDN REIT 2X Dly Bull ETF" />
+  <SYMBOL Code="HRIF" Name="Harvest Diversified Equity Income ETF" />
+  <SYMBOL Code="HRX" Name="Heroux-Devtek" />
+  <SYMBOL Code="HSAV" Name="GX Cash Maximizer Corporate Class ETF" />
+  <SYMBOL Code="HSD" Name="Betapro Sp500 2X Daily Bear ETF" />
+  <SYMBOL Code="HSH" Name="GX S&amp;P 500 CAD Hedged Index Corp Cls ETF" />
+  <SYMBOL Code="HSU" Name="Betapro Sp500 2X Daily Bull ETF" />
+  <SYMBOL Code="HSUV.U" Name="GX USD Cash Maximizer Corporate Class ETF" />
+  <SYMBOL Code="HTA" Name="Harvest Tech Achievers Growth &amp; Income ETF" />
+  <SYMBOL Code="HTA.B" Name="Harvest Tech Achievers Grwth Inc ETF Unh" />
+  <SYMBOL Code="HTA.U" Name="Harvest Tech Achievers Growth &amp; Income ETF USD" />
+  <SYMBOL Code="HTAE" Name="Harvest Tech Achievers Enh Inc ETF" />
+  <SYMBOL Code="HTB" Name="GX US 7-10 Yr Treas Bond Idx Corp Cls ETF" />
+  <SYMBOL Code="HTL" Name="Hamilton Thorne Ltd" />
+  <SYMBOL Code="HUBL" Name="Harvest US Bank Leaders Income ETF" />
+  <SYMBOL Code="HUC" Name="GX Crude Oil ETF" />
+  <SYMBOL Code="HUG" Name="GX Gold ETF" />
+  <SYMBOL Code="HULC" Name="GX US Large Cap Index Corp Cls ETF" />
+  <SYMBOL Code="HULC.U" Name="GX US Large Cap Index Corp Cls ETF USD" />
+  <SYMBOL Code="HUM" Name="Hamilton U.S. Mid/Small-Cap Financials E" />
+  <SYMBOL Code="HUN" Name="GX Natural Gas ETF" />
+  <SYMBOL Code="HURA" Name="GX Uranium Index ETF" />
+  <SYMBOL Code="HUT" Name="Hut 8 Corp" />
+  <SYMBOL Code="HUTE" Name="Harvest Eql Weight Glb Util Enh Inc ETF" />
+  <SYMBOL Code="HUTL" Name="Harvest Eql Wght Glb Util Income ETF" />
+  <SYMBOL Code="HUTS" Name="Hamilton Enhanced Utilities ETF" />
+  <SYMBOL Code="HUV" Name="Betapro Sp500 VIX ST Ftrs ETF" />
+  <SYMBOL Code="HUZ" Name="GX Silver ETF" />
+  <SYMBOL Code="HWO" Name="High Arctic Energy Services Inc" />
+  <SYMBOL Code="HWX" Name="Headwater Exploration Inc" />
+  <SYMBOL Code="HXCN" Name="GX S&amp;P/Tsx Capped Composite Idx Corp ETF" />
+  <SYMBOL Code="HXD" Name="Betapro S&amp;P TSX 60 2X Daily Bear ETF" />
+  <SYMBOL Code="HXDM" Name="GX Intl Dvlpd Mkts Eqty Idx Corp Cls ETF" />
+  <SYMBOL Code="HXDM.U" Name="GX Intl Dvlpd Mkts Eqty Idx Corp Cls ETF USD" />
+  <SYMBOL Code="HXE" Name="GX S&amp;P/Tsx Capped Energy Idx Corp Cls ETF" />
+  <SYMBOL Code="HXEM" Name="GX Emerging Markets Equity Idx Corp ETF" />
+  <SYMBOL Code="HXF" Name="GX S&amp;P/Tsx Capped Financials Idx Corp Cls ETF" />
+  <SYMBOL Code="HXH" Name="GX Canadian High Div Idx Corp Cls ETF" />
+  <SYMBOL Code="HXQ" Name="GX Nasdaq-100 Index Corporate Class ETF" />
+  <SYMBOL Code="HXQ.U" Name="GX Nasdaq-100 Index Corporate Class ETF USD" />
+  <SYMBOL Code="HXS" Name="GX S&amp;P 500 Index Corporate Class ETF" />
+  <SYMBOL Code="HXS.U" Name="GX S&amp;P 500 Index Corporate Class ETF USD" />
+  <SYMBOL Code="HXT" Name="GX S&amp;P/Tsx 60 Index Corporate Cls ETF" />
+  <SYMBOL Code="HXU" Name="Betapro S&amp;P TSX 60 2X Daily Bull ETF" />
+  <SYMBOL Code="HXX" Name="GX Europe 50 Index Corporate Class ETF" />
+  <SYMBOL Code="HYBR" Name="GX Active Hybrid Bond and Prfd Share ETF" />
+  <SYMBOL Code="HYLD" Name="Hamilton Enhanced U.S. Covered Call ETF" />
+  <SYMBOL Code="HYLD.U" Name="Hamilton Enhanced US Coverd Call ETF USD" />
+  <SYMBOL Code="HZD" Name="Betapro Silver 2X Daily Bear ETF" />
+  <SYMBOL Code="HZU" Name="Betapro Silver 2X Daily Bull ETF" />
+  <SYMBOL Code="IAG" Name="IA Financial Corp Inc" />
+  <SYMBOL Code="IAU" Name="I-80 Gold Corp" />
+  <SYMBOL Code="IAU.WT" Name="I 80 Gold Corp Wts" />
+  <SYMBOL Code="IBG.DB.E" Name="Ibi Group Inc 6.50% Listed Senior" />
+  <SYMBOL Code="ICE" Name="Canlan ICE Sports Corp" />
+  <SYMBOL Code="ICPB" Name="IA Clarington Core Plus Bond Fund" />
+  <SYMBOL Code="ICTE" Name="Invesco SP TSX Comp ESG Tilt Index ETF" />
+  <SYMBOL Code="IDIV.B" Name="Manulife Smart International Div ETF" />
+  <SYMBOL Code="IE" Name="Ivanhoe Electric Inc" />
+  <SYMBOL Code="IFA" Name="Ifabric Corp" />
+  <SYMBOL Code="IFC" Name="Intact Financial Corp" />
+  <SYMBOL Code="IFC.PR.A" Name="Intact Financial Corp Pref Cl A" />
+  <SYMBOL Code="IFC.PR.C" Name="Intact Financial Corp Pref Cl A" />
+  <SYMBOL Code="IFC.PR.E" Name="Intact Financial Corp Pref Cl A Ser 5" />
+  <SYMBOL Code="IFC.PR.F" Name="Intact Financial Corp Pref Shares Ser 6" />
+  <SYMBOL Code="IFC.PR.G" Name="Intact Financial Corp Pref Shares Ser 7" />
+  <SYMBOL Code="IFC.PR.I" Name="Intact Financial Corp Pref Shares Ser 9" />
+  <SYMBOL Code="IFC.PR.K" Name="Intact Financial Corp" />
+  <SYMBOL Code="IFP" Name="Interfor Corp" />
+  <SYMBOL Code="IGAF" Name="IA Clarington Global Allocation Fund ETF" />
+  <SYMBOL Code="IGB" Name="Purpose Mngd Duration Invest Bond ETF" />
+  <SYMBOL Code="IGBT.UN" Name="2028 Investment Grade Bond Trust" />
+  <SYMBOL Code="IGEO" Name="IA Clarington Loomis Global Equity Opportunities" />
+  <SYMBOL Code="IGET" Name="Invesco MS Glbl Energy Trans Idx ETF" />
+  <SYMBOL Code="IGM" Name="Igm Financial Inc" />
+  <SYMBOL Code="IICE" Name="Invesco SP Intl Developed ESG ETF" />
+  <SYMBOL Code="III" Name="Imperial Metals Corp" />
+  <SYMBOL Code="IIMF" Name="Invesco Intl Dev Dyn Mf Idx ETF" />
+  <SYMBOL Code="IIMF.F" Name="Invesco International Developed Dynamic-Multifac" />
+  <SYMBOL Code="IIP.UN" Name="Interrent Real Estate Investment Trust" />
+  <SYMBOL Code="IITE" Name="Invesco SP Intl Develped ESG Tilt ETF" />
+  <SYMBOL Code="ILLM" Name="Acuityads Holdings Inc" />
+  <SYMBOL Code="IMG" Name="Iamgold Corp" />
+  <SYMBOL Code="IMO" Name="Imperial Oil" />
+  <SYMBOL Code="IMP" Name="Intermap Tech Corp" />
+  <SYMBOL Code="INAI" Name="Invesco Morningstar Global Next Gen Ai Index ETF" />
+  <SYMBOL Code="INAI.F" Name="Invsco Mrnstr Glb Nxt Gen Ai Idx Heg ETF" />
+  <SYMBOL Code="INC.UN" Name="Income Fin Un" />
+  <SYMBOL Code="INCM" Name="Accelerate Diversified Credit Income Fun" />
+  <SYMBOL Code="INCM.U" Name="Accelerate Diversf Credit Inc Fd ETF USD" />
+  <SYMBOL Code="INE" Name="Innergex Renewable Energy Inc" />
+  <SYMBOL Code="INE.DB.B" Name="Innergex Renewable Energy 4.75 Pct Debs" />
+  <SYMBOL Code="INE.DB.C" Name="Innergex Renewable Energy 4.65 Pct Debs" />
+  <SYMBOL Code="INE.PR.A" Name="Innergex Renewable Energy Pref Ser A" />
+  <SYMBOL Code="INE.PR.C" Name="Innergex Renewable Energy Inc Pref Ser C" />
+  <SYMBOL Code="INO.UN" Name="Inovalis REIT" />
+  <SYMBOL Code="INOC" Name="GX Inovestor Canadian Equity Index ETF" />
+  <SYMBOL Code="IPCO" Name="International Petroleum Corp" />
+  <SYMBOL Code="IPO" Name="Inplay Oil Corp" />
+  <SYMBOL Code="IQD" Name="CI Wisdomtree Intl Qlty Divd Growth Index ETF" />
+  <SYMBOL Code="IQD.B" Name="CI Wisdomtree Intl Qlty Divd Growth Index ETF" />
+  <SYMBOL Code="IS" Name="Infrastructure Dividend Split Corp" />
+  <SYMBOL Code="IS.PR.A" Name="Infrastructure Dividend Split Corp" />
+  <SYMBOL Code="ISIF" Name="IA Claringtion Strategic Income Fund ETF" />
+  <SYMBOL Code="ISO" Name="Isoenergy Ltd" />
+  <SYMBOL Code="ISV" Name="Information Services Corp" />
+  <SYMBOL Code="ITH" Name="International Tower Hill Mines Ltd" />
+  <SYMBOL Code="IUAE" Name="Invesco SP US Div Aristocrt ESG ETF" />
+  <SYMBOL Code="IUCE" Name="Invesco SP US Total Mkt ESG Idx ETF" />
+  <SYMBOL Code="IUFR.U" Name="Invesco US TR FL Rate Note Idx US ETF" />
+  <SYMBOL Code="IUMF" Name="Invesco Russell 1000 Dyn Mf Idx ETF" />
+  <SYMBOL Code="IUMF.F" Name="Invesco Russell 1000 Dyn Mf Idx ETF Ch" />
+  <SYMBOL Code="IVN" Name="Ivanhoe Mines Ltd" />
+  <SYMBOL Code="IVQ" Name="Invesque Inc CAD" />
+  <SYMBOL Code="IVQ.DB.U" Name="Invesque Inc 5.00 Pct Debs" />
+  <SYMBOL Code="IVQ.DB.V" Name="Invesque Inc 6.00 Pct Debs USD" />
+  <SYMBOL Code="IVQ.U" Name="Invesque Inc" />
+  <SYMBOL Code="IWBE" Name="Invesco ESG Global Bond ETF" />
+  <SYMBOL Code="IXTE" Name="Invesco SP TSX 60 ESG Tilt Index ETF" />
+  <SYMBOL Code="JAG" Name="Jaguar Mining Inc" />
+  <SYMBOL Code="JAPN" Name="CI Wisdomtree Japan Equity Index ETF" />
+  <SYMBOL Code="JAPN.B" Name="CI Wisdomtree Japan Equity Index ETF" />
+  <SYMBOL Code="JEPI" Name="Jpmorgan US Equity Premium Income Active" />
+  <SYMBOL Code="JEPQ" Name="Jpmorgan Nasdaq Equity Premium Income AC" />
+  <SYMBOL Code="JFS.UN" Name="Jft Strategies Fund" />
+  <SYMBOL Code="JOY" Name="Journey Energy Inc" />
+  <SYMBOL Code="JWEL" Name="Jamieson Wellness Inc" />
+  <SYMBOL Code="K" Name="Kinross Gold Corp" />
+  <SYMBOL Code="KBL" Name="Kbro Linen Inc" />
+  <SYMBOL Code="KEC" Name="Kiwetinohk Energy Corp" />
+  <SYMBOL Code="KEG.UN" Name="Keg Royalties Income Fund" />
+  <SYMBOL Code="KEI" Name="Kolibri Global Energy Inc" />
+  <SYMBOL Code="KEL" Name="Kelt Exploration Ltd" />
+  <SYMBOL Code="KEY" Name="Keyera Corp" />
+  <SYMBOL Code="KILO" Name="Purp Gold Bullion Tu" />
+  <SYMBOL Code="KILO.B" Name="Purpose Gold Bullion Fund Non Hedged" />
+  <SYMBOL Code="KITS" Name="Kits Eyecare Ltd" />
+  <SYMBOL Code="KLS" Name="Kelso Technologies Inc" />
+  <SYMBOL Code="KMP.UN" Name="Killam Apartment REIT" />
+  <SYMBOL Code="KNGC" Name="Brompton Canadian Cash Flow Kings ETF" />
+  <SYMBOL Code="KNGU" Name="Brompton US Cash Flow Kings ETF" />
+  <SYMBOL Code="KNGX" Name="Brompton Intl Cash Flow Kings ETF" />
+  <SYMBOL Code="KNT" Name="K92 Mining Inc" />
+  <SYMBOL Code="KPT" Name="Kp Tissue Inc" />
+  <SYMBOL Code="KRN" Name="Karnalyte Resources Inc" />
+  <SYMBOL Code="KSI" Name="Kneat.com Inc" />
+  <SYMBOL Code="KXS" Name="Kinaxis Inc" />
+  <SYMBOL Code="L" Name="Loblaw CO" />
+  <SYMBOL Code="L.PR.B" Name="Loblaw Companies Ltd 2nd Pref Ser B" />
+  <SYMBOL Code="LAAC" Name="Lithium Americas Argentina Corp" />
+  <SYMBOL Code="LABS" Name="Medipharm Labs Corp" />
+  <SYMBOL Code="LAC" Name="Lithium Americas Corp" />
+  <SYMBOL Code="LAM" Name="Laramide Resources Ltd" />
+  <SYMBOL Code="LAS.A" Name="Lassonde Industries Inc Cl A Sv" />
+  <SYMBOL Code="LB" Name="Laurentian Bank" />
+  <SYMBOL Code="LB.PR.H" Name="Laurentian Bank of Cda Pr Ser 13" />
+  <SYMBOL Code="LBS" Name="Life &amp; Banc Split Corp" />
+  <SYMBOL Code="LBS.PR.A" Name="Life &amp; Banc Split Corp" />
+  <SYMBOL Code="LCFS" Name="Tidewater Renewables Ltd" />
+  <SYMBOL Code="LCS" Name="Brompton Lifeco Split Corp Class A" />
+  <SYMBOL Code="LCS.PR.A" Name="Brompton Lifeco Split Corp Pref Shares" />
+  <SYMBOL Code="LEAD" Name="Evolve Future Leadership ETF Hedged" />
+  <SYMBOL Code="LEAD.B" Name="Evolve Future Leadership ETF Unhedged" />
+  <SYMBOL Code="LEV" Name="Lion Electric CO [The]" />
+  <SYMBOL Code="LEV.WT" Name="The Lion Electric Company WT" />
+  <SYMBOL Code="LEV.WT.A" Name="The Lion Electric Company Wts A" />
+  <SYMBOL Code="LFE" Name="Canadian Life Companies Split Corp" />
+  <SYMBOL Code="LFE.PR.B" Name="Canadian Life Split 2012 Pref Sh" />
+  <SYMBOL Code="LGD" Name="Liberty Gold Corp" />
+  <SYMBOL Code="LGO" Name="Largo Resources Ltd" />
+  <SYMBOL Code="LIF" Name="Labrador Iron Ore Royalty Corp" />
+  <SYMBOL Code="LIFE" Name="Evolve Global Healthcare Enhance Yld ETF" />
+  <SYMBOL Code="LIFE.B" Name="Evolve Global Healthcare Enhance Yld Unheg" />
+  <SYMBOL Code="LIFE.U" Name="Evolve Global Healthcare Yld Fund ETF USD" />
+  <SYMBOL Code="LIRC" Name="Lithium Royalty Corp WI" />
+  <SYMBOL Code="LLHE" Name="Harvest Eli Lilly Enhanced High Income S" />
+  <SYMBOL Code="LLHE.U" Name="Harvest Eli Lilly Enh HI Shs ETF USD" />
+  <SYMBOL Code="LLYH" Name="Harvest Eli Lilly High Income Shares ETF" />
+  <SYMBOL Code="LLYH.U" Name="Harvest Eli Lilly High Income Shares ETF" />
+  <SYMBOL Code="LMAX" Name="Hamilton Healthcare Yield Maximizer ETF" />
+  <SYMBOL Code="LN" Name="Loncor Gold Inc" />
+  <SYMBOL Code="LNF" Name="Leons Furniture" />
+  <SYMBOL Code="LNR" Name="Linamar Corp" />
+  <SYMBOL Code="LPAY" Name="GX Long-Term U.S. Treasury Prem Yld ETF" />
+  <SYMBOL Code="LPAY.U" Name="GX Long-Term U.S. Treasury Prem Yld ETF USD" />
+  <SYMBOL Code="LSPD" Name="Lightspeed Commerce Inc." />
+  <SYMBOL Code="LSPK" Name="Lifespeak Inc" />
+  <SYMBOL Code="LUC" Name="Lucara Diamond Corp" />
+  <SYMBOL Code="LUG" Name="Lundin Gold Inc" />
+  <SYMBOL Code="LUN" Name="Lundin Mining Corp" />
+  <SYMBOL Code="LYCT" Name="Lysander Canso Corp Treasury Activ ETF" />
+  <SYMBOL Code="LYFR" Name="Lysander-Canso Floating Rate Activetf" />
+  <SYMBOL Code="MAG" Name="MAG Silver Corp" />
+  <SYMBOL Code="MAL" Name="Magellan Aero" />
+  <SYMBOL Code="MARI" Name="Marimaca Copper Corp" />
+  <SYMBOL Code="MART" Name="Global X Equal Weight Canadian Groceries &amp; Stapl" />
+  <SYMBOL Code="MATR" Name="Mattr Corp" />
+  <SYMBOL Code="MAYB.F" Name="First Trust CBOE Vst US Eq Bf Hg ETF May" />
+  <SYMBOL Code="MBAL" Name="Mackenzie Balanced Allocation ETF" />
+  <SYMBOL Code="MBX" Name="Microbix J" />
+  <SYMBOL Code="MCAD" Name="Premium Cash Management Fund ETF" />
+  <SYMBOL Code="MCB" Name="Mccoy Global Inc" />
+  <SYMBOL Code="MCLC" Name="Manulife Mltfactor CDN Large Cap Uh ETF" />
+  <SYMBOL Code="MCLV" Name="Mackenzie Canada Low Volatility ETF" />
+  <SYMBOL Code="MCON" Name="Mackenzie Conservative Allocation CAD ETF" />
+  <SYMBOL Code="MCSB" Name="Mackenzie CDN Short Term Fixed Inc ETF" />
+  <SYMBOL Code="MCSM" Name="Manulife Mulfact CDN Smid Cap Idx ETF" />
+  <SYMBOL Code="MDA" Name="Mda Ltd" />
+  <SYMBOL Code="MDI" Name="Major Drilling Grp" />
+  <SYMBOL Code="MDIV" Name="Middlefield Sustainable Global Dividend" />
+  <SYMBOL Code="MDNA" Name="Medicenna Therapeutics Corp" />
+  <SYMBOL Code="MDP" Name="Medexus Pharmaceuticals Inc" />
+  <SYMBOL Code="MDS.UN" Name="Healthcare Special Opp Fund" />
+  <SYMBOL Code="MDVD" Name="Mackenzie Global Sustainable Div Idx ETF" />
+  <SYMBOL Code="MEG" Name="Meg Energy Corp" />
+  <SYMBOL Code="MEME.B" Name="Manulife Multifactor Emerg Mkts Idx ETF" />
+  <SYMBOL Code="MEQ" Name="Mainstreet Eq J" />
+  <SYMBOL Code="MEQT" Name="Mackenzie All Equity Allocation ETF" />
+  <SYMBOL Code="MFC" Name="Manulife Fin" />
+  <SYMBOL Code="MFC.PR.B" Name="Manulife Financial Cl A Pref Ser 2" />
+  <SYMBOL Code="MFC.PR.C" Name="Manulife Financial Cl A Pref Ser 3" />
+  <SYMBOL Code="MFC.PR.F" Name="Manulife Financial Cl 1 Sh Ser 3" />
+  <SYMBOL Code="MFC.PR.I" Name="Manulife Financial Pref Ser 9" />
+  <SYMBOL Code="MFC.PR.J" Name="Manulife Financial Class 1 Ser 11" />
+  <SYMBOL Code="MFC.PR.K" Name="Manulife Financial Pref Ser 13" />
+  <SYMBOL Code="MFC.PR.L" Name="Manulife Financial Pref Ser 15" />
+  <SYMBOL Code="MFC.PR.M" Name="Manulife Financial Pref Ser 17" />
+  <SYMBOL Code="MFC.PR.N" Name="Manulife Financial Pref Ser 19" />
+  <SYMBOL Code="MFC.PR.P" Name="Manulife Financial Class 1 Sh Ser 4" />
+  <SYMBOL Code="MFC.PR.Q" Name="Manulife Financial Corp Pref Series 25" />
+  <SYMBOL Code="MFI" Name="Maple Leaf Foods" />
+  <SYMBOL Code="MFT" Name="Mackenzie Floating Rate Income ETF" />
+  <SYMBOL Code="MG" Name="Magna International Inc" />
+  <SYMBOL Code="MGA" Name="Mega Uranium Ltd" />
+  <SYMBOL Code="MGB" Name="Mackenzie Core Pls Glob Fixed Inc ETF" />
+  <SYMBOL Code="MGDV" Name="Mackenzie Global Dividend ETF" />
+  <SYMBOL Code="MGQE" Name="Mackenzie Global Equity ETF" />
+  <SYMBOL Code="MGRW" Name="Mackenzie Growth Allocation ETF" />
+  <SYMBOL Code="MHC.U" Name="Flagship Communities Real Estate Investm" />
+  <SYMBOL Code="MHC.UN" Name="Flagship Communites REIT" />
+  <SYMBOL Code="MHCD" Name="Middlefield Healthcare Dividend ETF" />
+  <SYMBOL Code="MI.UN" Name="Minto Apartment REIT" />
+  <SYMBOL Code="MIC.PR.A" Name="Sagen MI Canada Inc" />
+  <SYMBOL Code="MID.UN" Name="Mint Income Fund" />
+  <SYMBOL Code="MINF" Name="Middlefield Sustainable Infrastructure D" />
+  <SYMBOL Code="MINN" Name="Middlefield Innovation Dividend ETF" />
+  <SYMBOL Code="MINT" Name="Manulife Mltfactor Dev Intl Hgd ETF" />
+  <SYMBOL Code="MINT.B" Name="Manulife Mltfactor Dev Intl Uh ETF" />
+  <SYMBOL Code="MIQE" Name="Mackenzie International Equity ETF" />
+  <SYMBOL Code="MIVG" Name="Mackenzie Ivy Global Equity ETF" />
+  <SYMBOL Code="MKB" Name="Mackenzie Core Pls CDN Fixed Income ETF" />
+  <SYMBOL Code="MKP" Name="Mcan Mortgage Corp" />
+  <SYMBOL Code="MKZ.UN" Name="Mackenzie Mstr Un" />
+  <SYMBOL Code="MMP.UN" Name="Precious Metals and Mining Trust" />
+  <SYMBOL Code="MND" Name="Mandalay Resources Corp" />
+  <SYMBOL Code="MNO" Name="Meridian Mining UK Societas" />
+  <SYMBOL Code="MNS" Name="Royal CDN Mint CDN Silver Reserves Etr" />
+  <SYMBOL Code="MNT" Name="Royal Canadian Mint CDN Gold Reserves" />
+  <SYMBOL Code="MNT.U" Name="Royal Canadian Mint CDN Gld Reserves USD" />
+  <SYMBOL Code="MNU.U" Name="Purpose USD Cash Management Fnd ETF USD" />
+  <SYMBOL Code="MNXT" Name="Mackenzie Bluewater Next Gen Grwth ETF" />
+  <SYMBOL Code="MNY" Name="Purpose Cash Management Fund ETF" />
+  <SYMBOL Code="MOGO" Name="Mogo Inc" />
+  <SYMBOL Code="MORE" Name="Mackenzie Core Resources ETF" />
+  <SYMBOL Code="MPAY" Name="GX Mid-Term U.S. Treasury Prem Yld ETF" />
+  <SYMBOL Code="MPAY.U" Name="GX Mid-Term U.S. Treasury Prem Yld ETF USD" />
+  <SYMBOL Code="MPCT.DB.A" Name="Dream Impact Trust 5.75%" />
+  <SYMBOL Code="MPCT.UN" Name="Dream Impact Trust Units" />
+  <SYMBOL Code="MPVD" Name="Mountain Province Diamonds Inc" />
+  <SYMBOL Code="MPY" Name="Mulvihill Premium Yield Fund ETF" />
+  <SYMBOL Code="MR.DB.B" Name="Melcor REIT 5.1 Pct Debs" />
+  <SYMBOL Code="MR.UN" Name="Melcor REIT" />
+  <SYMBOL Code="MRC" Name="Morguard Corp" />
+  <SYMBOL Code="MRD" Name="Melcor Dev" />
+  <SYMBOL Code="MRE" Name="Martinrea International Inc" />
+  <SYMBOL Code="MREL" Name="Middlefield Real Estate Dividend ETF" />
+  <SYMBOL Code="MRG.UN" Name="Morguard Na Residential REIT Units" />
+  <SYMBOL Code="MRT.DB.A" Name="Morguard REIT 5.25 Pct Debs" />
+  <SYMBOL Code="MRT.UN" Name="Morguard Un" />
+  <SYMBOL Code="MRU" Name="Metro Inc" />
+  <SYMBOL Code="MSA" Name="Mineros S.A." />
+  <SYMBOL Code="MSCL" Name="Satellos Bioscience Inc" />
+  <SYMBOL Code="MSFH" Name="Harvest Microsoft High Income Shares ETF" />
+  <SYMBOL Code="MSFH.U" Name="Harvest Microsoft High Income Shares ETF" />
+  <SYMBOL Code="MSHE" Name="Harvest Microsoft Enhanced High Income S" />
+  <SYMBOL Code="MSHE.U" Name="Harvest Microsoft Enhanced High Income S" />
+  <SYMBOL Code="MSV" Name="Minco Silver Corp" />
+  <SYMBOL Code="MTAV" Name="GX Metaverse Index ETF" />
+  <SYMBOL Code="MTL" Name="Mullen Group Ltd" />
+  <SYMBOL Code="MTL.DB" Name="Mullen Group Ltd 5.75 Pct Debs" />
+  <SYMBOL Code="MTY" Name="Mty Food Group Inc" />
+  <SYMBOL Code="MUB" Name="Mackenzie Unconstrained Bond ETF" />
+  <SYMBOL Code="MULC" Name="Manulife Mltfactor US Large Cap Hgd ETF" />
+  <SYMBOL Code="MULC.B" Name="Manulife Mltfactor US Large Cap Uh ETF" />
+  <SYMBOL Code="MULV" Name="Mackenzie US Low Volatility ETF" />
+  <SYMBOL Code="MUMC.B" Name="Manulife Mltfactor US Mid Cap Uh ETF" />
+  <SYMBOL Code="MUSA" Name="Middlefield U.S. Equity Dividend ETF" />
+  <SYMBOL Code="MUX" Name="Mcewen Mining Inc" />
+  <SYMBOL Code="MWLV" Name="Mackenzie World Low Volatility ETF" />
+  <SYMBOL Code="MX" Name="Methanex Corp" />
+  <SYMBOL Code="MXG" Name="Maxim Power Corp" />
+  <SYMBOL Code="NA" Name="National Bank of Canada" />
+  <SYMBOL Code="NA.PR.C" Name="National Bank Pref Ser 38" />
+  <SYMBOL Code="NA.PR.E" Name="National Bank Pref Series 40" />
+  <SYMBOL Code="NA.PR.G" Name="National Bank Pref Series 42" />
+  <SYMBOL Code="NA.PR.S" Name="National Bank Pref Ser 30" />
+  <SYMBOL Code="NA.PR.W" Name="National Bank Pref Ser 32" />
+  <SYMBOL Code="NA.R" Name="National Bank of Canada" />
+  <SYMBOL Code="NALT" Name="NBI Liquid Alternatives ETF" />
+  <SYMBOL Code="NANO" Name="Nano One Materials Corp" />
+  <SYMBOL Code="NCF" Name="Northcliff Resources Ltd" />
+  <SYMBOL Code="NCP" Name="Nickel Creek Platinum Corp" />
+  <SYMBOL Code="NDIV" Name="NBI Canadian Dividend Income ETF" />
+  <SYMBOL Code="NDM" Name="Northern Dynasty Minerals Ltd" />
+  <SYMBOL Code="NEO" Name="NEO Performance Materials Inc" />
+  <SYMBOL Code="NEXT" Name="Nextsource Materials Inc" />
+  <SYMBOL Code="NFAM" Name="NBI Canadian Family Business ETF" />
+  <SYMBOL Code="NFI" Name="Nfi Group Inc." />
+  <SYMBOL Code="NFI.DB" Name="Nfi Group Inc 5 Pct Debs" />
+  <SYMBOL Code="NG" Name="Novagold Res Inc" />
+  <SYMBOL Code="NGD" Name="New Gold Inc" />
+  <SYMBOL Code="NGEX" Name="Ngex Minerals Ltd" />
+  <SYMBOL Code="NGPE" Name="NBI Global Private Equity ETF" />
+  <SYMBOL Code="NGT" Name="Newmont Corp" />
+  <SYMBOL Code="NHYB" Name="NBI High Yield Bond ETF" />
+  <SYMBOL Code="NOA" Name="North American Construction Group Ltd" />
+  <SYMBOL Code="NOA.DB.A" Name="Na Construction Grp Ltd 500% Conv. Unsec. Sub DE" />
+  <SYMBOL Code="NPI" Name="Northland Power Inc" />
+  <SYMBOL Code="NPI.PR.A" Name="Northland Power Pref Equity Inc" />
+  <SYMBOL Code="NPI.PR.B" Name="Northland Power Inc Pref Ser 2" />
+  <SYMBOL Code="NPK" Name="Verde Agritech Plc" />
+  <SYMBOL Code="NPRF" Name="NBI Active Canadian Preferred Sh ETF" />
+  <SYMBOL Code="NPS" Name="Canadian Large Cap Leaders Split Corp" />
+  <SYMBOL Code="NPS.PR.A" Name="Canadian Lrg Cap Ldr Split Corp Pref Ser" />
+  <SYMBOL Code="NREA" Name="NBI Global Real Assets Income ETF" />
+  <SYMBOL Code="NRGY" Name="Global X Equal Wght CDN Oil Gas Indx ETF" />
+  <SYMBOL Code="NRR.UN" Name="Northview Residential REIT" />
+  <SYMBOL Code="NSCB" Name="NBI Sustainable Canadian Bond ETF" />
+  <SYMBOL Code="NSCC" Name="NBI Sustainable CDN Corporate Bond ETF" />
+  <SYMBOL Code="NSCE" Name="NBI Sustainable Canadian Equity ETF" />
+  <SYMBOL Code="NSGE" Name="NBI Sustainable Global Equity ETF" />
+  <SYMBOL Code="NSSB" Name="NBI Sustainable CDN Short Term Bond ETF" />
+  <SYMBOL Code="NTR" Name="Nutrien Ltd" />
+  <SYMBOL Code="NUAG" Name="New Pacific Metals Corp" />
+  <SYMBOL Code="NUBF" Name="NBI Unconstrained Fixed Income ETF" />
+  <SYMBOL Code="NUMI" Name="Numinus Wellness Inc" />
+  <SYMBOL Code="NUSA" Name="NBI Active US Equity ETF" />
+  <SYMBOL Code="NVA" Name="Nuvista Energy Ltd" />
+  <SYMBOL Code="NVDH" Name="Harvest Nvidia High Income Shares ETF (C" />
+  <SYMBOL Code="NVDH.U" Name="Harvest Nvidia High Income Shares ETF (C" />
+  <SYMBOL Code="NVHE" Name="Harvest Nvidia Enhanced High Income Shar" />
+  <SYMBOL Code="NVHE.U" Name="Harvest Nvidia Enhanced HI Shs ETF USD" />
+  <SYMBOL Code="NVO" Name="Novo Resources Corp" />
+  <SYMBOL Code="NWC" Name="The North West Company Inc" />
+  <SYMBOL Code="NWH.DB.G" Name="Northwest Healthcare Prop REIT 5.50 Debs" />
+  <SYMBOL Code="NWH.DB.H" Name="Northwest Hc Prop REIT 6.25 Pct Dbs" />
+  <SYMBOL Code="NWH.DB.I" Name="Northwest Hc Prop REIT 7.75 Pct Dbs" />
+  <SYMBOL Code="NWH.UN" Name="Northwest Healthcare Prop REIT" />
+  <SYMBOL Code="NXE" Name="Nexgen Energy Ltd" />
+  <SYMBOL Code="NXF" Name="CI Energy Giants Cov Call ETF" />
+  <SYMBOL Code="NXF.B" Name="CI Energy Giants ETF Unhedged" />
+  <SYMBOL Code="NXR.UN" Name="Nexus Real Estate Investment Trust" />
+  <SYMBOL Code="OBE" Name="Obsidian Energy Ltd" />
+  <SYMBOL Code="OGC" Name="Oceanagold Corp" />
+  <SYMBOL Code="OGD" Name="Orbit Garant Drilling Inc" />
+  <SYMBOL Code="OGI" Name="Organigram Holdings Inc" />
+  <SYMBOL Code="OLA" Name="Orla Mining Ltd" />
+  <SYMBOL Code="OLY" Name="Olympia Financial Group Inc" />
+  <SYMBOL Code="ONC" Name="Oncolytics Bio" />
+  <SYMBOL Code="ONEQ" Name="CI One Global Equity ETF" />
+  <SYMBOL Code="ONEX" Name="Onex Corp" />
+  <SYMBOL Code="OPT" Name="Optiva Inc" />
+  <SYMBOL Code="OR" Name="Osisko Gold Royalties Ltd" />
+  <SYMBOL Code="ORA" Name="Aura Minerals Inc" />
+  <SYMBOL Code="ORE" Name="Orezone Gold Corp" />
+  <SYMBOL Code="ORV" Name="Orvana Minerals J" />
+  <SYMBOL Code="OTEX" Name="Open Text Corp" />
+  <SYMBOL Code="OVV" Name="Ovintiv Inc" />
+  <SYMBOL Code="PAAS" Name="Pan American Silver Corp" />
+  <SYMBOL Code="PABF" Name="Purpose Actv Balanced Fund ETF" />
+  <SYMBOL Code="PACF" Name="Purpose Actv Conservative Fund ETF" />
+  <SYMBOL Code="PAGF" Name="Purpose Actv Growth Fund ETF" />
+  <SYMBOL Code="PAY" Name="Payfare Inc" />
+  <SYMBOL Code="PAYF" Name="Purpose Enhanced Premium Yield Fund ETF" />
+  <SYMBOL Code="PAYS" Name="Global X Short-Term Government Bond Premium Yiel" />
+  <SYMBOL Code="PBD" Name="Purpose Total Return Bond Fund ETF" />
+  <SYMBOL Code="PBH" Name="Premium Brands Holdings Corp" />
+  <SYMBOL Code="PBH.DB.G" Name="Premium Brands Holdings 4.65 Pct Debs" />
+  <SYMBOL Code="PBH.DB.H" Name="Premium Brands Holdings 4.20 Pct Debs" />
+  <SYMBOL Code="PBH.DB.I" Name="Premium Brands Hldngs Corp 5.40 Pct Debs" />
+  <SYMBOL Code="PBI" Name="Purpose Best Ideas Fund ETF" />
+  <SYMBOL Code="PBI.B" Name="Purpose Best Ideas Fund Non Hdg" />
+  <SYMBOL Code="PBL" Name="Pollard Banknote Ltd" />
+  <SYMBOL Code="PBY.UN" Name="Canso Credit Income Fund Units" />
+  <SYMBOL Code="PCOR" Name="Pimco Managed Core Bond Pool ETF" />
+  <SYMBOL Code="PD" Name="Precision Drilling Corp" />
+  <SYMBOL Code="PDC" Name="Invesco CDN Div Idx ETF" />
+  <SYMBOL Code="PDF" Name="Purpose Core Dividend Fund ETF" />
+  <SYMBOL Code="PDIV" Name="Purpose Enhanced Dividend Fund ETF" />
+  <SYMBOL Code="PDV" Name="Prime Dividend Corp Cl A" />
+  <SYMBOL Code="PEA" Name="Pieridae Energy Ltd" />
+  <SYMBOL Code="PET" Name="Pet Valu Holdings Ltd" />
+  <SYMBOL Code="PEY" Name="Peyto Exploration and Dvlpmnt Corp" />
+  <SYMBOL Code="PFAA" Name="Picton Mahoney Fortified Alpha Alt ETF" />
+  <SYMBOL Code="PFAE" Name="Picton Mahoney Fort Act Ext Alt Fund ETF" />
+  <SYMBOL Code="PFCB" Name="Picton Mahoney Fortified Core Bond ETF" />
+  <SYMBOL Code="PFH.F" Name="Invesco HY Corp Bond Index ETF" />
+  <SYMBOL Code="PFIA" Name="Picton Mahoney Fort Income Alt Fund ETF" />
+  <SYMBOL Code="PFIG" Name="Picton Mahoney Fort Inv Grd Alt Fund ETF" />
+  <SYMBOL Code="PFL" Name="Powershares 1 To 3 Yr Lad Float Rate ETF" />
+  <SYMBOL Code="PFLS" Name="Picton Mahoney Frt Lng Shrt Alt Fund ETF" />
+  <SYMBOL Code="PFMN" Name="Picton Mahoney Fort Mkt Neutral Fund ETF" />
+  <SYMBOL Code="PGI.UN" Name="Pimco Global Inc Opportunities Fund" />
+  <SYMBOL Code="PGIC" Name="Premium Global Income Split Corp" />
+  <SYMBOL Code="PGIC.PR.A" Name="Premium Global Income Split Corp. Preferred Shar" />
+  <SYMBOL Code="PHE.B" Name="Purpose Tactical Hedged Equity Fund ETF" />
+  <SYMBOL Code="PHR" Name="Purpose Duration Hedged Real Estate ETF" />
+  <SYMBOL Code="PHW" Name="Purpose Intl Tactical Hedged Equity Fund" />
+  <SYMBOL Code="PHX" Name="Phx Energy Services Corp" />
+  <SYMBOL Code="PHYS" Name="Sprott Physical Gold Trust CAD" />
+  <SYMBOL Code="PHYS.U" Name="Sprott Physical Gold Trust USD" />
+  <SYMBOL Code="PIC.A" Name="Premium Income A" />
+  <SYMBOL Code="PIC.PR.A" Name="Premium Income Pr" />
+  <SYMBOL Code="PID" Name="Purpose Intl Dividend Fund ETF" />
+  <SYMBOL Code="PIF" Name="Polaris Infrastructure Inc" />
+  <SYMBOL Code="PIN" Name="Purpose Monthly Income Fund ETF" />
+  <SYMBOL Code="PINC" Name="Purpose Multi Asset Income Fund" />
+  <SYMBOL Code="PIX.UN" Name="Pimco Multi Sector Income Fund" />
+  <SYMBOL Code="PKI" Name="Parkland Fuel Corp" />
+  <SYMBOL Code="PLV" Name="Invesco Low Vol Portfolio ETF" />
+  <SYMBOL Code="PLZ.UN" Name="Plaza Retail REIT" />
+  <SYMBOL Code="PME" Name="Sentry Select Primary Metals Corp" />
+  <SYMBOL Code="PMET" Name="Patriot Battery Metals Inc" />
+  <SYMBOL Code="PMIF" Name="Pimco Monthly Income Fund" />
+  <SYMBOL Code="PMIF.U" Name="Pimco Monthly Income Fund" />
+  <SYMBOL Code="PMM" Name="Purpose Multi Strategy Mkt Neutral Fund" />
+  <SYMBOL Code="PMNT" Name="Pimco Global Short Maturity Fund ETF" />
+  <SYMBOL Code="PMZ.UN" Name="Primaris REIT" />
+  <SYMBOL Code="PNC.A" Name="Postmedia Network Canada Corp Cl A" />
+  <SYMBOL Code="PNC.B" Name="Postmedia Network Canada Corp Cl B" />
+  <SYMBOL Code="PNE" Name="Pine Cliff Energy Ltd" />
+  <SYMBOL Code="PNP" Name="Pinetree Capital Ltd" />
+  <SYMBOL Code="POU" Name="Paramount Resources Ltd" />
+  <SYMBOL Code="POW" Name="Power Corp of Canada Sv" />
+  <SYMBOL Code="POW.PR.A" Name="Power Corp A Pr" />
+  <SYMBOL Code="POW.PR.B" Name="Power Corp Pref Shares Series B" />
+  <SYMBOL Code="POW.PR.C" Name="Power Corp of Canada 5.80%" />
+  <SYMBOL Code="POW.PR.D" Name="Power Corp Non-Cum 1st Pfd Shs Ser D" />
+  <SYMBOL Code="POW.PR.G" Name="Power Corp of Canada 5.60 Pct Pref Ser G" />
+  <SYMBOL Code="PPL" Name="Pembina Pipeline Corp" />
+  <SYMBOL Code="PPL.PF.A" Name="Pembina Pipeline Corp Pref Ser 21" />
+  <SYMBOL Code="PPL.PF.E" Name="Pembina Pipeline Corp Pref Series 25" />
+  <SYMBOL Code="PPL.PR.A" Name="Pembina Pipeline Corp Pref Class A" />
+  <SYMBOL Code="PPL.PR.C" Name="Pembina Pipeline Corp Pref Ser 3" />
+  <SYMBOL Code="PPL.PR.E" Name="Pembina Pipeline Corp Pref Ser 5" />
+  <SYMBOL Code="PPL.PR.G" Name="Pembina Pipeline Corp Pref Ser 7" />
+  <SYMBOL Code="PPL.PR.I" Name="Pembina Pipeline Corp Pref Ser 9" />
+  <SYMBOL Code="PPL.PR.O" Name="Pembina Pipeline Corp Pref Series 15" />
+  <SYMBOL Code="PPL.PR.Q" Name="Pembina Pipeline Corp Pref Series 17" />
+  <SYMBOL Code="PPL.PR.S" Name="Pembina Pipeline Corp Pref Series 19" />
+  <SYMBOL Code="PPLN" Name="Global X Pipeline Energy Service Idx ETF" />
+  <SYMBOL Code="PPR" Name="Prairie Provident Resources Inc" />
+  <SYMBOL Code="PPTA" Name="Perpetua Resources Corp" />
+  <SYMBOL Code="PR" Name="Lysander Slater Pref Share Activ ETF" />
+  <SYMBOL Code="PRA" Name="Purpose Diversified Real Asset Fund ETF" />
+  <SYMBOL Code="PRB" Name="Probe Gold Inc" />
+  <SYMBOL Code="PREF" Name="Quadravest Preferred Split Share ETF" />
+  <SYMBOL Code="PRL" Name="Propel Holdings Inc" />
+  <SYMBOL Code="PRM" Name="Big Pharma Split Corp" />
+  <SYMBOL Code="PRN" Name="Profound Medical Corp" />
+  <SYMBOL Code="PRQ" Name="Petrus Resources Ltd" />
+  <SYMBOL Code="PRU" Name="Perseus Mining Ltd" />
+  <SYMBOL Code="PRV.DB" Name="Pro Real Estate Investment TR 8 Pct Debs" />
+  <SYMBOL Code="PRV.UN" Name="Pro Real Estate Investment Trust" />
+  <SYMBOL Code="PRYM" Name="Prime Mining Corp" />
+  <SYMBOL Code="PSA" Name="Purpose High Interest Savings ETF" />
+  <SYMBOL Code="PSB" Name="Invesco 1 To 5 Yrladder Inv Grd Bd ETF" />
+  <SYMBOL Code="PSD" Name="Pulse Seismic Inc" />
+  <SYMBOL Code="PSI" Name="Pason Systems Inc" />
+  <SYMBOL Code="PSK" Name="Prairiesky Royalty Ltd" />
+  <SYMBOL Code="PSLV" Name="Sprott Physical Silver Trust CAD" />
+  <SYMBOL Code="PSLV.U" Name="Sprott Physical Silver Trust USD" />
+  <SYMBOL Code="PSU.U" Name="Purpose US Cash ETF" />
+  <SYMBOL Code="PTI.UN" Name="Pimco Tactical Income Fund" />
+  <SYMBOL Code="PTM" Name="Platinum Group Metals Ltd" />
+  <SYMBOL Code="PTO.UN" Name="Pimco Tactical Income Opportunites Fund" />
+  <SYMBOL Code="PVS.PR.G" Name="Partners Value Split Corp" />
+  <SYMBOL Code="PVS.PR.H" Name="Partners Value Split Corp Pref Ser 10" />
+  <SYMBOL Code="PVS.PR.I" Name="Partners Value Split Corp Pref Series 11" />
+  <SYMBOL Code="PVS.PR.J" Name="Partners Value Split Corp" />
+  <SYMBOL Code="PVS.PR.K" Name="Partners Value Split Corp Pref Ser 13" />
+  <SYMBOL Code="PVS.PR.L" Name="Partners Value Split Corp" />
+  <SYMBOL Code="PWF.PF.A" Name="Power Financial Corporation" />
+  <SYMBOL Code="PWF.PR.A" Name="Power Fin Ser A Pr" />
+  <SYMBOL Code="PWF.PR.E" Name="Power Fin Ser D Pr" />
+  <SYMBOL Code="PWF.PR.F" Name="Power Financial Corp Pref Ser E" />
+  <SYMBOL Code="PWF.PR.G" Name="Power Financial Corp 5.90% Pr Series F" />
+  <SYMBOL Code="PWF.PR.H" Name="Power Financial Corp 5.75% Pr Series H" />
+  <SYMBOL Code="PWF.PR.K" Name="Power Fin Corp 4.95% Ser K" />
+  <SYMBOL Code="PWF.PR.L" Name="Power Financial Corp Series L Pfd" />
+  <SYMBOL Code="PWF.PR.O" Name="Power Financial Corp 5.80 Pref Ser O" />
+  <SYMBOL Code="PWF.PR.P" Name="Pwr Fnl Corp 4.40 Non Cumul Pref Ser P" />
+  <SYMBOL Code="PWF.PR.Q" Name="Power Fin Corp 4.40 Pct Pref Ser Q" />
+  <SYMBOL Code="PWF.PR.R" Name="Power Financial Corp 5.5 Pct Pref Ser R" />
+  <SYMBOL Code="PWF.PR.S" Name="Power Financial Corp Pref Ser S" />
+  <SYMBOL Code="PWF.PR.T" Name="Power Financial Corp 4.20 Pct Pref Ser T" />
+  <SYMBOL Code="PWF.PR.Z" Name="Power Financial Corp 5.15 Pct Pref Ser V" />
+  <SYMBOL Code="PWI" Name="Sustainable Power Infra Split Corp Cl A" />
+  <SYMBOL Code="PWI.PR.A" Name="Sustainable Power Infra Split Corp Pr A" />
+  <SYMBOL Code="PXC" Name="Invesco FTSE RAFI CAD Idx ETF" />
+  <SYMBOL Code="PXS" Name="Pwrshr FTSE RAFI US Fdamntl ETF II" />
+  <SYMBOL Code="PXT" Name="Parex Resources Inc" />
+  <SYMBOL Code="PYF" Name="Purpose Premium Yield Fund ETF" />
+  <SYMBOL Code="PYF.U" Name="Purpose Premium Yield Fund NH USD ETF" />
+  <SYMBOL Code="PYR" Name="Pyrogenesis Canada Inc" />
+  <SYMBOL Code="PZA" Name="Pizza Pizza Royalty Corp" />
+  <SYMBOL Code="PZW" Name="Pwrshr FTSE RAFI Glb Sml Mid Fdamntl ETF" />
+  <SYMBOL Code="QAH" Name="Mackenzie US Large Cap Eqty Idx CAD Hgd" />
+  <SYMBOL Code="QASH" Name="Mackenzie CDN Ultra Short Bond Index ETF" />
+  <SYMBOL Code="QBB" Name="Mackenzie CDN Aggregate Bond Index ETF" />
+  <SYMBOL Code="QBR.A" Name="Quebecor Inc Cl A Mv" />
+  <SYMBOL Code="QBR.B" Name="Quebecor Inc Cl B Sv" />
+  <SYMBOL Code="QBTC" Name="The Bitcoin Fund CAD" />
+  <SYMBOL Code="QBTC.U" Name="The Bitcoin Fund" />
+  <SYMBOL Code="QBTL" Name="Agfiq US Mkt Neut Antibeta CAD Hdg ETF" />
+  <SYMBOL Code="QCE" Name="Mackenzie CDN Large Cap Equity Index ETF" />
+  <SYMBOL Code="QCLN" Name="First Trust Nsdq Cln Edg Green Enrgy ETF" />
+  <SYMBOL Code="QCN" Name="Mackenzie Canadian Equity Index ETF" />
+  <SYMBOL Code="QDX" Name="Mackenzie International Equity Index ETF" />
+  <SYMBOL Code="QDXB" Name="Mackenzie Dev Ex Na Agg Bond Idx Hgd ETF" />
+  <SYMBOL Code="QDXH" Name="Mackenzie Intl Equity Index ETF CAD Hgd" />
+  <SYMBOL Code="QEBH" Name="Mackenzie Emerging Mkts Bond Index ETF" />
+  <SYMBOL Code="QEBL" Name="Mackenzie Emerging Mkts Local Cur Bd ETF" />
+  <SYMBOL Code="QEC" Name="Questerre Energy Corp" />
+  <SYMBOL Code="QEE" Name="Mackenzie Emerging Mkts Equity Index ETF" />
+  <SYMBOL Code="QETH.U" Name="Ether Fund [The]" />
+  <SYMBOL Code="QETH.UN" Name="The Ether Fund" />
+  <SYMBOL Code="QHY" Name="Mackenzie US High Yld Bnd Idx CAD Hgd" />
+  <SYMBOL Code="QIE" Name="Quantshrs Enh Core Intl Equity ETF" />
+  <SYMBOL Code="QINF" Name="Mackenzie Global Infrastructure Indx ETF" />
+  <SYMBOL Code="QIPT" Name="Quipt Home Medical Corp" />
+  <SYMBOL Code="QMAX" Name="Hamilton Technology Yield Maximizer ETF" />
+  <SYMBOL Code="QQC" Name="Invesco Nasdaq 100 Index ETF" />
+  <SYMBOL Code="QQC.F" Name="Invesco QQQ Index ETF" />
+  <SYMBOL Code="QQCC" Name="GX Nasdaq-100 Covered Call ETF" />
+  <SYMBOL Code="QQCE" Name="Invesco ESG Nasdaq 100 Idx ETF" />
+  <SYMBOL Code="QQCE.F" Name="Invesco ESG Nasdaq 100 Idx ETF Hdg" />
+  <SYMBOL Code="QQCI" Name="Invesco Nasdaq 100 Income Advantage ETF" />
+  <SYMBOL Code="QQCL" Name="GX Enhanced Nasdaq-100 Covered Call ETF" />
+  <SYMBOL Code="QQEQ" Name="Invesco Nasdaq 100 Equal Weight Indx ETF" />
+  <SYMBOL Code="QQEQ.F" Name="Invesco Nasdaq 100 Eql Weight Idx HD ETF" />
+  <SYMBOL Code="QQJR" Name="Invesco Nasdaq Next Gen 100 Index ETF" />
+  <SYMBOL Code="QQQL" Name="Global X Enhanced Nasdaq-100 Index ETF" />
+  <SYMBOL Code="QQQT" Name="Evolve Nasdaq Tech Index Fnd Hedgd ETF" />
+  <SYMBOL Code="QQQT.B" Name="Evolve Nasdaq Tech Index Fnd Unhegd ETF" />
+  <SYMBOL Code="QQQT.U" Name="Evolve Nasdaq Technology Index Fund" />
+  <SYMBOL Code="QQQX" Name="Global X Nasdaq 100 Index ETF" />
+  <SYMBOL Code="QQQX.U" Name="Global X Nasdaq-100 Index ETF" />
+  <SYMBOL Code="QQQY" Name="Evolve Nasdaq Tech Enh Yld Indx Fund ETF" />
+  <SYMBOL Code="QRC" Name="Queens Road Capital Investment Ltd" />
+  <SYMBOL Code="QSB" Name="Mackenzie CDN Short Term Bond Index ETF" />
+  <SYMBOL Code="QSR" Name="Restaurant Brands International Inc" />
+  <SYMBOL Code="QTRH" Name="Quarterhill Inc" />
+  <SYMBOL Code="QTRH.DB" Name="Quarterhill Inc 6 Pct Debs" />
+  <SYMBOL Code="QUB" Name="Mackenzie US Aggregate Bond Indx Hgd ETF" />
+  <SYMBOL Code="QUIG" Name="Mackenzie US Inv Grd Corp Bd Idx CAD Hgd" />
+  <SYMBOL Code="QUS" Name="Quantshrs Enh Core US Equity ETF" />
+  <SYMBOL Code="QUU" Name="Mackenzie US Large Cap Equity Index ETF" />
+  <SYMBOL Code="QUU.U" Name="Mackenzie US Large Cap Eqty Indx USD ETF" />
+  <SYMBOL Code="QXM" Name="CI Morningstar Nb Quebec ETF" />
+  <SYMBOL Code="RA.UN" Name="Middlefield Global Real Asset Fund" />
+  <SYMBOL Code="RAAA" Name="Corton Enhanced Income Fund ETF" />
+  <SYMBOL Code="RATE" Name="Arrow Ec Income Advantage Alt Fund ETF" />
+  <SYMBOL Code="RAV.UN" Name="Ravensource Fund" />
+  <SYMBOL Code="RAY.A" Name="Stingray Digital Group Inc Sv" />
+  <SYMBOL Code="RAY.B" Name="Stingray Digital Group Inc Variable Sv" />
+  <SYMBOL Code="RBA" Name="Rb Global Inc" />
+  <SYMBOL Code="RBN.UN" Name="Blue Ribbon Income Fund" />
+  <SYMBOL Code="RBNK" Name="RBC CDN Bank Yield Index ETF" />
+  <SYMBOL Code="RBO" Name="RBC 1 To 5 Yr Laddered Corp Bond ETF" />
+  <SYMBOL Code="RBOT" Name="GX Robotics &amp; Ai Index ETF" />
+  <SYMBOL Code="RBY" Name="Rubellite Energy Inc" />
+  <SYMBOL Code="RCD" Name="RBC Quant CDN Dividend Leaders ETF" />
+  <SYMBOL Code="RCDC" Name="RBC Canadian Dividend Covered Call ETF" />
+  <SYMBOL Code="RCG" Name="RF Capital Group Inc" />
+  <SYMBOL Code="RCG.PR.B" Name="RF Capital Group Inc Pref B" />
+  <SYMBOL Code="RCH" Name="Richelieu Hardware Ltd" />
+  <SYMBOL Code="RCI.A" Name="Rogers Communications Inc Cl A Mv" />
+  <SYMBOL Code="RCI.B" Name="Rogers Communications Inc Cl B NV" />
+  <SYMBOL Code="RDBH" Name="RBC US Discount Bond CAD Hedged ETF" />
+  <SYMBOL Code="REAL" Name="Real Matters Inc" />
+  <SYMBOL Code="REI.UN" Name="Riocan Real Est Un" />
+  <SYMBOL Code="RGQN" Name="RBC Target 2025 Government Bond ETF" />
+  <SYMBOL Code="RGQO" Name="RBC Target 2026 Government Bond ETF" />
+  <SYMBOL Code="RGQP" Name="RBC Target 2027 Government Bond ETF" />
+  <SYMBOL Code="RGQQ" Name="RBC Target 2028 Government Bond ETF" />
+  <SYMBOL Code="RGQR" Name="RBC Target 2029 Government Bond ETF" />
+  <SYMBOL Code="RGQS" Name="RBC Target 2030 CDN Government Bond ETF" />
+  <SYMBOL Code="RID" Name="RBC Quant EAFE Div Leaders ETF" />
+  <SYMBOL Code="RIDH" Name="RBC Quant EAFE Div Leaders ETF" />
+  <SYMBOL Code="RIFI" Name="Russell Invt Fixed Income Pool ETF" />
+  <SYMBOL Code="RIIN" Name="Russell Invt Global Infr Pool ETF" />
+  <SYMBOL Code="RING" Name="Global X Eql Wght CDN Telecom Indx ETF" />
+  <SYMBOL Code="RIRA" Name="Russell Invt Real Assets ETF" />
+  <SYMBOL Code="RIT" Name="CI Canadian REIT ETF" />
+  <SYMBOL Code="RLB" Name="RBC 1 To 5 Year Laddered Can Bond ETF" />
+  <SYMBOL Code="RMAX" Name="Hamilton Reits Yield Maximizer ETF Class" />
+  <SYMBOL Code="ROOT" Name="Roots Corp" />
+  <SYMBOL Code="RPD" Name="RBC Quant European Div Leaders ETF" />
+  <SYMBOL Code="RPDH" Name="RBC Quant European Div Leaders ETF" />
+  <SYMBOL Code="RPF" Name="RBC Canadian Pref Share ETF" />
+  <SYMBOL Code="RPI.UN" Name="Richards Packaging Income Fund" />
+  <SYMBOL Code="RPSB" Name="RBC Phn Short Term CDN Bond ETF" />
+  <SYMBOL Code="RQN" Name="RBC Target 2025 Corp Bond Index ETF" />
+  <SYMBOL Code="RQO" Name="RBC Target 2026 Corporate Bond Index ETF" />
+  <SYMBOL Code="RQP" Name="RBC Target 2027 Corporate Bond Index ETF" />
+  <SYMBOL Code="RQQ" Name="RBC Target 2028 Corporate Bond Index ETF" />
+  <SYMBOL Code="RQR" Name="RBC Target 2029 Corporate Bond Index ETF" />
+  <SYMBOL Code="RQS" Name="RBC Target 2030 CDN Corp Bond Index ETF" />
+  <SYMBOL Code="RS" Name="Real Estate Split Corp" />
+  <SYMBOL Code="RS.PR.A" Name="Real Estate Split Corp Pfd A" />
+  <SYMBOL Code="RSI" Name="Rogers Sugar Inc" />
+  <SYMBOL Code="RSI.DB.E" Name="Rogers Sugar Inc 5Pct Debs" />
+  <SYMBOL Code="RSI.DB.F" Name="Rogers Sugar Inc 4.75 Pct Debs" />
+  <SYMBOL Code="RTG" Name="Rtg Mining Inc" />
+  <SYMBOL Code="RUBH" Name="RBC US Banks Yield CAD Hgd Index ETF" />
+  <SYMBOL Code="RUBY" Name="RBC US Banks Yield Index ETF CAD" />
+  <SYMBOL Code="RUBY.U" Name="RBC US Banks Yield Index ETF USD" />
+  <SYMBOL Code="RUD" Name="RBC Quant US Div Leaders ETF" />
+  <SYMBOL Code="RUD.U" Name="RBC Quant US Div Leaders USD ETF" />
+  <SYMBOL Code="RUDB" Name="RBC US Discount Bond ETF" />
+  <SYMBOL Code="RUDB.U" Name="RBC US Discount Bond ETF USD" />
+  <SYMBOL Code="RUDC" Name="RBC U.S. Dividend Covered Call ETF" />
+  <SYMBOL Code="RUDC.U" Name="RBC US Dividend Covered Call ETF USD" />
+  <SYMBOL Code="RUDH" Name="RBC Quant US Div Leaders ETF" />
+  <SYMBOL Code="RUP" Name="Rupert Resources Ltd" />
+  <SYMBOL Code="RUQO" Name="RBC Target 2026 US Corp Bond ETF" />
+  <SYMBOL Code="RUQO.U" Name="RBC Target 2026 US Corp Bond ETF USD" />
+  <SYMBOL Code="RUQP" Name="RBC Target 2027 U.S. Corporate Bond ETF" />
+  <SYMBOL Code="RUQQ" Name="RBC Target 2028 U.S. Corporate Bond ETF" />
+  <SYMBOL Code="RUQR.U" Name="RBC Target 2029 US Corp Bond ETF USD" />
+  <SYMBOL Code="RUQS" Name="RBC Target 2030 US Corp Bond ETF" />
+  <SYMBOL Code="RUS" Name="Russel Metals" />
+  <SYMBOL Code="RVX" Name="Resverlogix Corp" />
+  <SYMBOL Code="RXD" Name="RBC Quant Emrg Mkts Div Leaders ETF" />
+  <SYMBOL Code="RY" Name="Royal Bank of Canada" />
+  <SYMBOL Code="RY.PR.J" Name="Royal Bank Pref Ser Bd" />
+  <SYMBOL Code="RY.PR.M" Name="Royal Bank Pref Ser Bf" />
+  <SYMBOL Code="RY.PR.N" Name="Royal Bank Pref Ser Bh" />
+  <SYMBOL Code="RY.PR.O" Name="Royal Bank Pref Ser Bi" />
+  <SYMBOL Code="RY.PR.S" Name="RBC Pref Shares Series Bo" />
+  <SYMBOL Code="S" Name="Sherritt Intl Rv" />
+  <SYMBOL Code="SAFE" Name="Global X Eql Wght CDN Insurance Indx ETF" />
+  <SYMBOL Code="SAM" Name="Starcore International Mines Ltd" />
+  <SYMBOL Code="SAP" Name="Saputo Inc" />
+  <SYMBOL Code="SAU" Name="ST Augustine Gold and Copper Ltd" />
+  <SYMBOL Code="SBC" Name="Brompton Split Banc Corp Cl A" />
+  <SYMBOL Code="SBC.PR.A" Name="Brompton Split Banc Corp Pref" />
+  <SYMBOL Code="SBI" Name="Serabi Gold Plc" />
+  <SYMBOL Code="SBT" Name="Purpose Silver Bullion ETF" />
+  <SYMBOL Code="SBT.B" Name="Silver Bullion Trust CAD ETF Non Cur" />
+  <SYMBOL Code="SBT.U" Name="Silver Bullion Trust USD ETF Non Cur" />
+  <SYMBOL Code="SCR" Name="Strathcona Resources Ltd." />
+  <SYMBOL Code="SCY" Name="Scandium International Mining Corp" />
+  <SYMBOL Code="SDE" Name="Spartan Delta Corp" />
+  <SYMBOL Code="SEA" Name="Seabridge Gold Inc" />
+  <SYMBOL Code="SEC" Name="Senvest Capital" />
+  <SYMBOL Code="SES" Name="Secure Energy Services Inc" />
+  <SYMBOL Code="SFC" Name="Sagicor Financial Company Ltd" />
+  <SYMBOL Code="SFC.WT" Name="Sagicor Financial Company Ltd WT" />
+  <SYMBOL Code="SFD" Name="Nxt Energy Solutions Inc" />
+  <SYMBOL Code="SFI" Name="Solution Financial Inc" />
+  <SYMBOL Code="SFTC" Name="Softchoice Corp" />
+  <SYMBOL Code="SGLD" Name="Sabre Gold Mines Corp" />
+  <SYMBOL Code="SGNL" Name="Signal Gold Inc" />
+  <SYMBOL Code="SGR.U" Name="Slate Grocery REIT USD" />
+  <SYMBOL Code="SGR.UN" Name="Slate Grocery REIT" />
+  <SYMBOL Code="SGY" Name="Surge Energy Inc" />
+  <SYMBOL Code="SGY.DB.B" Name="Surge Energy Inc. 8.50%" />
+  <SYMBOL Code="SHLE" Name="Source Energy Services Ltd" />
+  <SYMBOL Code="SHOP" Name="Shopify Inc" />
+  <SYMBOL Code="SIA" Name="Sienna Senior Living Inc" />
+  <SYMBOL Code="SIH.UN" Name="Sustainable Innovation &amp; Health Dividend" />
+  <SYMBOL Code="SII" Name="Sprott Inc" />
+  <SYMBOL Code="SIL" Name="Silvercrest Metals Inc" />
+  <SYMBOL Code="SIS" Name="Savaria Corp" />
+  <SYMBOL Code="SJ" Name="Stella Jones Inc" />
+  <SYMBOL Code="SKE" Name="Skeena Resources Ltd" />
+  <SYMBOL Code="SKYY" Name="First Trust Cloud Computing ETF" />
+  <SYMBOL Code="SLF" Name="Sun Life Financial Inc" />
+  <SYMBOL Code="SLF.PR.C" Name="Sun Life Pref Ser 3" />
+  <SYMBOL Code="SLF.PR.D" Name="Sun Life Pref Ser 4" />
+  <SYMBOL Code="SLF.PR.E" Name="Sun Life Pref Ser 5" />
+  <SYMBOL Code="SLF.PR.G" Name="Sun Life Pref Ser 8R" />
+  <SYMBOL Code="SLF.PR.H" Name="Sun Life Pref Ser H" />
+  <SYMBOL Code="SLF.PR.J" Name="Sun Life Pref Ser 9Qr" />
+  <SYMBOL Code="SLF.PR.K" Name="Sun Life Pref Ser 11Qr" />
+  <SYMBOL Code="SLR" Name="Solitario Zinc Corp" />
+  <SYMBOL Code="SLS" Name="Solaris Resources Inc" />
+  <SYMBOL Code="SMAX" Name="Hamilton U.S. Equity Yield Maximizer ETF" />
+  <SYMBOL Code="SMC" Name="Sulliden Mining Capital Inc" />
+  <SYMBOL Code="SMT" Name="Sierra Metals Inc" />
+  <SYMBOL Code="SOBO" Name="South Bow Corporation WI" />
+  <SYMBOL Code="SOIL" Name="Saturn Oil and Gas Inc" />
+  <SYMBOL Code="SOIL.WT.A" Name="Saturn Oil &amp; Gas Inc." />
+  <SYMBOL Code="SOLG" Name="Solgold Plc" />
+  <SYMBOL Code="SOT.DB" Name="Slate Office REIT 5.25 Pct Debs" />
+  <SYMBOL Code="SOT.DB.A" Name="Slate Office REIT 5.5 Pct Debs" />
+  <SYMBOL Code="SOT.DB.B" Name="Slate Office REIT 7.50 Pct Debs" />
+  <SYMBOL Code="SOT.UN" Name="Slate Office REIT" />
+  <SYMBOL Code="SOY" Name="Sunopta Inc" />
+  <SYMBOL Code="SPAC.U" Name="Mercer Park Opportunities Corp Cla USD" />
+  <SYMBOL Code="SPAY" Name="GX Short-Term U.S. Treas Prem Yld ETF" />
+  <SYMBOL Code="SPAY.U" Name="GX Short-Term U.S. Treas Prem Yld ETF USD" />
+  <SYMBOL Code="SPB" Name="Superior Plus Corp" />
+  <SYMBOL Code="SPLT" Name="Brompton Split Corp Preferred Share ETF" />
+  <SYMBOL Code="SPPP" Name="Sprott Physical Platinum Palladium CAD" />
+  <SYMBOL Code="SPPP.U" Name="Sprott Physical Platinum Palladium USD" />
+  <SYMBOL Code="SRU.UN" Name="Smartcentres Real Estate Investment Trust" />
+  <SYMBOL Code="SRV.UN" Name="Sir Royalty Income Fund" />
+  <SYMBOL Code="SSF.UN" Name="Symphony Floating Rate Sr Loan Fd" />
+  <SYMBOL Code="SSL" Name="Sandstorm Gold Ltd" />
+  <SYMBOL Code="SSRM" Name="Ssr Mining Inc" />
+  <SYMBOL Code="STC" Name="Sangoma Technologies Corp" />
+  <SYMBOL Code="STCK" Name="Stack Capital Group Inc" />
+  <SYMBOL Code="STEP" Name="Step Energy Services Ltd" />
+  <SYMBOL Code="STGO" Name="Steppe Gold Ltd" />
+  <SYMBOL Code="STLR" Name="Stllr Gold Inc" />
+  <SYMBOL Code="STN" Name="Stantec Inc" />
+  <SYMBOL Code="STPL" Name="BMO Glb Consumer Staples Hgd To CAD ETF" />
+  <SYMBOL Code="SU" Name="Suncor Energy Inc" />
+  <SYMBOL Code="SVA" Name="Sernova Corp" />
+  <SYMBOL Code="SVB" Name="Silver Bull Resources Inc" />
+  <SYMBOL Code="SVI" Name="Storagevault Canada Inc" />
+  <SYMBOL Code="SVI.DB" Name="Storagevault Canada Inc 5.75 Pct Debs" />
+  <SYMBOL Code="SVI.DB.B" Name="Storagevault Canada Inc 5.50 Pct Debs" />
+  <SYMBOL Code="SVI.DB.C" Name="Storagevault Canada Inc 5 Pct Debs" />
+  <SYMBOL Code="SVM" Name="Silvercorp Metals Inc" />
+  <SYMBOL Code="SVR" Name="Ishares Silver Bullion ETF Hdg" />
+  <SYMBOL Code="SVR.C" Name="Ishares Silver Bullion ETF Non Hdg" />
+  <SYMBOL Code="SWP" Name="Swiss Water Decaffeinated Coffee Inc" />
+  <SYMBOL Code="SXI" Name="Synex Intl J" />
+  <SYMBOL Code="SXP" Name="Supremex Inc" />
+  <SYMBOL Code="SYLD" Name="Purpose Strategic Yield Fund" />
+  <SYMBOL Code="SYZ" Name="Sylogist Ltd" />
+  <SYMBOL Code="T" Name="Telus Corp" />
+  <SYMBOL Code="TA" Name="Transalta Corp" />
+  <SYMBOL Code="TA.PR.D" Name="Transalta Corp Prfd Series A" />
+  <SYMBOL Code="TA.PR.E" Name="Transalta Corp Pref Ser B" />
+  <SYMBOL Code="TA.PR.F" Name="Transalta Corp Pref Ser C" />
+  <SYMBOL Code="TA.PR.G" Name="Transalta Corporation Pref Ser D" />
+  <SYMBOL Code="TA.PR.H" Name="Transalta Corp Pref Sh Series E" />
+  <SYMBOL Code="TA.PR.J" Name="Transalta Corp Pref Ser G" />
+  <SYMBOL Code="TAL" Name="Petrotal Corp" />
+  <SYMBOL Code="TBAL" Name="TD Balanced Portfolio ETF" />
+  <SYMBOL Code="TBCE" Name="TD Target 2025 Investment Grade Bond ETF" />
+  <SYMBOL Code="TBCF" Name="TD Target 2026 Investment Grade Bond ETF" />
+  <SYMBOL Code="TBCG" Name="TD Target 2027 Investment Grade Bond ETF" />
+  <SYMBOL Code="TBIL" Name="Harvest Canadian T Bill ETF" />
+  <SYMBOL Code="TBL" Name="Taiga Building Products Ltd" />
+  <SYMBOL Code="TBNK" Name="TD Canadian Bank Dividend Index ETF" />
+  <SYMBOL Code="TBUE.U" Name="TD Target 2025 US Inv Grade Bond ETF USD" />
+  <SYMBOL Code="TBUG.U" Name="TD Target 2027 US Inv Grade Bond ETF USD" />
+  <SYMBOL Code="TC" Name="Tucows Inc" />
+  <SYMBOL Code="TCL.A" Name="Transcontinental Inc Cl A Sv" />
+  <SYMBOL Code="TCL.B" Name="Transcontinental Inc Cl B Mv" />
+  <SYMBOL Code="TCLB" Name="TD Canadian Long Term Fed Bond ETF" />
+  <SYMBOL Code="TCLV" Name="TD Q Canadian Low Volatility ETF" />
+  <SYMBOL Code="TCON" Name="TD Conservative Portfolio ETF" />
+  <SYMBOL Code="TCS" Name="Tecsys Inc J" />
+  <SYMBOL Code="TCSB" Name="TD Select Short Term Corporate Bond Ladd" />
+  <SYMBOL Code="TCSH" Name="TD Cash Management ETF" />
+  <SYMBOL Code="TCW" Name="Trican Well" />
+  <SYMBOL Code="TD" Name="Toronto-Dominion Bank" />
+  <SYMBOL Code="TD.PF.A" Name="TD Bank Pref Ser 1" />
+  <SYMBOL Code="TD.PF.C" Name="TD Bank Pref Ser 5" />
+  <SYMBOL Code="TD.PF.D" Name="TD Bank Pref Ser 7" />
+  <SYMBOL Code="TD.PF.E" Name="TD Bank Pref Ser 9" />
+  <SYMBOL Code="TD.PF.I" Name="TD Bank Pref Ser 16" />
+  <SYMBOL Code="TD.PF.J" Name="TD Bank Pref Series 18" />
+  <SYMBOL Code="TDB" Name="TD CDN Aggregate Bond Index ETF" />
+  <SYMBOL Code="TDOC" Name="TD Global Healthcare Leaders Index ETF" />
+  <SYMBOL Code="TDOC.U" Name="TD Global Healthcare Leaders Idx ETF USD" />
+  <SYMBOL Code="TEC" Name="TD Global Technology Leaders Index ETF" />
+  <SYMBOL Code="TEC.U" Name="TD Global Technology Leaders Idx ETF USD" />
+  <SYMBOL Code="TECH" Name="Evolve Fangma Index ETF [Cad Hedged Unit" />
+  <SYMBOL Code="TECH.B" Name="Evolve Fangma Index ETF [Cad Unhedged Un" />
+  <SYMBOL Code="TECH.U" Name="Evolve Fangma Index Uh ETF USD" />
+  <SYMBOL Code="TECI" Name="TD Global Technology Innovators Indx ETF" />
+  <SYMBOL Code="TECK.A" Name="Teck Resources Ltd Cl A" />
+  <SYMBOL Code="TECK.B" Name="Teck Resources Ltd Cl B" />
+  <SYMBOL Code="TECX" Name="TD Global Tech Leaders CAD Hdg Idx ETF" />
+  <SYMBOL Code="TERM" Name="Manulife Smart Short-Term Bond ETF" />
+  <SYMBOL Code="TF" Name="Timbercreek Financial Corp" />
+  <SYMBOL Code="TF.DB.D" Name="Timbercreek Financial Corp 5.25 Pct Debs" />
+  <SYMBOL Code="TF.DB.E" Name="Timbercreek Financial Corp 5.00 Pct Debs" />
+  <SYMBOL Code="TF.DB.F" Name="Timbercreek Financial Corp 7.50 Pct Debs" />
+  <SYMBOL Code="TFII" Name="Tfi International Inc" />
+  <SYMBOL Code="TFPM" Name="Triple Flag Precious Metals Corp" />
+  <SYMBOL Code="TGAF" Name="Tralucent Global Alt [Long/Short] Equity Fund" />
+  <SYMBOL Code="TGED" Name="TD Active Global Enhanced Dividend ETF" />
+  <SYMBOL Code="TGED.U" Name="TD Active Global Enhanced Div ETF USD" />
+  <SYMBOL Code="TGFI" Name="TD Active Global Income ETF" />
+  <SYMBOL Code="TGGR" Name="TD Active Global Equity Growth ETF" />
+  <SYMBOL Code="TGO" Name="Terago Inc" />
+  <SYMBOL Code="TGRE" Name="TD Active Global Real Estate Equity ETF" />
+  <SYMBOL Code="TGRO" Name="TD Growth Portfolio ETF" />
+  <SYMBOL Code="TH" Name="Theratechnologies" />
+  <SYMBOL Code="The" Name="TD Intl Equity CAD Hedge Index ETF" />
+  <SYMBOL Code="THNC" Name="Thinkific Labs Inc" />
+  <SYMBOL Code="THU" Name="TD S&amp;P 500 CAD Hedge Index ETF" />
+  <SYMBOL Code="TI" Name="Titan Mining Corp" />
+  <SYMBOL Code="TIH" Name="Toromont Ind" />
+  <SYMBOL Code="TILV" Name="TD Systematic Intl Equity Low Vol ETF" />
+  <SYMBOL Code="TINF" Name="TD Active Global Infrastructure Eqty ETF" />
+  <SYMBOL Code="TIPS" Name="BMO US TIPS Index ETF" />
+  <SYMBOL Code="TIPS.F" Name="BMO US TIPS Index ETF Hdg" />
+  <SYMBOL Code="TIXT" Name="Telus International [Cda] Inc" />
+  <SYMBOL Code="TKN" Name="Ninepoint Web3 Innovators Fund" />
+  <SYMBOL Code="TKN.U" Name="Ninepoint Web3 Innovators Fund" />
+  <SYMBOL Code="TKO" Name="Taseko Mines Ltd" />
+  <SYMBOL Code="TLF" Name="Brompton Tech Leaders Income ETF" />
+  <SYMBOL Code="TLG" Name="Troilus Gold Corp" />
+  <SYMBOL Code="TLO" Name="Talon Metals Corp" />
+  <SYMBOL Code="TLRY" Name="Tilray Inc" />
+  <SYMBOL Code="TLV" Name="Invesco SP TSX Low Vol Idx ETF" />
+  <SYMBOL Code="TMQ" Name="Trilogy Metals Inc" />
+  <SYMBOL Code="TNT.UN" Name="True North Commercial REIT" />
+  <SYMBOL Code="TNZ" Name="Tenaz Energy Corp" />
+  <SYMBOL Code="TOT" Name="Total Energy Services Inc" />
+  <SYMBOL Code="TOU" Name="Tourmaline Oil Corp" />
+  <SYMBOL Code="TOWR" Name="BMO Brookfield Gbl Real Est Tech Fnd ETF" />
+  <SYMBOL Code="TOY" Name="Spin Master Corp" />
+  <SYMBOL Code="TPE" Name="TD International Equity Index ETF" />
+  <SYMBOL Code="TPRF" Name="TD Active Preferred Share ETF" />
+  <SYMBOL Code="TPU" Name="TD S&amp;P 500 Index ETF" />
+  <SYMBOL Code="TPU.U" Name="TD U.S. Equity Index Et" />
+  <SYMBOL Code="TPX.B" Name="Molson Coors Canada Inc Cl B NV" />
+  <SYMBOL Code="TPZ" Name="Topaz Energy Corp" />
+  <SYMBOL Code="TQCD" Name="TD Q Canadian Dividend ETF" />
+  <SYMBOL Code="TQGD" Name="TD Q Global Dividend ETF" />
+  <SYMBOL Code="TQGM" Name="TD Q Global Multifactor ETF" />
+  <SYMBOL Code="TQSM" Name="TD Q US Small Mid Cap Eqty ETF" />
+  <SYMBOL Code="TRI" Name="Thomson Reuters Corp" />
+  <SYMBOL Code="TRI.PR.B" Name="Thomson Reuters Corp Prf Srs 2" />
+  <SYMBOL Code="TRP" Name="TC Energy Corp" />
+  <SYMBOL Code="TRP.PR.A" Name="Transcanada Corp Pref Ser 1" />
+  <SYMBOL Code="TRP.PR.B" Name="Transcanada Corp Pref Ser 3" />
+  <SYMBOL Code="TRP.PR.C" Name="Transcanada Corp Pref Ser 5" />
+  <SYMBOL Code="TRP.PR.D" Name="Transcanada Corp Pref Ser 7" />
+  <SYMBOL Code="TRP.PR.E" Name="Transcanada Corp Pref Ser 9" />
+  <SYMBOL Code="TRP.PR.F" Name="Transcanada Corp Pref Ser 2" />
+  <SYMBOL Code="TRP.PR.G" Name="Transcanada Corp Pref Ser 11" />
+  <SYMBOL Code="TRP.PR.H" Name="Transcanada Corp Pref Ser 4" />
+  <SYMBOL Code="TRP.PR.I" Name="Transcanada Corp Pref Ser 6" />
+  <SYMBOL Code="TRP.PR.L" Name="TC Energy Corp Pref Series 10" />
+  <SYMBOL Code="TRVI" Name="Harvest Travel and Leisure Income ETF" />
+  <SYMBOL Code="TRVL" Name="Harvest Travel and Leisure Index ETF" />
+  <SYMBOL Code="TRVL.U" Name="Harvest Travel and Leisure ETF USD" />
+  <SYMBOL Code="TRX" Name="Trx Gold Corporation" />
+  <SYMBOL Code="TRZ" Name="Transat At Inc" />
+  <SYMBOL Code="TSAT" Name="Telesat Corp" />
+  <SYMBOL Code="TSK" Name="Talisker Resources Ltd" />
+  <SYMBOL Code="TSL" Name="Tree Island Steel Ltd" />
+  <SYMBOL Code="TSND" Name="Terrascend Corp" />
+  <SYMBOL Code="TSU" Name="Trisura Group Ltd" />
+  <SYMBOL Code="TTNM" Name="Titanium Transportation Group Inc" />
+  <SYMBOL Code="TTP" Name="TD S&amp;P TSX Capped Comp Index ETF" />
+  <SYMBOL Code="TTTX" Name="Global X Innov Bluechip Top 10 Ind ETF" />
+  <SYMBOL Code="TUED" Name="TD Active US Enhanced Dividend ETF" />
+  <SYMBOL Code="TUED.U" Name="TD Active US Enhanced Dividend ETF USD" />
+  <SYMBOL Code="TUEX" Name="TD Active US Enhanced Div CAD Hdg ETF" />
+  <SYMBOL Code="TUHY" Name="TD Active US High Yield Bond ETF" />
+  <SYMBOL Code="TULB" Name="TD US Long Term Treasury Bond ETF" />
+  <SYMBOL Code="TULV" Name="TD Q US Low Volatility ETF" />
+  <SYMBOL Code="TUSB" Name="TD Select U.S. Short Term Corporate Bond" />
+  <SYMBOL Code="TUSB.U" Name="TD Select US Short Term Corp Bnd ETF USD" />
+  <SYMBOL Code="TVA.B" Name="Tva Group Inc Cl B NV" />
+  <SYMBOL Code="TVE" Name="Tamarack Valley Energy Ltd" />
+  <SYMBOL Code="TVK" Name="Terravest Capital Inc" />
+  <SYMBOL Code="TWC" Name="Twc Enterprises Ltd" />
+  <SYMBOL Code="TWM" Name="Tidewater Midstream and Infras Ltd" />
+  <SYMBOL Code="TWM.DB.A" Name="Tidewater Midstream Infras 8.00 Pct Debs" />
+  <SYMBOL Code="TXF" Name="CI Tech Giants Covered Call ETF" />
+  <SYMBOL Code="TXF.B" Name="CI Tech Giants Cov Call Unheg" />
+  <SYMBOL Code="TXF.U" Name="CI Tech Giants Covered Call ETF USD" />
+  <SYMBOL Code="TXG" Name="Torex Gold Resources Inc" />
+  <SYMBOL Code="TXP" Name="Touchstone Exploration Inc" />
+  <SYMBOL Code="U.U" Name="Sprott Physical Uranium Trust USD" />
+  <SYMBOL Code="U.UN" Name="Sprott Physical Uranium Trust" />
+  <SYMBOL Code="UBIL.U" Name="GX 0-3 Month U.S. T-Bill ETF" />
+  <SYMBOL Code="UCSH.U" Name="GX USD High Interest Savings ETF" />
+  <SYMBOL Code="UDA" Name="Caldwell US Dividend Advantage Fund ETF" />
+  <SYMBOL Code="UDIV" Name="Manulife Smart U.S. Dividend ETF [Hedged" />
+  <SYMBOL Code="UDIV.B" Name="Manulife Smart U.S. Dividend ETF Unhedged Units" />
+  <SYMBOL Code="UDIV.U" Name="Manulife Smart US Dividend ETF USD" />
+  <SYMBOL Code="ULV.C" Name="Powershares Sp500 Low Volatility ETF" />
+  <SYMBOL Code="ULV.F" Name="Invesco S&amp;P 500 Low Volatility ETF" />
+  <SYMBOL Code="UMAX" Name="Hamilton Utilities Yield Maximizer ETF" />
+  <SYMBOL Code="UMI.B" Name="Wisdomtree US Midcap Div Idx Unheg ETF" />
+  <SYMBOL Code="UMNY.U" Name="CI US Money Market ETF USD" />
+  <SYMBOL Code="UNC" Name="United Corp Ltd" />
+  <SYMBOL Code="UNI" Name="Unisync Corp Class B" />
+  <SYMBOL Code="URB" Name="Urbana Corp" />
+  <SYMBOL Code="URB.A" Name="Urbana Corp A NV" />
+  <SYMBOL Code="URC" Name="Uranium Royalty Corp" />
+  <SYMBOL Code="URC.WT" Name="Uranium Royalty Corp WT" />
+  <SYMBOL Code="URE" Name="Ur-Energy Inc" />
+  <SYMBOL Code="USA" Name="Americas Silver Corp" />
+  <SYMBOL Code="USCC" Name="GX S&amp;P 500 Covered Call ETF" />
+  <SYMBOL Code="USCC.U" Name="GX S&amp;P 500 Covered Call ETF USD" />
+  <SYMBOL Code="USCL" Name="GX Enhanced S&amp;P 500 Covered Call ETF" />
+  <SYMBOL Code="USSL" Name="Global X Enhanced S&amp;P 500 Index ETF" />
+  <SYMBOL Code="USSX" Name="Global X S&amp;P 500 Index ETF Class A Units" />
+  <SYMBOL Code="USSX.U" Name="Global X SP 500 Index ETF USD" />
+  <SYMBOL Code="UTES" Name="Evolve CAD Util Enh Yield Idx Fnd ETF" />
+  <SYMBOL Code="UTIL" Name="GX Canadian Utility Srvs High Divd Idx ETF" />
+  <SYMBOL Code="VA" Name="Vanguard FTSE Dev Asia Pac All Cap ETF" />
+  <SYMBOL Code="VAB" Name="Vanguard CDN Aggregate Bond Index ETF" />
+  <SYMBOL Code="VALT" Name="CI Gold Bullion Fund ETF Hg CAD" />
+  <SYMBOL Code="VALT.B" Name="CI Gold Bullion Fund ETF" />
+  <SYMBOL Code="VALT.U" Name="CI Gold Bullion Fund ETF USD" />
+  <SYMBOL Code="VBAL" Name="Vanguard Balanced ETF Portfolio" />
+  <SYMBOL Code="VBNK" Name="Versabank" />
+  <SYMBOL Code="VCB" Name="Vanguard CDN Corporate Bond Index ETF" />
+  <SYMBOL Code="VCE" Name="Vanguard FTSE Canada Index ETF" />
+  <SYMBOL Code="VCIP" Name="Vanguard Conservative Income ETF" />
+  <SYMBOL Code="VCM" Name="Vecima Networks Inc" />
+  <SYMBOL Code="VCN" Name="Vanguard FTSE Canada All Cap ETF" />
+  <SYMBOL Code="VCNS" Name="Vanguard Conservative ETF Portfolio" />
+  <SYMBOL Code="VDU" Name="Vanguard FTSE Developed AC Ex US ETF" />
+  <SYMBOL Code="VDY" Name="Vanguard FTSE CDN High Div Yld Index ETF" />
+  <SYMBOL Code="VE" Name="Vanguard FTSE Dev Europe All Cap ETF" />
+  <SYMBOL Code="VEE" Name="Vanguard FTSE Emerging Mkts All Cap ETF" />
+  <SYMBOL Code="VEF" Name="Vanguard FTSE Dev AC Ex US ETF CAD Hdg" />
+  <SYMBOL Code="VEQT" Name="Vanguard All Equity ETF Portfolio" />
+  <SYMBOL Code="VET" Name="Vermilion Energy Inc" />
+  <SYMBOL Code="VFV" Name="Vanguard S&amp;P 500 Index ETF" />
+  <SYMBOL Code="VGG" Name="Vanguard US Div Appr ETF" />
+  <SYMBOL Code="VGH" Name="Vanguard US Div Appr ETF CAD Hdg" />
+  <SYMBOL Code="VGRO" Name="Vanguard Growth ETF Portfolio" />
+  <SYMBOL Code="VGV" Name="Vanguard CDN Government Bond Index ETF" />
+  <SYMBOL Code="VGZ" Name="Vista Gold Corp" />
+  <SYMBOL Code="VHI" Name="Vitalhub Corp" />
+  <SYMBOL Code="VI" Name="Vanguard FTSE Dev All Cap Na ETF" />
+  <SYMBOL Code="VIDY" Name="Vanguard FTSE Dev Ex Na High Div Yld ETF" />
+  <SYMBOL Code="VIU" Name="Vanguard FTSE Dev All Cap Na ETF" />
+  <SYMBOL Code="VLB" Name="Vanguard CDN Long Term Bond Index ETF" />
+  <SYMBOL Code="VLE" Name="Valeura Energy Inc" />
+  <SYMBOL Code="VLN" Name="Velan Inc Sv" />
+  <SYMBOL Code="VMO" Name="Vanguard Glob Momentum Factor ETF" />
+  <SYMBOL Code="VNP" Name="5N Plus Inc" />
+  <SYMBOL Code="VOXR" Name="Vox Royalty Corp" />
+  <SYMBOL Code="VQS" Name="Viq Solutions Inc" />
+  <SYMBOL Code="VRE" Name="Vanguard FTSE CDN Capped REIT Index ETF" />
+  <SYMBOL Code="VRIF" Name="Vanguard Retirement Income ETF" />
+  <SYMBOL Code="VRN" Name="Veren Inc" />
+  <SYMBOL Code="VRTS" Name="Virtus Investment Partners Inc." />
+  <SYMBOL Code="VSB" Name="Vanguard CDN Short-Term Bond Index ETF" />
+  <SYMBOL Code="VSC" Name="Vanguard CDN Short Term Corp Bd ETF" />
+  <SYMBOL Code="VSP" Name="Vanguard S&amp;P 500 Index ETF CAD Hdg" />
+  <SYMBOL Code="VUN" Name="Vanguard US Total Market ETF" />
+  <SYMBOL Code="VUS" Name="Vanguard US Total Mkt ETF CAD Hdg" />
+  <SYMBOL Code="VVL" Name="Vanguard Glob Val Factor ETF" />
+  <SYMBOL Code="VVO" Name="Vanguard Global Min Vol ETF" />
+  <SYMBOL Code="VVSG" Name="Vanguard CDN Ultra Sh Govt Bond Indx ETF" />
+  <SYMBOL Code="VXC" Name="Vanguard FTSE Global All Cap Ex Can ETF" />
+  <SYMBOL Code="VXM" Name="CI Morningstar Intl Value Idx ETF" />
+  <SYMBOL Code="VXM.B" Name="CI Morningstar Intl Value Idx Unheg" />
+  <SYMBOL Code="VZLA" Name="Vizsla Resources Corp" />
+  <SYMBOL Code="WCN" Name="Waste Connections Inc" />
+  <SYMBOL Code="WCP" Name="Whitecap Resources Inc" />
+  <SYMBOL Code="WDO" Name="Wesdome Gold Mines Ltd" />
+  <SYMBOL Code="WEED" Name="Canopy Growth Corp" />
+  <SYMBOL Code="WEF" Name="Western Forest Products Inc" />
+  <SYMBOL Code="WELL" Name="Well Health Technologies Corp" />
+  <SYMBOL Code="WELL.DB" Name="Well Health Technologies 5.5 Pct Debs" />
+  <SYMBOL Code="WFC" Name="Wall Financial" />
+  <SYMBOL Code="WFG" Name="West Fraser Timber CO Ltd" />
+  <SYMBOL Code="WGX" Name="Westgold Resources Limited" />
+  <SYMBOL Code="WILD" Name="Wildbrain Ltd" />
+  <SYMBOL Code="WJX" Name="Wajax Corp" />
+  <SYMBOL Code="WJX.DB" Name="Wajax Corp 6.00 Pct Debs" />
+  <SYMBOL Code="WLLW" Name="Willow Biosciencesinc" />
+  <SYMBOL Code="WM" Name="Wallbridge Mining Company Ltd" />
+  <SYMBOL Code="WN" Name="George Weston Limited" />
+  <SYMBOL Code="WN.PR.A" Name="George Weston Pref Ser 1" />
+  <SYMBOL Code="WN.PR.C" Name="George Weston 5.20% Pref Ser III" />
+  <SYMBOL Code="WN.PR.D" Name="George Weston 5.2% Pref Ser IV" />
+  <SYMBOL Code="WN.PR.E" Name="George Weston 4.75% Pref Ser V" />
+  <SYMBOL Code="WNDR" Name="Wonderfi Technologies Inc." />
+  <SYMBOL Code="WOMN" Name="BMO Women IN Leadership Fund" />
+  <SYMBOL Code="WPK" Name="Winpak Ltd" />
+  <SYMBOL Code="WPM" Name="Wheaton Precious Metals Corp" />
+  <SYMBOL Code="WPRT" Name="Westport Fuel Systems Inc" />
+  <SYMBOL Code="WRG" Name="Western Energy Services Corp" />
+  <SYMBOL Code="WRN" Name="Western Copper and Gold Corp" />
+  <SYMBOL Code="WRX" Name="Western Resources Corp" />
+  <SYMBOL Code="WSP" Name="WSP Global Inc" />
+  <SYMBOL Code="WSRD" Name="Wealthsimple Dev Mkt Ex Na Soc Resp ETF" />
+  <SYMBOL Code="WSRI" Name="Wealthsimple Na Socially Resp Index ETF" />
+  <SYMBOL Code="WTE" Name="Westshore Terminals Investment Corp" />
+  <SYMBOL Code="WXM" Name="CI Morningstar Cda Momentum Idx ETF" />
+  <SYMBOL Code="X" Name="TMX Group Ltd" />
+  <SYMBOL Code="XAD" Name="Ishares U.S. Aerospace &amp; Defense Index ETF" />
+  <SYMBOL Code="XAGG" Name="Ishares US Aggregate Bond Index ETF" />
+  <SYMBOL Code="XAGH" Name="Ishares US Aggregate Bond Idx ETF CAD HD" />
+  <SYMBOL Code="XAM" Name="Xanadu Mines Ltd" />
+  <SYMBOL Code="XAU" Name="Goldmoney Inc" />
+  <SYMBOL Code="XAW" Name="Ishares Core MSCI All Cntry Ex Can ETF" />
+  <SYMBOL Code="XAW.U" Name="Ishares Core MSCI All Ex Can ETF USD" />
+  <SYMBOL Code="XBAL" Name="Ishares Core Balanced ETF Portfolio" />
+  <SYMBOL Code="XBB" Name="Ishares Core CDN Universe Bond ETF" />
+  <SYMBOL Code="XBM" Name="Ishares S&amp;P TSX Global Base Mtls ETF" />
+  <SYMBOL Code="XCB" Name="Ishares Canadian Corporate Bond ETF" />
+  <SYMBOL Code="XCBG" Name="Ishares ESG Adv CAD Corp Bond Index ETF" />
+  <SYMBOL Code="XCD" Name="Ishares S&amp;P Global Cons Disc ETF" />
+  <SYMBOL Code="XCG" Name="Ishares Canadian Growth Index ETF" />
+  <SYMBOL Code="XCH" Name="Ishares China Index ETF" />
+  <SYMBOL Code="XCHP" Name="Ishares Semiconductor Index ETF" />
+  <SYMBOL Code="XCLN" Name="Ishares Global Clean Energy Index ETF" />
+  <SYMBOL Code="XCNS" Name="Ishares Core Conservative Balanced ETF" />
+  <SYMBOL Code="XCS" Name="Ishares S&amp;P TSX Smallcap Index ETF" />
+  <SYMBOL Code="XCSR" Name="Ishares ESG Advanced MSCI Canada Idx ETF" />
+  <SYMBOL Code="XCV" Name="Ishares Canadian Value Index ETF" />
+  <SYMBOL Code="XDG" Name="Ishares Core MSCI Glo Qlty Div ETF" />
+  <SYMBOL Code="XDGH" Name="Ishares Core MSCI Glo Qlty Div ETF" />
+  <SYMBOL Code="XDIV" Name="Ishares Core MSCI CAD Qlty Div ETF" />
+  <SYMBOL Code="XDSR" Name="Ishares ESG Advanced MSCI EAFE Index ETF" />
+  <SYMBOL Code="XDU" Name="Ishares Core MSCI US Qlty Div ETF" />
+  <SYMBOL Code="XDU.U" Name="Ishares Core MSCI US Qlty Div ETF USD" />
+  <SYMBOL Code="XDUH" Name="Ishares Core MSCI US Qlty Div ETF" />
+  <SYMBOL Code="XDV" Name="Ishares Canadian Select Div Index ETF" />
+  <SYMBOL Code="XEB" Name="Ishares JP Morgan USD Emerg Mkts Bd ETF" />
+  <SYMBOL Code="XEC" Name="Ishares Core MSCI Emerging Mkts IMI ETF" />
+  <SYMBOL Code="XEC.U" Name="Ishares Core MSCI Emrgng Mkt IMI ETF" />
+  <SYMBOL Code="XEF" Name="Ishares Core MSCI EAFE IMI Index ETF" />
+  <SYMBOL Code="XEF.U" Name="Ishares Core MSCI EAFE IMI Index ETF" />
+  <SYMBOL Code="XEG" Name="Ishares S&amp;P TSX Capped Energy Index ETF" />
+  <SYMBOL Code="XEH" Name="Ishares MSCI Europe IMI Index ETF" />
+  <SYMBOL Code="XEI" Name="Ishares S&amp;P TSX Comp High Div Index ETF" />
+  <SYMBOL Code="XEM" Name="Ishares MSCI Emerging Markets ETF" />
+  <SYMBOL Code="XEMC" Name="Ishares MSCI Emerg Mkts Ex China Idx ETF" />
+  <SYMBOL Code="XEN" Name="Ishares Jantzi Social Index ETF" />
+  <SYMBOL Code="XEQT" Name="Ishares Core Equity ETF" />
+  <SYMBOL Code="XESG" Name="Ishares ESG MSCI Cda Index ETF" />
+  <SYMBOL Code="XETM" Name="Ishares TSX Energy Transition Materials Index Et" />
+  <SYMBOL Code="XEU" Name="Ishares MSCI Europe IMI Index ETF" />
+  <SYMBOL Code="XEXP" Name="Ishares Exponential Tech Index ETF" />
+  <SYMBOL Code="XFH" Name="Ishares Core MSCI EAFE IMI Index ETF" />
+  <SYMBOL Code="XFLB" Name="Ishares Core CDN 15 Year Fed Bnd Idx ETF" />
+  <SYMBOL Code="XFLI" Name="Ishares Flexible Monthly Income ETF" />
+  <SYMBOL Code="XFLX" Name="Ishares Flexible Monthly Income ETF" />
+  <SYMBOL Code="XFN" Name="Ishares S&amp;P TSX Capped Financials ETF" />
+  <SYMBOL Code="XFR" Name="Ishares Floating Rate Index ETF" />
+  <SYMBOL Code="XGB" Name="Ishares Canadian Govt Bond Index ETF" />
+  <SYMBOL Code="XGD" Name="Ishares S&amp;P TSX Global Gold Index ETF" />
+  <SYMBOL Code="XGI" Name="Ishares S&amp;P Global Industrials ETF" />
+  <SYMBOL Code="XGRO" Name="Ishares Core Growth ETF Portfolio" />
+  <SYMBOL Code="XHAK" Name="Ishares Cybersecurity and Tech Index ETF" />
+  <SYMBOL Code="XHB" Name="Ishares CDN Hybrid Corp Bond ETF" />
+  <SYMBOL Code="XHC" Name="Ishares Global Healthcare Index ETF" />
+  <SYMBOL Code="XHD" Name="Ishares US High Div Equity Index ETF" />
+  <SYMBOL Code="XHU" Name="Ishares US High Div Equity Index ETF" />
+  <SYMBOL Code="XHY" Name="Ishares US High Yield Bond Index ETF" />
+  <SYMBOL Code="XIC" Name="Ishares Core S&amp;P TSX Capped Comp ETF" />
+  <SYMBOL Code="XID" Name="Ishares India Index ETF" />
+  <SYMBOL Code="XIG" Name="Ishares US IG Corporate Bond Index ETF" />
+  <SYMBOL Code="XIGS" Name="Ishares 1 To 5 Year US IG Corp Bond ETF" />
+  <SYMBOL Code="XIN" Name="Ishares MSCI EAFE Index ETF" />
+  <SYMBOL Code="XINC" Name="Ishares Core Income Balanced ETF" />
+  <SYMBOL Code="XIT" Name="Ishares S&amp;P TSX Capped Info Tech ETF" />
+  <SYMBOL Code="XIU" Name="Ishares S&amp;P TSX 60 Index ETF" />
+  <SYMBOL Code="XLB" Name="Ishares Core CDN Long Term Bond ETF" />
+  <SYMBOL Code="XLY" Name="Auxly Cannabis Group Inc" />
+  <SYMBOL Code="XMA" Name="Ishares S&amp;P TSX Capped Materials ETF" />
+  <SYMBOL Code="XMC" Name="Ishares S&amp;P US Midcap Index ETF" />
+  <SYMBOL Code="XMC.U" Name="Ishares SP US Midcap ETF USD" />
+  <SYMBOL Code="XMD" Name="Ishares S&amp;P TSX Completion Index ETF" />
+  <SYMBOL Code="XMF.A" Name="M Split Corp Capital Shares 2014" />
+  <SYMBOL Code="XMF.PR.B" Name="M Split Corp Class I Pref Shares" />
+  <SYMBOL Code="XMF.PR.C" Name="M Split Corp Class II Pref Shares 2014" />
+  <SYMBOL Code="XMH" Name="Ishares S&amp;P US Midcap Index ETF CAD Hgd" />
+  <SYMBOL Code="XMI" Name="Ishares Edge MSCI Min Vol EAFE ETF" />
+  <SYMBOL Code="XML" Name="Ishares Edge MSCI Mv EAFE ETF CAD Hgd" />
+  <SYMBOL Code="XMM" Name="Ishares Edge MSCI Min Vol Emerg ETF" />
+  <SYMBOL Code="XMS" Name="Ishares Edge MSCI Mv USA ETF CAD Hgd" />
+  <SYMBOL Code="XMTM" Name="Ishares Edge MSCI USA Momnt Fctr ETF" />
+  <SYMBOL Code="XMU" Name="Ishares Edge MSCI Min Vol USA ETF" />
+  <SYMBOL Code="XMV" Name="Ishares Edge MSCI Min Vol Can ETF" />
+  <SYMBOL Code="XMW" Name="Ishares Edge MSCI Min Vol Gbl ETF" />
+  <SYMBOL Code="XMY" Name="Ishares Edge MSCI Mv Global ETF CAD Hgd" />
+  <SYMBOL Code="XPF" Name="Ishares S&amp;P TSX Na Pref Stock ETF" />
+  <SYMBOL Code="XQB" Name="Ishares High Qlty Canadian Bond ETF" />
+  <SYMBOL Code="XQLT" Name="Ishares Edge MSCI USA Qlty Fctr Indx ETF" />
+  <SYMBOL Code="XQQ" Name="Ishares Nasdaq 100 Index ETF" />
+  <SYMBOL Code="XQQU" Name="Ishares Nasdaq 100 Index ETF" />
+  <SYMBOL Code="XQQU.U" Name="Ishares Nasdaq 100 Index ETF" />
+  <SYMBOL Code="XRB" Name="Ishares CDN Real Return Bond Index ETF" />
+  <SYMBOL Code="XRE" Name="Ishares S&amp;P TSX Capped REIT Index ETF" />
+  <SYMBOL Code="XSAB" Name="Ishares ESG CDN Agg Bond Index ETF" />
+  <SYMBOL Code="XSB" Name="Ishares Core CDN Short Trm Bond ETF" />
+  <SYMBOL Code="XSC" Name="Ishares Cons ST Strat Fix Inc ETF" />
+  <SYMBOL Code="XSE" Name="Ishares Cons Strat Fix Inc ETF" />
+  <SYMBOL Code="XSEA" Name="Ishares ESG MSCI EAFE Index ETF" />
+  <SYMBOL Code="XSEM" Name="Ishares ESG MSCI Emerg Mkts Index ETF" />
+  <SYMBOL Code="XSH" Name="Ishares Core CDN ST Corp Maple Bnd ETF" />
+  <SYMBOL Code="XSHG" Name="Ishares ESG Adv 1 To 5 Yr CAD Bd Idx ETF" />
+  <SYMBOL Code="XSHU" Name="Ishares 1 To 5 Year US IG Corp Bond ETF" />
+  <SYMBOL Code="XSI" Name="Ishares Short Term Strategic FI ETF" />
+  <SYMBOL Code="XSMC" Name="Ishares SP US Small Cap Index ETF" />
+  <SYMBOL Code="XSMH" Name="Ishares SP US Small Cap ETF CAD Hdg" />
+  <SYMBOL Code="XSP" Name="Ishares Core S&amp;P 500 ETF CAD Hdg ETF" />
+  <SYMBOL Code="XSPC" Name="Ishares S&amp;P 500 3% Capped Index ETF [Cad-Hedged]" />
+  <SYMBOL Code="XST" Name="Ishares S&amp;P TSX Capped Cons Stpl ETF" />
+  <SYMBOL Code="XSTB" Name="Ishares ESG CDN ST Bond Index ETF" />
+  <SYMBOL Code="XSTH" Name="Ishares 0 To 5 Year TIPS Bond Idx HD ETF" />
+  <SYMBOL Code="XSTP" Name="Ishares 0 To 5 Year TIPS Bond Index ETF" />
+  <SYMBOL Code="XSU" Name="Ishares US Small Cap Index ETF" />
+  <SYMBOL Code="XSUS" Name="Ishares ESG MSCI USA Index ETF" />
+  <SYMBOL Code="XTC" Name="Exco Tech" />
+  <SYMBOL Code="XTD" Name="Tdb Split Corp Class A Shares" />
+  <SYMBOL Code="XTD.PR.A" Name="Tdb Split Corp Priority Equity Shares" />
+  <SYMBOL Code="XTG" Name="Xtra Gold Resources Corp" />
+  <SYMBOL Code="XTLH" Name="Ishares 20 Year US Treasury Bond Hdg ETF" />
+  <SYMBOL Code="XTLT" Name="Ishares 20 Year US Treasury Bond ETF" />
+  <SYMBOL Code="XTLT.U" Name="Ishares 20 Year US Treasury Bond ETF USD" />
+  <SYMBOL Code="XTR" Name="Ishares Diversified Monthly Income ETF" />
+  <SYMBOL Code="XTRA" Name="Patriot One Technologies Inc" />
+  <SYMBOL Code="XTRA.WT" Name="Xtract One Technologies Inc Wts" />
+  <SYMBOL Code="XUH" Name="Ishares Core S&amp;P US Total Mkt ETF CAD Heg" />
+  <SYMBOL Code="XUS" Name="Ishares Core S&amp;P 500 Index ETF" />
+  <SYMBOL Code="XUS.U" Name="Ishares Core SP 500 Index ETF" />
+  <SYMBOL Code="XUSC" Name="Ishares S&amp;P 500 3% Capped Index ETF" />
+  <SYMBOL Code="XUSC.U" Name="Ishares SP 500 3 Pct Capped Indx ETF USD" />
+  <SYMBOL Code="XUSF" Name="Ishares SP US Financials Index ETF" />
+  <SYMBOL Code="XUSR" Name="Ishares ESG Advanced MSCI USA Index ETF" />
+  <SYMBOL Code="XUT" Name="Ishares S&amp;P TSX Capped Utilities ETF" />
+  <SYMBOL Code="XUU" Name="Ishares Core S&amp;P US Total Market ETF" />
+  <SYMBOL Code="XVLU" Name="Ishares Edge MSCI USA Value Fctr ETF" />
+  <SYMBOL Code="XWD" Name="Ishares MSCI World Index ETF" />
+  <SYMBOL Code="Y" Name="Yellow Pages Ltd" />
+  <SYMBOL Code="YCM" Name="Commerce Split Corp Capital Shares" />
+  <SYMBOL Code="YCM.PR.A" Name="Commerce Split Corp Class I Pref Shares" />
+  <SYMBOL Code="YCM.PR.B" Name="Commerce Split Corp Class II Pref Shares" />
+  <SYMBOL Code="YGR" Name="Yangarra Resources Ltd" />
+  <SYMBOL Code="YRB" Name="Yorbeau Resources Inc" />
+  <SYMBOL Code="ZACE" Name="BMO US All Cap Equity Fund ETF" />
+  <SYMBOL Code="ZAG" Name="BMO Aggregate Bond Index ETF" />
+  <SYMBOL Code="ZBAL" Name="BMO Balanced ETF" />
+  <SYMBOL Code="ZBAL.T" Name="BMO Balanced ETF [Fixed Percentage Distr" />
+  <SYMBOL Code="ZBBB" Name="BMO BBB Corporate Bond Index ETF" />
+  <SYMBOL Code="ZBI" Name="BMO Canadian Bank Income Index ETF" />
+  <SYMBOL Code="ZBK" Name="BMO Equal Weight US Bank ETF" />
+  <SYMBOL Code="ZCB" Name="BMO Corporate Bond Index ETF" />
+  <SYMBOL Code="ZCDB" Name="BMO Corporate Discount Bond ETF" />
+  <SYMBOL Code="ZCH" Name="BMO China Equity Index ETF" />
+  <SYMBOL Code="ZCLN" Name="BMO Clean Energy Index ETF" />
+  <SYMBOL Code="ZCM" Name="BMO Mid Corporate Bond ETF" />
+  <SYMBOL Code="ZCN" Name="BMO S&amp;P TSX Capped Comp ETF" />
+  <SYMBOL Code="ZCON" Name="BMO Conservative ETF" />
+  <SYMBOL Code="ZCPB" Name="BMO Core Plus Bond Fund" />
+  <SYMBOL Code="ZCS" Name="BMO Short Corp Bond ETF" />
+  <SYMBOL Code="ZCS.L" Name="BMO Short Corporate Bond ETF" />
+  <SYMBOL Code="ZDB" Name="BMO Discount Bond ETF" />
+  <SYMBOL Code="ZDH" Name="BMO Intl Div CAD Hedge ETF" />
+  <SYMBOL Code="ZDI" Name="BMO International Dividend ETF" />
+  <SYMBOL Code="ZDJ" Name="BMO DJIA Hedged To CAD Index ETF" />
+  <SYMBOL Code="ZDM" Name="BMO MSCI EAFE Hedged To CAD Index ETF" />
+  <SYMBOL Code="ZDV" Name="BMO Canadian Dividend ETF" />
+  <SYMBOL Code="ZDY" Name="BMO US Dividend ETF CAD" />
+  <SYMBOL Code="ZDY.U" Name="BMO US Dividend ETF USD" />
+  <SYMBOL Code="ZEA" Name="BMO MSCI EAFE ETF" />
+  <SYMBOL Code="ZEAT" Name="BMO Global Agriculture ETF" />
+  <SYMBOL Code="ZEB" Name="BMO S&amp;P TSX Equal Weight Banks Index ETF" />
+  <SYMBOL Code="ZEF" Name="BMO Emg Mkt Bond Hdgd To CAD ETF" />
+  <SYMBOL Code="ZEM" Name="BMO MSCI Emerging Markets Index ETF" />
+  <SYMBOL Code="ZEO" Name="BMO S&amp;P TSX Eql Weight Oil Gas Index ETF" />
+  <SYMBOL Code="ZEQ" Name="BMO MSCI EU Hq Hcad ETF" />
+  <SYMBOL Code="ZEQT" Name="BMO All-Equity ETF" />
+  <SYMBOL Code="ZESG" Name="BMO Balanced ESG ETF" />
+  <SYMBOL Code="ZFC" Name="BMO Sia Focused Canadian Equity Fund" />
+  <SYMBOL Code="ZFH" Name="BMO Floating Rate High Yield ETF" />
+  <SYMBOL Code="ZFL" Name="BMO Long Fed Bond Index ETF" />
+  <SYMBOL Code="ZFM" Name="BMO Mid Federal Bond Index ETF" />
+  <SYMBOL Code="ZFN" Name="BMO Sia Focused North American Equity Fu" />
+  <SYMBOL Code="ZFS" Name="BMO Short Federal Bond Index ETF" />
+  <SYMBOL Code="ZGB" Name="BMO Government Bond Index ETF" />
+  <SYMBOL Code="ZGD" Name="BMO S&amp;P TSX Eql Weight Global Gold ETF" />
+  <SYMBOL Code="ZGI" Name="BMO Global Infrastructure Index ETF" />
+  <SYMBOL Code="ZGLD" Name="BMO Gold Bullion ETF" />
+  <SYMBOL Code="ZGLD.U" Name="BMO Gold Bullion ETF USD" />
+  <SYMBOL Code="ZGLH" Name="BMO Gold Bullion Hedged To CAD ETF" />
+  <SYMBOL Code="ZGQ" Name="BMO MSCI All Cntry Wrld High Qlty ETF" />
+  <SYMBOL Code="ZGRN" Name="BMO MSCI ACWI Paris Aligned Climate Equi" />
+  <SYMBOL Code="ZGRO" Name="BMO Growth ETF" />
+  <SYMBOL Code="ZGRO.T" Name="BMO Growth ETF" />
+  <SYMBOL Code="ZGSB" Name="BMO Global Strategic Bond Fund" />
+  <SYMBOL Code="ZHP" Name="BMO US Pref Share Hgd To CAD ETF" />
+  <SYMBOL Code="ZHU" Name="BMO Equal Weight US Health Care Idx ETF" />
+  <SYMBOL Code="ZHY" Name="BMO High Yld US Corp Bnd Hdg CAD ETF" />
+  <SYMBOL Code="ZIC" Name="BMO Mid Term US IG Corp Bond ETF" />
+  <SYMBOL Code="ZIC.U" Name="BMO Mid Term US IG Corp Bond ETF USD" />
+  <SYMBOL Code="ZID" Name="BMO India Equity Index ETF" />
+  <SYMBOL Code="ZIN" Name="BMO S&amp;P TSX Equal Weight Indstrl ETF" />
+  <SYMBOL Code="ZIQ" Name="BMO MSCI EAFE High Quality Index ETF" />
+  <SYMBOL Code="ZIU" Name="BMO S&amp;P/Tsx 60 Index ETF" />
+  <SYMBOL Code="ZJG" Name="BMO Junior Gold Index ETF" />
+  <SYMBOL Code="ZJK" Name="BMO High Yield US Corp Bond ETF" />
+  <SYMBOL Code="ZJK.U" Name="BMO High Yield US Corp Bond Indx ETF USD" />
+  <SYMBOL Code="ZJPN" Name="BMO Japan Index ETF" />
+  <SYMBOL Code="ZJPN.F" Name="BMO Japan Index Hdg ETF" />
+  <SYMBOL Code="ZLB" Name="BMO Low Volatility CAD Equity ETF" />
+  <SYMBOL Code="ZLC" Name="BMO Long Corporate Bond Index ETF" />
+  <SYMBOL Code="ZLD" Name="BMO Low Vol Intl Eqty Hed To CAD ETF" />
+  <SYMBOL Code="ZLE" Name="BMO Low Vol Emerg Mkt Equity ETF" />
+  <SYMBOL Code="ZLH" Name="BMO Low Vol US Eqty Hed To CAD ETF" />
+  <SYMBOL Code="ZLI" Name="BMO Low Vol Intl Equity ETF" />
+  <SYMBOL Code="ZLSC" Name="BMO Long Short Canadian Equity ETF" />
+  <SYMBOL Code="ZLSU" Name="BMO Long Short US Equity ETF" />
+  <SYMBOL Code="ZLU" Name="BMO Low Volatility US Equity ETF CAD" />
+  <SYMBOL Code="ZLU.U" Name="BMO Low Volatility US Equity ETF USD" />
+  <SYMBOL Code="ZMBS" Name="BMO Canadian MBS Index ETF" />
+  <SYMBOL Code="ZMI" Name="BMO Monthly Income ETF" />
+  <SYMBOL Code="ZMID" Name="BMO SP US Mid Cap Index ETF" />
+  <SYMBOL Code="ZMID.F" Name="BMO SP US Mid Cap Index ETF Hedged" />
+  <SYMBOL Code="ZMID.U" Name="BMO SP US Mid Cap Index ETF USD" />
+  <SYMBOL Code="ZMMK" Name="BMO Money Market Fund ETF" />
+  <SYMBOL Code="ZMP" Name="BMO Mid Provincial Bond Index ETF" />
+  <SYMBOL Code="ZMSB" Name="BMO Global Multi Sector Bond Fund" />
+  <SYMBOL Code="ZMT" Name="BMO Sptsx Eql Wgt Glb Metal Hed CAD ETF" />
+  <SYMBOL Code="ZMU" Name="BMO Mid Term US IG Corp Bd Hgd CAD Idx" />
+  <SYMBOL Code="ZNQ" Name="BMO Nasdaq 100 Equity Index ETF" />
+  <SYMBOL Code="ZNQ.U" Name="BMO Nasdaq 100 Equity Index ETF USD" />
+  <SYMBOL Code="ZPAY" Name="BMO Premium Yield ETF" />
+  <SYMBOL Code="ZPAY.F" Name="BMO Premium Yield ETF Hedged" />
+  <SYMBOL Code="ZPAY.U" Name="BMO Premium Yield ETF USD" />
+  <SYMBOL Code="ZPH" Name="BMO US Put Write Hedged To CAD ETF" />
+  <SYMBOL Code="ZPL" Name="BMO Long Provincial Bond Index ETF" />
+  <SYMBOL Code="ZPR" Name="BMO Laddered Pref Share ETF" />
+  <SYMBOL Code="ZPS" Name="BMO Short Provincial Bond Index ETF" />
+  <SYMBOL Code="ZPS.L" Name="BMO Short Provincial Bond Index ETF" />
+  <SYMBOL Code="ZPW" Name="BMO US Put Write ETF" />
+  <SYMBOL Code="ZQB" Name="BMO High Quality Corporate Bond Idx ETF" />
+  <SYMBOL Code="ZQQ" Name="BMO Nasdaq 100 Hedged To CAD Index ETF" />
+  <SYMBOL Code="ZRE" Name="BMO Equal Weight Reits Index ETF" />
+  <SYMBOL Code="ZRR" Name="BMO Real Return Bond Index ETF" />
+  <SYMBOL Code="ZSB" Name="BMO Short Term Bond Idx ETF" />
+  <SYMBOL Code="ZSDB" Name="BMO Short Term Discount Bond ETF" />
+  <SYMBOL Code="ZSML" Name="BMO SP US Small Cap Index ETF" />
+  <SYMBOL Code="ZSML.F" Name="BMO SP US Small Cap Index ETF Hedged" />
+  <SYMBOL Code="ZSML.U" Name="BMO SP US Small Cap Index ETF USD" />
+  <SYMBOL Code="ZSP" Name="BMO S&amp;P 500 Index ETF" />
+  <SYMBOL Code="ZSP.U" Name="BMO S&amp;P 500 Index ETF USD" />
+  <SYMBOL Code="ZST" Name="BMO Ultra Short Term Bond ETF" />
+  <SYMBOL Code="ZST.L" Name="BMO Ultra Short Term Bond ETF" />
+  <SYMBOL Code="ZSU" Name="BMO ST US IG Corp Bond Hcad ETF" />
+  <SYMBOL Code="ZTIP" Name="BMO Short Term US TIPS Index ETF" />
+  <SYMBOL Code="ZTIP.F" Name="BMO Short Term US TIPS Index Hgd ETF" />
+  <SYMBOL Code="ZUAG" Name="BMO US Aggregate Bond Index ETF" />
+  <SYMBOL Code="ZUAG.F" Name="BMO US Aggregate Bond Index ETF Hdg" />
+  <SYMBOL Code="ZUAG.U" Name="BMO US Aggregate Bond Index ETF USD" />
+  <SYMBOL Code="ZUB" Name="BMO Eql Wgt US Bank Hdgd To CAD ETF" />
+  <SYMBOL Code="ZUCM" Name="BMO USD Cash Management ETF" />
+  <SYMBOL Code="ZUCM.U" Name="BMO USD Cash Management ETF" />
+  <SYMBOL Code="ZUD" Name="BMO US Dividend Hedged To CAD ETF" />
+  <SYMBOL Code="ZUE" Name="BMO S&amp;P 500 Hedged CAD ETF" />
+  <SYMBOL Code="ZUGE" Name="BMO US Equity Growth Mfr Fund ETF" />
+  <SYMBOL Code="ZUH" Name="BMO Eql Wgt US Hcare Hdgd To CAD ETF" />
+  <SYMBOL Code="ZUP" Name="BMO US Pref Share Index ETF" />
+  <SYMBOL Code="ZUP.U" Name="BMO US Pref Share Index ETF" />
+  <SYMBOL Code="ZUQ" Name="BMO MSCI USA High Quality Index ETF" />
+  <SYMBOL Code="ZUQ.F" Name="BMO MSCI USA High Quality Index ETF [Hed" />
+  <SYMBOL Code="ZUQ.U" Name="BMO MSCI USA High Quality Index ETF USD" />
+  <SYMBOL Code="ZUS.U" Name="BMO Ultra Short Term US Bond ETF USD" />
+  <SYMBOL Code="ZUS.V" Name="BMO Ultra Short Term US Bond ETF USD Acc" />
+  <SYMBOL Code="ZUT" Name="BMO Equal Weight Utilities Index ETF" />
+  <SYMBOL Code="ZVC" Name="BMO MSCI Cda Value Index ETF" />
+  <SYMBOL Code="ZVU" Name="BMO MSCI USA Value Index ETF" />
+  <SYMBOL Code="ZWA" Name="BMO Covered Call DJIA CAD ETF" />
+  <SYMBOL Code="ZWB" Name="BMO Covered Call Canadian Banks ETF" />
+  <SYMBOL Code="ZWC" Name="BMO CDN High Div Covered Call ETF" />
+  <SYMBOL Code="ZWE" Name="BMO Europe High Div CC CAD Hedge ETF" />
+  <SYMBOL Code="ZWEN" Name="BMO Covered Call Energy ETF" />
+  <SYMBOL Code="ZWG" Name="BMO Gbl High Dividend Covered Call ETF" />
+  <SYMBOL Code="ZWH" Name="BMO US High Dividend Covered Call ETF" />
+  <SYMBOL Code="ZWH.U" Name="BMO US High Dividend Cov Call ETF USD" />
+  <SYMBOL Code="ZWHC" Name="BMO Covered Call Health Care ETF" />
+  <SYMBOL Code="ZWK" Name="BMO Covered Call US Banks ETF" />
+  <SYMBOL Code="ZWP" Name="BMO Europe High Div Cov Call ETF" />
+  <SYMBOL Code="ZWQT" Name="BMO Global Enhanced Income Fund ETF" />
+  <SYMBOL Code="ZWS" Name="BMO US High Div Cov Call Hgd ETF" />
+  <SYMBOL Code="ZWT" Name="BMO Covered Call Technology ETF" />
+  <SYMBOL Code="ZWU" Name="BMO Covered Call Utilities ETF" />
+  <SYMBOL Code="ZZZD" Name="BMO Tactical Dividend ETF Fund" />
+</ArrayOfSYMBOL>

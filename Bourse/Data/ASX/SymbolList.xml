@@ -1,0 +1,3653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSYMBOL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SYMBOL Code="14D" Name="1414 Degrees Limited" />
+  <SYMBOL Code="1AD" Name="Adalta Limited" />
+  <SYMBOL Code="1AE" Name="Aurora Energy Metals Limited" />
+  <SYMBOL Code="1AI" Name="Algorae Pharmaceuticals Limited" />
+  <SYMBOL Code="1AIO" Name="1AIO" />
+  <SYMBOL Code="1CG" Name="One Click Group Limited" />
+  <SYMBOL Code="1CGO" Name="1CGO" />
+  <SYMBOL Code="1MC" Name="Morella Corporation Limited" />
+  <SYMBOL Code="1TT" Name="Thrive Tribe Technologies Limited" />
+  <SYMBOL Code="29M" Name="29metals Limited" />
+  <SYMBOL Code="360" Name="Life360 Inc." />
+  <SYMBOL Code="360KOA" Name="360KOA" />
+  <SYMBOL Code="360KOB" Name="360KOB" />
+  <SYMBOL Code="360KOC" Name="360KOC" />
+  <SYMBOL Code="360KOD" Name="360KOD" />
+  <SYMBOL Code="360KOE" Name="360KOE" />
+  <SYMBOL Code="3DA" Name="Amaero International Ltd" />
+  <SYMBOL Code="3DAO" Name="3DAO" />
+  <SYMBOL Code="3DP" Name="Pointerra Limited" />
+  <SYMBOL Code="3PL" Name="3p Learning Limited.." />
+  <SYMBOL Code="4DS" Name="4ds Memory Limited" />
+  <SYMBOL Code="4DX" Name="4dmedical Limited" />
+  <SYMBOL Code="4DXO" Name="4DXO" />
+  <SYMBOL Code="5EA" Name="5e Advanced Materials Inc." />
+  <SYMBOL Code="5GG" Name="Pentanet Limited" />
+  <SYMBOL Code="5GN" Name="5g Networks Limited" />
+  <SYMBOL Code="88E" Name="88 Energy Limited" />
+  <SYMBOL Code="88EOA" Name="88EOA" />
+  <SYMBOL Code="8CO" Name="8common Limited" />
+  <SYMBOL Code="8IH" Name="8i Holdings Ltd" />
+  <SYMBOL Code="8VI" Name="8vic Holdings Limited" />
+  <SYMBOL Code="A11" Name="Atlantic Lithium Limited" />
+  <SYMBOL Code="A1G" Name="African Gold Limited" />
+  <SYMBOL Code="A1M" Name="Aic Mines Limited" />
+  <SYMBOL Code="A1N" Name="Arn Media Limited" />
+  <SYMBOL Code="A200" Name="A200" />
+  <SYMBOL Code="A2M" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOA" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOB" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOD" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOF" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOP" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOQ" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOS" Name="The A2 Milk Company Limited" />
+  <SYMBOL Code="A2MKOV" Name="A2MKOV" />
+  <SYMBOL Code="A3D" Name="Aurora Labs Limited" />
+  <SYMBOL Code="A4N" Name="Alpha Hpa Limited" />
+  <SYMBOL Code="A8G" Name="Australasian Gold Limited" />
+  <SYMBOL Code="AAA" Name="Betashares Australian High Interest Cash" />
+  <SYMBOL Code="AAC" Name="Australian Agricultural Company Ltd" />
+  <SYMBOL Code="AAI" Name="Alcoa Inc (USA CUFS)" />
+  <SYMBOL Code="AAJ" Name="Aruma Resources Limited" />
+  <SYMBOL Code="AAJO" Name="AAJO" />
+  <SYMBOL Code="AAL" Name="Apac Coal Ltd" />
+  <SYMBOL Code="AAM" Name="A1 Minerals Ltd" />
+  <SYMBOL Code="AAP" Name="Australian Agricultural Projects Limited" />
+  <SYMBOL Code="AAR" Name="Anglo Australian Resources NL" />
+  <SYMBOL Code="AARO" Name="Astral Resources Nl" />
+  <SYMBOL Code="AASF" Name="AASF" />
+  <SYMBOL Code="AAU" Name="Adcorp Australia Ltd" />
+  <SYMBOL Code="AAUO" Name="AAUO" />
+  <SYMBOL Code="AAUOC" Name="AAUOC" />
+  <SYMBOL Code="ABA" Name="Auswide Bank Ltd" />
+  <SYMBOL Code="ABB" Name="Aussie Broadband Ltd" />
+  <SYMBOL Code="ABE" Name="Australian Bond Exchange Holdings Limited" />
+  <SYMBOL Code="ABG" Name="Abigroup" />
+  <SYMBOL Code="ABV" Name="Advanced Braking Technology Ltd" />
+  <SYMBOL Code="ABX" Name="Abelle Ltd" />
+  <SYMBOL Code="ABXO" Name="Abelle" />
+  <SYMBOL Code="ABY" Name="Adore Beauty Group Ltd" />
+  <SYMBOL Code="ACDC" Name="Etfs Battery Tech &amp; Lithium" />
+  <SYMBOL Code="ACE" Name="Advanced Engine Components Ltd" />
+  <SYMBOL Code="ACF" Name="Acumen Capital Property Securities Fund" />
+  <SYMBOL Code="ACL" Name="Alchemia Ltd" />
+  <SYMBOL Code="ACM" Name="Australian Critical Minerals Limited" />
+  <SYMBOL Code="ACMOA" Name="ACMOA" />
+  <SYMBOL Code="ACP" Name="Audalia Resources Limited" />
+  <SYMBOL Code="ACQ" Name="Acorn Capital Investment Fund Limited" />
+  <SYMBOL Code="ACR" Name="Acrux Ltd" />
+  <SYMBOL Code="ACS" Name="Accent Resources NL" />
+  <SYMBOL Code="ACU" Name="Acuvax Limited" />
+  <SYMBOL Code="ACW" Name="Actinogen Ltd" />
+  <SYMBOL Code="ACWOC" Name="ACWOC" />
+  <SYMBOL Code="AD1" Name="Applydirect Limited" />
+  <SYMBOL Code="AD8" Name="Audinate Group Limited" />
+  <SYMBOL Code="ADA" Name="Adacel Technologies Ltd" />
+  <SYMBOL Code="ADC" Name="Acdc Metals Ltd" />
+  <SYMBOL Code="ADCO" Name="ADCO" />
+  <SYMBOL Code="ADD" Name="Adavale Resources Ltd" />
+  <SYMBOL Code="ADDOA" Name="ADDOA" />
+  <SYMBOL Code="ADEF" Name="ADEF" />
+  <SYMBOL Code="ADG" Name="Adtrans Group Ltd" />
+  <SYMBOL Code="ADGO" Name="ADGO" />
+  <SYMBOL Code="ADGOA" Name="ADGOA" />
+  <SYMBOL Code="ADH" Name="Adairs Limited" />
+  <SYMBOL Code="ADN" Name="Adelaide Resources Ltd" />
+  <SYMBOL Code="ADNOC" Name="ADNOC" />
+  <SYMBOL Code="ADO" Name="" />
+  <SYMBOL Code="ADOO" Name="Anteo Diagnostics Limited" />
+  <SYMBOL Code="ADR" Name="Adherium Limited" />
+  <SYMBOL Code="ADS" Name="ADV Group Ltd" />
+  <SYMBOL Code="ADT" Name="Advent Ltd" />
+  <SYMBOL Code="ADV" Name="Australian Development Capital Fund" />
+  <SYMBOL Code="ADX" Name="Audax Resources Ltd" />
+  <SYMBOL Code="ADXO" Name="ADXO" />
+  <SYMBOL Code="ADY" Name="Admiralty Resources NL" />
+  <SYMBOL Code="AEE" Name="Aura Energy Ltd" />
+  <SYMBOL Code="AEEOC" Name="AEEOC" />
+  <SYMBOL Code="AEF" Name="Australian Ethical Investments Ltd" />
+  <SYMBOL Code="AEI" Name="Aeris Technologies Ltd" />
+  <SYMBOL Code="AEL" Name="Antaeus Energy Ltd" />
+  <SYMBOL Code="AER" Name="Aeeris Ltd" />
+  <SYMBOL Code="AESG" Name="AESG" />
+  <SYMBOL Code="AEV" Name="Avenira Limited" />
+  <SYMBOL Code="AEVO" Name="Avenira Limited" />
+  <SYMBOL Code="AFA" Name="ASF Group Ltd" />
+  <SYMBOL Code="AFG" Name="Allco Finance Group Ltd" />
+  <SYMBOL Code="AFI" Name="Australian Foundation Invest Ltd" />
+  <SYMBOL Code="AFL" Name="Australian Pure Fruits Ltd" />
+  <SYMBOL Code="AFP" Name="Aft Pharmaceuticals Limited" />
+  <SYMBOL Code="AGC" Name="Agincourt Resources Ltd" />
+  <SYMBOL Code="AGD" Name="Austral Gold Ltd" />
+  <SYMBOL Code="AGE" Name="Alligator Energy Limited" />
+  <SYMBOL Code="AGEOC" Name="AGEOC" />
+  <SYMBOL Code="AGH" Name="Australian Growth Properties" />
+  <SYMBOL Code="AGI" Name="Ainsworth Game Technology Ltd" />
+  <SYMBOL Code="AGL" Name="AGL Energy Limited" />
+  <SYMBOL Code="AGLKOA" Name="Agl Energy Limited." />
+  <SYMBOL Code="AGLKOB" Name="Agl Energy Limited." />
+  <SYMBOL Code="AGLKOC" Name="Agl Energy Limited." />
+  <SYMBOL Code="AGLKOP" Name="Agl Energy Limited." />
+  <SYMBOL Code="AGN" Name="Argenica Therapeutics Limited" />
+  <SYMBOL Code="AGR" Name="Aguia Resources Limited" />
+  <SYMBOL Code="AGVT" Name="AGVT" />
+  <SYMBOL Code="AGX1" Name="AGX1" />
+  <SYMBOL Code="AGY" Name="Argosy Minerals Inc (CUFS)" />
+  <SYMBOL Code="AHC" Name="AHC Ltd" />
+  <SYMBOL Code="AHF" Name="Australian Dairy Farms Group" />
+  <SYMBOL Code="AHI" Name="Allco Hit Ltd" />
+  <SYMBOL Code="AHK" Name="Ark Mines Limited" />
+  <SYMBOL Code="AHL" Name="Ahalife Holdings Limited" />
+  <SYMBOL Code="AHN" Name="Athena Resources Ltd" />
+  <SYMBOL Code="AHNO" Name="AHNO" />
+  <SYMBOL Code="AHNR" Name="AHNR" />
+  <SYMBOL Code="AHX" Name="Apiam Animal Health Limited" />
+  <SYMBOL Code="AI1" Name="Adisyn Ltd" />
+  <SYMBOL Code="AIA" Name="Auckland International Airport Ltd" />
+  <SYMBOL Code="AII" Name="ABRA Mining Ltd" />
+  <SYMBOL Code="AIM" Name="Aim Resources Ltd" />
+  <SYMBOL Code="AIQ" Name="Alternative Investment Trust" />
+  <SYMBOL Code="AIS" Name="Automotive Industrial &amp; Mining Supplies" />
+  <SYMBOL Code="AIV" Name="Activex Ltd" />
+  <SYMBOL Code="AIZ" Name="Air New Zealand Ltd" />
+  <SYMBOL Code="AJL" Name="AJ Lucas Group Ltd" />
+  <SYMBOL Code="AJX" Name="Alexium International Group Limited" />
+  <SYMBOL Code="AKA" Name="Australia Minerals And Mining Group Ltd" />
+  <SYMBOL Code="AKG" Name="AKG" />
+  <SYMBOL Code="AKM" Name="Aspire Mining Limited" />
+  <SYMBOL Code="AKN" Name="Auking Mining Limited" />
+  <SYMBOL Code="AKO" Name="Akora Resources Limited" />
+  <SYMBOL Code="AKP" Name="Audio Pixels Holdings Limited" />
+  <SYMBOL Code="AL3" Name="Aml3d Limited" />
+  <SYMBOL Code="AL8" Name="Alderan Resources Limited" />
+  <SYMBOL Code="AL8OA" Name="Alderan Resources Limited" />
+  <SYMBOL Code="ALA" Name="Applabs Technologies Ltd" />
+  <SYMBOL Code="ALB" Name="Albidon Ltd" />
+  <SYMBOL Code="ALC" Name="Alcidion Group Limited" />
+  <SYMBOL Code="ALD" Name="Allied Gold Ltd" />
+  <SYMBOL Code="ALDKOA" Name="ALDKOA" />
+  <SYMBOL Code="ALDKOB" Name="ALDKOB" />
+  <SYMBOL Code="ALDKOD" Name="ALDKOD" />
+  <SYMBOL Code="ALDKOP" Name="ALDKOP" />
+  <SYMBOL Code="ALDKOS" Name="ALDKOS" />
+  <SYMBOL Code="ALI" Name="Argo Global Listed Infrastructure Limited" />
+  <SYMBOL Code="ALK" Name="Alkane Exploration Ltd" />
+  <SYMBOL Code="ALL" Name="Aristocrat Leisure Ltd" />
+  <SYMBOL Code="ALLKOA" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOB" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOE" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOG" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOP" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOQ" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOT" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALLKOU" Name="Aristocrat Leisure Limited" />
+  <SYMBOL Code="ALM" Name="Australis Media Ltd broke" />
+  <SYMBOL Code="ALPH" Name="ALPH" />
+  <SYMBOL Code="ALQ" Name="Als Limited" />
+  <SYMBOL Code="ALQKOD" Name="Als Limited" />
+  <SYMBOL Code="ALQKOE" Name="Als Limited" />
+  <SYMBOL Code="ALQKOF" Name="Als Limited" />
+  <SYMBOL Code="ALQKOP" Name="Als Limited" />
+  <SYMBOL Code="ALQKOQ" Name="Als Limited" />
+  <SYMBOL Code="ALQKOR" Name="Als Limited" />
+  <SYMBOL Code="ALQKOS" Name="Als Limited" />
+  <SYMBOL Code="ALR" Name="Aberdeen Leaders Ltd" />
+  <SYMBOL Code="ALROB" Name="ALROB" />
+  <SYMBOL Code="ALTB" Name="ALTB" />
+  <SYMBOL Code="ALV" Name="Alvo Minerals Limited" />
+  <SYMBOL Code="ALX" Name="Allstate Explorations NL" />
+  <SYMBOL Code="ALXKOA" Name="Atlas Arteria" />
+  <SYMBOL Code="ALXKOB" Name="Atlas Arteria" />
+  <SYMBOL Code="ALXKOQ" Name="Atlas Arteria" />
+  <SYMBOL Code="ALXKOR" Name="Atlas Arteria" />
+  <SYMBOL Code="ALXKOS" Name="Atlas Arteria" />
+  <SYMBOL Code="ALY" Name="Alchemy Resources Ltd" />
+  <SYMBOL Code="AM5" Name="Antares Metals Limited" />
+  <SYMBOL Code="AM7" Name="Arcadia Minerals Limited" />
+  <SYMBOL Code="AMA" Name="Allomak Ltd" />
+  <SYMBOL Code="AMC" Name="Amcor Ltd" />
+  <SYMBOL Code="AMCKOC" Name="Amcor Limited" />
+  <SYMBOL Code="AMCKOG" Name="Amcor Plc" />
+  <SYMBOL Code="AMCKOP" Name="Amcor Limited" />
+  <SYMBOL Code="AMCKOS" Name="Amcor Limited" />
+  <SYMBOL Code="AMD" Name="Arrow Minerals Ltd" />
+  <SYMBOL Code="AME" Name="Austmet Resources Ltd" />
+  <SYMBOL Code="AMH" Name="AMCIL Ltd" />
+  <SYMBOL Code="AMI" Name="Aurelia Metals Limited" />
+  <SYMBOL Code="AML" Name="AMRAD Corporation Ltd" />
+  <SYMBOL Code="AMN" Name="Agrimin Limited" />
+  <SYMBOL Code="AMO" Name="Ambertech Ltd" />
+  <SYMBOL Code="AMP" Name="AMP Ltd" />
+  <SYMBOL Code="AMPKOA" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOB" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOC" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOD" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOG" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOR" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOS" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOT" Name="Amp Limited" />
+  <SYMBOL Code="AMPKOV" Name="Amp Limited" />
+  <SYMBOL Code="AMPLOA" Name="Amp Limited" />
+  <SYMBOL Code="AMPPB" Name="Amp Limited" />
+  <SYMBOL Code="AMS" Name="Allied Mining &amp; Processing Nl" />
+  <SYMBOL Code="AMSO" Name="AMSO" />
+  <SYMBOL Code="AMX" Name="Ampella Mining Ltd" />
+  <SYMBOL Code="AN1" Name="Anagenics Limited" />
+  <SYMBOL Code="AN3PH" Name="AN3PH" />
+  <SYMBOL Code="AN3PI" Name="AN3PI" />
+  <SYMBOL Code="AN3PJ" Name="AN3PJ" />
+  <SYMBOL Code="AN3PK" Name="AN3PK" />
+  <SYMBOL Code="AN3PL" Name="AN3PL" />
+  <SYMBOL Code="ANG" Name="Austin Engineering Ltd" />
+  <SYMBOL Code="ANL" Name="Anaconda Nickel Nl" />
+  <SYMBOL Code="ANN" Name="Ansell Ltd" />
+  <SYMBOL Code="ANNKOA" Name="Ansell Limited" />
+  <SYMBOL Code="ANNKOB" Name="Ansell Limited" />
+  <SYMBOL Code="ANNKOP" Name="Ansell Limited" />
+  <SYMBOL Code="ANO" Name="Advanced Nanotechnology Ltd" />
+  <SYMBOL Code="ANR" Name="Anatara Lifesciences Ltd" />
+  <SYMBOL Code="ANX" Name="Anadis Ltd" />
+  <SYMBOL Code="ANZ" Name="Australia &amp; NZ Banking Group Ltd" />
+  <SYMBOL Code="ANZKOA" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOC" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOE" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOH" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOM" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOP" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOR" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOU" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOV" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOW" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOX" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZKOY" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZMOB" Name="Australia And New Zealand Banking Group Limited" />
+  <SYMBOL Code="ANZMOU" Name="ANZMOU" />
+  <SYMBOL Code="AO1" Name="Assetowl Limited" />
+  <SYMBOL Code="AOA" Name="" />
+  <SYMBOL Code="AOF" Name="AMP Office Trust" />
+  <SYMBOL Code="AOK" Name="Austex Oil Ltd" />
+  <SYMBOL Code="AON" Name="Apollo Minerals Ltd" />
+  <SYMBOL Code="AOV" Name="Amotiv Limited" />
+  <SYMBOL Code="AOVKOA" Name="AOVKOA" />
+  <SYMBOL Code="AOVKOC" Name="AOVKOC" />
+  <SYMBOL Code="APA" Name="Australian Pipeline Trust" />
+  <SYMBOL Code="APAKOA" Name="Apa Group" />
+  <SYMBOL Code="APAKOQ" Name="Apa Group" />
+  <SYMBOL Code="APAKOR" Name="Apa Group" />
+  <SYMBOL Code="APC" Name="Australian Potash Limited" />
+  <SYMBOL Code="APCO" Name="APCO" />
+  <SYMBOL Code="APE" Name="AP Eagers Holdings Ltd" />
+  <SYMBOL Code="APL" Name="Australian Plantation Timber Ltd" />
+  <SYMBOL Code="APS" Name="Allup Silica Limited" />
+  <SYMBOL Code="APW" Name="Aims Property Securities Fund" />
+  <SYMBOL Code="APX" Name="Appen Limited" />
+  <SYMBOL Code="APZ" Name="Aspen Group" />
+  <SYMBOL Code="AQC" Name="Australian Pacific Coal Limited" />
+  <SYMBOL Code="AQD" Name="AusQuest Ltd" />
+  <SYMBOL Code="AQI" Name="Alicanto Minerals Limited" />
+  <SYMBOL Code="AQLT" Name="AQLT" />
+  <SYMBOL Code="AQN" Name="Aquirian Limited" />
+  <SYMBOL Code="AQX" Name="Alice Queen Limited" />
+  <SYMBOL Code="AQXOA" Name="AQXOA" />
+  <SYMBOL Code="AQXOC" Name="AQXOC" />
+  <SYMBOL Code="AQZ" Name="Alliance Aviation Services Limited" />
+  <SYMBOL Code="AR1" Name="Arrowhead Resources Limited" />
+  <SYMBOL Code="AR3" Name="Australian Rare Earths Limited" />
+  <SYMBOL Code="AR9" Name="Archtis Limited" />
+  <SYMBOL Code="ARA" Name="Ariadne Australia Ltd" />
+  <SYMBOL Code="ARB" Name="Arb Corporation Limited." />
+  <SYMBOL Code="ARBKOA" Name="Arb Corporation Limited." />
+  <SYMBOL Code="ARBKOB" Name="Arb Corporation Limited." />
+  <SYMBOL Code="ARBKOR" Name="ARBKOR" />
+  <SYMBOL Code="ARC" Name="Amalg Resources Nl" />
+  <SYMBOL Code="ARD" Name="Argent Minerials Lts" />
+  <SYMBOL Code="ARDO" Name="Argent Minerials Lts" />
+  <SYMBOL Code="ARDOC" Name="ARDOC" />
+  <SYMBOL Code="ARF" Name="Arena Reit" />
+  <SYMBOL Code="ARG" Name="Argo Investments Ltd" />
+  <SYMBOL Code="ARI" Name="Arrium Limited" />
+  <SYMBOL Code="ARL" Name="Austrim" />
+  <SYMBOL Code="ARMR" Name="ARMR" />
+  <SYMBOL Code="ARN" Name="Arnotts Ltd t/over Campbell Soup Co" />
+  <SYMBOL Code="ARNO" Name="ARNO" />
+  <SYMBOL Code="ARR" Name="Arasor International Ltd" />
+  <SYMBOL Code="ART" Name="Amp Shopping Centre ord unit" />
+  <SYMBOL Code="ARU" Name="Arafura Resources NL" />
+  <SYMBOL Code="ARUOA" Name="ARUOA" />
+  <SYMBOL Code="ARV" Name="Artemis Resources Ltd" />
+  <SYMBOL Code="ARVOC" Name="ARVOC" />
+  <SYMBOL Code="ARX" Name="Austindo Resources Corporation NL" />
+  <SYMBOL Code="AS1" Name="Angel Seafood Holdings Ltd" />
+  <SYMBOL Code="AS2" Name="Askari Metals Limited" />
+  <SYMBOL Code="ASAO" Name="ASAO" />
+  <SYMBOL Code="ASB" Name="Austal Ltd" />
+  <SYMBOL Code="ASE" Name="Astute Metals Nl" />
+  <SYMBOL Code="ASG" Name="Autosports Group Limited." />
+  <SYMBOL Code="ASH" Name="Ashley Services Group Limited" />
+  <SYMBOL Code="ASIA" Name="Betashares Asia Technology Tigers" />
+  <SYMBOL Code="ASK" Name="Amskan" />
+  <SYMBOL Code="ASL" Name="Ausdrill Ltd" />
+  <SYMBOL Code="ASM" Name="Australian Strategic Materials Limited" />
+  <SYMBOL Code="ASMO" Name="ASMO" />
+  <SYMBOL Code="ASN" Name="Anson Resources Limited" />
+  <SYMBOL Code="ASO" Name="Australian Silicon Ltd" />
+  <SYMBOL Code="ASP" Name="Aspermont Ltd" />
+  <SYMBOL Code="ASQ" Name="Asset Loans Ltd" />
+  <SYMBOL Code="ASR" Name="Australian Rural Group Ltd" />
+  <SYMBOL Code="ASRO" Name="ASRO" />
+  <SYMBOL Code="ASV" Name="Argus Solutions Ltd" />
+  <SYMBOL Code="ASX" Name="Australian Stock Exchange Ltd" />
+  <SYMBOL Code="ASXKOB" Name="Asx Limited" />
+  <SYMBOL Code="ASXKOC" Name="Asx Limited" />
+  <SYMBOL Code="ASXKOD" Name="Asx Limited" />
+  <SYMBOL Code="ASXKOP" Name="Asx Limited" />
+  <SYMBOL Code="ASXKOR" Name="Asx Limited" />
+  <SYMBOL Code="AT1" Name="Atomo Diagnostics Limited" />
+  <SYMBOL Code="ATA" Name="Atc Alloys Ltd" />
+  <SYMBOL Code="ATC" Name="Advantage Telecommunications Ltd" />
+  <SYMBOL Code="ATCOC" Name="ATCOC" />
+  <SYMBOL Code="ATEC" Name="ATEC" />
+  <SYMBOL Code="ATG" Name="Austin Group Ltd" />
+  <SYMBOL Code="ATH" Name="Atech Holdings Ltd" />
+  <SYMBOL Code="ATHO" Name="ATHO" />
+  <SYMBOL Code="ATM" Name="Aneka Tambang (Persero) Tbk (Indo)" />
+  <SYMBOL Code="ATOM" Name="ATOM" />
+  <SYMBOL Code="ATP" Name="Atlas Pacific Ltd" />
+  <SYMBOL Code="ATR" Name="Astron Ltd" />
+  <SYMBOL Code="ATS" Name="Australis Oil &amp; Gas Limited" />
+  <SYMBOL Code="ATU" Name="Atrum Coal Nl" />
+  <SYMBOL Code="ATV" Name="Atlantic Gold NL" />
+  <SYMBOL Code="ATVO" Name="Atlantic Gold NL" />
+  <SYMBOL Code="ATX" Name="Austminex Ltd" />
+  <SYMBOL Code="AU1" Name="Ausnet Financial Services Limited" />
+  <SYMBOL Code="AUA" Name="Australian Assets Corporation" />
+  <SYMBOL Code="AUB" Name="Austbrokers Holdings Ltd" />
+  <SYMBOL Code="AUC" Name="Ausgold Limited" />
+  <SYMBOL Code="AUE" Name="Aurum Resources Limited" />
+  <SYMBOL Code="AUEO" Name="AUEO" />
+  <SYMBOL Code="AUG" Name="Aurora Gold" />
+  <SYMBOL Code="AUH" Name="Australian Healthcare Technology Ltd" />
+  <SYMBOL Code="AUI" Name="Australian United Investment Ltd" />
+  <SYMBOL Code="AUK" Name="Augur Resources Ltd" />
+  <SYMBOL Code="AUKOA" Name="Aumake Limited." />
+  <SYMBOL Code="AUMF" Name="Ishares Edge Msci Australia Multifactor Etf" />
+  <SYMBOL Code="AUN" Name="Austar United Communications Ltd" />
+  <SYMBOL Code="AUQ" Name="Alara Uranium Ltd" />
+  <SYMBOL Code="AUR" Name="Auris Minerals Limited" />
+  <SYMBOL Code="AUST" Name="Betashares Managed Risk Australian Share Fund (man" />
+  <SYMBOL Code="AUZ" Name="Australian Mines Ltd" />
+  <SYMBOL Code="AUZOA" Name="AUZOA" />
+  <SYMBOL Code="AUZOB" Name="AUZOB" />
+  <SYMBOL Code="AV1" Name="Adveritas Limited" />
+  <SYMBOL Code="AVA" Name="Aviva Corporation Ltd" />
+  <SYMBOL Code="AVC" Name="Australian Visual Communications" />
+  <SYMBOL Code="AVD" Name="Advance Energy Ltd" />
+  <SYMBOL Code="AVE" Name="Aevum Ltd" />
+  <SYMBOL Code="AVEOA" Name="AVEOA" />
+  <SYMBOL Code="AVG" Name="Australian Vintage Ltd t/over by SWS" />
+  <SYMBOL Code="AVH" Name="Avita Medical Ltd" />
+  <SYMBOL Code="AVJ" Name="AV Jennings Homes Ltd" />
+  <SYMBOL Code="AVL" Name="Anvil Mining Nl" />
+  <SYMBOL Code="AVM" Name="Anvil Mining Ltd (Canada CUFS)" />
+  <SYMBOL Code="AVMO" Name="AVMO" />
+  <SYMBOL Code="AVR" Name="Avatar Industries Ltd" />
+  <SYMBOL Code="AVW" Name="Avira Energy Limited" />
+  <SYMBOL Code="AVWOA" Name="Avira Resources Ltd" />
+  <SYMBOL Code="AW1" Name="American West Metals Limited" />
+  <SYMBOL Code="AWJ" Name="Auric Mining Limited" />
+  <SYMBOL Code="AX1" Name="Accent Group Limited" />
+  <SYMBOL Code="AX8" Name="Accelerate Resources Limited" />
+  <SYMBOL Code="AXE" Name="Archer Exploration Ltd" />
+  <SYMBOL Code="AXI" Name="Axiom Properties Ltd" />
+  <SYMBOL Code="AXL" Name="Aucxis" />
+  <SYMBOL Code="AXN" Name="Axon Instruments Inc" />
+  <SYMBOL Code="AXP" Name="Airxpanders Inc" />
+  <SYMBOL Code="AYA" Name="Attila Resources Limited" />
+  <SYMBOL Code="AYI" Name="A1 Investments &amp; Resources Ltd" />
+  <SYMBOL Code="AYM" Name="Altius Mining Limited" />
+  <SYMBOL Code="AYT" Name="Adelaide Managed Funds Asset Trust" />
+  <SYMBOL Code="AYUHC" Name="Australian Unity Limited" />
+  <SYMBOL Code="AYUHD" Name="Australian Unity Limited" />
+  <SYMBOL Code="AYUHE" Name="AYUHE" />
+  <SYMBOL Code="AYUPA" Name="AYUPA" />
+  <SYMBOL Code="AZ9" Name="Asian Battery Metals Plc" />
+  <SYMBOL Code="AZ9O" Name="AZ9O" />
+  <SYMBOL Code="AZI" Name="Alta Zinc Limited" />
+  <SYMBOL Code="AZJ" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZJKOC" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZJKOD" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZJKOQ" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZJKOS" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZJKOT" Name="Aurizon Holdings Limited" />
+  <SYMBOL Code="AZL" Name="Anzoil Nl" />
+  <SYMBOL Code="AZLO" Name="AZLO" />
+  <SYMBOL Code="AZY" Name="Antipa Minerals Limited" />
+  <SYMBOL Code="B4P" Name="Beforepay Group Limited" />
+  <SYMBOL Code="BANK" Name="BANK" />
+  <SYMBOL Code="BAOR" Name="BAOR" />
+  <SYMBOL Code="BAP" Name="Burson Group Limited" />
+  <SYMBOL Code="BAPKOA" Name="Bapcor Limited" />
+  <SYMBOL Code="BAPKOB" Name="Bapcor Limited" />
+  <SYMBOL Code="BAPKOR" Name="Bapcor Limited" />
+  <SYMBOL Code="BAS" Name="Bass Strait Oil Company Ltd" />
+  <SYMBOL Code="BB1" Name="Blinklab Limited" />
+  <SYMBOL Code="BBAB" Name="BBAB" />
+  <SYMBOL Code="BBC" Name="Babcock &amp; Brown Communities Group" />
+  <SYMBOL Code="BBL" Name="Brisbane Broncos Ltd" />
+  <SYMBOL Code="BBN" Name="Baby Bunting Group Limited" />
+  <SYMBOL Code="BBOZ" Name="Betashares Australian Equities Strong Bear Hedge F" />
+  <SYMBOL Code="BBT" Name="Bluebet Holdings Ltd" />
+  <SYMBOL Code="BC8" Name="Black Cat Syndicate Limited" />
+  <SYMBOL Code="BC8O" Name="BC8O" />
+  <SYMBOL Code="BCA" Name="Baycorp Advantage Ltd" />
+  <SYMBOL Code="BCB" Name="Bowen Coking Coal Limited" />
+  <SYMBOL Code="BCC" Name="Buccaneer Energy Ltd" />
+  <SYMBOL Code="BCI" Name="BC Iron Ltd" />
+  <SYMBOL Code="BCK" Name="Brockman Mining Limited" />
+  <SYMBOL Code="BCM" Name="Babcock &amp; Brown Capital Ltd" />
+  <SYMBOL Code="BCMO" Name="BCMO" />
+  <SYMBOL Code="BCMOA" Name="BCMOA" />
+  <SYMBOL Code="BCN" Name="Beacon Minerals Ltd" />
+  <SYMBOL Code="BCNOD" Name="BCNOD" />
+  <SYMBOL Code="BCOM" Name="BCOM" />
+  <SYMBOL Code="BCT" Name="Bluechiip Limited" />
+  <SYMBOL Code="BDG" Name="Bendigo Mining Ltd" />
+  <SYMBOL Code="BDM" Name="Biodiem Ltd" />
+  <SYMBOL Code="BDT" Name="Birddog Technology Limited" />
+  <SYMBOL Code="BDX" Name="Bcal Diagnostics Limited" />
+  <SYMBOL Code="BEAR" Name="Betashares Australian Equities Bear Hedge Fund" />
+  <SYMBOL Code="BEL" Name="Bentley International Ltd" />
+  <SYMBOL Code="BEN" Name="Bendigo Bank Ltd" />
+  <SYMBOL Code="BENKOB" Name="Bendigo And Adelaide Bank Limited" />
+  <SYMBOL Code="BENKOC" Name="Bendigo And Adelaide Bank Limited" />
+  <SYMBOL Code="BENKOD" Name="Bendigo And Adelaide Bank Limited" />
+  <SYMBOL Code="BENKOQ" Name="Bendigo And Adelaide Bank Limited" />
+  <SYMBOL Code="BENKOT" Name="Bendigo And Adelaide Bank Limited" />
+  <SYMBOL Code="BENPH" Name="BENPH" />
+  <SYMBOL Code="BENPI" Name="BENPI" />
+  <SYMBOL Code="BEO" Name="Beonic Ltd" />
+  <SYMBOL Code="BET" Name="Belmont Holdings Ltd" />
+  <SYMBOL Code="BEZ" Name="Besra Gold Inc" />
+  <SYMBOL Code="BFC" Name="Beston Global Food Company Limited" />
+  <SYMBOL Code="BFG" Name="Bell Financial Group Ltd" />
+  <SYMBOL Code="BFL" Name="Bsp Financial Group Limited" />
+  <SYMBOL Code="BGA" Name="Bega Cheese Limited" />
+  <SYMBOL Code="BGBL" Name="BGBL" />
+  <SYMBOL Code="BGD" Name="Boulder Steel Ltd" />
+  <SYMBOL Code="BGE" Name="Bridge Saas Limited" />
+  <SYMBOL Code="BGL" Name="Bigair Group Ltd" />
+  <SYMBOL Code="BGLKOB" Name="BGLKOB" />
+  <SYMBOL Code="BGLKOD" Name="BGLKOD" />
+  <SYMBOL Code="BGLKOQ" Name="BGLKOQ" />
+  <SYMBOL Code="BGLKOR" Name="BGLKOR" />
+  <SYMBOL Code="BGP" Name="Briscoe Group Australasia Limited" />
+  <SYMBOL Code="BGT" Name="Bio-gene Technology Ltd" />
+  <SYMBOL Code="BHD" Name="Benjamin Hornigold Limited" />
+  <SYMBOL Code="BHP" Name="BHP Billiton Ltd" />
+  <SYMBOL Code="BHPKOA" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOB" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOC" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOD" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOF" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOG" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOH" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOO" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOP" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOT" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOU" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOW" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPKOY" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHPMOR" Name="Bhp Billiton Limited" />
+  <SYMBOL Code="BHYB" Name="BHYB" />
+  <SYMBOL Code="BILL" Name="Ishares Core Cash" />
+  <SYMBOL Code="BIM" Name="Bindi Metals Limited" />
+  <SYMBOL Code="BIO" Name="Biome Australia Limited" />
+  <SYMBOL Code="BIS" Name="" />
+  <SYMBOL Code="BIT" Name="Biotron Ltd" />
+  <SYMBOL Code="BKI" Name="Brickworks Investment Company Ltd" />
+  <SYMBOL Code="BKT" Name="Black Rock Mining Limited" />
+  <SYMBOL Code="BKW" Name="Brickworks Ltd" />
+  <SYMBOL Code="BKWKOB" Name="Brickworks Limited" />
+  <SYMBOL Code="BKWKOD" Name="BKWKOD" />
+  <SYMBOL Code="BKY" Name="Berkeley Resources Ltd" />
+  <SYMBOL Code="BLG" Name="Blugass Ltd" />
+  <SYMBOL Code="BLGO" Name="Bluglass Limited" />
+  <SYMBOL Code="BLU" Name="Bluefreeway Ltd" />
+  <SYMBOL Code="BLX" Name="Beacon Lighting Group Limited" />
+  <SYMBOL Code="BLZ" Name="Blaze International Ltd" />
+  <SYMBOL Code="BLZO" Name="BLZO" />
+  <SYMBOL Code="BM8" Name="Battery Age Minerals Ltd" />
+  <SYMBOL Code="BMG" Name="Brazilian Metals Group Limited." />
+  <SYMBOL Code="BMH" Name="Baumart Holdings Limited" />
+  <SYMBOL Code="BML" Name="Bank of Melbourne merger WBC" />
+  <SYMBOL Code="BMM" Name="Bellamel Mining Ltd" />
+  <SYMBOL Code="BMN" Name="Bannerman Resources Ltd" />
+  <SYMBOL Code="BMO" Name="BMA Gold Ltd" />
+  <SYMBOL Code="BMOOA" Name="BMOOA" />
+  <SYMBOL Code="BMR" Name="Balmoral Corporation" />
+  <SYMBOL Code="BMT" Name="Berkut Minerals Limited" />
+  <SYMBOL Code="BNL" Name="Balkans Gold Ltd" />
+  <SYMBOL Code="BNR" Name="Bulletin Resources Limited" />
+  <SYMBOL Code="BNROA" Name="BNROA" />
+  <SYMBOL Code="BNZ" Name="Benz Mining Corp." />
+  <SYMBOL Code="BOA" Name="Boadicea Resources Limited" />
+  <SYMBOL Code="BOAO" Name="Boadicea Resources Limited" />
+  <SYMBOL Code="BOC" Name="Bougainville Copper Ltd (PNG)" />
+  <SYMBOL Code="BOD" Name="bioMD Ltd" />
+  <SYMBOL Code="BOE" Name="Boss Energy Ltd" />
+  <SYMBOL Code="BOEKOA" Name="BOEKOA" />
+  <SYMBOL Code="BOEKOD" Name="BOEKOD" />
+  <SYMBOL Code="BOL" Name="Boom Logistics Ltd" />
+  <SYMBOL Code="BOQ" Name="Bank of Queensland Ltd" />
+  <SYMBOL Code="BOQKOA" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOD" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOE" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOF" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOP" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOR" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQKOS" Name="Bank Of Queensland Limited." />
+  <SYMBOL Code="BOQPF" Name="BOQPF" />
+  <SYMBOL Code="BOQPG" Name="BOQPG" />
+  <SYMBOL Code="BOT" Name="Botanix Pharmaceuticals Ltd" />
+  <SYMBOL Code="BP8" Name="Bph Global Ltd" />
+  <SYMBOL Code="BP8O" Name="BP8O" />
+  <SYMBOL Code="BPH" Name="BioPharmica Ltd" />
+  <SYMBOL Code="BPHO" Name="BPHO" />
+  <SYMBOL Code="BPM" Name="Bpm Minerals Limited" />
+  <SYMBOL Code="BPMO" Name="BPMO" />
+  <SYMBOL Code="BPMOB" Name="BPMOB" />
+  <SYMBOL Code="BPP" Name="Babylon Pump &amp; Power Limited" />
+  <SYMBOL Code="BPT" Name="Beach Petroleum Ltd" />
+  <SYMBOL Code="BPTKOA" Name="Beach Energy Limited" />
+  <SYMBOL Code="BPTKOD" Name="Beach Energy Limited" />
+  <SYMBOL Code="BPTKOP" Name="Beach Energy Limited" />
+  <SYMBOL Code="BPTKOR" Name="Beach Energy Limited" />
+  <SYMBOL Code="BRE" Name="Breathe Group" />
+  <SYMBOL Code="BRG" Name="Breville Group Ltd" />
+  <SYMBOL Code="BRGKOB" Name="Breville Group Limited" />
+  <SYMBOL Code="BRI" Name="Breakwater Island Trust" />
+  <SYMBOL Code="BRK" Name="BreakFree Ltd" />
+  <SYMBOL Code="BRL" Name="Brl Hardy" />
+  <SYMBOL Code="BRN" Name="Brainchip Holdings Ltd" />
+  <SYMBOL Code="BRU" Name="Buru Energy Ltd" />
+  <SYMBOL Code="BRX" Name="Belararox Limited" />
+  <SYMBOL Code="BRXOA" Name="BRXOA" />
+  <SYMBOL Code="BSA" Name="Broadcast Services Australia Ltd" />
+  <SYMBOL Code="BSAO" Name="Bsa Limited" />
+  <SYMBOL Code="BSL" Name="BlueScope Steel Ltd" />
+  <SYMBOL Code="BSLKOB" Name="Bluescope Steel Limited" />
+  <SYMBOL Code="BSLKOC" Name="Bluescope Steel Limited" />
+  <SYMBOL Code="BSLKOP" Name="Bluescope Steel Limited" />
+  <SYMBOL Code="BSLKOT" Name="Bluescope Steel Limited" />
+  <SYMBOL Code="BSLKOU" Name="Bluescope Steel Limited" />
+  <SYMBOL Code="BSN" Name="Bisan Ltd" />
+  <SYMBOL Code="BSUB" Name="BSUB" />
+  <SYMBOL Code="BSX" Name="Blackstone Minerals Limited" />
+  <SYMBOL Code="BTC" Name="BioTech Capital Ltd" />
+  <SYMBOL Code="BTE" Name="BT Australian Equity Management" />
+  <SYMBOL Code="BTH" Name="Bigtincan Holdings Limited" />
+  <SYMBOL Code="BTI" Name="Bailador Technology Investments Limited" />
+  <SYMBOL Code="BTM" Name="Breakthrough Minerals Limited" />
+  <SYMBOL Code="BTN" Name="Brighton Mining Group Limited" />
+  <SYMBOL Code="BTR" Name="Blackthorn Resources Ltd" />
+  <SYMBOL Code="BUB" Name="Bubs Australia Limited" />
+  <SYMBOL Code="BUGG" Name="BUGG" />
+  <SYMBOL Code="BUR" Name="Burleson Energy Ltd" />
+  <SYMBOL Code="BUS" Name="Bubalus Resources Limited" />
+  <SYMBOL Code="BUX" Name="Buxton Resources Ltd" />
+  <SYMBOL Code="BUXO" Name="Buxton Resources Limited" />
+  <SYMBOL Code="BUY" Name="Bounty Oil &amp; Gas NL" />
+  <SYMBOL Code="BVR" Name="Bellavista Resources Ltd" />
+  <SYMBOL Code="BVS" Name="Bravura Solutions Limited." />
+  <SYMBOL Code="BWF" Name="Blackwall Property Funds Limited" />
+  <SYMBOL Code="BWN" Name="Bowen Energy Ltd" />
+  <SYMBOL Code="BWP" Name="Bunnings Warehouse Property Trust" />
+  <SYMBOL Code="BXB" Name="Brambles Ltd" />
+  <SYMBOL Code="BXBKOA" Name="Brambles Limited" />
+  <SYMBOL Code="BXBKOB" Name="Brambles Limited" />
+  <SYMBOL Code="BXBKOD" Name="Brambles Limited" />
+  <SYMBOL Code="BXN" Name="Bioxyne Limited" />
+  <SYMBOL Code="BYH" Name="Bryah Resources Limited" />
+  <SYMBOL Code="BYHO" Name="Bryah Resources Limited" />
+  <SYMBOL Code="C1X" Name="Cosmos Exploration Limited" />
+  <SYMBOL Code="C29" Name="C29 Metals Limited" />
+  <SYMBOL Code="C2FHA" Name="C2FHA" />
+  <SYMBOL Code="C79" Name="Chrysos Corporation Limited" />
+  <SYMBOL Code="C7A" Name="Clara Resources Australia Ltd" />
+  <SYMBOL Code="CAA" Name="Capral Aluminium Ltd" />
+  <SYMBOL Code="CAE" Name="Cannindah Resources Limited" />
+  <SYMBOL Code="CAF" Name="Centrepoint Alliance Ltd" />
+  <SYMBOL Code="CAG" Name="Cape Range Wireless Ltd" />
+  <SYMBOL Code="CAI" Name="Casinos Austria International" />
+  <SYMBOL Code="CAIO" Name="Calidus Resources Limited" />
+  <SYMBOL Code="CAJ" Name="Capitol Health Ltd" />
+  <SYMBOL Code="CAM" Name="Clime Capital Ltd" />
+  <SYMBOL Code="CAMG" Name="Clime Capital Limited" />
+  <SYMBOL Code="CAN" Name="Cann Group Limited" />
+  <SYMBOL Code="CAQ" Name="Cell Aquaculture Ltd" />
+  <SYMBOL Code="CAR" Name="Carsales.com Limited." />
+  <SYMBOL Code="CARKOA" Name="Carsales.com Limited." />
+  <SYMBOL Code="CARKOB" Name="Carsales.com Limited." />
+  <SYMBOL Code="CARKOF" Name="Carsales.com Limited." />
+  <SYMBOL Code="CAT" Name="Catuity Inc (USA)" />
+  <SYMBOL Code="CAV" Name="Carnavale Resources Ltd" />
+  <SYMBOL Code="CAY" Name="Canyon Resources Ltd" />
+  <SYMBOL Code="CAZ" Name="Cazaly Resources Ltd" />
+  <SYMBOL Code="CBA" Name="Commonwealth Bank Ltd" />
+  <SYMBOL Code="CBAKOB" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOC" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOD" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOG" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOH" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOI" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOP" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOU" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAKOV" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAMOA" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAMOB" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAMOQ" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAPG" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAPI" Name="Commonwealth Bank Of Australia." />
+  <SYMBOL Code="CBAPJ" Name="CBAPJ" />
+  <SYMBOL Code="CBAPK" Name="CBAPK" />
+  <SYMBOL Code="CBAPL" Name="CBAPL" />
+  <SYMBOL Code="CBAPM" Name="CBAPM" />
+  <SYMBOL Code="CBE" Name="Cobre Limited" />
+  <SYMBOL Code="CBH" Name="CBH Resources Ltd" />
+  <SYMBOL Code="CBHO" Name="CBHO" />
+  <SYMBOL Code="CBHOA" Name="CBHOA" />
+  <SYMBOL Code="CBL" Name="Cbl Corporation Limited" />
+  <SYMBOL Code="CBO" Name="Cobra Resources Nl" />
+  <SYMBOL Code="CBY" Name="Canterbury Resources Limited" />
+  <SYMBOL Code="CC5" Name="Clever Culture Systems Limited" />
+  <SYMBOL Code="CC5OA" Name="CC5OA" />
+  <SYMBOL Code="CC9" Name="Chariot Corporation Ltd" />
+  <SYMBOL Code="CCA" Name="Chimpchange Limited" />
+  <SYMBOL Code="CCE" Name="Clinical Cell Culture Ltd" />
+  <SYMBOL Code="CCG" Name="Commschoice Group Limited" />
+  <SYMBOL Code="CCL" Name="Coca-Cola Amatil Ltd" />
+  <SYMBOL Code="CCM" Name="Cadoux Limited" />
+  <SYMBOL Code="CCO" Name="CircleCom Ltd" />
+  <SYMBOL Code="CCOOA" Name="CCOOA" />
+  <SYMBOL Code="CCP" Name="Credit Corp Group Ltd" />
+  <SYMBOL Code="CCPKOA" Name="Credit Corp Group Limited" />
+  <SYMBOL Code="CCPKOB" Name="Credit Corp Group Limited" />
+  <SYMBOL Code="CCPKOC" Name="Credit Corp Group Limited" />
+  <SYMBOL Code="CCPKOD" Name="Credit Corp Group Limited" />
+  <SYMBOL Code="CCR" Name="Credit Clear Limited" />
+  <SYMBOL Code="CCV" Name="Cash Converters International Ltd" />
+  <SYMBOL Code="CCX" Name="City Chic Collective Limited" />
+  <SYMBOL Code="CCZ" Name="Castillo Copper Limited" />
+  <SYMBOL Code="CD1" Name="Cordish Dixon Private Equity Fund I" />
+  <SYMBOL Code="CD2" Name="Cordish Dixon Private Equity Fund Ii" />
+  <SYMBOL Code="CD3" Name="Cordish Dixon Private Equity Fund Iii" />
+  <SYMBOL Code="CDA" Name="Codan Ltd" />
+  <SYMBOL Code="CDD" Name="Cardno Ltd" />
+  <SYMBOL Code="CDE" Name="Codeifai Limited" />
+  <SYMBOL Code="CDM" Name="Cadence Capital Ltd" />
+  <SYMBOL Code="CDO" Name="Colorado Group Ltd" />
+  <SYMBOL Code="CDP" Name="Carindale Property Trust" />
+  <SYMBOL Code="CDR" Name="Commander Communications Ltd" />
+  <SYMBOL Code="CDT" Name="Castle Minerals Ltd" />
+  <SYMBOL Code="CDTOA" Name="CDTOA" />
+  <SYMBOL Code="CDTOB" Name="CDTOB" />
+  <SYMBOL Code="CDX" Name="CDS Technologies Ltd" />
+  <SYMBOL Code="CDXOA" Name="CDXOA" />
+  <SYMBOL Code="CE1" Name="Calima Energy Limited" />
+  <SYMBOL Code="CEH" Name="China Education Ltd" />
+  <SYMBOL Code="CEL" Name="CEL" />
+  <SYMBOL Code="CEN" Name="Central Australian Phosphate Limited" />
+  <SYMBOL Code="CETF" Name="Vaneck Vectors Chinaamc A-share?" />
+  <SYMBOL Code="CF1" Name="Complii Fintech Solutions Ltd" />
+  <SYMBOL Code="CFLO" Name="CFLO" />
+  <SYMBOL Code="CG1" Name="Carbonxt Group Limited" />
+  <SYMBOL Code="CGF" Name="Challenger Financial Services Group" />
+  <SYMBOL Code="CGFKOB" Name="Challenger Limited" />
+  <SYMBOL Code="CGFKOC" Name="Challenger Limited" />
+  <SYMBOL Code="CGFKOD" Name="Challenger Limited" />
+  <SYMBOL Code="CGFKOP" Name="Challenger Limited" />
+  <SYMBOL Code="CGFKOR" Name="Challenger Limited" />
+  <SYMBOL Code="CGFKOS" Name="Challenger Limited" />
+  <SYMBOL Code="CGFPC" Name="CGFPC" />
+  <SYMBOL Code="CGFPD" Name="CGFPD" />
+  <SYMBOL Code="CGO" Name="CPT Global Ltd" />
+  <SYMBOL Code="CGR" Name="Careers Multilist Limited" />
+  <SYMBOL Code="CGS" Name="Cogstate Ltd" />
+  <SYMBOL Code="CGUN" Name="CGUN" />
+  <SYMBOL Code="CHC" Name="Charter Hall Group" />
+  <SYMBOL Code="CHCKOA" Name="Charter Hall Group" />
+  <SYMBOL Code="CHCKOC" Name="Charter Hall Group" />
+  <SYMBOL Code="CHCKOD" Name="Charter Hall Group" />
+  <SYMBOL Code="CHCKOQ" Name="Charter Hall Group" />
+  <SYMBOL Code="CHCKOS" Name="CHCKOS" />
+  <SYMBOL Code="CHCKOT" Name="Charter Hall Group" />
+  <SYMBOL Code="CHL" Name="CCI Holdings Ltd" />
+  <SYMBOL Code="CHM" Name="Chameleon Mining NL" />
+  <SYMBOL Code="CHN" Name="Chalice Gold Mines Ltd" />
+  <SYMBOL Code="CHNKOA" Name="CHNKOA" />
+  <SYMBOL Code="CHNKOP" Name="CHNKOP" />
+  <SYMBOL Code="CHR" Name="Chalmers Ltd" />
+  <SYMBOL Code="CHRCA" Name="CHRCA" />
+  <SYMBOL Code="CHW" Name="Chilwa Minerals Ltd" />
+  <SYMBOL Code="CI1" Name="Credit Intelligence Ltd" />
+  <SYMBOL Code="CIA" Name="Champion Iron Limited" />
+  <SYMBOL Code="CIAKOB" Name="CIAKOB" />
+  <SYMBOL Code="CIAKOC" Name="CIAKOC" />
+  <SYMBOL Code="CIAKOP" Name="CIAKOP" />
+  <SYMBOL Code="CIAKOQ" Name="CIAKOQ" />
+  <SYMBOL Code="CIAKOR" Name="CIAKOR" />
+  <SYMBOL Code="CIN" Name="Carlton Investments Ltd" />
+  <SYMBOL Code="CINPA" Name="Carlton Investments PA" />
+  <SYMBOL Code="CIP" Name="Centuria Industrial Reit" />
+  <SYMBOL Code="CIW" Name="Clime Investment Management Ltd" />
+  <SYMBOL Code="CKA" Name="Cokal Limited" />
+  <SYMBOL Code="CKF" Name="Collins Foods Limited" />
+  <SYMBOL Code="CKFKOA" Name="Collins Foods Limited" />
+  <SYMBOL Code="CKFKOB" Name="CKFKOB" />
+  <SYMBOL Code="CL8" Name="Collaborate Corporation Limited" />
+  <SYMBOL Code="CLA" Name="Celsius Coal Limited" />
+  <SYMBOL Code="CLE" Name="Clearwater Group Ltd" />
+  <SYMBOL Code="CLG" Name="Close The Loop Ltd." />
+  <SYMBOL Code="CLU" Name="Cloncurry Metals Ltd" />
+  <SYMBOL Code="CLV" Name="Clover Corporation Ltd" />
+  <SYMBOL Code="CLW" Name="Charter Hall Long Wale Reit" />
+  <SYMBOL Code="CLX" Name="CTI Logistics Ltd" />
+  <SYMBOL Code="CLZ" Name="Classic Minerals Ltd" />
+  <SYMBOL Code="CMB" Name="Cambium Bio Limited" />
+  <SYMBOL Code="CMD" Name="Cassius Mining Limited" />
+  <SYMBOL Code="CMG" Name="Commonwealth Installment Receipts Trst" />
+  <SYMBOL Code="CML" Name="Coles Myer Ltd" />
+  <SYMBOL Code="CMM" Name="Capricorn Metals Ltd" />
+  <SYMBOL Code="CMMKOA" Name="Capricorn Metals Ltd" />
+  <SYMBOL Code="CMMKOD" Name="CMMKOD" />
+  <SYMBOL Code="CMO" Name="CommodiTel Ltd" />
+  <SYMBOL Code="CMOO" Name="CMOO" />
+  <SYMBOL Code="CMP" Name="Compumedics Ltd" />
+  <SYMBOL Code="CMW" Name="Cromwell Corporation Ltd" />
+  <SYMBOL Code="CMX" Name="Climax Mining Ltd" />
+  <SYMBOL Code="CMXO" Name="Chemx Materials Limited" />
+  <SYMBOL Code="CNB" Name="Canberra Investment Corporation Ltd" />
+  <SYMBOL Code="CND" Name="Candle Australia Ltd" />
+  <SYMBOL Code="CNDOA" Name="CNDOA" />
+  <SYMBOL Code="CNI" Name="Centuria Capital Limited" />
+  <SYMBOL Code="CNJ" Name="Conico Ltd" />
+  <SYMBOL Code="CNJO" Name="Conico Ltd" />
+  <SYMBOL Code="CNQ" Name="Carbine Tungsten Limited" />
+  <SYMBOL Code="CNQO" Name="CNQO" />
+  <SYMBOL Code="CNU" Name="Chorus Limited" />
+  <SYMBOL Code="COB" Name="Cobalt Blue Holdings Limited" />
+  <SYMBOL Code="COD" Name="Cossack Energy Limited" />
+  <SYMBOL Code="CODO" Name="Cossack Energy Limited" />
+  <SYMBOL Code="COF" Name="Coffey International Ltd" />
+  <SYMBOL Code="COG" Name="Consolidated Operations Group Limited" />
+  <SYMBOL Code="COH" Name="Cochlear Ltd" />
+  <SYMBOL Code="COHKOA" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOB" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOC" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOG" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOQ" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOR" Name="Cochlear Limited" />
+  <SYMBOL Code="COHKOS" Name="Cochlear Limited" />
+  <SYMBOL Code="COI" Name="Comet Ridge Ltd" />
+  <SYMBOL Code="COL" Name="Coles Group Limited." />
+  <SYMBOL Code="COLKOA" Name="Coles Group Limited." />
+  <SYMBOL Code="COLKOB" Name="Coles Group Limited." />
+  <SYMBOL Code="COLKOC" Name="Coles Group Limited." />
+  <SYMBOL Code="COLKOD" Name="Coles Group Limited." />
+  <SYMBOL Code="COLKOE" Name="COLKOE" />
+  <SYMBOL Code="COLKOF" Name="COLKOF" />
+  <SYMBOL Code="COS" Name="Cool or Cosy Ltd" />
+  <SYMBOL Code="COV" Name="Cove Mining NL" />
+  <SYMBOL Code="COY" Name="Coppermoly Ltd" />
+  <SYMBOL Code="CPM" Name="Cooper Metals Limited" />
+  <SYMBOL Code="CPMO" Name="CPMO" />
+  <SYMBOL Code="CPN" Name="Carpathian Resources Ltd" />
+  <SYMBOL Code="CPO" Name="Culpeo Minerals Limited" />
+  <SYMBOL Code="CPOO" Name="CPOO" />
+  <SYMBOL Code="CPU" Name="Computershare Ltd" />
+  <SYMBOL Code="CPUKOB" Name="Computershare Limited." />
+  <SYMBOL Code="CPUKOC" Name="Computershare Limited." />
+  <SYMBOL Code="CPUKOE" Name="Computershare Limited." />
+  <SYMBOL Code="CPUKOP" Name="Computershare Limited." />
+  <SYMBOL Code="CPUKOR" Name="Computershare Limited." />
+  <SYMBOL Code="CPUKOT" Name="Computershare Limited." />
+  <SYMBOL Code="CPV" Name="Clearvue Technologies Limited" />
+  <SYMBOL Code="CQE" Name="Charter Hall Education Trust" />
+  <SYMBOL Code="CQEKOA" Name="CQEKOA" />
+  <SYMBOL Code="CQEKOC" Name="CQEKOC" />
+  <SYMBOL Code="CQEKOD" Name="CQEKOD" />
+  <SYMBOL Code="CQR" Name="Charter Hall Retail Reit" />
+  <SYMBOL Code="CR1" Name="Constellation Resources Limited" />
+  <SYMBOL Code="CR3" Name="Core Energy Minerals Ltd" />
+  <SYMBOL Code="CR9" Name="Corella Resources Ltd" />
+  <SYMBOL Code="CR9O" Name="CR9O" />
+  <SYMBOL Code="CRB" Name="Carbine Resources Ltd" />
+  <SYMBOL Code="CRD" Name="Crown Diamonds NL" />
+  <SYMBOL Code="CRI" Name="Critica Limited" />
+  <SYMBOL Code="CRIO" Name="CRIO" />
+  <SYMBOL Code="CRN" Name="Coronado Global Resources Inc." />
+  <SYMBOL Code="CRR" Name="Convenience Retail Reit" />
+  <SYMBOL Code="CRS" Name="Croesus Mining NL" />
+  <SYMBOL Code="CRYP" Name="CRYP" />
+  <SYMBOL Code="CSC" Name="Capstone Copper Corp." />
+  <SYMBOL Code="CSE" Name="Copper Strike Ltd" />
+  <SYMBOL Code="CSL" Name="CSL Ltd" />
+  <SYMBOL Code="CSLKOC" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOG" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOH" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOI" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOQ" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOR" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOS" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOT" Name="Csl Limited" />
+  <SYMBOL Code="CSLKOV" Name="Csl Limited" />
+  <SYMBOL Code="CSLMOT" Name="Csl Limited" />
+  <SYMBOL Code="CSS" Name="Clean Seas Tuna Ltd" />
+  <SYMBOL Code="CST" Name="Cellestis Ltd" />
+  <SYMBOL Code="CSX" Name="Cleanspace Holdings Limited" />
+  <SYMBOL Code="CT1" Name="Ccp Technologies Limited" />
+  <SYMBOL Code="CTD" Name="Corporate Travel Management Limited" />
+  <SYMBOL Code="CTDKOC" Name="Corporate Travel Management Limited" />
+  <SYMBOL Code="CTDKOD" Name="Corporate Travel Management Limited" />
+  <SYMBOL Code="CTDKOQ" Name="Corporate Travel Management Limited" />
+  <SYMBOL Code="CTE" Name="Cryosite Ltd" />
+  <SYMBOL Code="CTM" Name="Centaurus Metals Limited" />
+  <SYMBOL Code="CTN" Name="Contango Microcap Ltd" />
+  <SYMBOL Code="CTO" Name="Citigold Corporation Ltd" />
+  <SYMBOL Code="CTP" Name="Central Petroleum Ltd" />
+  <SYMBOL Code="CTQ" Name="Careteq Limited" />
+  <SYMBOL Code="CTT" Name="Crest Minerals Limited" />
+  <SYMBOL Code="CU6" Name="Clarity Pharmaceuticals Ltd" />
+  <SYMBOL Code="CUE" Name="Cue Energy Resources Ltd" />
+  <SYMBOL Code="CUF" Name="Cufe Ltd" />
+  <SYMBOL Code="CUFO" Name="CUFO" />
+  <SYMBOL Code="CUL" Name="Cullen Resources Ltd" />
+  <SYMBOL Code="CUP" Name="Countplus Limited" />
+  <SYMBOL Code="CUS" Name="Customers Ltd" />
+  <SYMBOL Code="CUV" Name="Clinuvel Pharmaceuticals Ltd" />
+  <SYMBOL Code="CVB" Name="Cheviot Bridge Ltd" />
+  <SYMBOL Code="CVC" Name="CVC Ltd" />
+  <SYMBOL Code="CVCHA" Name="CVCHA" />
+  <SYMBOL Code="CVL" Name="Clearview Capital" />
+  <SYMBOL Code="CVN" Name="Carnarvon Petroleum Ltd" />
+  <SYMBOL Code="CVR" Name="Central Asia Resources Ltd" />
+  <SYMBOL Code="CVV" Name="Caravel Minerals Limited" />
+  <SYMBOL Code="CVVOB" Name="CVVOB" />
+  <SYMBOL Code="CVW" Name="Clearview Wealth Limited" />
+  <SYMBOL Code="CWP" Name="Cedar Woods Properties Ltd" />
+  <SYMBOL Code="CWX" Name="Carawine Resources Limited" />
+  <SYMBOL Code="CWY" Name="Cleanaway Waste Management Limited" />
+  <SYMBOL Code="CWYKOC" Name="Cleanaway Waste Management Limited" />
+  <SYMBOL Code="CWYKOF" Name="Cleanaway Waste Management Limited" />
+  <SYMBOL Code="CWYKOP" Name="Cleanaway Waste Management Limited" />
+  <SYMBOL Code="CWYKOQ" Name="Cleanaway Waste Management Limited" />
+  <SYMBOL Code="CXL" Name="Central Exchange Ltd" />
+  <SYMBOL Code="CXM" Name="Centrex Mentals Ltd" />
+  <SYMBOL Code="CXO" Name="Core Exploration Limited" />
+  <SYMBOL Code="CXU" Name="" />
+  <SYMBOL Code="CXUO" Name="Cauldron Energy Limited" />
+  <SYMBOL Code="CXZ" Name="Connexion Media Limited" />
+  <SYMBOL Code="CY5" Name="Cygnus Gold Limited" />
+  <SYMBOL Code="CYB" Name="Cybg Plc" />
+  <SYMBOL Code="CYC" Name="Cyclopharm Ltd" />
+  <SYMBOL Code="CYG" Name="Coventry Group Ltd" />
+  <SYMBOL Code="CYL" Name="Catalyst Metals Ltd" />
+  <SYMBOL Code="CYM" Name="Cyprium Metals Limited" />
+  <SYMBOL Code="CYP" Name="Cynata Therapeutics Limited" />
+  <SYMBOL Code="CYPOA" Name="CYPOA" />
+  <SYMBOL Code="CYQ" Name="Cycliq Group Ltd" />
+  <SYMBOL Code="CZN" Name="Corazon Mining Limited" />
+  <SYMBOL Code="CZR" Name="Coziron Resources Ltd" />
+  <SYMBOL Code="D2O" Name="Duxton Water Limited" />
+  <SYMBOL Code="D2OOA" Name="D2OOA" />
+  <SYMBOL Code="D3E" Name="D3 Energy Limited" />
+  <SYMBOL Code="DAF" Name="Discovery Africa Limited" />
+  <SYMBOL Code="DAL" Name="Dalaroo Metals Ltd" />
+  <SYMBOL Code="DAOR" Name="DAOR" />
+  <SYMBOL Code="DAVA" Name="DAVA" />
+  <SYMBOL Code="DBBF" Name="DBBF" />
+  <SYMBOL Code="DBF" Name="Duxton Broadacre Farms Limited" />
+  <SYMBOL Code="DBI" Name="Dalrymple Bay Infrastructure Limited" />
+  <SYMBOL Code="DBO" Name="Diablo Resources Limited" />
+  <SYMBOL Code="DCC" Name="Digital Cc Limited" />
+  <SYMBOL Code="DCL" Name="Data &amp; Commerce" />
+  <SYMBOL Code="DCOR" Name="DCOR" />
+  <SYMBOL Code="DDB" Name="Dynamic Drill And Blast Holdings Limited" />
+  <SYMBOL Code="DDR" Name="Dicker Data Limited" />
+  <SYMBOL Code="DDT" Name="DataDot Technology Ltd" />
+  <SYMBOL Code="DEG" Name="De Grey Mining Ltd" />
+  <SYMBOL Code="DEGKOA" Name="DEGKOA" />
+  <SYMBOL Code="DEGKOB" Name="DEGKOB" />
+  <SYMBOL Code="DEL" Name="Delorean Corporation Limited" />
+  <SYMBOL Code="DEM" Name="De.mem Limited" />
+  <SYMBOL Code="DES" Name="Destra Corporation Ltd" />
+  <SYMBOL Code="DESO" Name="DESO" />
+  <SYMBOL Code="DEV" Name="Devex Resources Limited" />
+  <SYMBOL Code="DFGH" Name="DFGH" />
+  <SYMBOL Code="DGGF" Name="DGGF" />
+  <SYMBOL Code="DGH" Name="Desane Group Holdings Ltd" />
+  <SYMBOL Code="DGL" Name="Dgl Group Limited" />
+  <SYMBOL Code="DGR" Name="D'Aguilar Gold Ltd" />
+  <SYMBOL Code="DGSM" Name="DGSM" />
+  <SYMBOL Code="DGT" Name="Digico Infrastructure Reit" />
+  <SYMBOL Code="DGVA" Name="DGVA" />
+  <SYMBOL Code="DHG" Name="Domain Holdings Australia Limited." />
+  <SYMBOL Code="DHHF" Name="DHHF" />
+  <SYMBOL Code="DHOF" Name="DHOF" />
+  <SYMBOL Code="DJW" Name="Djerriwarth Investments Ltd" />
+  <SYMBOL Code="DJXKOC" Name="DJXKOC" />
+  <SYMBOL Code="DJXKOE" Name="DJXKOE" />
+  <SYMBOL Code="DJXKOJ" Name="DJXKOJ" />
+  <SYMBOL Code="DJXKOK" Name="DJXKOK" />
+  <SYMBOL Code="DJXKOM" Name="DJXKOM" />
+  <SYMBOL Code="DJXKOP" Name="Djia Mini E-cbot" />
+  <SYMBOL Code="DJXKOQ" Name="Djia Mini E-cbot" />
+  <SYMBOL Code="DJXKOR" Name="Djia Mini E-cbot" />
+  <SYMBOL Code="DJXKOY" Name="DJXKOY" />
+  <SYMBOL Code="DKM" Name="Duketon Mining Limited" />
+  <SYMBOL Code="DLI" Name="Delta Lithium Limited" />
+  <SYMBOL Code="DLM" Name="Dominion Minerals Limited" />
+  <SYMBOL Code="DM1" Name="Directmoney Limited" />
+  <SYMBOL Code="DM1O" Name="DM1O" />
+  <SYMBOL Code="DME" Name="Dome Gold Mines Limited" />
+  <SYMBOL Code="DMG" Name="Dragon Gold Mountain Ltd" />
+  <SYMBOL Code="DMM" Name="DMC Mining Ltd" />
+  <SYMBOL Code="DMMO" Name="DMC Mining Ltd" />
+  <SYMBOL Code="DMP" Name="Domino's Pizza Australia NZ Ltd" />
+  <SYMBOL Code="DMPKOA" Name="Dominos Pizza Enterprises Limited" />
+  <SYMBOL Code="DMPKOC" Name="Dominos Pizza Enterprises Limited" />
+  <SYMBOL Code="DMPKOD" Name="Dominos Pizza Enterprises Limited" />
+  <SYMBOL Code="DMPKOP" Name="Dominos Pizza Enterprises Limited" />
+  <SYMBOL Code="DMPKOS" Name="Dominos Pizza Enterprises Limited" />
+  <SYMBOL Code="DMPKOZ" Name="DMPKOZ" />
+  <SYMBOL Code="DNA" Name="Donaco International Limited" />
+  <SYMBOL Code="DNK" Name="Danakali Limited" />
+  <SYMBOL Code="DOC" Name="Doctor Care Anywhere Group Plc" />
+  <SYMBOL Code="DOU" Name="Douugh Limited" />
+  <SYMBOL Code="DOW" Name="Downer EDI Ltd" />
+  <SYMBOL Code="DOWKOC" Name="Downer Edi Limited" />
+  <SYMBOL Code="DOWKOF" Name="Downer Edi Limited" />
+  <SYMBOL Code="DOWKOP" Name="Downer Edi Limited" />
+  <SYMBOL Code="DOWKOR" Name="Downer Edi Limited" />
+  <SYMBOL Code="DOWKOS" Name="Downer Edi Limited" />
+  <SYMBOL Code="DOWKOT" Name="Downer Edi Limited" />
+  <SYMBOL Code="DRA" Name="Dragon Mining NL" />
+  <SYMBOL Code="DRE" Name="Dalrymple Resources Nl" />
+  <SYMBOL Code="DRO" Name="Droneshield Limited" />
+  <SYMBOL Code="DRR" Name="Deterra Royalties Limited" />
+  <SYMBOL Code="DRRKOA" Name="DRRKOA" />
+  <SYMBOL Code="DRRKOC" Name="DRRKOC" />
+  <SYMBOL Code="DRRKOD" Name="DRRKOD" />
+  <SYMBOL Code="DRUG" Name="Betashares Global Healthcare Etf - Currency Hedged" />
+  <SYMBOL Code="DRX" Name="Diatreme Resources Ltd" />
+  <SYMBOL Code="DSE" Name="Dropsuite Limited" />
+  <SYMBOL Code="DSK" Name="Dusk Group Limited" />
+  <SYMBOL Code="DTEC" Name="DTEC" />
+  <SYMBOL Code="DTI" Name="Dti Group Ltd" />
+  <SYMBOL Code="DTL" Name="Data#3 Ltd" />
+  <SYMBOL Code="DTM" Name="Dart Mining NL" />
+  <SYMBOL Code="DTR" Name="Dateline Resources Limited" />
+  <SYMBOL Code="DTRO" Name="DTRO" />
+  <SYMBOL Code="DTZ" Name="Dotz Nano Limited" />
+  <SYMBOL Code="DUB" Name="Dubber Corporation Limited" />
+  <SYMBOL Code="DUG" Name="Dug Technology Ltd" />
+  <SYMBOL Code="DUI" Name="Diversified United Investment Ltd" />
+  <SYMBOL Code="DUN" Name="Dundas Minerals Limited" />
+  <SYMBOL Code="DUR" Name="Duratec Limited" />
+  <SYMBOL Code="DVL" Name="Dorsavi Ltd" />
+  <SYMBOL Code="DVP" Name="Develop Global Limited" />
+  <SYMBOL Code="DXB" Name="Dimerix Limited" />
+  <SYMBOL Code="DXBO" Name="DXBO" />
+  <SYMBOL Code="DXC" Name="Dexus Convenience Retail Reit" />
+  <SYMBOL Code="DXI" Name="Dexus Industria Reit." />
+  <SYMBOL Code="DXN" Name="The Data Exchange Network Limited" />
+  <SYMBOL Code="DXS" Name="Dexus Property Group" />
+  <SYMBOL Code="DXSKOA" Name="Dexus Property Group" />
+  <SYMBOL Code="DXSKOB" Name="Dexus Property Group" />
+  <SYMBOL Code="DXSKOC" Name="Dexus" />
+  <SYMBOL Code="DXSKOE" Name="DXSKOE" />
+  <SYMBOL Code="DXSKOQ" Name="Dexus Property Group" />
+  <SYMBOL Code="DXSKOR" Name="Dexus Property Group" />
+  <SYMBOL Code="DY6" Name="Dy6 Metals Ltd" />
+  <SYMBOL Code="DYL" Name="Deep Yellow Ltd" />
+  <SYMBOL Code="DYLKOA" Name="DYLKOA" />
+  <SYMBOL Code="DYLKOB" Name="DYLKOB" />
+  <SYMBOL Code="DYM" Name="Dynamic Metals Limited" />
+  <SYMBOL Code="DZZF" Name="DZZF" />
+  <SYMBOL Code="E200" Name="E200" />
+  <SYMBOL Code="E25" Name="Element 25 Limited" />
+  <SYMBOL Code="E79" Name="E79 Gold Mines Limited" />
+  <SYMBOL Code="EAFZ" Name="EAFZ" />
+  <SYMBOL Code="EAT" Name="Entertainment Rewards Ltd" />
+  <SYMBOL Code="EAX" Name="Energy Action Limited" />
+  <SYMBOL Code="EBG" Name="Eumundi Group Ltd" />
+  <SYMBOL Code="EBO" Name="Ebos Group Limited" />
+  <SYMBOL Code="EBR" Name="Eagle Bay Resources NL" />
+  <SYMBOL Code="ECF" Name="Elanor Commercial Property Fund" />
+  <SYMBOL Code="ECH" Name="Echelon Resources Ltd" />
+  <SYMBOL Code="ECL" Name="Excelsior Capital Ltd" />
+  <SYMBOL Code="ECP" Name="E Corp" />
+  <SYMBOL Code="ECPGA" Name="ECPGA" />
+  <SYMBOL Code="ECS" Name="ECSI Ltd" />
+  <SYMBOL Code="ECT" Name="Environmental Clean Technologies Limited." />
+  <SYMBOL Code="EDC" Name="Eildon Capital Limited" />
+  <SYMBOL Code="EDE" Name="Eden Energy Ltd" />
+  <SYMBOL Code="EDEOC" Name="Eden Innovations Ltd" />
+  <SYMBOL Code="EDEOD" Name="EDEOD" />
+  <SYMBOL Code="EDOC" Name="EDOC" />
+  <SYMBOL Code="EDU" Name="Edu Holdings Limited" />
+  <SYMBOL Code="EDV" Name="Endeavour Group Limited" />
+  <SYMBOL Code="EDVKOC" Name="EDVKOC" />
+  <SYMBOL Code="EDVKOD" Name="EDVKOD" />
+  <SYMBOL Code="EE1" Name="Earths Energy Limited" />
+  <SYMBOL Code="EEG" Name="Empire Energy Group Limited" />
+  <SYMBOL Code="EEL" Name="Envirostar Energy" />
+  <SYMBOL Code="EFE" Name="Eastern Iron Ltd" />
+  <SYMBOL Code="EG1" Name="Evergreen Lithium Limited" />
+  <SYMBOL Code="EGG" Name="Enero Group Limited" />
+  <SYMBOL Code="EGH" Name="Eureka Group Holdings Limited" />
+  <SYMBOL Code="EGL" Name="Environmental Group Ltd (The)" />
+  <SYMBOL Code="EGN" Name="EGN" />
+  <SYMBOL Code="EGR" Name="Ecograf Limited" />
+  <SYMBOL Code="EGY" Name="Energy Technologies Limited" />
+  <SYMBOL Code="EHL" Name="Emeco Holdings Ltd" />
+  <SYMBOL Code="EIGA" Name="EIGA" />
+  <SYMBOL Code="EINC" Name="EINC" />
+  <SYMBOL Code="EIQ" Name="Echoiq Limited" />
+  <SYMBOL Code="EL8" Name="Elevate Uranium Ltd" />
+  <SYMBOL Code="ELD" Name="ELD" />
+  <SYMBOL Code="ELDKOA" Name="Elders Limited" />
+  <SYMBOL Code="ELDKOB" Name="ELDKOB" />
+  <SYMBOL Code="ELDKOC" Name="ELDKOC" />
+  <SYMBOL Code="ELS" Name="Equity Long / Short Strategies Fund (the)" />
+  <SYMBOL Code="ELT" Name="Elementos Limited" />
+  <SYMBOL Code="EM2" Name="Eagle Mountain Mining Limited" />
+  <SYMBOL Code="EM2O" Name="EM2O" />
+  <SYMBOL Code="EMB" Name="Embelton Ltd" />
+  <SYMBOL Code="EMC" Name="Emefcy Group Limited" />
+  <SYMBOL Code="EMD" Name="Emerald Clinics Limited" />
+  <SYMBOL Code="EME" Name="Energy Metals Ltd" />
+  <SYMBOL Code="EMH" Name="European Metals Holdings Limited" />
+  <SYMBOL Code="EMKT" Name="Vaneck Vectors Msci Multifactor Emerging Markets E" />
+  <SYMBOL Code="EML" Name="Emerchants Limited" />
+  <SYMBOL Code="EMMG" Name="EMMG" />
+  <SYMBOL Code="EMN" Name="Euro Manganese Inc" />
+  <SYMBOL Code="EMP" Name="Emperor Mines Ltd" />
+  <SYMBOL Code="EMPO" Name="EMPO" />
+  <SYMBOL Code="EMR" Name="Emerald Oil &amp; Gas NL" />
+  <SYMBOL Code="EMRKOR" Name="EMRKOR" />
+  <SYMBOL Code="EMS" Name="Eastland Medical Systems Ltd" />
+  <SYMBOL Code="EMT" Name="Emetals Limited" />
+  <SYMBOL Code="EMTO" Name="Emetals Limited" />
+  <SYMBOL Code="EMU" Name="EMU Nickel NL" />
+  <SYMBOL Code="EMV" Name="Emvision Medical Devices Limited" />
+  <SYMBOL Code="EMXC" Name="EMXC" />
+  <SYMBOL Code="ENL" Name="Eagle Nickel Ltd" />
+  <SYMBOL Code="ENN" Name="Elanor Investors Group" />
+  <SYMBOL Code="ENR" Name="Encounter Resources Ltd" />
+  <SYMBOL Code="ENT" Name="" />
+  <SYMBOL Code="ENV" Name="Envestra Ltd" />
+  <SYMBOL Code="ENVO" Name="ENVO" />
+  <SYMBOL Code="ENX" Name="Enegex Nl" />
+  <SYMBOL Code="EOF" Name="Ecofibre Limited" />
+  <SYMBOL Code="EOL" Name="Energy One Ltd" />
+  <SYMBOL Code="EOS" Name="Electro Optic Systems Holdings Ltd" />
+  <SYMBOL Code="EP1" Name="E&amp;p Financial Group Limited" />
+  <SYMBOL Code="EPM" Name="Eclipse Metals Limited." />
+  <SYMBOL Code="EPN" Name="Epsilon Healthcare Limited" />
+  <SYMBOL Code="EPY" Name="E-Pay Asia Ltd" />
+  <SYMBOL Code="EQE" Name="Equus Mining Limited" />
+  <SYMBOL Code="EQN" Name="Equinox Minerals Ltd (Canada CHESS)" />
+  <SYMBOL Code="EQR" Name="Equinox Resources Nl" />
+  <SYMBOL Code="EQS" Name="Equs" />
+  <SYMBOL Code="EQT" Name="Equity Trustees Ltd" />
+  <SYMBOL Code="EQX" Name="Eqitx Ltd" />
+  <SYMBOL Code="ERA" Name="Energy Resources of Australia Ltd" />
+  <SYMBOL Code="ERD" Name="Exalt Resources Limited" />
+  <SYMBOL Code="ERG" Name="ERG Ltd" />
+  <SYMBOL Code="ERL" Name="Empire Resources Ltd" />
+  <SYMBOL Code="ERM" Name="Emmerson Resources Ltd" />
+  <SYMBOL Code="ERTH" Name="ERTH" />
+  <SYMBOL Code="ERW" Name="Errawarra Resources Ltd" />
+  <SYMBOL Code="ESK" Name="Etherstack Plc" />
+  <SYMBOL Code="ESPO" Name="ESPO" />
+  <SYMBOL Code="ESR" Name="Estrella Resources Limited" />
+  <SYMBOL Code="ESROB" Name="ESROB" />
+  <SYMBOL Code="ETM" Name="Energy Transition Minerals Ltd" />
+  <SYMBOL Code="ETPMAG" Name="Etfs Physical Silver" />
+  <SYMBOL Code="ETPMPD" Name="Etfs Physical Palladium" />
+  <SYMBOL Code="ETPMPM" Name="Etfs Physical Pm Basket" />
+  <SYMBOL Code="ETPMPT" Name="Etfs Physical Platinum" />
+  <SYMBOL Code="ETR" Name="ETRADE Australia Ltd" />
+  <SYMBOL Code="ETRO" Name="ETRO" />
+  <SYMBOL Code="EUR" Name="Euraust Ltd" />
+  <SYMBOL Code="EURO" Name="EURO" />
+  <SYMBOL Code="EUROB" Name="European Lithium Limited" />
+  <SYMBOL Code="EV1" Name="Evolution Energy Minerals Limited" />
+  <SYMBOL Code="EVE" Name="Energy Ventures Ltd" />
+  <SYMBOL Code="EVG" Name="Envirogold Ltd" />
+  <SYMBOL Code="EVN" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOA" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOB" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOC" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOD" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOE" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOP" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVNKOR" Name="Evolution Mining Limited" />
+  <SYMBOL Code="EVO" Name="Evolve Education Group Limited" />
+  <SYMBOL Code="EVR" Name="Endeavour Mining Corporation" />
+  <SYMBOL Code="EVROA" Name="EVROA" />
+  <SYMBOL Code="EVS" Name="Envirosuite Limited" />
+  <SYMBOL Code="EVT" Name="Event Hospitality And Entertainment Ltd" />
+  <SYMBOL Code="EVZ" Name="Envirozel Ltd" />
+  <SYMBOL Code="EWC" Name="Energy World Corporation Ltd" />
+  <SYMBOL Code="EX20" Name="Betashares Australian Ex-20 Portfolio Diversifier" />
+  <SYMBOL Code="EXL" Name="Excel Coal Ltd" />
+  <SYMBOL Code="EXLO" Name="EXLO" />
+  <SYMBOL Code="EXP" Name="Experience Co Limited" />
+  <SYMBOL Code="EXR" Name="Elixir Petroleum Ltd" />
+  <SYMBOL Code="EXROB" Name="EXROB" />
+  <SYMBOL Code="EXT" Name="Extract Resources Ltd" />
+  <SYMBOL Code="EXTOD" Name="EXTOD" />
+  <SYMBOL Code="EYE" Name="Eagle Eye Metals Ltd" />
+  <SYMBOL Code="EZL" Name="Euroz Ltd" />
+  <SYMBOL Code="EZZ" Name="Ezz Life Science Holdings Limited" />
+  <SYMBOL Code="F100" Name="F100" />
+  <SYMBOL Code="FAIR" Name="Betashares Australian Sustainability Leaders" />
+  <SYMBOL Code="FAL" Name="Falcon Metals Ltd" />
+  <SYMBOL Code="FANG" Name="FANG" />
+  <SYMBOL Code="FAR" Name="First Australian Resources Ltd" />
+  <SYMBOL Code="FAU" Name="First Au Limited" />
+  <SYMBOL Code="FBM" Name="Future Battery Minerals Limited" />
+  <SYMBOL Code="FBR" Name="Fastbrick Robotics Ltd" />
+  <SYMBOL Code="FBU" Name="Fletcher Building Ltd" />
+  <SYMBOL Code="FBUKOA" Name="Fletcher Building Limited" />
+  <SYMBOL Code="FBUKOB" Name="Fletcher Building Limited" />
+  <SYMBOL Code="FBUKOP" Name="Fletcher Building Limited" />
+  <SYMBOL Code="FBUKOS" Name="Fletcher Building Limited" />
+  <SYMBOL Code="FCAP" Name="FCAP" />
+  <SYMBOL Code="FCG" Name="Frontier Capital Group Limited" />
+  <SYMBOL Code="FCL" Name="Futuris Corporation Ltd" />
+  <SYMBOL Code="FCT" Name="Firstwave Cloud Technology Limited" />
+  <SYMBOL Code="FDR" Name="Federation Group Ltd" />
+  <SYMBOL Code="FDV" Name="Frontier Digital Ventures Limited" />
+  <SYMBOL Code="FEG" Name="Far East Gold Ltd" />
+  <SYMBOL Code="FEX" Name="Fenix Resources Ltd" />
+  <SYMBOL Code="FFF" Name="First Folio Ltd" />
+  <SYMBOL Code="FFG" Name="Fatfish Internet Group Ltd" />
+  <SYMBOL Code="FFGO" Name="Fatfish Internet Group Ltd" />
+  <SYMBOL Code="FFI" Name="FFI Holdings Ltd" />
+  <SYMBOL Code="FFM" Name="Firefly Metals Ltd" />
+  <SYMBOL Code="FG1" Name="Flynn Gold Limited" />
+  <SYMBOL Code="FG1O" Name="FG1O" />
+  <SYMBOL Code="FGG" Name="Future Generation Global Investment Company Limited" />
+  <SYMBOL Code="FGH" Name="Foresta Group Holdings Limited" />
+  <SYMBOL Code="FGR" Name="First Graphite Limited" />
+  <SYMBOL Code="FGX" Name="Future Generation Investment Fund Limited" />
+  <SYMBOL Code="FHCO" Name="FHCO" />
+  <SYMBOL Code="FHE" Name="Frontier Energy Limited" />
+  <SYMBOL Code="FHNG" Name="FHNG" />
+  <SYMBOL Code="FHS" Name="Freehill Mining Limited." />
+  <SYMBOL Code="FID" Name="Fiducian Group Limited" />
+  <SYMBOL Code="FIIN" Name="FIIN" />
+  <SYMBOL Code="FIN" Name="Aii S&amp;p/asx 200 Financials" />
+  <SYMBOL Code="FL1" Name="First Lithium Limited" />
+  <SYMBOL Code="FL1O" Name="FL1O" />
+  <SYMBOL Code="FLC" Name="Fluence Corporation Limited" />
+  <SYMBOL Code="FLN" Name="Freelancer Limited" />
+  <SYMBOL Code="FLOT" Name="Vaneck Vectors Australian Floating Rate" />
+  <SYMBOL Code="FLT" Name="Flight Centre Ltd" />
+  <SYMBOL Code="FLTKOA" Name="Flight Centre Travel Group Limited" />
+  <SYMBOL Code="FLTKOQ" Name="Flight Centre Travel Group Limited" />
+  <SYMBOL Code="FLTKOR" Name="Flight Centre Travel Group Limited" />
+  <SYMBOL Code="FLX" Name="Felix Resources Ltd" />
+  <SYMBOL Code="FME" Name="Future Metals Nl" />
+  <SYMBOL Code="FMEOA" Name="FMEOA" />
+  <SYMBOL Code="FMG" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOC" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOD" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOM" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKON" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOO" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOX" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOY" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGKOZ" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FMGMOP" Name="Fortescue Metals Group Ltd" />
+  <SYMBOL Code="FML" Name="Focus Minerals Ltd" />
+  <SYMBOL Code="FMR" Name="Fmr Resources Limited" />
+  <SYMBOL Code="FND" Name="Finders Resources Ltd" />
+  <SYMBOL Code="FNR" Name="Far Northern Resources Limited" />
+  <SYMBOL Code="FNX" Name="Finexia Financial Group Limited" />
+  <SYMBOL Code="FOS" Name="Fos Capital Ltd" />
+  <SYMBOL Code="FPC" Name="Fat Prophets Global Contrarian Fund Ltd" />
+  <SYMBOL Code="FPH" Name="Fisher &amp; Paykel Healthcare Corp Ltd" />
+  <SYMBOL Code="FPHKOD" Name="FPHKOD" />
+  <SYMBOL Code="FPHKOE" Name="Fisher &amp; Paykel Healthcare Corporation Limited" />
+  <SYMBOL Code="FPP" Name="Fat Prophets Global Property Fund" />
+  <SYMBOL Code="FPR" Name="Fleetpartners Group Limited" />
+  <SYMBOL Code="FRAR" Name="FRAR" />
+  <SYMBOL Code="FRB" Name="Firebird Metals Limited" />
+  <SYMBOL Code="FRE" Name="Freshtel Holdings Ltd" />
+  <SYMBOL Code="FRGG" Name="FRGG" />
+  <SYMBOL Code="FRI" Name="Finbar International Ltd" />
+  <SYMBOL Code="FRM" Name="Farm Pride Foods Ltd" />
+  <SYMBOL Code="FRS" Name="Ferraus Ltd" />
+  <SYMBOL Code="FRSO" Name="Forrestania Resources Limited" />
+  <SYMBOL Code="FRSOA" Name="FRSOA" />
+  <SYMBOL Code="FRSOB" Name="FRSOB" />
+  <SYMBOL Code="FRW" Name="Freightways Group Limited" />
+  <SYMBOL Code="FRX" Name="Flexiroam Limited" />
+  <SYMBOL Code="FSA" Name="FSA Group Ltd" />
+  <SYMBOL Code="FSF" Name="Fonterra Shareholders Fund" />
+  <SYMBOL Code="FSG" Name="Field Solutions Holdings Limited" />
+  <SYMBOL Code="FSI" Name="Flagship Investments Limited" />
+  <SYMBOL Code="FSIGA" Name="FSIGA" />
+  <SYMBOL Code="FSML" Name="FSML" />
+  <SYMBOL Code="FTC" Name="Fintech Chain Limited" />
+  <SYMBOL Code="FTL" Name="Firetail Resources Limited" />
+  <SYMBOL Code="FTZ" Name="Fertoz Limited" />
+  <SYMBOL Code="FUEL" Name="Betashares Global Energy Companies - Currency Hedg" />
+  <SYMBOL Code="FUL" Name="Fulcrum Equity Ltd" />
+  <SYMBOL Code="FUTR" Name="FUTR" />
+  <SYMBOL Code="FWD" Name="Fleetwood Corporation Ltd" />
+  <SYMBOL Code="FXEKOB" Name="Currency Warrant Aud/eur" />
+  <SYMBOL Code="FXEKOC" Name="FXEKOC" />
+  <SYMBOL Code="FXEKOR" Name="FXEKOR" />
+  <SYMBOL Code="FXEKOS" Name="Currency Warrant Aud/eur" />
+  <SYMBOL Code="FXEKOT" Name="FXEKOT" />
+  <SYMBOL Code="FXEKOV" Name="FXEKOV" />
+  <SYMBOL Code="FXG" Name="Felix Gold Limited" />
+  <SYMBOL Code="FXGO" Name="FXGO" />
+  <SYMBOL Code="FXPKOB" Name="FXPKOB" />
+  <SYMBOL Code="FXPKOC" Name="FXPKOC" />
+  <SYMBOL Code="FXPKOD" Name="FXPKOD" />
+  <SYMBOL Code="FXPKOE" Name="FXPKOE" />
+  <SYMBOL Code="FXPKOF" Name="FXPKOF" />
+  <SYMBOL Code="FXPKOG" Name="FXPKOG" />
+  <SYMBOL Code="FXPKOQ" Name="Currency Warrant Aud/gbp" />
+  <SYMBOL Code="FXPKOR" Name="FXPKOR" />
+  <SYMBOL Code="FXPKOS" Name="FXPKOS" />
+  <SYMBOL Code="FXPKOT" Name="FXPKOT" />
+  <SYMBOL Code="FXPKOV" Name="FXPKOV" />
+  <SYMBOL Code="FXUKOC" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOD" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOE" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOJ" Name="FXUKOJ" />
+  <SYMBOL Code="FXUKOM" Name="FXUKOM" />
+  <SYMBOL Code="FXUKOQ" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOR" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOS" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOV" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOW" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOY" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUKOZ" Name="Currency Warrant Aus/usd." />
+  <SYMBOL Code="FXUMOE" Name="FXUMOE" />
+  <SYMBOL Code="FXUMOP" Name="FXUMOP" />
+  <SYMBOL Code="FXUMOQ" Name="FXUMOQ" />
+  <SYMBOL Code="FXUMOW" Name="FXUMOW" />
+  <SYMBOL Code="FXUQOP" Name="FXUQOP" />
+  <SYMBOL Code="FXYKOA" Name="FXYKOA" />
+  <SYMBOL Code="FXYKOC" Name="FXYKOC" />
+  <SYMBOL Code="FXYKOF" Name="FXYKOF" />
+  <SYMBOL Code="FXYKOG" Name="FXYKOG" />
+  <SYMBOL Code="FXYKOP" Name="Currency Warrant Aud/jpy" />
+  <SYMBOL Code="FXYKOQ" Name="FXYKOQ" />
+  <SYMBOL Code="FXYKOR" Name="FXYKOR" />
+  <SYMBOL Code="FXYKOS" Name="FXYKOS" />
+  <SYMBOL Code="FXYKOW" Name="FXYKOW" />
+  <SYMBOL Code="FXZKOB" Name="FXZKOB" />
+  <SYMBOL Code="FXZKOF" Name="FXZKOF" />
+  <SYMBOL Code="FXZKOQ" Name="FXZKOQ" />
+  <SYMBOL Code="FXZKOR" Name="FXZKOR" />
+  <SYMBOL Code="FXZKOS" Name="FXZKOS" />
+  <SYMBOL Code="FXZKOT" Name="FXZKOT" />
+  <SYMBOL Code="FXZKOU" Name="FXZKOU" />
+  <SYMBOL Code="FZR" Name="Fitzroy River Corporation Ltd" />
+  <SYMBOL Code="G11" Name="G11 Resources Limited" />
+  <SYMBOL Code="G1A" Name="Galena Mining Limited" />
+  <SYMBOL Code="G200" Name="G200" />
+  <SYMBOL Code="G50" Name="Gold 50 Limited" />
+  <SYMBOL Code="G6M" Name="Group 6 Metals Limited" />
+  <SYMBOL Code="G88" Name="Golden Mile Resources Ltd" />
+  <SYMBOL Code="G88OA" Name="G88OA" />
+  <SYMBOL Code="GAL" Name="Galicia Energy Corporation Ltd" />
+  <SYMBOL Code="GAP" Name="Gale Pacific Ltd" />
+  <SYMBOL Code="GARP" Name="GARP" />
+  <SYMBOL Code="GAS" Name="GasNet Australia Group" />
+  <SYMBOL Code="GBE" Name="Globe Uranium Ltd" />
+  <SYMBOL Code="GBR" Name="G Retail Ltd" />
+  <SYMBOL Code="GBZ" Name="GBM Resources Ltd" />
+  <SYMBOL Code="GC1" Name="Glennon Small Companies Limited" />
+  <SYMBOL Code="GC1PA" Name="GC1PA" />
+  <SYMBOL Code="GCAP" Name="GCAP" />
+  <SYMBOL Code="GCI" Name="Gryphon Capital Income Trust" />
+  <SYMBOL Code="GCM" Name="Garda Capital Group" />
+  <SYMBOL Code="GCR" Name="Golden Cross Resources Ltd" />
+  <SYMBOL Code="GDA" Name="Gondwana Resources Ltd" />
+  <SYMBOL Code="GDC" Name="Global Data Centre Group" />
+  <SYMBOL Code="GDF" Name="Garda Diversified Property Fund" />
+  <SYMBOL Code="GDG" Name="Generation Development Group Limited" />
+  <SYMBOL Code="GDI" Name="Gdi Property Group" />
+  <SYMBOL Code="GDM" Name="Goldstream Mining NL" />
+  <SYMBOL Code="GDX" Name="Vaneck Vectors Gold Miners" />
+  <SYMBOL Code="GEAR" Name="Betashares Geared Australian Equity" />
+  <SYMBOL Code="GED" Name="Golden Deeps Ltd" />
+  <SYMBOL Code="GEDO" Name="GEDO" />
+  <SYMBOL Code="GEM" Name="G8 Education Limited" />
+  <SYMBOL Code="GEMKOC" Name="G8 Education Limited" />
+  <SYMBOL Code="GEN" Name="Genesis Research &amp; Devlpmnt Corp Ltd" />
+  <SYMBOL Code="GES" Name="Genesis Resources Limited" />
+  <SYMBOL Code="GFL" Name="Global Masters Fund Ltd" />
+  <SYMBOL Code="GFLGA" Name="GFLGA" />
+  <SYMBOL Code="GGAB" Name="GGAB" />
+  <SYMBOL Code="GGE" Name="Grand Gulf Energy Ltd" />
+  <SYMBOL Code="GGEO" Name="Grand Gulf Energy Limited" />
+  <SYMBOL Code="GGEOA" Name="GGEOA" />
+  <SYMBOL Code="GGX" Name="Gas2Grid Ltd" />
+  <SYMBOL Code="GHHF" Name="GHHF" />
+  <SYMBOL Code="GHM" Name="Golden Horse Minerals Limited" />
+  <SYMBOL Code="GHY" Name="Gold Hydrogen Limited" />
+  <SYMBOL Code="GIB" Name="Gibb River Diamonds Limited" />
+  <SYMBOL Code="GL1" Name="Global Lithium Resources Limited" />
+  <SYMBOL Code="GLA" Name="Gladiator Resources Ltd" />
+  <SYMBOL Code="GLB" Name="Globe International Ltd" />
+  <SYMBOL Code="GLDN" Name="GLDN" />
+  <SYMBOL Code="GLE" Name="GLG Corp Ltd" />
+  <SYMBOL Code="GLH" Name="Global Health Ltd" />
+  <SYMBOL Code="GLIN" Name="Amp Global Infrastructure Securities (unhedged)" />
+  <SYMBOL Code="GLL" Name="Galilee Energy Limited" />
+  <SYMBOL Code="GLN" Name="Gleneagle Gold Ltd" />
+  <SYMBOL Code="GLNOB" Name="GLNOB" />
+  <SYMBOL Code="GLOB" Name="GLOB" />
+  <SYMBOL Code="GLPR" Name="GLPR" />
+  <SYMBOL Code="GMD" Name="Genesis Minerals Ltd" />
+  <SYMBOL Code="GMG" Name="Goodman Group" />
+  <SYMBOL Code="GMGKOB" Name="Goodman Group" />
+  <SYMBOL Code="GMGKOQ" Name="Goodman Group" />
+  <SYMBOL Code="GML" Name="Gateway Mining NL" />
+  <SYMBOL Code="GMN" Name="Gold Mountain Limited" />
+  <SYMBOL Code="GMNO" Name="GMNO" />
+  <SYMBOL Code="GMNOC" Name="GMNOC" />
+  <SYMBOL Code="GMTL" Name="GMTL" />
+  <SYMBOL Code="GNC" Name="GrainCorp Ltd" />
+  <SYMBOL Code="GNCKOA" Name="Graincorp Limited" />
+  <SYMBOL Code="GNCKOB" Name="Graincorp Limited" />
+  <SYMBOL Code="GNCKOD" Name="Graincorp Limited" />
+  <SYMBOL Code="GNCKOE" Name="Graincorp Limited" />
+  <SYMBOL Code="GNCKOF" Name="Graincorp Limited" />
+  <SYMBOL Code="GNCKOG" Name="GNCKOG" />
+  <SYMBOL Code="GNCKOP" Name="GNCKOP" />
+  <SYMBOL Code="GNCKOQ" Name="GNCKOQ" />
+  <SYMBOL Code="GNCKOR" Name="GNCKOR" />
+  <SYMBOL Code="GNCKOS" Name="GNCKOS" />
+  <SYMBOL Code="GNDQ" Name="GNDQ" />
+  <SYMBOL Code="GNE" Name="Genesis Energy Limited" />
+  <SYMBOL Code="GNG" Name="Gr Engineering Services Limited" />
+  <SYMBOL Code="GNM" Name="Gujarat NRE Minerals Ltd" />
+  <SYMBOL Code="GNMOC" Name="GNMOC" />
+  <SYMBOL Code="GNP" Name="Genusplus Group Ltd" />
+  <SYMBOL Code="GOAT" Name="GOAT" />
+  <SYMBOL Code="GOLD" Name="Etfs Physical Gold" />
+  <SYMBOL Code="GOR" Name="Gold Road Resources Limited" />
+  <SYMBOL Code="GOVT" Name="Spdr??s&amp;p?/asx Australian Government Bond Fund" />
+  <SYMBOL Code="GOW" Name="Gowing Bros Ltd" />
+  <SYMBOL Code="GOZ" Name="Growthpoint Properties Australia" />
+  <SYMBOL Code="GPEQ" Name="GPEQ" />
+  <SYMBOL Code="GPR" Name="Geopacific Resources NL" />
+  <SYMBOL Code="GPT" Name="General Property Trust" />
+  <SYMBOL Code="GPTKOA" Name="Gpt Group" />
+  <SYMBOL Code="GPTKOB" Name="Gpt Group" />
+  <SYMBOL Code="GPTKOC" Name="Gpt Group" />
+  <SYMBOL Code="GPTKOE" Name="GPTKOE" />
+  <SYMBOL Code="GPTKOP" Name="Gpt Group" />
+  <SYMBOL Code="GPTKOQ" Name="Gpt Group" />
+  <SYMBOL Code="GPTKOR" Name="Gpt Group" />
+  <SYMBOL Code="GQG" Name="Gqg Partners Inc." />
+  <SYMBOL Code="GR8" Name="Great Dirt Resources Ltd" />
+  <SYMBOL Code="GRE" Name="Greentech Metals Limited" />
+  <SYMBOL Code="GRL" Name="Gawler Resources Ltd" />
+  <SYMBOL Code="GRLO" Name="GRLO" />
+  <SYMBOL Code="GRR" Name="Grange Resources Ltd" />
+  <SYMBOL Code="GRV" Name="Greenvale Mining NL" />
+  <SYMBOL Code="GRX" Name="Goodrich Resources Ltd" />
+  <SYMBOL Code="GSBG25" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBG26" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBG27" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBG29" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBG33" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBG37" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBK31" Name="GSBK31" />
+  <SYMBOL Code="GSBK35" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBK39" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBK51" Name="GSBK51" />
+  <SYMBOL Code="GSBK54" Name="GSBK54" />
+  <SYMBOL Code="GSBQ26" Name="GSBQ26" />
+  <SYMBOL Code="GSBU25" Name="GSBU25" />
+  <SYMBOL Code="GSBU27" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBU28" Name="Australian Government Treasury Bonds" />
+  <SYMBOL Code="GSBU29" Name="GSBU29" />
+  <SYMBOL Code="GSBU31" Name="GSBU31" />
+  <SYMBOL Code="GSBU32" Name="GSBU32" />
+  <SYMBOL Code="GSBU33" Name="GSBU33" />
+  <SYMBOL Code="GSIC50" Name="GSIC50" />
+  <SYMBOL Code="GSIO35" Name="Australian Government Treasury Indexed Bonds" />
+  <SYMBOL Code="GSIO40" Name="Australian Government Treasury Indexed Bonds" />
+  <SYMBOL Code="GSIQ25" Name="Australian Government Treasury Indexed Bonds" />
+  <SYMBOL Code="GSIQ30" Name="Australian Government Treasury Indexed Bonds" />
+  <SYMBOL Code="GSIU27" Name="Australian Government Treasury Indexed Bonds" />
+  <SYMBOL Code="GSIU32" Name="GSIU32" />
+  <SYMBOL Code="GSM" Name="Golden State Mining Limited" />
+  <SYMBOL Code="GSN" Name="Great Southern Mining Limited" />
+  <SYMBOL Code="GSS" Name="Genetic Signatures Limited" />
+  <SYMBOL Code="GT1" Name="Green Technology Metals Limited" />
+  <SYMBOL Code="GTE" Name="Great Western Exploration Ltd" />
+  <SYMBOL Code="GTG" Name="Genetic Technologies Ltd" />
+  <SYMBOL Code="GTH" Name="Gathid Ltd" />
+  <SYMBOL Code="GTI" Name="Globe Securities Ltd" />
+  <SYMBOL Code="GTK" Name="Gentrack Group Limited" />
+  <SYMBOL Code="GTN" Name="GTN Resources Ltd" />
+  <SYMBOL Code="GTR" Name="GTI Resources Ltd" />
+  <SYMBOL Code="GTROC" Name="GTROC" />
+  <SYMBOL Code="GUE" Name="Global Uranium And Enrichment Ltd" />
+  <SYMBOL Code="GUL" Name="Gullewa Ltd" />
+  <SYMBOL Code="GVF" Name="Global Value Fund Limited" />
+  <SYMBOL Code="GW1" Name="Greenwing Resources Ltd" />
+  <SYMBOL Code="GWA" Name="Gwa Group Limited." />
+  <SYMBOL Code="GWAKOB" Name="Gwa Group Limited." />
+  <SYMBOL Code="GWAKOQ" Name="Gwa Group Limited." />
+  <SYMBOL Code="GWR" Name="Golden West Resources Ltd" />
+  <SYMBOL Code="GYG" Name="Guzman Y Gomez Limited" />
+  <SYMBOL Code="GYGKOA" Name="GYGKOA" />
+  <SYMBOL Code="GYGKOP" Name="GYGKOP" />
+  <SYMBOL Code="H100" Name="H100" />
+  <SYMBOL Code="H2G" Name="H2G" />
+  <SYMBOL Code="HACK" Name="Betashares Global Cybersecurity" />
+  <SYMBOL Code="HAL" Name="Halo Technologies Holdings Ltd" />
+  <SYMBOL Code="HAR" Name="Haranga Resources Limited" />
+  <SYMBOL Code="HARO" Name="HARO" />
+  <SYMBOL Code="HAS" Name="Hastings Rare Metals Ltd" />
+  <SYMBOL Code="HASO" Name="Hastings Rare Metals Ltd" />
+  <SYMBOL Code="HAV" Name="Havilah Resources NL" />
+  <SYMBOL Code="HAW" Name="Hawthorn Resources Ltd" />
+  <SYMBOL Code="HCD" Name="Huadu City Development Ltd" />
+  <SYMBOL Code="HCF" Name="H&amp;g High Conviction Limited" />
+  <SYMBOL Code="HCH" Name="Hot Chili Limited" />
+  <SYMBOL Code="HCL" Name="Highcom Limited" />
+  <SYMBOL Code="HCT" Name="Holista Colltech Limited" />
+  <SYMBOL Code="HCW" Name="Healthco Healthcare And Wellness Reit" />
+  <SYMBOL Code="HDN" Name="Haddington Resources Ltd" />
+  <SYMBOL Code="HE8" Name="Helios Energy Ltd" />
+  <SYMBOL Code="HETH" Name="HETH" />
+  <SYMBOL Code="HEUR" Name="Betashares Wisdomtree Europe (currency Hedged)" />
+  <SYMBOL Code="HFR" Name="Highfield Resources Limited" />
+  <SYMBOL Code="HFY" Name="Hubify Limited" />
+  <SYMBOL Code="HGBL" Name="HGBL" />
+  <SYMBOL Code="HGEN" Name="HGEN" />
+  <SYMBOL Code="HGH" Name="Heartland Group Holdings Limited" />
+  <SYMBOL Code="HGL" Name="Hudson Investment Group Ltd" />
+  <SYMBOL Code="HGO" Name="Hillgrove Resources Ltd" />
+  <SYMBOL Code="HGV" Name="Hygrovest Limited" />
+  <SYMBOL Code="HHIF" Name="HHIF" />
+  <SYMBOL Code="HHR" Name="Hartshead Resources Nl" />
+  <SYMBOL Code="HIO" Name="Hawsons Iron Ltd" />
+  <SYMBOL Code="HIOO" Name="HIOO" />
+  <SYMBOL Code="HIQ" Name="Hitiq Limited" />
+  <SYMBOL Code="HIQO" Name="HIQO" />
+  <SYMBOL Code="HIT" Name="Hitech Group Australia Ltd" />
+  <SYMBOL Code="HJPN" Name="Betashares Wisdomtree Japan (currency Hedged)" />
+  <SYMBOL Code="HJZP" Name="HJZP" />
+  <SYMBOL Code="HLI" Name="Hailian International Ltd" />
+  <SYMBOL Code="HLIKOA" Name="HLIKOA" />
+  <SYMBOL Code="HLIKOC" Name="HLIKOC" />
+  <SYMBOL Code="HLIKOP" Name="HLIKOP" />
+  <SYMBOL Code="HLIKOQ" Name="HLIKOQ" />
+  <SYMBOL Code="HLO" Name="Helloworld Limited" />
+  <SYMBOL Code="HLS" Name="Hillcrest Litigation Services Ltd" />
+  <SYMBOL Code="HLSKOA" Name="Healius Ltd" />
+  <SYMBOL Code="HLSKOB" Name="Healius Limited" />
+  <SYMBOL Code="HLSKOF" Name="Healius Ltd" />
+  <SYMBOL Code="HLSKOQ" Name="Healius Ltd" />
+  <SYMBOL Code="HLSKOR" Name="Healius Ltd" />
+  <SYMBOL Code="HLSKOS" Name="Healius Ltd" />
+  <SYMBOL Code="HLSKOT" Name="Healius Ltd" />
+  <SYMBOL Code="HLTH" Name="HLTH" />
+  <SYMBOL Code="HLX" Name="Helix Resources Ltd" />
+  <SYMBOL Code="HLXO" Name="HLXO" />
+  <SYMBOL Code="HM1" Name="Hearts And Minds Investments Limited" />
+  <SYMBOL Code="HMC" Name="Hydromet Corporation Ltd" />
+  <SYMBOL Code="HMCO" Name="Hydromet Corporation Ltd" />
+  <SYMBOL Code="HMD" Name="Heramed Limited" />
+  <SYMBOL Code="HMG" Name="Hamelin Gold Limited" />
+  <SYMBOL Code="HMI" Name="Harvest Minerals Ltd" />
+  <SYMBOL Code="HMX" Name="Hammer Metals Limited" />
+  <SYMBOL Code="HMY" Name="Harmoney Corp Limited" />
+  <SYMBOL Code="HNDQ" Name="HNDQ" />
+  <SYMBOL Code="HNG" Name="HGL Ltd" />
+  <SYMBOL Code="HOR" Name="Horseshoe Metals Limited" />
+  <SYMBOL Code="HPC" Name="The Hydration Pharmaceuticals Company Limited" />
+  <SYMBOL Code="HPG" Name="Hipages Group Holdings Ltd" />
+  <SYMBOL Code="HPI" Name="Hotel Property Investments" />
+  <SYMBOL Code="HPP" Name="Health And Plant Protein Group Limited" />
+  <SYMBOL Code="HPR" Name="High Peak Royalties Limited" />
+  <SYMBOL Code="HQLT" Name="HQLT" />
+  <SYMBOL Code="HRE" Name="Heavy Rare Earths Limited" />
+  <SYMBOL Code="HRN" Name="Horizon Gold Limited" />
+  <SYMBOL Code="HRZ" Name="Horizon Energy Investment Group" />
+  <SYMBOL Code="HRZO" Name="HRZO" />
+  <SYMBOL Code="HRZOB" Name="Horizon Minerals Limited" />
+  <SYMBOL Code="HSN" Name="Hansen Technologies Ltd" />
+  <SYMBOL Code="HT8" Name="Harris Technology Group Limited" />
+  <SYMBOL Code="HTA" Name="Hutchison Telecommunications (Aust)" />
+  <SYMBOL Code="HTG" Name="Harvest Technology Group Ltd" />
+  <SYMBOL Code="HTM" Name="Heritage Gold NZ Ltd" />
+  <SYMBOL Code="HTMO" Name="HTMO" />
+  <SYMBOL Code="HUB" Name="Hub24 Limited" />
+  <SYMBOL Code="HUBKOA" Name="HUBKOA" />
+  <SYMBOL Code="HUBKOB" Name="HUBKOB" />
+  <SYMBOL Code="HUM" Name="Humanis Group Limited" />
+  <SYMBOL Code="HVLU" Name="HVLU" />
+  <SYMBOL Code="HVN" Name="Harvey Norman Holdings Ltd" />
+  <SYMBOL Code="HVNKOB" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOC" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOD" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOE" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOQ" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOR" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVNKOW" Name="Harvey Norman Holdings Limited" />
+  <SYMBOL Code="HVST" Name="Betashares Australian Dividend Harvester Fund (man" />
+  <SYMBOL Code="HVY" Name="Heavy Minerals Limited" />
+  <SYMBOL Code="HWK" Name="Hawkstone Mining Limited" />
+  <SYMBOL Code="HWKOA" Name="HWKOA" />
+  <SYMBOL Code="HXG" Name="Hexagon Resources Limited" />
+  <SYMBOL Code="HXL" Name="Hexima Ltd" />
+  <SYMBOL Code="HYD" Name="Hydrix Limited" />
+  <SYMBOL Code="HYGG" Name="HYGG" />
+  <SYMBOL Code="HYT" Name="Hyterra Ltd" />
+  <SYMBOL Code="HYTO" Name="HYTO" />
+  <SYMBOL Code="HYTOA" Name="HYTOA" />
+  <SYMBOL Code="HZN" Name="Horizon Oil Ltd" />
+  <SYMBOL Code="HZR" Name="Hazer Group Limited" />
+  <SYMBOL Code="HZRO" Name="Hazer Group Limited" />
+  <SYMBOL Code="I88" Name="Infini Resources Limited" />
+  <SYMBOL Code="IAA" Name="Ishares Asia 50" />
+  <SYMBOL Code="IAF" Name="Ishares Core Composite Bond" />
+  <SYMBOL Code="IAG" Name="Insurance Australia Group Ltd" />
+  <SYMBOL Code="IAGKOA" Name="Insurance Australia Group Limited" />
+  <SYMBOL Code="IAGKOB" Name="Insurance Australia Group Limited" />
+  <SYMBOL Code="IAGKOD" Name="Insurance Australia Group Limited" />
+  <SYMBOL Code="IAGKOQ" Name="Insurance Australia Group Limited" />
+  <SYMBOL Code="IAGKOT" Name="Insurance Australia Group Limited" />
+  <SYMBOL Code="IAGPE" Name="IAGPE" />
+  <SYMBOL Code="IAGPF" Name="IAGPF" />
+  <SYMBOL Code="IAM" Name="Intiger Group Limited" />
+  <SYMBOL Code="IAMOB" Name="IAMOB" />
+  <SYMBOL Code="IBAL" Name="IBAL" />
+  <SYMBOL Code="IBC" Name="Ironbark Capital Ltd" />
+  <SYMBOL Code="IBG" Name="Ironbark Gold Ltd" />
+  <SYMBOL Code="IBGO" Name="Ironbark Zinc Ltd" />
+  <SYMBOL Code="IBX" Name="Imagion Biosystems Limited" />
+  <SYMBOL Code="ICE" Name="ICE Corporation Ltd" />
+  <SYMBOL Code="ICG" Name="Inca Minerals Limited" />
+  <SYMBOL Code="ICGOD" Name="ICGOD" />
+  <SYMBOL Code="ICGOE" Name="ICGOE" />
+  <SYMBOL Code="ICGOF" Name="ICGOF" />
+  <SYMBOL Code="ICI" Name="Icandy Interactive Limited" />
+  <SYMBOL Code="ICL" Name="International Coal Holdings Limited" />
+  <SYMBOL Code="ICLO" Name="ICLO" />
+  <SYMBOL Code="ICN" Name="Icon Energy Ltd" />
+  <SYMBOL Code="ICOR" Name="ICOR" />
+  <SYMBOL Code="ICR" Name="Intelicare Holdings Limited" />
+  <SYMBOL Code="ICRO" Name="ICRO" />
+  <SYMBOL Code="ICU" Name="Isentric Limited" />
+  <SYMBOL Code="ID8" Name="Identitii Limited" />
+  <SYMBOL Code="ID8O" Name="ID8O" />
+  <SYMBOL Code="IDA" Name="Indiana Resources Limited" />
+  <SYMBOL Code="IDT" Name="Institute of Drug Technology Aust" />
+  <SYMBOL Code="IDX" Name="Indexshares Fund The" />
+  <SYMBOL Code="IEAT" Name="IEAT" />
+  <SYMBOL Code="IEC" Name="Intra Energy Corporation Limited" />
+  <SYMBOL Code="IEL" Name="Idp Education Limited" />
+  <SYMBOL Code="IELKOB" Name="IELKOB" />
+  <SYMBOL Code="IELKOP" Name="Idp Education Limited" />
+  <SYMBOL Code="IELKOQ" Name="Idp Education Limited" />
+  <SYMBOL Code="IELKOR" Name="IELKOR" />
+  <SYMBOL Code="IEM" Name="Ishares Msci Emerging Markets" />
+  <SYMBOL Code="IEQ" Name="International Equities Corp Ltd" />
+  <SYMBOL Code="IESG" Name="IESG" />
+  <SYMBOL Code="IEU" Name="Ishares Europe" />
+  <SYMBOL Code="IFG" Name="Infocus Group Holdings Limited" />
+  <SYMBOL Code="IFL" Name="IOOF Holdings Ltd" />
+  <SYMBOL Code="IFLKOA" Name="Ioof Holdings Limited" />
+  <SYMBOL Code="IFLKOD" Name="Ioof Holdings Limited" />
+  <SYMBOL Code="IFLKOP" Name="Ioof Holdings Limited" />
+  <SYMBOL Code="IFLKOQ" Name="Ioof Holdings Limited" />
+  <SYMBOL Code="IFM" Name="Infomedia Ltd" />
+  <SYMBOL Code="IFRA" Name="Vaneck Vectors Ftse Global Infrastructure (hedged)" />
+  <SYMBOL Code="IFT" Name="Infratil Limited." />
+  <SYMBOL Code="IG6" Name="International Graphite Limited" />
+  <SYMBOL Code="IGB" Name="Ishares Treasury" />
+  <SYMBOL Code="IGL" Name="International Goldfields Ltd" />
+  <SYMBOL Code="IGN" Name="Ignite Limited" />
+  <SYMBOL Code="IGO" Name="Independence Group NL" />
+  <SYMBOL Code="IGOKOA" Name="Independence Group Nl" />
+  <SYMBOL Code="IGOKOP" Name="Independence Group Nl" />
+  <SYMBOL Code="IGOKOQ" Name="Independence Group Nl" />
+  <SYMBOL Code="IGOKOR" Name="Independence Group Nl" />
+  <SYMBOL Code="IGRO" Name="IGRO" />
+  <SYMBOL Code="IHCB" Name="Ishares Core Global Corporate Bond (aud Hedged)" />
+  <SYMBOL Code="IHD" Name="Ishares S&amp;p/asx Dividend Opportunities" />
+  <SYMBOL Code="IHEB" Name="Ishares J.p. Morgan Usd Emerging Markets Bond (aud" />
+  <SYMBOL Code="IHOO" Name="Ishares Global 100 Aud Hedged" />
+  <SYMBOL Code="IHWL" Name="Ishares Core Msci World All Cap (aud Hedged)?" />
+  <SYMBOL Code="IIGF" Name="IIGF" />
+  <SYMBOL Code="IIQ" Name="Inoviq Ltd" />
+  <SYMBOL Code="IIQO" Name="IIQO" />
+  <SYMBOL Code="IJH" Name="Ishares Core S&amp;p Mid-cap" />
+  <SYMBOL Code="IJP" Name="Ishares Msci Japan" />
+  <SYMBOL Code="IJR" Name="Ishares Core S&amp;p Small-cap" />
+  <SYMBOL Code="IKE" Name="Ikegps Group Limited" />
+  <SYMBOL Code="IKO" Name="Ishares Msci South Korea Capped" />
+  <SYMBOL Code="ILA" Name="Island Pharmaceuticals Limited" />
+  <SYMBOL Code="ILAO" Name="ILAO" />
+  <SYMBOL Code="ILB" Name="Ishares Government Inflation" />
+  <SYMBOL Code="ILC" Name="Ishares S&amp;p/asx 20" />
+  <SYMBOL Code="ILT" Name="Iltani Resources Limited." />
+  <SYMBOL Code="ILU" Name="Iluka Resources Ltd" />
+  <SYMBOL Code="ILUKOE" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOG" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOH" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOP" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOQ" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOT" Name="Iluka Resources Limited" />
+  <SYMBOL Code="ILUKOU" Name="Iluka Resources Limited" />
+  <SYMBOL Code="IMA" Name="Image Resources NL" />
+  <SYMBOL Code="IMB" Name="Intelligent Monitoring Group Limited" />
+  <SYMBOL Code="IMC" Name="" />
+  <SYMBOL Code="IMD" Name="Imdex Ltd" />
+  <SYMBOL Code="IME" Name="Imexhs Limited" />
+  <SYMBOL Code="IMI" Name="IM Medical Ltd" />
+  <SYMBOL Code="IMLC" Name="IMLC" />
+  <SYMBOL Code="IMM" Name="Immutep Limited" />
+  <SYMBOL Code="IMPQ" Name="IMPQ" />
+  <SYMBOL Code="IMR" Name="Imricor Medical Systems Inc." />
+  <SYMBOL Code="IMU" Name="Imugene Ltd" />
+  <SYMBOL Code="IMUOE" Name="IMUOE" />
+  <SYMBOL Code="INA" Name="Ingenia Communities Group" />
+  <SYMBOL Code="INCM" Name="Betashares Global Income Leaders" />
+  <SYMBOL Code="IND" Name="Indus Energy Nl" />
+  <SYMBOL Code="INDO" Name="Indus Energy Nl" />
+  <SYMBOL Code="INF" Name="Infosentials" />
+  <SYMBOL Code="ING" Name="Inghams Group Limited" />
+  <SYMBOL Code="INGKOD" Name="INGKOD" />
+  <SYMBOL Code="INGKOP" Name="Inghams Group Limited" />
+  <SYMBOL Code="INGKOQ" Name="Inghams Group Limited" />
+  <SYMBOL Code="INGKOS" Name="INGKOS" />
+  <SYMBOL Code="INGKOT" Name="INGKOT" />
+  <SYMBOL Code="INIF" Name="INIF" />
+  <SYMBOL Code="INP" Name="Innamincka Petroleum Ltd" />
+  <SYMBOL Code="INR" Name="India Nre Minerals Ltd" />
+  <SYMBOL Code="INV" Name="InvestorInfo Ltd" />
+  <SYMBOL Code="IOD" Name="Iodm Limited" />
+  <SYMBOL Code="ION" Name="ION Ltd" />
+  <SYMBOL Code="IOO" Name="Ishares Global 100" />
+  <SYMBOL Code="IOZ" Name="Ishares Core S&amp;p/asx 200" />
+  <SYMBOL Code="IPB" Name="Ipb Petroleum Limited" />
+  <SYMBOL Code="IPC" Name="Imperial Pacific Limited" />
+  <SYMBOL Code="IPD" Name="Impedimed Ltd" />
+  <SYMBOL Code="IPG" Name="Investa Property Group" />
+  <SYMBOL Code="IPH" Name="Ipoh" />
+  <SYMBOL Code="IPHKOB" Name="Iph Limited" />
+  <SYMBOL Code="IPL" Name="Incitec Pivot Ltd" />
+  <SYMBOL Code="IPLKOA" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOB" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOD" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOE" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOF" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOG" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOH" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOP" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOQ" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOR" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOT" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPLKOU" Name="Incitec Pivot Limited" />
+  <SYMBOL Code="IPT" Name="Impact Minerals Ltd" />
+  <SYMBOL Code="IPTO" Name="Impact Minerals Limited" />
+  <SYMBOL Code="IPX" Name="Intrapower Ltd" />
+  <SYMBOL Code="IR1" Name="Iris Metals Limited" />
+  <SYMBOL Code="IRD" Name="Iron Road Ltd" />
+  <SYMBOL Code="IRE" Name="IRESS Market Technology Ltd" />
+  <SYMBOL Code="IREKOA" Name="Iress Limited" />
+  <SYMBOL Code="IREKOB" Name="Iress Limited" />
+  <SYMBOL Code="IREKOQ" Name="Iress Limited" />
+  <SYMBOL Code="IREKOR" Name="Iress Limited" />
+  <SYMBOL Code="IRI" Name="Integrated Research Ltd" />
+  <SYMBOL Code="IRX" Name="Inhalerx Limited" />
+  <SYMBOL Code="IS3" Name="I Synergy Group Limited" />
+  <SYMBOL Code="ISEC" Name="Ishares Enhanced Cash" />
+  <SYMBOL Code="ISLM" Name="ISLM" />
+  <SYMBOL Code="ISO" Name="Ishares S&amp;p/asx Small Ordinaries" />
+  <SYMBOL Code="ITEK" Name="ITEK" />
+  <SYMBOL Code="ITM" Name="Itech Minerals Ltd" />
+  <SYMBOL Code="IUSG" Name="IUSG" />
+  <SYMBOL Code="IVE" Name="Ishares Msci Eafe" />
+  <SYMBOL Code="IVR" Name="IVR" />
+  <SYMBOL Code="IVRO" Name="Investigator Resources Ltd" />
+  <SYMBOL Code="IVT" Name="Inventis Ltd" />
+  <SYMBOL Code="IVV" Name="Ishares Core S&amp;p 500" />
+  <SYMBOL Code="IVX" Name="Invion Limited" />
+  <SYMBOL Code="IVZ" Name="Invictus Energy Ltd" />
+  <SYMBOL Code="IVZOA" Name="IVZOA" />
+  <SYMBOL Code="IXC" Name="Invex Therapeutics Ltd" />
+  <SYMBOL Code="IXI" Name="Ishares Global Consumer Staples" />
+  <SYMBOL Code="IXJ" Name="Ishares Global Healthcare" />
+  <SYMBOL Code="IXR" Name="IMX Resoures NL" />
+  <SYMBOL Code="IXU" Name="Ixup Limited" />
+  <SYMBOL Code="IZZ" Name="Ishares China Large-cap" />
+  <SYMBOL Code="JAL" Name="Jameson Resources Ltd" />
+  <SYMBOL Code="JAN" Name="Janison Education Group Limited" />
+  <SYMBOL Code="JAT" Name="" />
+  <SYMBOL Code="JAV" Name="Javelin Minerals Limited" />
+  <SYMBOL Code="JAVOA" Name="JAVOA" />
+  <SYMBOL Code="JAY" Name="Jayride Group Limited" />
+  <SYMBOL Code="JBH" Name="JB Hi-Fi Ltd" />
+  <SYMBOL Code="JBHKOA" Name="Jb Hi-fi Limited" />
+  <SYMBOL Code="JBHKOB" Name="Jb Hi-fi Limited" />
+  <SYMBOL Code="JBHKOC" Name="Jb Hi-fi Limited" />
+  <SYMBOL Code="JBHKOG" Name="Jb Hi-fi Limited" />
+  <SYMBOL Code="JBY" Name="James Bay Minerals Limited" />
+  <SYMBOL Code="JCS" Name="Jcurve Solutions Ltd" />
+  <SYMBOL Code="JDO" Name="Judo Capital Holdings Limited" />
+  <SYMBOL Code="JDOKOA" Name="JDOKOA" />
+  <SYMBOL Code="JDOKOB" Name="JDOKOB" />
+  <SYMBOL Code="JDOPA" Name="JDOPA" />
+  <SYMBOL Code="JEGA" Name="JEGA" />
+  <SYMBOL Code="JGH" Name="Jade Gas Holdings Limited" />
+  <SYMBOL Code="JGLO" Name="JGLO" />
+  <SYMBOL Code="JHGA" Name="JHGA" />
+  <SYMBOL Code="JHLO" Name="JHLO" />
+  <SYMBOL Code="JHX" Name="James Hardie Industries NV (CUFS)" />
+  <SYMBOL Code="JHXKOA" Name="James Hardie Industries Se" />
+  <SYMBOL Code="JHXKOD" Name="James Hardie Industries Plc" />
+  <SYMBOL Code="JHXKOQ" Name="James Hardie Industries Se" />
+  <SYMBOL Code="JHXKOR" Name="James Hardie Industries Se" />
+  <SYMBOL Code="JHXKOT" Name="James Hardie Industries Plc" />
+  <SYMBOL Code="JIN" Name="JIN" />
+  <SYMBOL Code="JLG" Name="Johns Lyng Group Limited" />
+  <SYMBOL Code="JLL" Name="Jindalee Lithium Limited" />
+  <SYMBOL Code="JLLO" Name="JLLO" />
+  <SYMBOL Code="JLLOA" Name="JLLOA" />
+  <SYMBOL Code="JMS" Name="Jupiter Mines Ltd" />
+  <SYMBOL Code="JNDQ" Name="JNDQ" />
+  <SYMBOL Code="JNO" Name="Juno Minerals Limited" />
+  <SYMBOL Code="JPEQ" Name="JPEQ" />
+  <SYMBOL Code="JPHQ" Name="JPHQ" />
+  <SYMBOL Code="JPR" Name="Jupiter Energy Ltd" />
+  <SYMBOL Code="JREG" Name="JREG" />
+  <SYMBOL Code="JRHG" Name="JRHG" />
+  <SYMBOL Code="JRV" Name="Jervois Mining Ltd" />
+  <SYMBOL Code="JYC" Name="Joyce Corporation Ltd" />
+  <SYMBOL Code="JZRO" Name="JZRO" />
+  <SYMBOL Code="KAI" Name="Kairos Minerals Limited" />
+  <SYMBOL Code="KAL" Name="Kalgoorlie-Boulder Resources Ltd" />
+  <SYMBOL Code="KAM" Name="K2 Asset Management Holdings Ltd" />
+  <SYMBOL Code="KAR" Name="Karoon Gas Australia Ltd" />
+  <SYMBOL Code="KARKOD" Name="Karoon Gas Australia Limited" />
+  <SYMBOL Code="KARKOE" Name="Karoon Gas Australia Limited" />
+  <SYMBOL Code="KARKOR" Name="Karoon Gas Australia Limited" />
+  <SYMBOL Code="KARKOU" Name="Karoon Gas Australia Limited" />
+  <SYMBOL Code="KARKOV" Name="Karoon Gas Australia Limited" />
+  <SYMBOL Code="KAT" Name="Katana Capital Ltd" />
+  <SYMBOL Code="KATO" Name="KATO" />
+  <SYMBOL Code="KAU" Name="Kaiser Reef Limited" />
+  <SYMBOL Code="KBC" Name="Keybridge Capital Ltd" />
+  <SYMBOL Code="KCC" Name="Kincora Copper Limited" />
+  <SYMBOL Code="KCN" Name="Kingsgate Consolidated Ltd" />
+  <SYMBOL Code="KDY" Name="Kaddy Limited" />
+  <SYMBOL Code="KEY" Name="Key Petroleum Ltd" />
+  <SYMBOL Code="KFM" Name="Kingfisher Mining Ltd" />
+  <SYMBOL Code="KFMO" Name="KFMO" />
+  <SYMBOL Code="KGD" Name="Kula Gold Limited" />
+  <SYMBOL Code="KGL" Name="Kentor Gold Ltd" />
+  <SYMBOL Code="KGN" Name="Kogan.com Ltd" />
+  <SYMBOL Code="KKC" Name="Kkr Credit Income Fund" />
+  <SYMBOL Code="KKO" Name="Kinetiko Energy Ltd" />
+  <SYMBOL Code="KLI" Name="Killi Resources Limited" />
+  <SYMBOL Code="KLR" Name="Kaili Resources Limited" />
+  <SYMBOL Code="KLS" Name="Kanowna Lights Nl" />
+  <SYMBOL Code="KM1" Name="Kali Metals Limited" />
+  <SYMBOL Code="KMD" Name="Kathmandu Holdings Limited" />
+  <SYMBOL Code="KME" Name="Kip McGrath Education Centres" />
+  <SYMBOL Code="KNB" Name="Koonenberry Gold Limited" />
+  <SYMBOL Code="KNBO" Name="KNBO" />
+  <SYMBOL Code="KNG" Name="Kingsland Minerals Ltd" />
+  <SYMBOL Code="KNGO" Name="KNGO" />
+  <SYMBOL Code="KNI" Name="Kuniko Limited" />
+  <SYMBOL Code="KNM" Name="Kneomedia Limited" />
+  <SYMBOL Code="KNO" Name="Knosys Limited" />
+  <SYMBOL Code="KOB" Name="Koba Resources Limited" />
+  <SYMBOL Code="KOR" Name="Korab Resources Ltd" />
+  <SYMBOL Code="KOV" Name="Korvest Ltd" />
+  <SYMBOL Code="KP2" Name="Kore Potash Plc" />
+  <SYMBOL Code="KPG" Name="Kelly Partners Group Holdings Limited" />
+  <SYMBOL Code="KPO" Name="Kalina Power Limited" />
+  <SYMBOL Code="KRM" Name="Kingsrose Mining Ltd" />
+  <SYMBOL Code="KRR" Name="King River Resources Limited" />
+  <SYMBOL Code="KSC" Name="K&amp;S Corporation Ltd" />
+  <SYMBOL Code="KSL" Name="Kina Securities Limited" />
+  <SYMBOL Code="KSM" Name="Kingstream Steel" />
+  <SYMBOL Code="KSN" Name="Kingston Resources Limited" />
+  <SYMBOL Code="KTA" Name="Krakatoa Resources Limited" />
+  <SYMBOL Code="KYP" Name="Kinatico Ltd" />
+  <SYMBOL Code="KZR" Name="Kalamazoo Resources Limited" />
+  <SYMBOL Code="L1IF" Name="L1IF" />
+  <SYMBOL Code="L1M" Name="Lightning Minerals Ltd" />
+  <SYMBOL Code="L1MO" Name="L1MO" />
+  <SYMBOL Code="LAM" Name="Laramide Resources Ltd" />
+  <SYMBOL Code="LAT" Name="Latin Gold Ltd" />
+  <SYMBOL Code="LAU" Name="Lindsay Australia Ltd" />
+  <SYMBOL Code="LAW" Name="Lawfinance Limited" />
+  <SYMBOL Code="LBL" Name="Laserbond Ltd" />
+  <SYMBOL Code="LBT" Name="Labtech Systems Ltd" />
+  <SYMBOL Code="LBTOA" Name="Labtech Systems Ltd" />
+  <SYMBOL Code="LCE" Name="London City Equities Ltd" />
+  <SYMBOL Code="LCL" Name="Lighting Corporation Ltd" />
+  <SYMBOL Code="LCLO" Name="LCLO" />
+  <SYMBOL Code="LCY" Name="Legacy Iron Ore Ltd" />
+  <SYMBOL Code="LDR" Name="Lach Drummond Resources Ltd" />
+  <SYMBOL Code="LDX" Name="Lumos Diagnostics Holdings Limited" />
+  <SYMBOL Code="LEG" Name="Legend Mining Ltd" />
+  <SYMBOL Code="LEL" Name="Lion Equities" />
+  <SYMBOL Code="LEX" Name="Lefroy Exploration Limited" />
+  <SYMBOL Code="LFG" Name="Liberty Financial Group" />
+  <SYMBOL Code="LFS" Name="Latitude Group Holdings Limited" />
+  <SYMBOL Code="LFSPA" Name="LFSPA" />
+  <SYMBOL Code="LGI" Name="Lgi Limited" />
+  <SYMBOL Code="LGL" Name="Lihir Gold Ltd" />
+  <SYMBOL Code="LGM" Name="Luiri Gold Limited" />
+  <SYMBOL Code="LGMO" Name="LGMO" />
+  <SYMBOL Code="LGP" Name="Little Green Pharma Ltd" />
+  <SYMBOL Code="LHM" Name="Land &amp; Homes Group Limited" />
+  <SYMBOL Code="LIC" Name="Lifestyles Communities Ltd" />
+  <SYMBOL Code="LICKOA" Name="LICKOA" />
+  <SYMBOL Code="LICKOB" Name="LICKOB" />
+  <SYMBOL Code="LICKOC" Name="LICKOC" />
+  <SYMBOL Code="LIN" Name="Lindian Resources Ltd" />
+  <SYMBOL Code="LIO" Name="Lion Energy Ltd" />
+  <SYMBOL Code="LIS" Name="Li-s Energy Limited" />
+  <SYMBOL Code="LIT" Name="Lithium Australia Nl" />
+  <SYMBOL Code="LITOA" Name="LITOA" />
+  <SYMBOL Code="LITOB" Name="Lithium Australia Limited" />
+  <SYMBOL Code="LKE" Name="Lake Resources NL" />
+  <SYMBOL Code="LKY" Name="Locksley Resources Limited" />
+  <SYMBOL Code="LLC" Name="Lend Lease Corporation Ltd" />
+  <SYMBOL Code="LLCKOA" Name="Lend Lease Group" />
+  <SYMBOL Code="LLCKOB" Name="Lend Lease Group" />
+  <SYMBOL Code="LLCKOC" Name="Lend Lease Group" />
+  <SYMBOL Code="LLCKOR" Name="Lend Lease Group" />
+  <SYMBOL Code="LLCKOS" Name="Lend Lease Group" />
+  <SYMBOL Code="LLCKOV" Name="Lend Lease Group" />
+  <SYMBOL Code="LLI" Name="Loyal Lithium Limited" />
+  <SYMBOL Code="LLL" Name="Leo Lithium Limited" />
+  <SYMBOL Code="LM1" Name="Leeuwin Metals Ltd" />
+  <SYMBOL Code="LM8" Name="Lunnon Metals Limited" />
+  <SYMBOL Code="LMG" Name="Latrobe Magnesium Ltd" />
+  <SYMBOL Code="LML" Name="Lincoln Minerals Ltd" />
+  <SYMBOL Code="LMS" Name="Litchfield Minerals Limited" />
+  <SYMBOL Code="LNR" Name="Lonestar Resources Limited" />
+  <SYMBOL Code="LNRO" Name="Lanthanein Resources Ltd" />
+  <SYMBOL Code="LNU" Name="Linius Technologies Limited" />
+  <SYMBOL Code="LNW" Name="Light &amp; Wonder Inc." />
+  <SYMBOL Code="LNYN" Name="LNYN" />
+  <SYMBOL Code="LOM" Name="Lonrho Mining Ltd" />
+  <SYMBOL Code="LOT" Name="Lotus Resources Limited" />
+  <SYMBOL Code="LOV" Name="Lovisa Holdings Limited" />
+  <SYMBOL Code="LOVKOB" Name="Lovisa Holdings Limited" />
+  <SYMBOL Code="LOVKOP" Name="LOVKOP" />
+  <SYMBOL Code="LOVKOQ" Name="LOVKOQ" />
+  <SYMBOL Code="LOVKOR" Name="LOVKOR" />
+  <SYMBOL Code="LPD" Name="Lepidico Ltd" />
+  <SYMBOL Code="LPDOE" Name="LPDOE" />
+  <SYMBOL Code="LPE" Name="Locality Planning Energy Holdings Ltd" />
+  <SYMBOL Code="LPM" Name="Loop Mobile Ltd" />
+  <SYMBOL Code="LRD" Name="Lord Resources Limited" />
+  <SYMBOL Code="LRDO" Name="Lord Resources Limited" />
+  <SYMBOL Code="LRK" Name="Lark Distilling Co. Ltd" />
+  <SYMBOL Code="LRL" Name="Leyshon Resources Ltd" />
+  <SYMBOL Code="LRS" Name="Latin Resources Limited" />
+  <SYMBOL Code="LRT" Name="Lowell Resources Fund" />
+  <SYMBOL Code="LRV" Name="Larvotto Resources Limited" />
+  <SYMBOL Code="LRVO" Name="LRVO" />
+  <SYMBOL Code="LSA" Name="Lachlan Star Ltd" />
+  <SYMBOL Code="LSF" Name="L1 Long Short Fund Limited" />
+  <SYMBOL Code="LSR" Name="Lodestar Minerals Ltd" />
+  <SYMBOL Code="LSX" Name="Lion Selection Group Limited." />
+  <SYMBOL Code="LTM" Name="Arcadium Lithium Plc" />
+  <SYMBOL Code="LTP" Name="Ltr Pharma Limited" />
+  <SYMBOL Code="LTR" Name="Liontown Resources Ltd" />
+  <SYMBOL Code="LTRKOP" Name="LTRKOP" />
+  <SYMBOL Code="LTRKOQ" Name="LTRKOQ" />
+  <SYMBOL Code="LTRKOR" Name="LTRKOR" />
+  <SYMBOL Code="LU7" Name="Lithium Universe Limited" />
+  <SYMBOL Code="LU7O" Name="LU7O" />
+  <SYMBOL Code="LV1" Name="Live Verdure Ltd" />
+  <SYMBOL Code="LV1OA" Name="LV1OA" />
+  <SYMBOL Code="LVE" Name="Love Group Global Ltd" />
+  <SYMBOL Code="LVH" Name="Livehire Limited" />
+  <SYMBOL Code="LYC" Name="Lynas Corporation Ltd" />
+  <SYMBOL Code="LYCKOA" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOC" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOD" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOP" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOQ" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOS" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOT" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOU" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYCKOV" Name="Lynas Corporation Limited" />
+  <SYMBOL Code="LYK" Name="Lykos Metals Limited" />
+  <SYMBOL Code="LYKOA" Name="LYKOA" />
+  <SYMBOL Code="LYL" Name="Lycopodium Ltd" />
+  <SYMBOL Code="LYN" Name="Lycaon Resources Ltd" />
+  <SYMBOL Code="M24" Name="Mamba Exploration Limited" />
+  <SYMBOL Code="M2M" Name="Mt Malcolm Mines Nl" />
+  <SYMBOL Code="M2MO" Name="M2MO" />
+  <SYMBOL Code="M2R" Name="Miramar Resources Limited" />
+  <SYMBOL Code="M2ROA" Name="M2ROA" />
+  <SYMBOL Code="M3M" Name="M3 Mining Limited" />
+  <SYMBOL Code="M4M" Name="Macro Metals Limited" />
+  <SYMBOL Code="M4MOB" Name="M4MOB" />
+  <SYMBOL Code="M7T" Name="Mach7 Technologies Limited" />
+  <SYMBOL Code="M8S" Name="M8 Sustainable Limited" />
+  <SYMBOL Code="MAC" Name="Macro Corporation Ltd" />
+  <SYMBOL Code="MAD" Name="Maverick Drilling And Exploration Limited" />
+  <SYMBOL Code="MAET" Name="MAET" />
+  <SYMBOL Code="MAF" Name="Ma Financial Group Limited" />
+  <SYMBOL Code="MAG" Name="Magellan Petroleum Australia Ltd" />
+  <SYMBOL Code="MAH" Name="Macmahon Holdings Ltd" />
+  <SYMBOL Code="MAM" Name="Aii S&amp;p/asx 300 Metals &amp; Mining" />
+  <SYMBOL Code="MAN" Name="Magna Mining Ltd" />
+  <SYMBOL Code="MAP" Name="Macquarie Airports" />
+  <SYMBOL Code="MAQ" Name="Macquarie Telecom Group Ltd" />
+  <SYMBOL Code="MAT" Name="Matine Ltd t/over" />
+  <SYMBOL Code="MAU" Name="Magnetic Resources NL" />
+  <SYMBOL Code="MAUCA" Name="Magnetic Resources Nl" />
+  <SYMBOL Code="MAY" Name="Mayne Group Ltd" />
+  <SYMBOL Code="MBH" Name="Maggie Beer Holdings Ltd" />
+  <SYMBOL Code="MBK" Name="Metal Bank Limited" />
+  <SYMBOL Code="MBLPC" Name="MBLPC" />
+  <SYMBOL Code="MBLPD" Name="MBLPD" />
+  <SYMBOL Code="MBX" Name="mBox.com" />
+  <SYMBOL Code="MCA" Name="Medica Holdings" />
+  <SYMBOL Code="MCCL" Name="MCCL" />
+  <SYMBOL Code="MCE" Name="Matrix Composites &amp; Engineering Limited" />
+  <SYMBOL Code="MCGG" Name="MCGG" />
+  <SYMBOL Code="MCM" Name="Mc Mining Limited" />
+  <SYMBOL Code="MCO" Name="Mount Conqueror Minerals NL" />
+  <SYMBOL Code="MCP" Name="McPhersons Ltd" />
+  <SYMBOL Code="MCY" Name="Mighty River Power Limited." />
+  <SYMBOL Code="MDC" Name="McConnell Dowell Corporation" />
+  <SYMBOL Code="MDI" Name="Middle Island Resources Limited" />
+  <SYMBOL Code="MDR" Name="Medadvisor Limited" />
+  <SYMBOL Code="MDX" Name="Mindax Ltd" />
+  <SYMBOL Code="MEC" Name="Morphic Ethical Equities Fund Limited" />
+  <SYMBOL Code="MEG" Name="MCM Entertainment Group Ltd" />
+  <SYMBOL Code="MEI" Name="Meteoric Resources NL" />
+  <SYMBOL Code="MEK" Name="Meeka Gold Limited" />
+  <SYMBOL Code="MEL" Name="Metgasco Ltd" />
+  <SYMBOL Code="MELOB" Name="MELOB" />
+  <SYMBOL Code="MEM" Name="Memphasys Limited." />
+  <SYMBOL Code="MEU" Name="Maramota Energy Ltd" />
+  <SYMBOL Code="MEZ" Name="Meridian Energy Limited" />
+  <SYMBOL Code="MFD" Name="Mayfield Childcare Limited" />
+  <SYMBOL Code="MFF" Name="Magellan Flagship Fund Ltd" />
+  <SYMBOL Code="MFG" Name="Magellan Financial Group" />
+  <SYMBOL Code="MFGKOA" Name="Magellan Financial Group Limited" />
+  <SYMBOL Code="MFGKOB" Name="Magellan Financial Group Limited" />
+  <SYMBOL Code="MFGKOC" Name="Magellan Financial Group Limited" />
+  <SYMBOL Code="MFGKOQ" Name="Magellan Financial Group Limited" />
+  <SYMBOL Code="MFGKOR" Name="Magellan Financial Group Limited" />
+  <SYMBOL Code="MFGO" Name="MFGO" />
+  <SYMBOL Code="MFOA" Name="MFOA" />
+  <SYMBOL Code="MGA" Name="Metalsgrove Mining Ltd" />
+  <SYMBOL Code="MGAO" Name="MGAO" />
+  <SYMBOL Code="MGH" Name="Maas Group Holdings Limited" />
+  <SYMBOL Code="MGL" Name="Magontec Limited" />
+  <SYMBOL Code="MGOC" Name="MGOC" />
+  <SYMBOL Code="MGR" Name="Mirvac Group" />
+  <SYMBOL Code="MGRKOB" Name="Mirvac Group" />
+  <SYMBOL Code="MGRKOC" Name="Mirvac Group" />
+  <SYMBOL Code="MGRKOE" Name="MGRKOE" />
+  <SYMBOL Code="MGRKOP" Name="Mirvac Group" />
+  <SYMBOL Code="MGRKOQ" Name="Mirvac Group" />
+  <SYMBOL Code="MGRKOR" Name="Mirvac Group" />
+  <SYMBOL Code="MGT" Name="Magnetite Mines Limited." />
+  <SYMBOL Code="MGTO" Name="MGTO" />
+  <SYMBOL Code="MGTOA" Name="MGTOA" />
+  <SYMBOL Code="MGU" Name="Magnum Gold NL" />
+  <SYMBOL Code="MGUO" Name="Magnum Mining And Exploration Limited" />
+  <SYMBOL Code="MGX" Name="Mount Gibson Iron Ltd" />
+  <SYMBOL Code="MGXKOJ" Name="Mount Gibson Iron Limited" />
+  <SYMBOL Code="MHC" Name="Manhattan Corporation Limited" />
+  <SYMBOL Code="MHG" Name="Magellan Global Equities Fund (currency Hedged)" />
+  <SYMBOL Code="MHHT" Name="MHHT" />
+  <SYMBOL Code="MHI" Name="Merchant House International Ltd" />
+  <SYMBOL Code="MHJ" Name="Michael Hill International Limited" />
+  <SYMBOL Code="MHK" Name="Metal Hawk Limited." />
+  <SYMBOL Code="MHM" Name="Macquarie Harbour Mining Ltd" />
+  <SYMBOL Code="MHOT" Name="MHOT" />
+  <SYMBOL Code="MI6" Name="Minerals 260 Limited" />
+  <SYMBOL Code="MICH" Name="MICH" />
+  <SYMBOL Code="MIN" Name="Mineral Resources Ltd" />
+  <SYMBOL Code="MINKOB" Name="Mineral Resources Limited" />
+  <SYMBOL Code="MINKOC" Name="Mineral Resources Limited" />
+  <SYMBOL Code="MIO" Name="Miclyn Express Offshore Limited" />
+  <SYMBOL Code="MIOO" Name="MIOO" />
+  <SYMBOL Code="MIR" Name="Mirrabooka Investments Ltd" />
+  <SYMBOL Code="MKG" Name="Mako Gold Limited" />
+  <SYMBOL Code="MKL" Name="Mighty Kingdom Limited" />
+  <SYMBOL Code="MKR" Name="Manuka Resources Ltd." />
+  <SYMBOL Code="MKT" Name="The Market Limited" />
+  <SYMBOL Code="MLG" Name="Mlg Oz Limited" />
+  <SYMBOL Code="MLS" Name="Metals Australia Ltd" />
+  <SYMBOL Code="MLX" Name="Metals X Ltd" />
+  <SYMBOL Code="MM1" Name="Midas Minerals Ltd" />
+  <SYMBOL Code="MM8" Name="Medallion Metals Limited." />
+  <SYMBOL Code="MMA" Name="MMC Contrarian Ltd" />
+  <SYMBOL Code="MME" Name="MTM Entertainment Trust" />
+  <SYMBOL Code="MMI" Name="Metro Mining Limited" />
+  <SYMBOL Code="MMKT" Name="MMKT" />
+  <SYMBOL Code="MML" Name="Medusa Mining Ltd" />
+  <SYMBOL Code="MMR" Name="Mec Resources Ltd" />
+  <SYMBOL Code="MMRO" Name="Mec Resources Ltd" />
+  <SYMBOL Code="MMS" Name="McMillan Shakespeare Ltd" />
+  <SYMBOL Code="MMSKOB" Name="Mcmillan Shakespeare Limited" />
+  <SYMBOL Code="MMSKOC" Name="Mcmillan Shakespeare Limited" />
+  <SYMBOL Code="MNB" Name="Minbos Resources Limited" />
+  <SYMBOL Code="MNBOB" Name="MNBOB" />
+  <SYMBOL Code="MNC" Name="Metminco Ltd" />
+  <SYMBOL Code="MND" Name="Monadelphous Group Ltd" />
+  <SYMBOL Code="MNDKOA" Name="Monadelphous Group Limited" />
+  <SYMBOL Code="MNDKOC" Name="Monadelphous Group Limited" />
+  <SYMBOL Code="MNDKOP" Name="Monadelphous Group Limited" />
+  <SYMBOL Code="MNDKOQ" Name="Monadelphous Group Limited" />
+  <SYMBOL Code="MNDKOT" Name="Monadelphous Group Limited" />
+  <SYMBOL Code="MNS" Name="Milnes Holdings" />
+  <SYMBOL Code="MOAT" Name="Vaneck Vectors Morningstar Wide?moat" />
+  <SYMBOL Code="MOGL" Name="MOGL" />
+  <SYMBOL Code="MOH" Name="Moho Resources Limited" />
+  <SYMBOL Code="MOM" Name="Moab Minerals Limited" />
+  <SYMBOL Code="MOT" Name="Motopia Limited" />
+  <SYMBOL Code="MOV" Name="Moore Australasia (holdings) Limited" />
+  <SYMBOL Code="MOZ" Name="Mozambi Coal Limited" />
+  <SYMBOL Code="MOZG" Name="MOZG" />
+  <SYMBOL Code="MP1" Name="Megaport Limited" />
+  <SYMBOL Code="MP1KOB" Name="MP1KOB" />
+  <SYMBOL Code="MP1KOG" Name="MP1KOG" />
+  <SYMBOL Code="MP1KOP" Name="MP1KOP" />
+  <SYMBOL Code="MPA" Name="Marine Produce Australia Ltd" />
+  <SYMBOL Code="MPK" Name="Many Peaks Minerals Ltd" />
+  <SYMBOL Code="MPL" Name="Medibank Private Limited" />
+  <SYMBOL Code="MPLKOE" Name="Medibank Private Limited" />
+  <SYMBOL Code="MPLKOP" Name="Medibank Private Limited" />
+  <SYMBOL Code="MPLKOS" Name="Medibank Private Limited" />
+  <SYMBOL Code="MPP" Name="Metro Performance Glass Limited" />
+  <SYMBOL Code="MPR" Name="Macquarie ProLogis Trust" />
+  <SYMBOL Code="MPRO" Name="Mpower Group Limited" />
+  <SYMBOL Code="MPX" Name="Mustera Property Group Limited" />
+  <SYMBOL Code="MQDB" Name="MQDB" />
+  <SYMBOL Code="MQEG" Name="MQEG" />
+  <SYMBOL Code="MQG" Name="Macquarie Group Ltd" />
+  <SYMBOL Code="MQGKOB" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOC" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOD" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOE" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOG" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOI" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOJ" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOK" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOP" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOQ" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOT" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGKOZ" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGMOA" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGMOQ" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGPC" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGPD" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGPE" Name="MQGPE" />
+  <SYMBOL Code="MQGPF" Name="Macquarie Group Limited" />
+  <SYMBOL Code="MQGPG" Name="MQGPG" />
+  <SYMBOL Code="MQIO" Name="MQIO" />
+  <SYMBOL Code="MQR" Name="Marquee Resources Limited" />
+  <SYMBOL Code="MRC" Name="Mineral Commodities Ltd" />
+  <SYMBOL Code="MRD" Name="Mount Ridley Mines Limited" />
+  <SYMBOL Code="MRE" Name="Minara Resources Ltd" />
+  <SYMBOL Code="MRI" Name="MRI Holdings Ltd" />
+  <SYMBOL Code="MRL" Name="Miller's Retail Ltd" />
+  <SYMBOL Code="MRQ" Name="Mrg Metals Limited" />
+  <SYMBOL Code="MRQO" Name="Mrg Metals Limited" />
+  <SYMBOL Code="MRR" Name="Minrex Resources Nl" />
+  <SYMBOL Code="MRZ" Name="Mirvac Real Estate Investment Trust" />
+  <SYMBOL Code="MSB" Name="Mesoblast Ltd" />
+  <SYMBOL Code="MSG" Name="Mcs Services Limited" />
+  <SYMBOL Code="MSI" Name="Multistack International Ltd" />
+  <SYMBOL Code="MSTR" Name="MSTR" />
+  <SYMBOL Code="MSV" Name="Mitchell Services Limited" />
+  <SYMBOL Code="MTB" Name="Mount Burgess Mining NL" />
+  <SYMBOL Code="MTC" Name="Metalstech Limited" />
+  <SYMBOL Code="MTH" Name="Mithril Resources Ltd" />
+  <SYMBOL Code="MTHO" Name="Mithril Resources Limited" />
+  <SYMBOL Code="MTL" Name="Manalto Limited" />
+  <SYMBOL Code="MTM" Name="Mareterram Limited" />
+  <SYMBOL Code="MTO" Name="Moto Goldmines Ltd" />
+  <SYMBOL Code="MTS" Name="Metcash Ltd" />
+  <SYMBOL Code="MTSKOE" Name="Metcash Limited" />
+  <SYMBOL Code="MTSKOP" Name="Metcash Limited" />
+  <SYMBOL Code="MTSKOQ" Name="Metcash Limited" />
+  <SYMBOL Code="MTSKOR" Name="Metcash Limited" />
+  <SYMBOL Code="MTUM" Name="MTUM" />
+  <SYMBOL Code="MVA" Name="Vaneck Vectors Australian?property" />
+  <SYMBOL Code="MVB" Name="Vaneck Vectors Australian Banks" />
+  <SYMBOL Code="MVE" Name="Vaneck Vectors S&amp;p/asx Midcap" />
+  <SYMBOL Code="MVF" Name="Monash Ivf Group Limited" />
+  <SYMBOL Code="MVL" Name="Microview Ltd" />
+  <SYMBOL Code="MVOL" Name="Ishares Edge Msci Australia Minimum Volatility" />
+  <SYMBOL Code="MVP" Name="Medical Developments International" />
+  <SYMBOL Code="MVR" Name="Vaneck Vectors Australian Resources" />
+  <SYMBOL Code="MVS" Name="Vaneck Vectors Small Cap Dividend?payers" />
+  <SYMBOL Code="MVW" Name="Vaneck Vectors Australian Equal Weight" />
+  <SYMBOL Code="MWY" Name="Midway Limited" />
+  <SYMBOL Code="MX1" Name="Micro-x Limited" />
+  <SYMBOL Code="MXI" Name="MaxiTRA Industries Ltd" />
+  <SYMBOL Code="MXO" Name="Matrix Oil" />
+  <SYMBOL Code="MXR" Name="Maximus Resources Ltd" />
+  <SYMBOL Code="MXT" Name="Mcp Master Income Trust" />
+  <SYMBOL Code="MYE" Name="Mastermyne Group Limited" />
+  <SYMBOL Code="MYG" Name="Mutiny Gold Ltd" />
+  <SYMBOL Code="MYR" Name="Myer Holdings Limited" />
+  <SYMBOL Code="MYS" Name="Mystate Limited" />
+  <SYMBOL Code="MYX" Name="MYX" />
+  <SYMBOL Code="N1H" Name="N1 Holdings Limited" />
+  <SYMBOL Code="NAB" Name="National Australia Bank Ltd" />
+  <SYMBOL Code="NABKOA" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOB" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOC" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOD" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOG" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOH" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOJ" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOK" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOL" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOP" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOQ" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOT" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOV" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABKOW" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABPF" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABPH" Name="NABPH" />
+  <SYMBOL Code="NABPI" Name="National Australia Bank Limited" />
+  <SYMBOL Code="NABPJ" Name="NABPJ" />
+  <SYMBOL Code="NABPK" Name="NABPK" />
+  <SYMBOL Code="NAC" Name="Naos Absolute Opportunities Company Limited" />
+  <SYMBOL Code="NACGA" Name="NACGA" />
+  <SYMBOL Code="NACO" Name="Naos Absolute Opportunities Company Limited" />
+  <SYMBOL Code="NAE" Name="New Age Exploration Ltd" />
+  <SYMBOL Code="NAG" Name="" />
+  <SYMBOL Code="NAGO" Name="NAGO" />
+  <SYMBOL Code="NAN" Name="Nanosonics Ltd" />
+  <SYMBOL Code="NANKOB" Name="Nanosonics Limited" />
+  <SYMBOL Code="NANKOR" Name="NANKOR" />
+  <SYMBOL Code="NC1" Name="Nico Resources Limited" />
+  <SYMBOL Code="NC6" Name="Nanollose Limited" />
+  <SYMBOL Code="NC6OB" Name="NC6OB" />
+  <SYMBOL Code="NCC" Name="Naos Emerging Opportunities Company Limited" />
+  <SYMBOL Code="NCCGA" Name="NCCGA" />
+  <SYMBOL Code="NCCO" Name="Naos Emerging Opportunities Company Limited" />
+  <SYMBOL Code="NCK" Name="Nick Scali Ltd" />
+  <SYMBOL Code="NCR" Name="Nucoal Resources Nl" />
+  <SYMBOL Code="NDIA" Name="NDIA" />
+  <SYMBOL Code="NDO" Name="Nido Petroleum Ltd" />
+  <SYMBOL Code="NDQ" Name="Betashares Nasdaq 100" />
+  <SYMBOL Code="NDXKOA" Name="Nasdaq 100 E-mini" />
+  <SYMBOL Code="NDXKOD" Name="NDXKOD" />
+  <SYMBOL Code="NDXKOE" Name="NDXKOE" />
+  <SYMBOL Code="NDXKOF" Name="NDXKOF" />
+  <SYMBOL Code="NDXKON" Name="NDXKON" />
+  <SYMBOL Code="NDXKOP" Name="Nasdaq 100 E-mini" />
+  <SYMBOL Code="NDXKOQ" Name="Nasdaq 100 E-mini" />
+  <SYMBOL Code="NDXKOR" Name="Nasdaq 100 E-mini" />
+  <SYMBOL Code="NDXKOS" Name="Nasdaq 100 E-mini" />
+  <SYMBOL Code="NEC" Name="Nine Entertainment Co Holdings Ltd" />
+  <SYMBOL Code="NECKOA" Name="Nine Entertainment Co. Holdings Limited" />
+  <SYMBOL Code="NECKOD" Name="Nine Entertainment Co. Holdings Limited" />
+  <SYMBOL Code="NECKOP" Name="Nine Entertainment Co. Holdings Limited" />
+  <SYMBOL Code="NECKOS" Name="Nine Entertainment Co. Holdings Limited" />
+  <SYMBOL Code="NEM" Name="Newmont Mining Corporation (US CUFS)" />
+  <SYMBOL Code="NES" Name="Nelson Resources Limited." />
+  <SYMBOL Code="NET" Name="Netlinkz Limited" />
+  <SYMBOL Code="NEU" Name="Neuren Pharmaceuticals Ltd" />
+  <SYMBOL Code="NEUKOB" Name="NEUKOB" />
+  <SYMBOL Code="NEUKOC" Name="NEUKOC" />
+  <SYMBOL Code="NFL" Name="Natural Fuel Ltd" />
+  <SYMBOL Code="NFLO" Name="NFLO" />
+  <SYMBOL Code="NFM" Name="Normandy Nfm" />
+  <SYMBOL Code="NFNG" Name="NFNG" />
+  <SYMBOL Code="NGE" Name="New Guinea Energy Ltd" />
+  <SYMBOL Code="NGI" Name="Navigator Global Investments Limited" />
+  <SYMBOL Code="NGS" Name="Nutritional Growth Solutions Ltd" />
+  <SYMBOL Code="NGX" Name="Norseman Gold Plc" />
+  <SYMBOL Code="NGY" Name="Nuenergy Capital Ltd" />
+  <SYMBOL Code="NH3" Name="Nh3 Clean Energy Limited" />
+  <SYMBOL Code="NHC" Name="New Hope Corporation Ltd" />
+  <SYMBOL Code="NHCKOA" Name="New Hope Corporation Limited" />
+  <SYMBOL Code="NHCKOB" Name="New Hope Corporation Limited" />
+  <SYMBOL Code="NHCKOP" Name="New Hope Corporation Limited" />
+  <SYMBOL Code="NHCKOQ" Name="New Hope Corporation Limited" />
+  <SYMBOL Code="NHCKOR" Name="New Hope Corporation Limited" />
+  <SYMBOL Code="NHE" Name="New Horizon Energy Ltd" />
+  <SYMBOL Code="NHEO" Name="Noble Helium Limited" />
+  <SYMBOL Code="NHEOA" Name="NHEOA" />
+  <SYMBOL Code="NHF" Name="Nib Holdings Ltd" />
+  <SYMBOL Code="NHFKOA" Name="Nib Holdings Limited" />
+  <SYMBOL Code="NHFKOC" Name="Nib Holdings Limited" />
+  <SYMBOL Code="NHFKOF" Name="NHFKOF" />
+  <SYMBOL Code="NHFKOP" Name="Nib Holdings Limited" />
+  <SYMBOL Code="NHFKOQ" Name="Nib Holdings Limited" />
+  <SYMBOL Code="NI2KOC" Name="NI2KOC" />
+  <SYMBOL Code="NI2KOD" Name="NI2KOD" />
+  <SYMBOL Code="NI2KOF" Name="NI2KOF" />
+  <SYMBOL Code="NI2KOK" Name="NI2KOK" />
+  <SYMBOL Code="NI2KOQ" Name="NI2KOQ" />
+  <SYMBOL Code="NI2KOS" Name="NI2KOS" />
+  <SYMBOL Code="NI2KOT" Name="NI2KOT" />
+  <SYMBOL Code="NI2KOZ" Name="NI2KOZ" />
+  <SYMBOL Code="NI2MOP" Name="NI2MOP" />
+  <SYMBOL Code="NIC" Name="Nickel Mines Limited" />
+  <SYMBOL Code="NICKOA" Name="NICKOA" />
+  <SYMBOL Code="NICKOC" Name="NICKOC" />
+  <SYMBOL Code="NICKOE" Name="NICKOE" />
+  <SYMBOL Code="NIM" Name="Nimy Resources Limited" />
+  <SYMBOL Code="NIS" Name="Nickelsearch Limited" />
+  <SYMBOL Code="NME" Name="Nex Metals Exploration Ltd" />
+  <SYMBOL Code="NMG" Name="Noble Mineral Resources Ltd" />
+  <SYMBOL Code="NML" Name="Navarre Minerals Limited" />
+  <SYMBOL Code="NMR" Name="Nimrodel Resources Ltd" />
+  <SYMBOL Code="NMT" Name="Neometals Ltd" />
+  <SYMBOL Code="NNG" Name="Northern Gold NL" />
+  <SYMBOL Code="NNGO" Name="NNGO" />
+  <SYMBOL Code="NNL" Name="Nordic Nickel Limited" />
+  <SYMBOL Code="NNUK" Name="NNUK" />
+  <SYMBOL Code="NNWH" Name="NNWH" />
+  <SYMBOL Code="NOL" Name="National 1" />
+  <SYMBOL Code="NOR" Name="Norwood Systems Limited" />
+  <SYMBOL Code="NOROD" Name="NOROD" />
+  <SYMBOL Code="NOU" Name="Noumi Limited" />
+  <SYMBOL Code="NOUO" Name="NOUO" />
+  <SYMBOL Code="NOV" Name="Novatti Group Limited" />
+  <SYMBOL Code="NOVO" Name="NOVO" />
+  <SYMBOL Code="NOVOA" Name="NOVOA" />
+  <SYMBOL Code="NOX" Name="Noxopharm Limited" />
+  <SYMBOL Code="NPM" Name="Newpeak Metals Limited" />
+  <SYMBOL Code="NRX" Name="Noronex Limited" />
+  <SYMBOL Code="NRXO" Name="NRXO" />
+  <SYMBOL Code="NRZ" Name="Neurizer Ltd" />
+  <SYMBOL Code="NRZO" Name="NRZO" />
+  <SYMBOL Code="NSB" Name="Neuroscientific Biopharmaceuticals Ltd" />
+  <SYMBOL Code="NSC" Name="Naos Small Cap Opportunities Company Limited" />
+  <SYMBOL Code="NSM" Name="North Stawell Minerals Ltd" />
+  <SYMBOL Code="NSR" Name="National Storage Reit" />
+  <SYMBOL Code="NSRKOA" Name="National Storage Reit" />
+  <SYMBOL Code="NSRKOB" Name="National Storage Reit" />
+  <SYMBOL Code="NST" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOA" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOB" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOC" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOD" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOE" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOG" Name="NSTKOG" />
+  <SYMBOL Code="NSTKOP" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOR" Name="Northern Star Resources Ltd" />
+  <SYMBOL Code="NSTKOV" Name="NSTKOV" />
+  <SYMBOL Code="NSX" Name="X Ltd" />
+  <SYMBOL Code="NTD" Name="National Tyre &amp; Wheel Limited" />
+  <SYMBOL Code="NTI" Name="Neurotech International Limited" />
+  <SYMBOL Code="NTIOA" Name="NTIOA" />
+  <SYMBOL Code="NTL" Name="New Talisman Gold Mines Limited" />
+  <SYMBOL Code="NTM" Name="Northern Manganese Limited" />
+  <SYMBOL Code="NTU" Name="Northen Uranium Ltd" />
+  <SYMBOL Code="NUC" Name="Nuchev Limited" />
+  <SYMBOL Code="NUF" Name="NuFarm Ltd" />
+  <SYMBOL Code="NUFKOA" Name="Nufarm Limited" />
+  <SYMBOL Code="NUFKOD" Name="Nufarm Limited" />
+  <SYMBOL Code="NUFKOP" Name="Nufarm Limited" />
+  <SYMBOL Code="NUFKOQ" Name="Nufarm Limited" />
+  <SYMBOL Code="NUFKOR" Name="Nufarm Limited" />
+  <SYMBOL Code="NUGG" Name="NUGG" />
+  <SYMBOL Code="NUH" Name="Nuheara Limited" />
+  <SYMBOL Code="NUZ" Name="Neurizon Therapeutics Limited" />
+  <SYMBOL Code="NUZOA" Name="NUZOA" />
+  <SYMBOL Code="NVA" Name="Nova Minerals Limited" />
+  <SYMBOL Code="NVO" Name="Nvoi Ltd" />
+  <SYMBOL Code="NVQ" Name="Noviqtech Limited" />
+  <SYMBOL Code="NVU" Name="Nanoveu Limited" />
+  <SYMBOL Code="NVX" Name="Novonix Limited" />
+  <SYMBOL Code="NWC" Name="New World Cobalt Limited" />
+  <SYMBOL Code="NWF" Name="Newfield Resources Limited" />
+  <SYMBOL Code="NWH" Name="NRW Holdings Ltd" />
+  <SYMBOL Code="NWHKOA" Name="Nrw Holdings Limited" />
+  <SYMBOL Code="NWHKOB" Name="Nrw Holdings Limited" />
+  <SYMBOL Code="NWHKOC" Name="Nrw Holdings Limited" />
+  <SYMBOL Code="NWL" Name="New Tel" />
+  <SYMBOL Code="NWLKOA" Name="NWLKOA" />
+  <SYMBOL Code="NWLKOP" Name="Netwealth Group Limited" />
+  <SYMBOL Code="NWLKOQ" Name="NWLKOQ" />
+  <SYMBOL Code="NWLKOR" Name="NWLKOR" />
+  <SYMBOL Code="NWM" Name="Norwest Minerals Limited" />
+  <SYMBOL Code="NWMO" Name="NWMO" />
+  <SYMBOL Code="NWS" Name="News Corporation" />
+  <SYMBOL Code="NWSLV" Name="NEWS CORP-PREFD" />
+  <SYMBOL Code="NXD" Name="Nexted Group Limited" />
+  <SYMBOL Code="NXG" Name="Nexgen Energy (canada) Ltd" />
+  <SYMBOL Code="NXL" Name="Nuix Limited" />
+  <SYMBOL Code="NXM" Name="Nexus Minerals Limited" />
+  <SYMBOL Code="NXMO" Name="NXMO" />
+  <SYMBOL Code="NXS" Name="Nexus Energy Ltd" />
+  <SYMBOL Code="NXT" Name="Nextdc Limited" />
+  <SYMBOL Code="NXTKOA" Name="Nextdc Limited" />
+  <SYMBOL Code="NXTKOB" Name="Nextdc Limited" />
+  <SYMBOL Code="NXTKOE" Name="Nextdc Limited" />
+  <SYMBOL Code="NXTKOQ" Name="NXTKOQ" />
+  <SYMBOL Code="NXTKOR" Name="Nextdc Limited" />
+  <SYMBOL Code="NYM" Name="Narryer Metals Limited" />
+  <SYMBOL Code="NYR" Name="Nyrada Inc." />
+  <SYMBOL Code="NZK" Name="New Zealand King Salmon Investments Limited" />
+  <SYMBOL Code="NZM" Name="Nzme Limited" />
+  <SYMBOL Code="NZS" Name="New Zealand Coastal Seafoods Limited" />
+  <SYMBOL Code="NZSOB" Name="New Zealand Coastal Seafoods Limited" />
+  <SYMBOL Code="OAK" Name="Oaks Hotels &amp; Resorts Ltd" />
+  <SYMBOL Code="OAR" Name="Oakdale Resources Limited" />
+  <SYMBOL Code="OAROD" Name="OAROD" />
+  <SYMBOL Code="OB1" Name="Orbminco Limited" />
+  <SYMBOL Code="OB1O" Name="OB1O" />
+  <SYMBOL Code="OBL" Name="Oil Basins Ltd" />
+  <SYMBOL Code="OBM" Name="Ora Banda Mining Ltd" />
+  <SYMBOL Code="OCA" Name="Oil Company Of Australia" />
+  <SYMBOL Code="OCC" Name="Orthocell Limited" />
+  <SYMBOL Code="OCL" Name="Objective Corporation Ltd" />
+  <SYMBOL Code="OCN" Name="Oceana Lithium Limited" />
+  <SYMBOL Code="OCT" Name="Octava Minerals Limited" />
+  <SYMBOL Code="OD6" Name="Od6 Metals Limited" />
+  <SYMBOL Code="ODA" Name="Orcoda Limited" />
+  <SYMBOL Code="ODE" Name="Odessa Minerals Limited" />
+  <SYMBOL Code="ODEO" Name="ODEO" />
+  <SYMBOL Code="ODY" Name="Odyssey Energy Ltd" />
+  <SYMBOL Code="OEC" Name="Orbital Corporation Ltd" />
+  <SYMBOL Code="OECO" Name="OECO" />
+  <SYMBOL Code="OECR" Name="OECR" />
+  <SYMBOL Code="OEL" Name="Ottoman Energy Ltd" />
+  <SYMBOL Code="OEQ" Name="Orion Equities Ltd" />
+  <SYMBOL Code="OFX" Name="Ozforex Group Limited" />
+  <SYMBOL Code="OFXKOQ" Name="Ozforex Group Limited" />
+  <SYMBOL Code="OFXKOR" Name="Ozforex Group Limited" />
+  <SYMBOL Code="OIL" Name="Optiscan Imaging Ltd" />
+  <SYMBOL Code="OJC" Name="The Original Juice Co. Ltd" />
+  <SYMBOL Code="OKJ" Name="Oakajee Corporation Ltd" />
+  <SYMBOL Code="OLH" Name="Oldfields Holdings Ltd" />
+  <SYMBOL Code="OLI" Name="Olivers Real Food Limited" />
+  <SYMBOL Code="OLL" Name="Openlearning Limited" />
+  <SYMBOL Code="OLY" Name="Olympia Resources Ltd" />
+  <SYMBOL Code="OM1" Name="Omnia Metals Group Ltd" />
+  <SYMBOL Code="OM1O" Name="OM1O" />
+  <SYMBOL Code="OMA" Name="Omega Oil &amp; Gas Limited" />
+  <SYMBOL Code="OMH" Name="OM Holdings Ltd" />
+  <SYMBOL Code="OML" Name="Ooh!media Limited" />
+  <SYMBOL Code="OMLKOA" Name="Ooh!media Limited" />
+  <SYMBOL Code="OMX" Name="Ormil Energy Limited" />
+  <SYMBOL Code="ONE" Name="Oneview Healthcare Plc" />
+  <SYMBOL Code="OOO" Name="Betashares Crude Oil Index Etf - Currency Hedged (" />
+  <SYMBOL Code="OPH" Name="Ophir High Conviction Fund" />
+  <SYMBOL Code="OPL" Name="Orchard Petroleum Ltd" />
+  <SYMBOL Code="OPN" Name="Opendna Limited" />
+  <SYMBOL Code="OPNOA" Name="OPNOA" />
+  <SYMBOL Code="OPT" Name="Opthea Limited" />
+  <SYMBOL Code="OPTOA" Name="OPTOA" />
+  <SYMBOL Code="OPTOB" Name="OPTOB" />
+  <SYMBOL Code="ORA" Name="Orora Limited" />
+  <SYMBOL Code="ORAKOA" Name="Orora Limited" />
+  <SYMBOL Code="ORAKOB" Name="Orora Limited" />
+  <SYMBOL Code="ORAKOP" Name="Orora Limited" />
+  <SYMBOL Code="ORAKOQ" Name="Orora Limited" />
+  <SYMBOL Code="ORD" Name="Ord River Resources Ltd" />
+  <SYMBOL Code="ORG" Name="Origin Energy Ltd" />
+  <SYMBOL Code="ORGKOA" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOB" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOC" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOD" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOE" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOP" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOQ" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORGKOS" Name="Origin Energy Limited" />
+  <SYMBOL Code="ORI" Name="Orica Ltd" />
+  <SYMBOL Code="ORIKOB" Name="Orica Limited" />
+  <SYMBOL Code="ORIKOC" Name="Orica Limited" />
+  <SYMBOL Code="ORIKOD" Name="Orica Limited" />
+  <SYMBOL Code="ORIKOP" Name="Orica Limited" />
+  <SYMBOL Code="ORIKOR" Name="Orica Limited" />
+  <SYMBOL Code="ORIKOT" Name="Orica Limited" />
+  <SYMBOL Code="ORN" Name="ORN" />
+  <SYMBOL Code="ORP" Name="Oropa Ltd" />
+  <SYMBOL Code="OSL" Name="Oncosil Medical Ltd" />
+  <SYMBOL Code="OSLO" Name="OSLO" />
+  <SYMBOL Code="OSLOB" Name="OSLOB" />
+  <SYMBOL Code="OSLOC" Name="OSLOC" />
+  <SYMBOL Code="OSM" Name="Osmond Resources Limited" />
+  <SYMBOL Code="OSX" Name="Osteopore Limited" />
+  <SYMBOL Code="OSXO" Name="OSXO" />
+  <SYMBOL Code="OVT" Name="Ovato Limited" />
+  <SYMBOL Code="OXT" Name="Orexplore Technologies Limited" />
+  <SYMBOL Code="OZF" Name="Spdr??s&amp;p?/asx 200 Financials Ex A-reit Fund" />
+  <SYMBOL Code="OZM" Name="Ozaurum Resources Limited" />
+  <SYMBOL Code="OZR" Name="Spdr??s&amp;p?/asx 200 Resources Fund" />
+  <SYMBOL Code="OZZ" Name="Ozz Resources Limited" />
+  <SYMBOL Code="PAB" Name="Patrys Ltd" />
+  <SYMBOL Code="PAC" Name="Pacsoft Ltd" />
+  <SYMBOL Code="PAI" Name="Platinum Asia Investments Limited" />
+  <SYMBOL Code="PAM" Name="Pan Asia Metals Limited" />
+  <SYMBOL Code="PAR" Name="Paradigm Biopharmaceuticals Limited.." />
+  <SYMBOL Code="PARO" Name="PARO" />
+  <SYMBOL Code="PAT" Name="Patriot Lithium Limited" />
+  <SYMBOL Code="PBH" Name="Pointsbet Holdings Limited" />
+  <SYMBOL Code="PBL" Name="Publishing &amp; Broadcasting Ltd" />
+  <SYMBOL Code="PCG" Name="PCH Group Ltd" />
+  <SYMBOL Code="PCI" Name="Perpetual Credit Income Trust" />
+  <SYMBOL Code="PCK" Name="Painchek Ltd" />
+  <SYMBOL Code="PCL" Name="Pancontinental Oil &amp; Gas NL" />
+  <SYMBOL Code="PCLO" Name="Pancontinental Energy Nl" />
+  <SYMBOL Code="PCX" Name="Pengana Global Private Credit Trust" />
+  <SYMBOL Code="PDI" Name="Predictive Discovery Limited" />
+  <SYMBOL Code="PDN" Name="Paladin Resources Ltd" />
+  <SYMBOL Code="PDNKOB" Name="Paladin Energy Ltd" />
+  <SYMBOL Code="PDNKOE" Name="Paladin Energy Ltd" />
+  <SYMBOL Code="PDNKOP" Name="Paladin Energy Ltd" />
+  <SYMBOL Code="PDNKOR" Name="Paladin Energy Ltd" />
+  <SYMBOL Code="PE1" Name="Pengana Private Equity Trust" />
+  <SYMBOL Code="PEB" Name="Pacific Edge Limited" />
+  <SYMBOL Code="PEC" Name="Perpetual Resources Limited" />
+  <SYMBOL Code="PEK" Name="Peak Resources Ltd" />
+  <SYMBOL Code="PEN" Name="Peninsula Minerals Ltd" />
+  <SYMBOL Code="PER" Name="Percheron Therapeutics Limited" />
+  <SYMBOL Code="PET" Name="Peters MacGregor Investments Ltd" />
+  <SYMBOL Code="PEX" Name="Peel Exploration Ltd" />
+  <SYMBOL Code="PFE" Name="Pantera Minerals Limited" />
+  <SYMBOL Code="PFEO" Name="PFEO" />
+  <SYMBOL Code="PFEOA" Name="Pantera Minerals Limited" />
+  <SYMBOL Code="PFG" Name="Prime Financial Group Ltd" />
+  <SYMBOL Code="PFP" Name="WC Penfold" />
+  <SYMBOL Code="PFT" Name="Pure Foods Tasmania Limited" />
+  <SYMBOL Code="PGA1" Name="PGA1" />
+  <SYMBOL Code="PGC" Name="Paragon Care Ltd" />
+  <SYMBOL Code="PGD" Name="Peregrine Gold Ltd" />
+  <SYMBOL Code="PGDOA" Name="PGDOA" />
+  <SYMBOL Code="PGF" Name="Pm Capital Global Opportunities Fund Limited" />
+  <SYMBOL Code="PGH" Name="Pact Group Holdings Ltd" />
+  <SYMBOL Code="PGM" Name="Platina Resources Ltd" />
+  <SYMBOL Code="PGO" Name="Primary Gold Limited" />
+  <SYMBOL Code="PGOOB" Name="PGOOB" />
+  <SYMBOL Code="PGY" Name="Pilot Energy Limited" />
+  <SYMBOL Code="PGYO" Name="Pilot Energy Limited" />
+  <SYMBOL Code="PH2" Name="Pure Hydrogen Corporation Limited" />
+  <SYMBOL Code="PHL" Name="Pearl Healthcare Ltd" />
+  <SYMBOL Code="PHO" Name="Phoneware" />
+  <SYMBOL Code="PHX" Name="Pharmx Technologies Limited" />
+  <SYMBOL Code="PIA" Name="Prudential Investment Company Of Australia" />
+  <SYMBOL Code="PIC" Name="Perpetual Equity Investment Company Limited" />
+  <SYMBOL Code="PIL" Name="Pilbara Mines NL." />
+  <SYMBOL Code="PIM" Name="Prime Minerals Ltd" />
+  <SYMBOL Code="PIMO" Name="Prime Minerals Ltd" />
+  <SYMBOL Code="PIQ" Name="Proteomics International Laboratories Ltd" />
+  <SYMBOL Code="PKD" Name="Parkd Ltd" />
+  <SYMBOL Code="PKO" Name="Peak Oil &amp; Gas Limited" />
+  <SYMBOL Code="PKOO" Name="PKOO" />
+  <SYMBOL Code="PL3" Name="Patagonia Lithium Ltd" />
+  <SYMBOL Code="PL3O" Name="PL3O" />
+  <SYMBOL Code="PL8" Name="Plato Income Maximiser Limited." />
+  <SYMBOL Code="PLC" Name="Plc Financial Solutions Limited" />
+  <SYMBOL Code="PLG" Name="Propertylink Group" />
+  <SYMBOL Code="PLL" Name="Poltech International" />
+  <SYMBOL Code="PLN" Name="Planar Semiconductor Inc" />
+  <SYMBOL Code="PLS" Name="Pilbara Minerals Limited" />
+  <SYMBOL Code="PLSKOA" Name="PLSKOA" />
+  <SYMBOL Code="PLSKOC" Name="PLSKOC" />
+  <SYMBOL Code="PLSKOD" Name="PLSKOD" />
+  <SYMBOL Code="PLSKOP" Name="PLSKOP" />
+  <SYMBOL Code="PLSKOQ" Name="PLSKOQ" />
+  <SYMBOL Code="PLSKOS" Name="PLSKOS" />
+  <SYMBOL Code="PLSKOU" Name="PLSKOU" />
+  <SYMBOL Code="PLT" Name="Polartechnics Ltd" />
+  <SYMBOL Code="PLY" Name="Polymetals Mining Limited" />
+  <SYMBOL Code="PMC" Name="Platinum Capital Ltd" />
+  <SYMBOL Code="PME" Name="Pro Medicus Ltd" />
+  <SYMBOL Code="PMEKOA" Name="Pro Medicus Limited" />
+  <SYMBOL Code="PMEKOB" Name="Pro Medicus Limited" />
+  <SYMBOL Code="PMEKOC" Name="Pro Medicus Limited" />
+  <SYMBOL Code="PMEKOD" Name="Pro Medicus Limited" />
+  <SYMBOL Code="PMEKOE" Name="Pro Medicus Limited" />
+  <SYMBOL Code="PMEKOF" Name="PMEKOF" />
+  <SYMBOL Code="PMEKOG" Name="PMEKOG" />
+  <SYMBOL Code="PMEKOH" Name="PMEKOH" />
+  <SYMBOL Code="PMEKOP" Name="PMEKOP" />
+  <SYMBOL Code="PMGOLD" Name="Perth Mint Gold" />
+  <SYMBOL Code="PMT" Name="Patriot Battery Metals Inc." />
+  <SYMBOL Code="PMV" Name="Premier Investments Ltd" />
+  <SYMBOL Code="PMVKOA" Name="Premier Investments Limited" />
+  <SYMBOL Code="PMVKOB" Name="Premier Investments Limited" />
+  <SYMBOL Code="PMVKOC" Name="Premier Investments Limited" />
+  <SYMBOL Code="PMVKOQ" Name="Premier Investments Limited" />
+  <SYMBOL Code="PMVKOR" Name="Premier Investments Limited" />
+  <SYMBOL Code="PMVKOS" Name="Premier Investments Limited" />
+  <SYMBOL Code="PNC" Name="Pioneer Credit Limited" />
+  <SYMBOL Code="PNCO" Name="Pioneer Credit Limited" />
+  <SYMBOL Code="PNI" Name="Pinnacle Investment Management Group Ltd" />
+  <SYMBOL Code="PNM" Name="Pacific Nickel Mines Limited" />
+  <SYMBOL Code="PNN" Name="PeppinNini Minerals Ltd" />
+  <SYMBOL Code="PNNO" Name="Pepinnini Minerals Limited" />
+  <SYMBOL Code="PNR" Name="Pacific Niugini Minerals Ltd" />
+  <SYMBOL Code="PNT" Name="Panther Metals Ltd" />
+  <SYMBOL Code="PNTOA" Name="PNTOA" />
+  <SYMBOL Code="PNV" Name="Polynovo Limited" />
+  <SYMBOL Code="PNVKOA" Name="PNVKOA" />
+  <SYMBOL Code="PNVKOB" Name="Polynovo Limited" />
+  <SYMBOL Code="PO3" Name="Purifloh Limited" />
+  <SYMBOL Code="POD" Name="Podium Minerals Limited" />
+  <SYMBOL Code="PODOA" Name="PODOA" />
+  <SYMBOL Code="POL" Name="Polaris Metals NL" />
+  <SYMBOL Code="POS" Name="Poseidon Nickel Ltd" />
+  <SYMBOL Code="PPC" Name="Peet &amp; Company Ltd" />
+  <SYMBOL Code="PPE" Name="People Infrastructure Ltd" />
+  <SYMBOL Code="PPG" Name="Pro-Pac Packaging Ltd" />
+  <SYMBOL Code="PPK" Name="Plaspak Group Ltd" />
+  <SYMBOL Code="PPL" Name="Park Plaza Kemayan" />
+  <SYMBOL Code="PPM" Name="Primero Mining Corp." />
+  <SYMBOL Code="PPS" Name="Praemium Ltd" />
+  <SYMBOL Code="PPT" Name="Perpetual Trustees Australia Ltd" />
+  <SYMBOL Code="PPTKOA" Name="Perpetual Limited" />
+  <SYMBOL Code="PPTKOD" Name="Perpetual Limited" />
+  <SYMBOL Code="PPTKOE" Name="Perpetual Limited" />
+  <SYMBOL Code="PPTKOU" Name="PPTKOU" />
+  <SYMBOL Code="PPY" Name="Papyrus Australia Ltd" />
+  <SYMBOL Code="PR1" Name="Pure Resources Limited" />
+  <SYMBOL Code="PR1OA" Name="Pure Resources Limited" />
+  <SYMBOL Code="PR2" Name="Piche Resources Limited" />
+  <SYMBOL Code="PR2O" Name="PR2O" />
+  <SYMBOL Code="PRG" Name="Programmed Maintenance Services Ltd" />
+  <SYMBOL Code="PRL" Name="Petrel Energy Limited" />
+  <SYMBOL Code="PRM" Name="Plenty River Mining Corporation Ltd" />
+  <SYMBOL Code="PRN" Name="Pelsart Resources Nl" />
+  <SYMBOL Code="PRO" Name="Prophecy International Holdings Ltd" />
+  <SYMBOL Code="PRS" Name="Prospech Limited." />
+  <SYMBOL Code="PRSOA" Name="PRSOA" />
+  <SYMBOL Code="PRU" Name="Perseus Mining Ltd" />
+  <SYMBOL Code="PRUKOA" Name="Perseus Mining Limited" />
+  <SYMBOL Code="PRUKOB" Name="Perseus Mining Limited" />
+  <SYMBOL Code="PRUKOC" Name="Perseus Mining Limited" />
+  <SYMBOL Code="PRUKOE" Name="Perseus Mining Limited" />
+  <SYMBOL Code="PRX" Name="Prime Retail Group unit/ord" />
+  <SYMBOL Code="PSC" Name="Prospect Resources Limited" />
+  <SYMBOL Code="PSL" Name="Panaseer" />
+  <SYMBOL Code="PSQ" Name="Pacific Smiles Group Limited" />
+  <SYMBOL Code="PTL" Name="Pental Limited" />
+  <SYMBOL Code="PTM" Name="Platinum Asset Management Ltd" />
+  <SYMBOL Code="PTMKOP" Name="Platinum Asset Management Limited" />
+  <SYMBOL Code="PTMKOS" Name="Platinum Asset Management Limited" />
+  <SYMBOL Code="PTN" Name="Prime Retirement &amp; Aged Care Property Trust" />
+  <SYMBOL Code="PTR" Name="Petratherm Ltd" />
+  <SYMBOL Code="PTX" Name="Prescient Therapeutics Limited" />
+  <SYMBOL Code="PUA" Name="Pure Alumina Limited" />
+  <SYMBOL Code="PUR" Name="Purus Energy Ltd" />
+  <SYMBOL Code="PV1" Name="Provaris Energy Ltd" />
+  <SYMBOL Code="PVE" Name="Po Valley Energy Ltd" />
+  <SYMBOL Code="PVL" Name="Powerhouse Ventures Limited" />
+  <SYMBOL Code="PVT" Name="Provet Holdings Limited" />
+  <SYMBOL Code="PVW" Name="Pvw Resources Limited" />
+  <SYMBOL Code="PWH" Name="Pwr Holdings Limited" />
+  <SYMBOL Code="PWN" Name="Potash West Nl" />
+  <SYMBOL Code="PWR" Name="Powerlan Ltd" />
+  <SYMBOL Code="PXA" Name="Pexa Group Limited" />
+  <SYMBOL Code="PXAKOA" Name="PXAKOA" />
+  <SYMBOL Code="PXAKOB" Name="PXAKOB" />
+  <SYMBOL Code="PXAKOC" Name="PXAKOC" />
+  <SYMBOL Code="PXX" Name="Polarx Limited" />
+  <SYMBOL Code="PYC" Name="Phylogica Ltd" />
+  <SYMBOL Code="QAL" Name="Qualitas Limited" />
+  <SYMBOL Code="QAN" Name="Qantas Airways Ltd" />
+  <SYMBOL Code="QANKOA" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOB" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOE" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOF" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOP" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOS" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QANKOU" Name="Qantas Airways Limited" />
+  <SYMBOL Code="QAU" Name="Betashares Gold Bullion Etf - Currency Hedged" />
+  <SYMBOL Code="QBE" Name="QBE Insurance Group Ltd" />
+  <SYMBOL Code="QBEKOA" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOB" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOC" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOD" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOF" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOP" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOR" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOS" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QBEKOT" Name="Qbe Insurance Group Limited" />
+  <SYMBOL Code="QEM" Name="Qem Limited" />
+  <SYMBOL Code="QEMO" Name="QEMO" />
+  <SYMBOL Code="QFE" Name="Quickfee Limited" />
+  <SYMBOL Code="QFN" Name="Betashares S&amp;p/asx 200 Financials Sector" />
+  <SYMBOL Code="QGL" Name="Quantum Graphite Limited" />
+  <SYMBOL Code="QHAL" Name="Vaneck Vectors Msci World Ex-australia Quality Hed" />
+  <SYMBOL Code="QHL" Name="Quickstep Holdings Ltd" />
+  <SYMBOL Code="QHSM" Name="QHSM" />
+  <SYMBOL Code="QML" Name="QMastor Ltd" />
+  <SYMBOL Code="QNDQ" Name="QNDQ" />
+  <SYMBOL Code="QOR" Name="Qoria Limited" />
+  <SYMBOL Code="QOZ" Name="Betashares Ftse Rafi Australia 200" />
+  <SYMBOL Code="QPM" Name="Queensland Pacific Metals Limited" />
+  <SYMBOL Code="QPON" Name="Betashares Australian Bank Senior Floating Rate Bo" />
+  <SYMBOL Code="QRE" Name="Betashares S&amp;p/asx 200 Resources Sector" />
+  <SYMBOL Code="QRI" Name="Qualitas Real Estate Income Fund" />
+  <SYMBOL Code="QSML" Name="QSML" />
+  <SYMBOL Code="QUAL" Name="Vaneck Vectors Msci World Ex-australia Quality" />
+  <SYMBOL Code="QUB" Name="Qube Logistics" />
+  <SYMBOL Code="QUBKOC" Name="Qube Holdings Limited" />
+  <SYMBOL Code="QUE" Name="Queste Communications Ltd" />
+  <SYMBOL Code="QUS" Name="Betashares Ftse Rafi U.s. 1000?" />
+  <SYMBOL Code="QXR" Name="Qx Resources Limited" />
+  <SYMBOL Code="R8R" Name="Regener8 Resources Nl" />
+  <SYMBOL Code="RAC" Name="Reinsurance Australia Corporation" />
+  <SYMBOL Code="RAD" Name="Radar Iron Limited" />
+  <SYMBOL Code="RADO" Name="Radar Iron Limited" />
+  <SYMBOL Code="RADOA" Name="RADOA" />
+  <SYMBOL Code="RAG" Name="Ragnar Metals Limited" />
+  <SYMBOL Code="RAGOD" Name="RAGOD" />
+  <SYMBOL Code="RAN" Name="Range International Limited" />
+  <SYMBOL Code="RAS" Name="Ragusa Minerals Ltd" />
+  <SYMBOL Code="RAU" Name="Republic Gold Ltd" />
+  <SYMBOL Code="RB6" Name="Rubix Resources Limited" />
+  <SYMBOL Code="RB6O" Name="Rubix Resources Limited" />
+  <SYMBOL Code="RBD" Name="Restaurant Brands New Zealand Limited" />
+  <SYMBOL Code="RBR" Name="Rubicon Resources Ltd" />
+  <SYMBOL Code="RBTZ" Name="Betashares Global Robotics And Artificial Intellig" />
+  <SYMBOL Code="RBX" Name="Resources Base Ltd" />
+  <SYMBOL Code="RC1" Name="Redcastle Resources Limited" />
+  <SYMBOL Code="RC1O" Name="RC1O" />
+  <SYMBOL Code="RCAP" Name="RCAP" />
+  <SYMBOL Code="RCB" Name="Russell Australian Select Corporate Bond Etf" />
+  <SYMBOL Code="RCE" Name="Recce Limited" />
+  <SYMBOL Code="RCL" Name="Repco Corporation Ltd" />
+  <SYMBOL Code="RCR" Name="RCR Tomlinson Ltd" />
+  <SYMBOL Code="RCT" Name="Reef Casino Trust" />
+  <SYMBOL Code="RDG" Name="Resource Development Group Limited" />
+  <SYMBOL Code="RDM" Name="Red Metal Ltd" />
+  <SYMBOL Code="RDN" Name="Raiden Resources Limited" />
+  <SYMBOL Code="RDNOA" Name="RDNOA" />
+  <SYMBOL Code="RDS" Name="Redstone Resources Ltd" />
+  <SYMBOL Code="RDV" Name="Russell High Dividend Australian Shares" />
+  <SYMBOL Code="RDX" Name="Redox Limited" />
+  <SYMBOL Code="RDY" Name="Readytech Holdings Limited" />
+  <SYMBOL Code="REA" Name="realestate.com.au Ltd" />
+  <SYMBOL Code="REAKOF" Name="Rea Group Ltd" />
+  <SYMBOL Code="REAKOP" Name="Rea Group Ltd" />
+  <SYMBOL Code="REC" Name="Recall Holdings Limited" />
+  <SYMBOL Code="REE" Name="Rarex Limited" />
+  <SYMBOL Code="REEO" Name="REEO" />
+  <SYMBOL Code="REG" Name="RG Capital Radio" />
+  <SYMBOL Code="REGKOA" Name="Regis Healthcare Limited" />
+  <SYMBOL Code="REGKOB" Name="Regis Healthcare Limited" />
+  <SYMBOL Code="REH" Name="Reece Australia Ltd" />
+  <SYMBOL Code="REHKOA" Name="REHKOA" />
+  <SYMBOL Code="REHKOB" Name="REHKOB" />
+  <SYMBOL Code="REHKOC" Name="REHKOC" />
+  <SYMBOL Code="REHKOR" Name="REHKOR" />
+  <SYMBOL Code="REIT" Name="REIT" />
+  <SYMBOL Code="REM" Name="Reliance Mining Ltd" />
+  <SYMBOL Code="REMO" Name="REMO" />
+  <SYMBOL Code="REP" Name="Ram Essential Services Property Fund" />
+  <SYMBOL Code="REX" Name="Regional Express Holdings Ltd" />
+  <SYMBOL Code="REY" Name="Rey Resources Ltd" />
+  <SYMBOL Code="REZ" Name="Resources &amp; Energy Group Limited" />
+  <SYMBOL Code="RF1" Name="Regal Investment Fund" />
+  <SYMBOL Code="RFA" Name="Rare Foods Australia Limited" />
+  <SYMBOL Code="RFF" Name="Rural Funds Group" />
+  <SYMBOL Code="RFG" Name="Retail Food Group Ltd" />
+  <SYMBOL Code="RFT" Name="Rectifier Technologies Ltd" />
+  <SYMBOL Code="RFX" Name="Redflow Limited" />
+  <SYMBOL Code="RG8" Name="Regal Asian Investments Limited" />
+  <SYMBOL Code="RGB" Name="Russell Australian Government Bond" />
+  <SYMBOL Code="RGL" Name="Ruralco Holdings Ltd" />
+  <SYMBOL Code="RGN" Name="Region Group" />
+  <SYMBOL Code="RGNKOA" Name="RGNKOA" />
+  <SYMBOL Code="RGNKOB" Name="RGNKOB" />
+  <SYMBOL Code="RGNKOC" Name="RGNKOC" />
+  <SYMBOL Code="RGNKOP" Name="RGNKOP" />
+  <SYMBOL Code="RGNKOR" Name="RGNKOR" />
+  <SYMBOL Code="RGNKOS" Name="RGNKOS" />
+  <SYMBOL Code="RGT" Name="Argent Biopharma Limited" />
+  <SYMBOL Code="RHC" Name="Ramsay Health Care Ltd" />
+  <SYMBOL Code="RHCKOB" Name="Ramsay Health Care Limited" />
+  <SYMBOL Code="RHCKOQ" Name="Ramsay Health Care Limited" />
+  <SYMBOL Code="RHCKOR" Name="Ramsay Health Care Limited" />
+  <SYMBOL Code="RHCPA" Name="Ramsay Health Care Ltd" />
+  <SYMBOL Code="RHI" Name="Red Hill Iron Ltd" />
+  <SYMBOL Code="RHK" Name="Red Hawk Mining Limited" />
+  <SYMBOL Code="RHT" Name="Resonance Health Ltd" />
+  <SYMBOL Code="RHY" Name="Rhythm Biosciences Limited" />
+  <SYMBOL Code="RHYO" Name="RHYO" />
+  <SYMBOL Code="RIC" Name="Ridley Corporation Ltd" />
+  <SYMBOL Code="RIE" Name="Riedel Resources Limited" />
+  <SYMBOL Code="RIL" Name="Redivium Limited" />
+  <SYMBOL Code="RIM" Name="Rimfire Pacific Mining NL" />
+  <SYMBOL Code="RINC" Name="RINC" />
+  <SYMBOL Code="RIO" Name="Rio Tinto Ltd" />
+  <SYMBOL Code="RIOKOC" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOE" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOH" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOI" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOQ" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOR" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOS" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOU" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOV" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOW" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOX" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOKOY" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RIOMOB" Name="Rio Tinto Limited" />
+  <SYMBOL Code="RKN" Name="Reckon Ltd" />
+  <SYMBOL Code="RKT" Name="Rocketdna Ltd." />
+  <SYMBOL Code="RLC" Name="Revere Mining" />
+  <SYMBOL Code="RLF" Name="Rlf Agtech Ltd" />
+  <SYMBOL Code="RLG" Name="Rcl Group" />
+  <SYMBOL Code="RLGO" Name="Roolife Group Ltd" />
+  <SYMBOL Code="RLL" Name="Rapid Lithium Limited" />
+  <SYMBOL Code="RLT" Name="Renergen Limited" />
+  <SYMBOL Code="RMC" Name="RIMCapital Ltd" />
+  <SYMBOL Code="RMD" Name="ResMed Inc (USA CUFS)" />
+  <SYMBOL Code="RMDKOE" Name="Resmed Inc" />
+  <SYMBOL Code="RMI" Name="Resource Mining Corporation Ltd" />
+  <SYMBOL Code="RML" Name="Rusina Mining NL" />
+  <SYMBOL Code="RMS" Name="Ramelius Resources Ltd" />
+  <SYMBOL Code="RMX" Name="Red Mountain Mining Limited" />
+  <SYMBOL Code="RMXO" Name="Red Mountain Mining Limited" />
+  <SYMBOL Code="RMXOK" Name="RMXOK" />
+  <SYMBOL Code="RMY" Name="Rma Global Limited" />
+  <SYMBOL Code="RND" Name="Rand Mining NL" />
+  <SYMBOL Code="RNE" Name="Renu Energy Limited" />
+  <SYMBOL Code="RNT" Name="Rent.com.au Limited" />
+  <SYMBOL Code="RNTO" Name="RNTO" />
+  <SYMBOL Code="RNU" Name="Renaissance Uranium Limited" />
+  <SYMBOL Code="RNV" Name="Renerve Limited" />
+  <SYMBOL Code="RNX" Name="Renegade Exploration Limited" />
+  <SYMBOL Code="ROBO" Name="Etfs Robo Global Robotics &amp; Automation" />
+  <SYMBOL Code="ROC" Name="Roc Oil Company Ltd" />
+  <SYMBOL Code="ROG" Name="Red Sky Energy Ltd" />
+  <SYMBOL Code="RON" Name="Ronin Resources Ltd" />
+  <SYMBOL Code="ROYL" Name="ROYL" />
+  <SYMBOL Code="RPG" Name="Raptis Group Ltd" />
+  <SYMBOL Code="RPL" Name="Regal Partners Limited" />
+  <SYMBOL Code="RPM" Name="Roma Petroleum NL" />
+  <SYMBOL Code="RPMO" Name="Rpm Automotive Group Limited" />
+  <SYMBOL Code="RR1" Name="Reach Resources Limited" />
+  <SYMBOL Code="RR1OA" Name="RR1OA" />
+  <SYMBOL Code="RRL" Name="Regis Resources NL" />
+  <SYMBOL Code="RRLKOC" Name="Regis Resources Limited" />
+  <SYMBOL Code="RRLKOD" Name="Regis Resources Limited" />
+  <SYMBOL Code="RRLKOE" Name="Regis Resources Limited" />
+  <SYMBOL Code="RRLKOP" Name="Regis Resources Limited" />
+  <SYMBOL Code="RRLKOR" Name="Regis Resources Limited" />
+  <SYMBOL Code="RRR" Name="Revolver Resources Holdings Ltd" />
+  <SYMBOL Code="RSG" Name="Resolute Mining Ltd" />
+  <SYMBOL Code="RSH" Name="Respiri Limited" />
+  <SYMBOL Code="RSHO" Name="RSHO" />
+  <SYMBOL Code="RSM" Name="Russell Australian Semi-government Bond" />
+  <SYMBOL Code="RTG" Name="Rtg Mining Inc." />
+  <SYMBOL Code="RTH" Name="Ras Technology Holdings Limited" />
+  <SYMBOL Code="RTR" Name="Rumble Resources Limited" />
+  <SYMBOL Code="RTYKOB" Name="RTYKOB" />
+  <SYMBOL Code="RUL" Name="Runge Ltd" />
+  <SYMBOL Code="RVT" Name="Richmond Vanadium Technology Limited" />
+  <SYMBOL Code="RWC" Name="Reliance Worldwide Corporation Limited" />
+  <SYMBOL Code="RWCKOA" Name="Reliance Worldwide Corporation Limited" />
+  <SYMBOL Code="RWCKOB" Name="Reliance Worldwide Corporation Limited" />
+  <SYMBOL Code="RWCKOP" Name="RWCKOP" />
+  <SYMBOL Code="RWCKOQ" Name="Reliance Worldwide Corporation Limited" />
+  <SYMBOL Code="RWCKOR" Name="RWCKOR" />
+  <SYMBOL Code="RWD" Name="Reward Minerals Ltd" />
+  <SYMBOL Code="RWDO" Name="Reward Minerals Ltd" />
+  <SYMBOL Code="RWL" Name="Rubicon Water Limited" />
+  <SYMBOL Code="RXH" Name="Rewardle Holdings Limited" />
+  <SYMBOL Code="RXL" Name="Rox Resources Ltd" />
+  <SYMBOL Code="RYD" Name="Ryder Capital Limited" />
+  <SYMBOL Code="RZI" Name="Raiz Invest Limited" />
+  <SYMBOL Code="S2R" Name="S2 Resources Ltd" />
+  <SYMBOL Code="S32" Name="South32 Limited" />
+  <SYMBOL Code="S32KOA" Name="South32 Limited" />
+  <SYMBOL Code="S32KOB" Name="South32 Limited" />
+  <SYMBOL Code="S32KOF" Name="South32 Limited" />
+  <SYMBOL Code="S32KOG" Name="South32 Limited" />
+  <SYMBOL Code="S32KOP" Name="South32 Limited" />
+  <SYMBOL Code="S32KOQ" Name="South32 Limited" />
+  <SYMBOL Code="S32KOR" Name="South32 Limited" />
+  <SYMBOL Code="S32KOT" Name="South32 Limited" />
+  <SYMBOL Code="S32KOV" Name="South32 Limited" />
+  <SYMBOL Code="S3GO" Name="S3GO" />
+  <SYMBOL Code="S66" Name="Star Combo Pharma Limited" />
+  <SYMBOL Code="SAN" Name="Sagalio Energy Limited" />
+  <SYMBOL Code="SB2" Name="Salter Brothers Emerging Companies Limited" />
+  <SYMBOL Code="SBM" Name="St Barbara Mines Ltd" />
+  <SYMBOL Code="SBR" Name="Sabre Resources Ltd" />
+  <SYMBOL Code="SBW" Name="Shekel Brainweigh Ltd" />
+  <SYMBOL Code="SCG" Name="Scentre Group" />
+  <SYMBOL Code="SCGKOA" Name="Scentre Group" />
+  <SYMBOL Code="SCGKOE" Name="SCGKOE" />
+  <SYMBOL Code="SCGKOP" Name="Scentre Group" />
+  <SYMBOL Code="SCGKOQ" Name="Scentre Group" />
+  <SYMBOL Code="SCN" Name="Scorpion Minerals Limited" />
+  <SYMBOL Code="SCNO" Name="SCNO" />
+  <SYMBOL Code="SCP" Name="Shopping Centres Australasia Property Group" />
+  <SYMBOL Code="SDF" Name="Steadfast Group Limited" />
+  <SYMBOL Code="SDI" Name="SDI Ltd" />
+  <SYMBOL Code="SDR" Name="Sundowner Group" />
+  <SYMBOL Code="SDV" Name="Scidev Ltd" />
+  <SYMBOL Code="SEC" Name="Spheria Emerging Companies Limited" />
+  <SYMBOL Code="SEG" Name="Segue Resources Ltd" />
+  <SYMBOL Code="SEK" Name="Seek Ltd" />
+  <SYMBOL Code="SEKKOB" Name="Seek Limited" />
+  <SYMBOL Code="SEKKOC" Name="Seek Limited" />
+  <SYMBOL Code="SEKKOD" Name="Seek Limited" />
+  <SYMBOL Code="SEKKOR" Name="Seek Limited" />
+  <SYMBOL Code="SEN" Name="Senetas Corporation Ltd" />
+  <SYMBOL Code="SEQ" Name="Southern Equity Holdings" />
+  <SYMBOL Code="SER" Name="Strategic Energy Resources Ltd" />
+  <SYMBOL Code="SFC" Name="Schaffer Corporation Ltd" />
+  <SYMBOL Code="SFG" Name="St Francis Group Ltd" />
+  <SYMBOL Code="SFM" Name="Santa Fe Minerals Ltd" />
+  <SYMBOL Code="SFR" Name="Sandfire Resources NL" />
+  <SYMBOL Code="SFRKOA" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOB" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOC" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOE" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOF" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOG" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOR" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOS" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFRKOV" Name="Sandfire Resources Nl" />
+  <SYMBOL Code="SFX" Name="Sheffield Resources Limited" />
+  <SYMBOL Code="SFY" Name="Spdr S&amp;p/asx 50" />
+  <SYMBOL Code="SGA" Name="Sarytogan Graphite Limited" />
+  <SYMBOL Code="SGAO" Name="Sarytogan Graphite Limited" />
+  <SYMBOL Code="SGF" Name="Sg Fleet Group Limited" />
+  <SYMBOL Code="SGH" Name="Slater &amp; Gordon Ltd" />
+  <SYMBOL Code="SGHKOA" Name="Slater &amp; Gordon Limited" />
+  <SYMBOL Code="SGHKOB" Name="Slater &amp; Gordon Limited" />
+  <SYMBOL Code="SGHKOD" Name="Slater &amp; Gordon Limited" />
+  <SYMBOL Code="SGHKOP" Name="Slater &amp; Gordon Limited" />
+  <SYMBOL Code="SGHKOQ" Name="Slater &amp; Gordon Limited" />
+  <SYMBOL Code="SGHKOR" Name="SGHKOR" />
+  <SYMBOL Code="SGI" Name="Signature Capital Investments Limited" />
+  <SYMBOL Code="SGLLV" Name="Ricegrowers Limited" />
+  <SYMBOL Code="SGM" Name="Sims Group Ltd" />
+  <SYMBOL Code="SGMKOA" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOB" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOD" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOP" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOQ" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOS" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGMKOT" Name="Sims Metal Management Limited" />
+  <SYMBOL Code="SGP" Name="Stockland" />
+  <SYMBOL Code="SGPKOA" Name="Stockland" />
+  <SYMBOL Code="SGPKOB" Name="Stockland" />
+  <SYMBOL Code="SGPKOC" Name="Stockland" />
+  <SYMBOL Code="SGPKOQ" Name="Stockland" />
+  <SYMBOL Code="SGPKOR" Name="Stockland" />
+  <SYMBOL Code="SGPKOS" Name="Stockland" />
+  <SYMBOL Code="SGQ" Name="St George Mining Limited" />
+  <SYMBOL Code="SGQO" Name="St George Mining Limited" />
+  <SYMBOL Code="SGR" Name="The Star Entertainment Group Limited" />
+  <SYMBOL Code="SGRKOQ" Name="The Star Entertainment Group Limited" />
+  <SYMBOL Code="SGRKOR" Name="The Star Entertainment Group Limited" />
+  <SYMBOL Code="SHA" Name="Shannon Resources Ltd" />
+  <SYMBOL Code="SHE" Name="Stonehenge Metals Ltd" />
+  <SYMBOL Code="SHG" Name="Sunshine Gas Ltd" />
+  <SYMBOL Code="SHJ" Name="Shine Corporate Ltd" />
+  <SYMBOL Code="SHL" Name="Sonic Healthcare Ltd" />
+  <SYMBOL Code="SHLKOB" Name="Sonic Healthcare Limited" />
+  <SYMBOL Code="SHLKOP" Name="Sonic Healthcare Limited" />
+  <SYMBOL Code="SHLKOQ" Name="Sonic Healthcare Limited" />
+  <SYMBOL Code="SHM" Name="Shriro Holdings Limited" />
+  <SYMBOL Code="SHN" Name="Sherlock Bay Nickel Corporation Ltd" />
+  <SYMBOL Code="SHO" Name="Sportshero Limited" />
+  <SYMBOL Code="SHP" Name="Shoply Limited" />
+  <SYMBOL Code="SHV" Name="Select Harvests Ltd" />
+  <SYMBOL Code="SI6" Name="Six Sigma Metals Limited" />
+  <SYMBOL Code="SI6OF" Name="SI6OF" />
+  <SYMBOL Code="SIG" Name="Sigma Company Ltd" />
+  <SYMBOL Code="SIGKOB" Name="Sigma Healthcare Limited" />
+  <SYMBOL Code="SIO" Name="Simonds Group Limited" />
+  <SYMBOL Code="SIQ" Name="Smartgroup Corporation Ltd" />
+  <SYMBOL Code="SIQKOB" Name="Smartgroup Corporation Ltd" />
+  <SYMBOL Code="SIQKOC" Name="Smartgroup Corporation Ltd" />
+  <SYMBOL Code="SIS" Name="Simble Solutions Limited" />
+  <SYMBOL Code="SIT" Name="SIT" />
+  <SYMBOL Code="SIV" Name="Silver Chef Ltd" />
+  <SYMBOL Code="SIX" Name="Sprintex Limited" />
+  <SYMBOL Code="SKC" Name="Sky City Entertainment Group Ltd" />
+  <SYMBOL Code="SKN" Name="Skansen Holdings" />
+  <SYMBOL Code="SKNOD" Name="SKNOD" />
+  <SYMBOL Code="SKO" Name="Serko Limited" />
+  <SYMBOL Code="SKS" Name="Stokes (Australasia) Ltd" />
+  <SYMBOL Code="SKT" Name="Sky Network Television Ltd" />
+  <SYMBOL Code="SKUK" Name="SKUK" />
+  <SYMBOL Code="SKY" Name="Skydome Holdings Ltd" />
+  <SYMBOL Code="SLB" Name="Stelar Metals Limited" />
+  <SYMBOL Code="SLC" Name="Softlaw Corporation Ltd" />
+  <SYMBOL Code="SLF" Name="Spdr??s&amp;p?/asx 200 Listed Property Fund" />
+  <SYMBOL Code="SLH" Name="Silk Logistics Holdings Limited" />
+  <SYMBOL Code="SLM" Name="Salmat Ltd" />
+  <SYMBOL Code="SLS" Name="Solstice Minerals Limited" />
+  <SYMBOL Code="SLSO" Name="SLSO" />
+  <SYMBOL Code="SLX" Name="Silex Systems Ltd" />
+  <SYMBOL Code="SLZ" Name="Sultan Resources Ltd" />
+  <SYMBOL Code="SLZO" Name="SLZO" />
+  <SYMBOL Code="SM1" Name="Synlait Milk Limited" />
+  <SYMBOL Code="SMI" Name="Santana Minerals Limited" />
+  <SYMBOL Code="SMLL" Name="Betashares Australian Small Companies Select" />
+  <SYMBOL Code="SMM" Name="Summit Resources Ltd" />
+  <SYMBOL Code="SMMO" Name="SMMO" />
+  <SYMBOL Code="SMN" Name="Structural Monitoring Systems Plc" />
+  <SYMBOL Code="SMNOA" Name="Structural Monitoring Systems Plc" />
+  <SYMBOL Code="SMP" Name="Smartpay Holdings Limited" />
+  <SYMBOL Code="SMR" Name="Stanmore Coal Limited" />
+  <SYMBOL Code="SMS" Name="Sims Group Ltd" />
+  <SYMBOL Code="SMX" Name="SMS Management &amp; Technology Ltd" />
+  <SYMBOL Code="SMXO" Name="SMXO" />
+  <SYMBOL Code="SNC" Name="Sandon Capital Investments Limited" />
+  <SYMBOL Code="SNCHA" Name="SNCHA" />
+  <SYMBOL Code="SND" Name="Saunders International Ltd" />
+  <SYMBOL Code="SNG" Name="Siren Gold Limited" />
+  <SYMBOL Code="SNL" Name="Supply Network Ltd" />
+  <SYMBOL Code="SNS" Name="Sensen Networks Limited" />
+  <SYMBOL Code="SNT" Name="Sky Network Television Ltd" />
+  <SYMBOL Code="SNX" Name="Securenet" />
+  <SYMBOL Code="SNZ" Name="Summerset Group Holdings Limited" />
+  <SYMBOL Code="SOC" Name="Sovereign Gold Company Limited" />
+  <SYMBOL Code="SOL" Name="Washington H Soul Pattison &amp; Co Ltd" />
+  <SYMBOL Code="SOLKOA" Name="Washington H Soul Pattinson &amp; Company Limited" />
+  <SYMBOL Code="SOLKOB" Name="Washington H Soul Pattinson &amp; Company Limited" />
+  <SYMBOL Code="SOLKOD" Name="SOLKOD" />
+  <SYMBOL Code="SOM" Name="SomnoMed Ltd" />
+  <SYMBOL Code="SOP" Name="Sml Corporation Limited" />
+  <SYMBOL Code="SOR" Name="Strategic Elements Limited" />
+  <SYMBOL Code="SP3" Name="Spectur Limited" />
+  <SYMBOL Code="SP8" Name="Streamplay Studio Limited" />
+  <SYMBOL Code="SPA" Name="Spencer Resources Limited" />
+  <SYMBOL Code="SPAO" Name="SPAO" />
+  <SYMBOL Code="SPD" Name="Strategic Pooled Development Ltd" />
+  <SYMBOL Code="SPFKOB" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOC" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOE" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOG" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOH" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOL" Name="SPFKOL" />
+  <SYMBOL Code="SPFKON" Name="SPFKON" />
+  <SYMBOL Code="SPFKOO" Name="SPFKOO" />
+  <SYMBOL Code="SPFKOQ" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOR" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOS" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFKOT" Name="S&amp;p 500 Emini Futures" />
+  <SYMBOL Code="SPFMOA" Name="SPFMOA" />
+  <SYMBOL Code="SPFMOB" Name="SPFMOB" />
+  <SYMBOL Code="SPG" Name="Superwoman Group Limited" />
+  <SYMBOL Code="SPK" Name="Spark New Zealand Limited" />
+  <SYMBOL Code="SPKKOA" Name="SPKKOA" />
+  <SYMBOL Code="SPL" Name="Starpharma Holdings Ltd" />
+  <SYMBOL Code="SPN" Name="SP Ausnet" />
+  <SYMBOL Code="SPQ" Name="Superior Resources Ltd" />
+  <SYMBOL Code="SPQOB" Name="SPQOB" />
+  <SYMBOL Code="SPR" Name="S8 Property Trust" />
+  <SYMBOL Code="SPX" Name="Spinifex Gold Nl" />
+  <SYMBOL Code="SPXOA" Name="SPXOA" />
+  <SYMBOL Code="SPY" Name="Spdr??s&amp;p 500? Etf Trust" />
+  <SYMBOL Code="SPZ" Name="Smart Parking Limited" />
+  <SYMBOL Code="SQ2" Name="Block Inc." />
+  <SYMBOL Code="SQX" Name="Sqx Resources Limited" />
+  <SYMBOL Code="SQXO" Name="SQXO" />
+  <SYMBOL Code="SRG" Name="Sydney Roads Group" />
+  <SYMBOL Code="SRH" Name="Saferoads Holdings Ltd" />
+  <SYMBOL Code="SRI" Name="Sipa Resources Ltd" />
+  <SYMBOL Code="SRJ" Name="Srj Technologies Group Plc" />
+  <SYMBOL Code="SRK" Name="Strike Resources Ltd" />
+  <SYMBOL Code="SRL" Name="Straits Resources Ltd" />
+  <SYMBOL Code="SRN" Name="Surefire Resources Nl" />
+  <SYMBOL Code="SRNOD" Name="SRNOD" />
+  <SYMBOL Code="SRR" Name="Shaw River Resources Ltd" />
+  <SYMBOL Code="SRT" Name="Startrack Communications" />
+  <SYMBOL Code="SRV" Name="Servcorp Ltd" />
+  <SYMBOL Code="SRY" Name="Story-i Limited" />
+  <SYMBOL Code="SRZ" Name="Stellar Resources Ltd" />
+  <SYMBOL Code="SS1" Name="Sun Silver Limited" />
+  <SYMBOL Code="SSG" Name="Shaver Shop Group Limited" />
+  <SYMBOL Code="SSH" Name="SSH Medical Ltd" />
+  <SYMBOL Code="SSL" Name="Sietel Ltd" />
+  <SYMBOL Code="SSLPA" Name="Sietel PA" />
+  <SYMBOL Code="SSM" Name="Service Stream Ltd" />
+  <SYMBOL Code="SSO" Name="Spdr??s&amp;p?/asx Small Ordinaries" />
+  <SYMBOL Code="SSR" Name="SSR Mining Inc" />
+  <SYMBOL Code="SST" Name="Steamships Trading Company Ltd (PNG)" />
+  <SYMBOL Code="ST1" Name="Spirit Telecom Limited" />
+  <SYMBOL Code="STA" Name="Strandline Resources Limited" />
+  <SYMBOL Code="STG" Name="Staging Connections Group Ltd" />
+  <SYMBOL Code="STK" Name="Strickland Resources Limited" />
+  <SYMBOL Code="STM" Name="Sunstone Metals Ltd" />
+  <SYMBOL Code="STN" Name="Southern Titanium Nl" />
+  <SYMBOL Code="STO" Name="Santos Ltd" />
+  <SYMBOL Code="STOKOA" Name="Santos Limited" />
+  <SYMBOL Code="STOKOE" Name="Santos Limited" />
+  <SYMBOL Code="STOKOF" Name="Santos Limited" />
+  <SYMBOL Code="STOKOG" Name="Santos Limited" />
+  <SYMBOL Code="STOKOH" Name="Santos Limited" />
+  <SYMBOL Code="STOKOI" Name="Santos Limited" />
+  <SYMBOL Code="STOKOJ" Name="Santos Limited" />
+  <SYMBOL Code="STOKOK" Name="Santos Limited" />
+  <SYMBOL Code="STOKOL" Name="Santos Limited" />
+  <SYMBOL Code="STOKOM" Name="Santos Limited" />
+  <SYMBOL Code="STOKON" Name="Santos Limited" />
+  <SYMBOL Code="STOKOP" Name="Santos Limited" />
+  <SYMBOL Code="STOKOQ" Name="Santos Limited" />
+  <SYMBOL Code="STOKOR" Name="Santos Limited" />
+  <SYMBOL Code="STOKOS" Name="Santos Limited" />
+  <SYMBOL Code="STOKOU" Name="Santos Limited" />
+  <SYMBOL Code="STP" Name="Stericorp Ltd" />
+  <SYMBOL Code="STW" Name="Spdr?s&amp;p/asx 200" />
+  <SYMBOL Code="STX" Name="Strike Oil Ltd" />
+  <SYMBOL Code="SUH" Name="Southern Hemisphere Mining Limited" />
+  <SYMBOL Code="SUL" Name="Super Cheap Auto Group Ltd" />
+  <SYMBOL Code="SULKOC" Name="Super Retail Group Limited" />
+  <SYMBOL Code="SULKOD" Name="Super Retail Group Limited" />
+  <SYMBOL Code="SULKOR" Name="Super Retail Group Limited" />
+  <SYMBOL Code="SUM" Name="Sumatra Copper &amp; Gold Plc" />
+  <SYMBOL Code="SUMO" Name="SUMO" />
+  <SYMBOL Code="SUN" Name="Suncorp-Metway Ltd" />
+  <SYMBOL Code="SUNKOA" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNKOB" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNKOD" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNKOP" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNKOQ" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNKOS" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNPH" Name="Suncorp Group Limited" />
+  <SYMBOL Code="SUNPI" Name="SUNPI" />
+  <SYMBOL Code="SUNPJ" Name="SUNPJ" />
+  <SYMBOL Code="SUV" Name="Suvo Strategic Minerals Limited" />
+  <SYMBOL Code="SVG" Name="Savannah Goldfields Limited" />
+  <SYMBOL Code="SVGO" Name="SVGO" />
+  <SYMBOL Code="SVL" Name="Silver Mines Ltd" />
+  <SYMBOL Code="SVM" Name="Sovereign Metals Ltd" />
+  <SYMBOL Code="SVNP" Name="SVNP" />
+  <SYMBOL Code="SVR" Name="Solvar Limited" />
+  <SYMBOL Code="SVY" Name="Stavely Minerals Limited" />
+  <SYMBOL Code="SVYO" Name="Stavely Minerals Limited" />
+  <SYMBOL Code="SW1" Name="Swift Networks Group Limited" />
+  <SYMBOL Code="SWF" Name="Selfwealth Limited" />
+  <SYMBOL Code="SWM" Name="Seven West Media Limited" />
+  <SYMBOL Code="SWMKOR" Name="Seven West Media Limited" />
+  <SYMBOL Code="SWP" Name="Swoop Holdings Limited" />
+  <SYMBOL Code="SWTZ" Name="SWTZ" />
+  <SYMBOL Code="SXE" Name="Southern Cross Electrical Engineering Ltd" />
+  <SYMBOL Code="SXG" Name="Southern Cross Goldfields Ltd" />
+  <SYMBOL Code="SXL" Name="Southern Cross Media Group" />
+  <SYMBOL Code="SYA" Name="Sayona Mining Limited" />
+  <SYMBOL Code="SYI" Name="Spdr Msci Australia Select High Dividend Yield Fun" />
+  <SYMBOL Code="SYL" Name="Sylvastate Ltd" />
+  <SYMBOL Code="SYR" Name="Syrah Resources Ltd" />
+  <SYMBOL Code="T3D" Name="333d Limited" />
+  <SYMBOL Code="T3MP" Name="T3MP" />
+  <SYMBOL Code="T88" Name="Taiton Resources Limited" />
+  <SYMBOL Code="T92" Name="Terra Uranium Limited" />
+  <SYMBOL Code="T92O" Name="T92O" />
+  <SYMBOL Code="TAH" Name="Tabcorp Holdings Ltd" />
+  <SYMBOL Code="TAHKOC" Name="Tabcorp Holdings Limited" />
+  <SYMBOL Code="TAHKOQ" Name="Tabcorp Holdings Limited" />
+  <SYMBOL Code="TAHKOT" Name="Tabcorp Holdings Limited" />
+  <SYMBOL Code="TAL" Name="Tower Australia Group Ltd" />
+  <SYMBOL Code="TAM" Name="Tanami Gold NL" />
+  <SYMBOL Code="TANN" Name="TANN" />
+  <SYMBOL Code="TAR" Name="Taruga Gold Limited" />
+  <SYMBOL Code="TAS" Name="Tasman Resources NL" />
+  <SYMBOL Code="TAT" Name="Tat Hong Holdings Ltd (Singapr CUFS)" />
+  <SYMBOL Code="TBIL" Name="TBIL" />
+  <SYMBOL Code="TBN" Name="Tamboran Resources Limited" />
+  <SYMBOL Code="TBR" Name="Tribune Resources NL" />
+  <SYMBOL Code="TCF" Name="360 Capital Enhanced Income Fund" />
+  <SYMBOL Code="TCG" Name="Turaco Gold Limited" />
+  <SYMBOL Code="TCL" Name="Transurban Group" />
+  <SYMBOL Code="TCLKOA" Name="Transurban Group" />
+  <SYMBOL Code="TCLKOC" Name="Transurban Group" />
+  <SYMBOL Code="TCLKOP" Name="Transurban Group" />
+  <SYMBOL Code="TCLKOQ" Name="Transurban Group" />
+  <SYMBOL Code="TCO" Name="Transmetro Corporation Ltd" />
+  <SYMBOL Code="TD1" Name="Tali Digital Limited" />
+  <SYMBOL Code="TDO" Name="3D Oil Ltd" />
+  <SYMBOL Code="TEA" Name="Terra Gold Mining Ltd" />
+  <SYMBOL Code="TECH" Name="Etfs Global Core Infrastructure" />
+  <SYMBOL Code="TEE" Name="Tele-IP Ltd" />
+  <SYMBOL Code="TEG" Name="Triangle Energy (global) Limited" />
+  <SYMBOL Code="TEGO" Name="Triangle Energy (global) Limited" />
+  <SYMBOL Code="TEK" Name="Thorney Technologies Ltd" />
+  <SYMBOL Code="TEM" Name="Tempo Services Ltd" />
+  <SYMBOL Code="TER" Name="Terrain Australia Ltd" />
+  <SYMBOL Code="TFL" Name="Tasfoods Limited" />
+  <SYMBOL Code="TG1" Name="Techgen Metals Ltd" />
+  <SYMBOL Code="TG1O" Name="TG1O" />
+  <SYMBOL Code="TG6" Name="Tg Metals Limited" />
+  <SYMBOL Code="TGF" Name="Tianshan Goldfields Ltd" />
+  <SYMBOL Code="TGH" Name="Tegel Group Holdings Limited" />
+  <SYMBOL Code="TGM" Name="Theta Gold Mines Limited" />
+  <SYMBOL Code="TGN" Name="Tungsten Mining Nl" />
+  <SYMBOL Code="TGP" Name="Trafalgar Corporate Group" />
+  <SYMBOL Code="THB" Name="Thunderbird Resources Limited" />
+  <SYMBOL Code="THL" Name="Tourism Holdings Rentals Limited" />
+  <SYMBOL Code="THR" Name="Thor Mining Plc" />
+  <SYMBOL Code="THROD" Name="THROD" />
+  <SYMBOL Code="TIA" Name="Tian An Australia Limited" />
+  <SYMBOL Code="TIG" Name="Tigers Realm Coal Limited" />
+  <SYMBOL Code="TIP" Name="Teaminvest Private Group Limited" />
+  <SYMBOL Code="TKL" Name="Traka Resources Ltd" />
+  <SYMBOL Code="TKM" Name="Trek Metals Limited" />
+  <SYMBOL Code="TKMO" Name="TKMO" />
+  <SYMBOL Code="TLC" Name="Tourism Hotels &amp; Leisure Ltd" />
+  <SYMBOL Code="TLG" Name="Talga Gold Limited" />
+  <SYMBOL Code="TLM" Name="Talisman Mining Ltd" />
+  <SYMBOL Code="TLS" Name="Telstra Corporation Ltd" />
+  <SYMBOL Code="TLSKOA" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOC" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOD" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOF" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOG" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOH" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOJ" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOM" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOP" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOQ" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOS" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOT" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOU" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOV" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLSKOX" Name="Telstra Corporation Limited." />
+  <SYMBOL Code="TLX" Name="Telix Pharmaceuticals Limited" />
+  <SYMBOL Code="TLXKOA" Name="TLXKOA" />
+  <SYMBOL Code="TLXKOB" Name="TLXKOB" />
+  <SYMBOL Code="TLXKOC" Name="TLXKOC" />
+  <SYMBOL Code="TM1" Name="Terra Metals Limited" />
+  <SYMBOL Code="TM1O" Name="TM1O" />
+  <SYMBOL Code="TMB" Name="Tambourah Metals Ltd" />
+  <SYMBOL Code="TMG" Name="Trigg Mining Ltd." />
+  <SYMBOL Code="TMGOD" Name="TMGOD" />
+  <SYMBOL Code="TMK" Name="Tamaska Oil And Gas Ltd" />
+  <SYMBOL Code="TMKO" Name="Tamaska Oil And Gas Ltd" />
+  <SYMBOL Code="TMKOB" Name="TMKOB" />
+  <SYMBOL Code="TML" Name="Timah Resources Limited" />
+  <SYMBOL Code="TMS" Name="Television &amp; Media Services Ltd" />
+  <SYMBOL Code="TMSO" Name="TMSO" />
+  <SYMBOL Code="TMSOA" Name="TMSOA" />
+  <SYMBOL Code="TMX" Name="Terrain Minerals Ltd" />
+  <SYMBOL Code="TMZ" Name="Thomson Resources Limited" />
+  <SYMBOL Code="TNC" Name="Transol Corporation Ltd" />
+  <SYMBOL Code="TNE" Name="Technology One Ltd" />
+  <SYMBOL Code="TNEKOB" Name="Technology One Limited" />
+  <SYMBOL Code="TNEKOD" Name="Technology One Limited" />
+  <SYMBOL Code="TNY" Name="Tennyson Networks Holdings" />
+  <SYMBOL Code="TOE" Name="Toro Energy Ltd" />
+  <SYMBOL Code="TOEO" Name="TOEO" />
+  <SYMBOL Code="TOK" Name="Tolu Minerals Limited." />
+  <SYMBOL Code="TON" Name="Triton Gold Limited" />
+  <SYMBOL Code="TONOG" Name="Triton Minerals Ltd" />
+  <SYMBOL Code="TOP" Name="Thorney Opportunities Ltd" />
+  <SYMBOL Code="TOR" Name="Ticor Ltd" />
+  <SYMBOL Code="TOT" Name="360 Capital Total Return Fund" />
+  <SYMBOL Code="TOU" Name="Tlou Energy Limited" />
+  <SYMBOL Code="TOY" Name="Toysrus Anz Limited" />
+  <SYMBOL Code="TPC" Name="Tel Pacific Ltd" />
+  <SYMBOL Code="TPG" Name="Taragon Property Fund" />
+  <SYMBOL Code="TPGKOE" Name="TPGKOE" />
+  <SYMBOL Code="TPW" Name="Temple &amp; Webster Group Ltd" />
+  <SYMBOL Code="TRA" Name="Turners Automotive Group Limited" />
+  <SYMBOL Code="TRE" Name="Toubani Resources Inc." />
+  <SYMBOL Code="TRI" Name="Triumph Tin Limited" />
+  <SYMBOL Code="TRJ" Name="Trajan Minerals Ltd" />
+  <SYMBOL Code="TRM" Name="Truscott Mining Corporation Ltd" />
+  <SYMBOL Code="TRP" Name="Tissue Repair Ltd" />
+  <SYMBOL Code="TRS" Name="Reject Shop Ltd (The)" />
+  <SYMBOL Code="TRU" Name="Trust Company of Australia Ltd" />
+  <SYMBOL Code="TSI" Name="Transfield Services Infrasture Fund" />
+  <SYMBOL Code="TSIO" Name="TSIO" />
+  <SYMBOL Code="TSL" Name="Titanium Sands Limited" />
+  <SYMBOL Code="TSLOA" Name="TSLOA" />
+  <SYMBOL Code="TSO" Name="Tishman Speyer Office Fund" />
+  <SYMBOL Code="TSOO" Name="Tesoro Gold Ltd" />
+  <SYMBOL Code="TSOOA" Name="TSOOA" />
+  <SYMBOL Code="TTA" Name="TTA Holdings Ltd" />
+  <SYMBOL Code="TTI" Name="Traffic Technologies Ltd" />
+  <SYMBOL Code="TTM" Name="Titan Minerals Limited" />
+  <SYMBOL Code="TTMO" Name="TTMO" />
+  <SYMBOL Code="TTT" Name="Tritton Resources Ltd" />
+  <SYMBOL Code="TUA" Name="Tuas Limited" />
+  <SYMBOL Code="TVL" Name="Travel.com.au Ltd" />
+  <SYMBOL Code="TVN" Name="TVSN Ltd" />
+  <SYMBOL Code="TVNO" Name="TVNO" />
+  <SYMBOL Code="TVNOA" Name="TVNOA" />
+  <SYMBOL Code="TWD" Name="Tamawood Ltd" />
+  <SYMBOL Code="TWE" Name="Treasury Wine Estates Limited" />
+  <SYMBOL Code="TWEKOA" Name="Treasury Wine Estates Limited" />
+  <SYMBOL Code="TWEKOP" Name="Treasury Wine Estates Limited" />
+  <SYMBOL Code="TWEKOQ" Name="Treasury Wine Estates Limited" />
+  <SYMBOL Code="TWEKOR" Name="Treasury Wine Estates Limited" />
+  <SYMBOL Code="TWR" Name="Tower Ltd" />
+  <SYMBOL Code="TX3" Name="Trinex Minerals Limited" />
+  <SYMBOL Code="TYP" Name="Tryptamine Therapeutics Limited" />
+  <SYMBOL Code="TYR" Name="Tyro Payments Limited" />
+  <SYMBOL Code="TYRKOC" Name="TYRKOC" />
+  <SYMBOL Code="TYX" Name="Tyranna Resources Limited" />
+  <SYMBOL Code="TZL" Name="TZ Ltd" />
+  <SYMBOL Code="TZN" Name="Terramin Australia Ltd" />
+  <SYMBOL Code="U100" Name="U100" />
+  <SYMBOL Code="UBI" Name="Universal Biosensors Ltd" />
+  <SYMBOL Code="UBIO" Name="UBIO" />
+  <SYMBOL Code="UBN" Name="Urbanise.com Limited" />
+  <SYMBOL Code="UCM" Name="USCOM Ltd" />
+  <SYMBOL Code="ULTB" Name="ULTB" />
+  <SYMBOL Code="UNI" Name="Unilife Medical Solutions Ltd" />
+  <SYMBOL Code="UNT" Name="Unith Ltd" />
+  <SYMBOL Code="UNTOA" Name="UNTOA" />
+  <SYMBOL Code="UOS" Name="United Overseas Australia Ltd" />
+  <SYMBOL Code="URF" Name="Us Masters Residential Property Fund" />
+  <SYMBOL Code="URNM" Name="URNM" />
+  <SYMBOL Code="URW" Name="Unibail-rodamco-westfield" />
+  <SYMBOL Code="US10" Name="US10" />
+  <SYMBOL Code="USD" Name="Betashares U.s. Dollar" />
+  <SYMBOL Code="USIG" Name="USIG" />
+  <SYMBOL Code="USL" Name="Unico Silver Limited" />
+  <SYMBOL Code="USTB" Name="USTB" />
+  <SYMBOL Code="UTIP" Name="UTIP" />
+  <SYMBOL Code="UVA" Name="Uvre Limited" />
+  <SYMBOL Code="UWC" Name="Underwood Capital Limited" />
+  <SYMBOL Code="VACF" Name="Vanguard Australian Corporate Fixed Interest Index" />
+  <SYMBOL Code="VAE" Name="Vanguard Ftse Asia Ex Japan Shares Index?" />
+  <SYMBOL Code="VAF" Name="Vanguard Australian Fixed Interest Index" />
+  <SYMBOL Code="VAP" Name="Vanguard Australian Property Securities Index Fund" />
+  <SYMBOL Code="VAR" Name="Variscan Mines Limited" />
+  <SYMBOL Code="VAS" Name="Vanguard Australian Shares Index" />
+  <SYMBOL Code="VAU" Name="Vault Minerals Limited" />
+  <SYMBOL Code="VAUKOA" Name="VAUKOA" />
+  <SYMBOL Code="VAUKOB" Name="VAUKOB" />
+  <SYMBOL Code="VBC" Name="Verbrec Limited" />
+  <SYMBOL Code="VBS" Name="Vectus Biosystems Limited" />
+  <SYMBOL Code="VBTC" Name="VBTC" />
+  <SYMBOL Code="VCF" Name="Vanguard?international Credit Securities Index (he" />
+  <SYMBOL Code="VCX" Name="Vicinity Centres" />
+  <SYMBOL Code="VCXKOA" Name="Vicinity Centres" />
+  <SYMBOL Code="VCXKOC" Name="Vicinity Centres" />
+  <SYMBOL Code="VDBA" Name="Vanguard Diversified Balanced Index" />
+  <SYMBOL Code="VDCO" Name="Vanguard Diversified Conservative" />
+  <SYMBOL Code="VDGR" Name="Vanguard Diversified Growth" />
+  <SYMBOL Code="VDHG" Name="Vanguard Diversified High Growth" />
+  <SYMBOL Code="VEA" Name="Veda Advantage Ltd" />
+  <SYMBOL Code="VEE" Name="Veem Ltd" />
+  <SYMBOL Code="VEN" Name="Vintage Energy Ltd" />
+  <SYMBOL Code="VEQ" Name="Vanguard Ftse Europe Shares" />
+  <SYMBOL Code="VESG" Name="Vanguard Ethically Conscious International Shares" />
+  <SYMBOL Code="VETH" Name="VETH" />
+  <SYMBOL Code="VEU" Name="Vanguard All-world Ex-us Shares Index Etf" />
+  <SYMBOL Code="VFX" Name="Visionflex Group Limited" />
+  <SYMBOL Code="VFY" Name="Vitrafy Life Sciences Limited" />
+  <SYMBOL Code="VG1" Name="Vgi Partners Global Investments Limited" />
+  <SYMBOL Code="VGB" Name="Vanguard Australian Government Bond Index" />
+  <SYMBOL Code="VGE" Name="Vanguard Ftse Emerging Markets Shares" />
+  <SYMBOL Code="VGL" Name="Volante Group Ltd" />
+  <SYMBOL Code="VGS" Name="Vanguard Msci Index International Shares" />
+  <SYMBOL Code="VHM" Name="Vhm Limited" />
+  <SYMBOL Code="VHY" Name="Vanguard Australian Shares High Yield" />
+  <SYMBOL Code="VIF" Name="Vanguard International Fixed Interest Index (hedge" />
+  <SYMBOL Code="VIG" Name="Victor Group Holdings Limited" />
+  <SYMBOL Code="VIP" Name="Voltage IP Ltd" />
+  <SYMBOL Code="VISM" Name="Vanguard Msci International Small Companies Index" />
+  <SYMBOL Code="VIT" Name="Vital Capital" />
+  <SYMBOL Code="VKA" Name="Viking Ashanti Limited" />
+  <SYMBOL Code="VLC" Name="Vanguard Msci Australian Large Companies Index" />
+  <SYMBOL Code="VLS" Name="Vita Life Sciences" />
+  <SYMBOL Code="VMC" Name="Venus Metals Corporation Limited" />
+  <SYMBOL Code="VMG" Name="VDM Group Ltd" />
+  <SYMBOL Code="VMIN" Name="Vanguard Global Minimum Volatility Active" />
+  <SYMBOL Code="VML" Name="Vital Metals Ltd" />
+  <SYMBOL Code="VMM" Name="Viridis Mining And Minerals Limited" />
+  <SYMBOL Code="VMT" Name="Vmoto Ltd" />
+  <SYMBOL Code="VN8" Name="Vonex Limited.." />
+  <SYMBOL Code="VNL" Name="Vinyl Group Ltd" />
+  <SYMBOL Code="VNT" Name="Ventia Services Group Limited" />
+  <SYMBOL Code="VPR" Name="Volt Power Group Limited" />
+  <SYMBOL Code="VR1" Name="Vection Technologies Ltd" />
+  <SYMBOL Code="VR1O" Name="VR1O" />
+  <SYMBOL Code="VR8" Name="Vanadium Resources Limited" />
+  <SYMBOL Code="VRC" Name="Volt Resources Limited" />
+  <SYMBOL Code="VRCOB" Name="Volt Resources Limited" />
+  <SYMBOL Code="VRL" Name="Village Roadshow Ltd" />
+  <SYMBOL Code="VRLOF" Name="VRLOF" />
+  <SYMBOL Code="VRS" Name="Veris Limited" />
+  <SYMBOL Code="VRX" Name="Ventnor Resources Ltd" />
+  <SYMBOL Code="VSL" Name="Vision Systems Ltd" />
+  <SYMBOL Code="VSO" Name="Vanguard Msci Australian Small Companies Index" />
+  <SYMBOL Code="VSR" Name="Voltaic Strategic Resources Ltd" />
+  <SYMBOL Code="VSRO" Name="VSRO" />
+  <SYMBOL Code="VTI" Name="Virotec International Ltd" />
+  <SYMBOL Code="VTM" Name="Volta Mining Limited" />
+  <SYMBOL Code="VTS" Name="Vanguard U.s. Total Market Shares Index" />
+  <SYMBOL Code="VTX" Name="Vortex Pipes Ltd" />
+  <SYMBOL Code="VTXO" Name="Vtx Holdings Limited" />
+  <SYMBOL Code="VTXOA" Name="VTXOA" />
+  <SYMBOL Code="VUL" Name="Valhalla Uranium Ltd" />
+  <SYMBOL Code="VVA" Name="Viva Leisure Limited" />
+  <SYMBOL Code="VVLU" Name="Vanguard Global Value Equity Active" />
+  <SYMBOL Code="VYS" Name="Vysarn Limited" />
+  <SYMBOL Code="W2V" Name="Way 2 Vat Ltd." />
+  <SYMBOL Code="W2VO" Name="W2VO" />
+  <SYMBOL Code="WA1" Name="Wa1 Resources Ltd" />
+  <SYMBOL Code="WA8" Name="Warriedar Resources Limited" />
+  <SYMBOL Code="WAA" Name="Wam Active Ltd" />
+  <SYMBOL Code="WAF" Name="West African Resources Limited" />
+  <SYMBOL Code="WAFKOA" Name="WAFKOA" />
+  <SYMBOL Code="WAG" Name="WorldAudio Ltd" />
+  <SYMBOL Code="WAK" Name="Wa Kaolin Limited" />
+  <SYMBOL Code="WAM" Name="WAM Capital Ltd" />
+  <SYMBOL Code="WAR" Name="Wam Strategic Value Limited" />
+  <SYMBOL Code="WAT" Name="Waterco Ltd" />
+  <SYMBOL Code="WAX" Name="WAX" />
+  <SYMBOL Code="WBC" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOA" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOB" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOC" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOD" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOF" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOG" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOH" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOO" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOQ" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCKOU" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCMOB" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCPH" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCPJ" Name="WBCPJ" />
+  <SYMBOL Code="WBCPK" Name="WBCPK" />
+  <SYMBOL Code="WBCPL" Name="Westpac Banking Corporation" />
+  <SYMBOL Code="WBCPM" Name="WBCPM" />
+  <SYMBOL Code="WBE" Name="Whitebark Energy Ltd" />
+  <SYMBOL Code="WBT" Name="Weebit Nano Ltd" />
+  <SYMBOL Code="WC1" Name="West Cobar Metals Limited" />
+  <SYMBOL Code="WC1O" Name="WC1O" />
+  <SYMBOL Code="WC8" Name="Wildcat Resources Limited" />
+  <SYMBOL Code="WCMQ" Name="WCMQ" />
+  <SYMBOL Code="WCN" Name="White Cliff Nickel Ltd" />
+  <SYMBOL Code="WCNO" Name="White Cliff Nickel Ltd" />
+  <SYMBOL Code="WDMF" Name="Ishares Edge Msci World Multifactor" />
+  <SYMBOL Code="WDS" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOA" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOE" Name="WDSKOE" />
+  <SYMBOL Code="WDSKOF" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOL" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOP" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOR" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOS" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOU" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WDSKOW" Name="WDSKOW" />
+  <SYMBOL Code="WDSKOY" Name="Woodside Energy Group Ltd" />
+  <SYMBOL Code="WEB" Name="Webjet Ltd" />
+  <SYMBOL Code="WEBKOQ" Name="Webjet Limited" />
+  <SYMBOL Code="WEBKOR" Name="Webjet Limited" />
+  <SYMBOL Code="WEC" Name="White Energy Company Ltd" />
+  <SYMBOL Code="WEL" Name="Winchester Energy Ltd" />
+  <SYMBOL Code="WEMG" Name="Spdr??s&amp;p??emerging Markets Fund" />
+  <SYMBOL Code="WES" Name="Wesfarmers Ltd" />
+  <SYMBOL Code="WESKOA" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOB" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOH" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOI" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOQ" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOR" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WESKOU" Name="Wesfarmers Limited" />
+  <SYMBOL Code="WFL" Name="Willmott Forests Ltd" />
+  <SYMBOL Code="WFLOB" Name="WFLOB" />
+  <SYMBOL Code="WGB" Name="Wam Global Limited" />
+  <SYMBOL Code="WGN" Name="Wagners Holding Company Limited" />
+  <SYMBOL Code="WGR" Name="Westgold Resources NL" />
+  <SYMBOL Code="WGX" Name="Westgold Resources Limited." />
+  <SYMBOL Code="WHC" Name="Whitehaven Coal Ltd" />
+  <SYMBOL Code="WHCKOA" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOC" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOG" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOJ" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOK" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOQ" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOR" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOX" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHCKOZ" Name="Whitehaven Coal Limited" />
+  <SYMBOL Code="WHF" Name="Whitefield Ltd" />
+  <SYMBOL Code="WHFPA" Name="Whitefield PA" />
+  <SYMBOL Code="WHFPB" Name="Whitefield Limited" />
+  <SYMBOL Code="WHI" Name="Whitefield Income Limited" />
+  <SYMBOL Code="WHK" Name="Whitehawk Limited" />
+  <SYMBOL Code="WHKO" Name="WHKO" />
+  <SYMBOL Code="WIA" Name="Wia Gold Limited" />
+  <SYMBOL Code="WIN" Name="Windward Resources Ltd" />
+  <SYMBOL Code="WJL" Name="Webjet Group Limited" />
+  <SYMBOL Code="WKT" Name="Walkabout Resources Ltd" />
+  <SYMBOL Code="WLD" Name="Wellard Limited" />
+  <SYMBOL Code="WLE" Name="Wam Leaders" />
+  <SYMBOL Code="WMA" Name="Wam Alternative Assets Limited" />
+  <SYMBOL Code="WMG" Name="Westmag Ltd" />
+  <SYMBOL Code="WMI" Name="Wam Microcap Limited" />
+  <SYMBOL Code="WML" Name="Westcoast Mining Ltd" />
+  <SYMBOL Code="WMLO" Name="Macquarie Goodman Group" />
+  <SYMBOL Code="WNR" Name="Wingara Ag Ltd" />
+  <SYMBOL Code="WNX" Name="Wellnex Life Limited" />
+  <SYMBOL Code="WOA" Name="Wide Open Agriculture Ltd" />
+  <SYMBOL Code="WOAO" Name="Wide Open Agriculture Ltd" />
+  <SYMBOL Code="WOR" Name="WorleyParsons Ltd" />
+  <SYMBOL Code="WORKOC" Name="Worleyparsons Limited" />
+  <SYMBOL Code="WORKOF" Name="Worleyparsons Limited" />
+  <SYMBOL Code="WORKOR" Name="Worleyparsons Limited" />
+  <SYMBOL Code="WORKOS" Name="Worleyparsons Limited" />
+  <SYMBOL Code="WORKOV" Name="Worleyparsons Limited" />
+  <SYMBOL Code="WOT" Name="Westpac Office Trust" />
+  <SYMBOL Code="WOW" Name="Woolworths Ltd" />
+  <SYMBOL Code="WOWKOC" Name="Woolworths Limited" />
+  <SYMBOL Code="WOWKOE" Name="Woolworths Limited" />
+  <SYMBOL Code="WOWKOQ" Name="Woolworths Limited" />
+  <SYMBOL Code="WOWKOR" Name="Woolworths Limited" />
+  <SYMBOL Code="WOWKOT" Name="Woolworths Limited" />
+  <SYMBOL Code="WOWKOX" Name="Woolworths Limited" />
+  <SYMBOL Code="WPR" Name="Waypoint Reit" />
+  <SYMBOL Code="WQG" Name="Wcm Global Growth Limited" />
+  <SYMBOL Code="WR1" Name="Winsome Resources Limited" />
+  <SYMBOL Code="WRK" Name="Warwick Resources Ltd" />
+  <SYMBOL Code="WSI" Name="Weststar Industrial Limited" />
+  <SYMBOL Code="WSR" Name="Whitestar Resources Limited" />
+  <SYMBOL Code="WSROA" Name="WSROA" />
+  <SYMBOL Code="WTC" Name="Wisetech Global Limited" />
+  <SYMBOL Code="WTCKOE" Name="Wisetech Global Limited" />
+  <SYMBOL Code="WTCKOF" Name="Wisetech Global Limited" />
+  <SYMBOL Code="WTL" Name="Wt Financial Group Limited" />
+  <SYMBOL Code="WTM" Name="Waratah Minerals Limited" />
+  <SYMBOL Code="WTN" Name="Western Uranium Ltd" />
+  <SYMBOL Code="WVOL" Name="Ishares Edge Msci World Minimum Volatility" />
+  <SYMBOL Code="WWG" Name="WWG" />
+  <SYMBOL Code="WWI" Name="West Wits Mining Ltd" />
+  <SYMBOL Code="WXHG" Name="Spdr??s&amp;p??world Ex-australia (hedged) Fund" />
+  <SYMBOL Code="WXOZ" Name="Spdr??s&amp;p??world Ex-australia Fund" />
+  <SYMBOL Code="WYX" Name="Western Yilgarn Nl" />
+  <SYMBOL Code="WYXO" Name="WYXO" />
+  <SYMBOL Code="WZR" Name="Wisr Limited" />
+  <SYMBOL Code="X2M" Name="X2m Connect Limited" />
+  <SYMBOL Code="X64" Name="Ten Sixty Four Limited" />
+  <SYMBOL Code="XAE" Name="" />
+  <SYMBOL Code="XAF" Name="S&amp;P/ASX All Australian 50" />
+  <SYMBOL Code="XALG" Name="XALG" />
+  <SYMBOL Code="XAM" Name="Xanadu Mines Limited" />
+  <SYMBOL Code="XAO" Name="ASX All Ordinaries" />
+  <SYMBOL Code="XARO" Name="XARO" />
+  <SYMBOL Code="XASG" Name="XASG" />
+  <SYMBOL Code="XAT" Name="S&amp;P/ASX All Australian 200" />
+  <SYMBOL Code="XBK" Name="" />
+  <SYMBOL Code="XBN" Name="" />
+  <SYMBOL Code="XBT" Name="" />
+  <SYMBOL Code="XBW" Name="S&amp;P/ASX Buy-Write Index" />
+  <SYMBOL Code="XCO2" Name="XCO2" />
+  <SYMBOL Code="XDI" Name="" />
+  <SYMBOL Code="XDJ" Name="S&amp;P/ASX 200 Consumer Discretionary" />
+  <SYMBOL Code="XEC" Name="" />
+  <SYMBOL Code="XEJ" Name="S&amp;P/ASX 200 Energy" />
+  <SYMBOL Code="XET" Name="" />
+  <SYMBOL Code="XEW" Name="" />
+  <SYMBOL Code="XF1" Name="Xref Limited" />
+  <SYMBOL Code="XFJ" Name="S&amp;P/ASX 200 Financials" />
+  <SYMBOL Code="XFL" Name="S&amp;P/ASX 50" />
+  <SYMBOL Code="XGD" Name="S&amp;P/ASX All Ordinaries Gold" />
+  <SYMBOL Code="XGL" Name="Xamble Group Limited" />
+  <SYMBOL Code="XHJ" Name="S&amp;P/ASX 200 Health Care" />
+  <SYMBOL Code="XIJ" Name="S&amp;P/ASX 200 Information Technology" />
+  <SYMBOL Code="XIN" Name="" />
+  <SYMBOL Code="XJO" Name="S&amp;P/ASX 200" />
+  <SYMBOL Code="XJOBOC" Name="XJOBOC" />
+  <SYMBOL Code="XJOBOE" Name="XJOBOE" />
+  <SYMBOL Code="XJOKOD" Name="XJOKOD" />
+  <SYMBOL Code="XJOKOJ" Name="XJOKOJ" />
+  <SYMBOL Code="XJOKOM" Name="XJOKOM" />
+  <SYMBOL Code="XJOKON" Name="XJOKON" />
+  <SYMBOL Code="XJOKOO" Name="XJOKOO" />
+  <SYMBOL Code="XJOKOP" Name="XJOKOP" />
+  <SYMBOL Code="XJOKOQ" Name="XJOKOQ" />
+  <SYMBOL Code="XJOKOR" Name="XJOKOR" />
+  <SYMBOL Code="XJOKOW" Name="XJOKOW" />
+  <SYMBOL Code="XJOKOZ" Name="XJOKOZ" />
+  <SYMBOL Code="XJOLOH" Name="XJOLOH" />
+  <SYMBOL Code="XJOMOV" Name="XJOMOV" />
+  <SYMBOL Code="XJOQOB" Name="XJOQOB" />
+  <SYMBOL Code="XJOQOD" Name="XJOQOD" />
+  <SYMBOL Code="XJOQOF" Name="XJOQOF" />
+  <SYMBOL Code="XJOQOG" Name="XJOQOG" />
+  <SYMBOL Code="XJOTOM" Name="XJOTOM" />
+  <SYMBOL Code="XJOTON" Name="XJOTON" />
+  <SYMBOL Code="XJOTOO" Name="XJOTOO" />
+  <SYMBOL Code="XJOUOB" Name="XJOUOB" />
+  <SYMBOL Code="XJOUOF" Name="XJOUOF" />
+  <SYMBOL Code="XJOUOL" Name="XJOUOL" />
+  <SYMBOL Code="XJOUOO" Name="XJOUOO" />
+  <SYMBOL Code="XJR" Name="" />
+  <SYMBOL Code="XJT" Name="" />
+  <SYMBOL Code="XKO" Name="S&amp;P/ASX 300" />
+  <SYMBOL Code="XLD" Name="" />
+  <SYMBOL Code="XMD" Name="S&amp;P/ASX Midcap 50" />
+  <SYMBOL Code="XMET" Name="XMET" />
+  <SYMBOL Code="XMJ" Name="S&amp;P/ASX 200 Materials" />
+  <SYMBOL Code="XMM" Name="S&amp;P/ASX 300 Metals And Mining" />
+  <SYMBOL Code="XNJ" Name="S&amp;P/ASX 200 Industrials" />
+  <SYMBOL Code="XNT" Name="" />
+  <SYMBOL Code="XNV" Name="" />
+  <SYMBOL Code="XPJ" Name="S&amp;P/ASX 200 Property Trusts" />
+  <SYMBOL Code="XPN" Name="Xpon Technologies Group Limited" />
+  <SYMBOL Code="XRE" Name="S&amp;P/ASX 200 Real Estate" />
+  <SYMBOL Code="XRF" Name="XRF Scientific Ltd" />
+  <SYMBOL Code="XRG" Name="Xreality Group Ltd" />
+  <SYMBOL Code="XRO" Name="Xero Limited" />
+  <SYMBOL Code="XROKOC" Name="Xero Limited" />
+  <SYMBOL Code="XROKOD" Name="Xero Limited" />
+  <SYMBOL Code="XROKOR" Name="XROKOR" />
+  <SYMBOL Code="XSJ" Name="S&amp;P/ASX 200 Consumer Staples" />
+  <SYMBOL Code="XSO" Name="S&amp;P/ASX Small Ordinaries" />
+  <SYMBOL Code="XST" Name="Xstate Resources Ltd" />
+  <SYMBOL Code="XSY" Name="" />
+  <SYMBOL Code="XTJ" Name="S&amp;P/ASX 200 Telecommunication Services" />
+  <SYMBOL Code="XTL" Name="S&amp;P/ASX 20" />
+  <SYMBOL Code="XTO" Name="S&amp;P/ASX 100" />
+  <SYMBOL Code="XUJ" Name="S&amp;P/ASX 200 Utilities" />
+  <SYMBOL Code="XVI" Name="" />
+  <SYMBOL Code="XXJ" Name="S&amp;P/ASX 200 Financials x Property Trusts" />
+  <SYMBOL Code="YAL" Name="Yancoal Australia Limited" />
+  <SYMBOL Code="YANK" Name="Betashares Strong U.s. Dollar" />
+  <SYMBOL Code="YAR" Name="Yari Minerals Limited" />
+  <SYMBOL Code="YAROD" Name="YAROD" />
+  <SYMBOL Code="YOJ" Name="Yojee Limited" />
+  <SYMBOL Code="YOW" Name="Yowie Group Ltd" />
+  <SYMBOL Code="YRL" Name="Yandal Resources Limited" />
+  <SYMBOL Code="Z2U" Name="Zoom2u Technologies Limited" />
+  <SYMBOL Code="ZAG" Name="Zuleika Gold Limited" />
+  <SYMBOL Code="ZCLKOA" Name="ZCLKOA" />
+  <SYMBOL Code="ZCLKOD" Name="ZCLKOD" />
+  <SYMBOL Code="ZCLKOE" Name="ZCLKOE" />
+  <SYMBOL Code="ZCLKOF" Name="ZCLKOF" />
+  <SYMBOL Code="ZCLKOJ" Name="ZCLKOJ" />
+  <SYMBOL Code="ZCLKOR" Name="ZCLKOR" />
+  <SYMBOL Code="ZCLKOV" Name="ZCLKOV" />
+  <SYMBOL Code="ZCLKOY" Name="ZCLKOY" />
+  <SYMBOL Code="ZEO" Name="Zeotech Limited" />
+  <SYMBOL Code="ZEU" Name="Zeus Resources Limited" />
+  <SYMBOL Code="ZEUO" Name="ZEUO" />
+  <SYMBOL Code="ZGCKOA" Name="ZGCKOA" />
+  <SYMBOL Code="ZGCKOB" Name="ZGCKOB" />
+  <SYMBOL Code="ZGCKOC" Name="ZGCKOC" />
+  <SYMBOL Code="ZGCKOD" Name="ZGCKOD" />
+  <SYMBOL Code="ZGCKOE" Name="ZGCKOE" />
+  <SYMBOL Code="ZGCKOF" Name="ZGCKOF" />
+  <SYMBOL Code="ZGCKOG" Name="ZGCKOG" />
+  <SYMBOL Code="ZGCKOH" Name="ZGCKOH" />
+  <SYMBOL Code="ZGCKOI" Name="ZGCKOI" />
+  <SYMBOL Code="ZGCKOJ" Name="ZGCKOJ" />
+  <SYMBOL Code="ZGCKOK" Name="ZGCKOK" />
+  <SYMBOL Code="ZGCKOL" Name="ZGCKOL" />
+  <SYMBOL Code="ZGCKOP" Name="ZGCKOP" />
+  <SYMBOL Code="ZGCKOR" Name="ZGCKOR" />
+  <SYMBOL Code="ZGCKOT" Name="ZGCKOT" />
+  <SYMBOL Code="ZGCKOW" Name="ZGCKOW" />
+  <SYMBOL Code="ZGCKOY" Name="ZGCKOY" />
+  <SYMBOL Code="ZGCMOP" Name="ZGCMOP" />
+  <SYMBOL Code="ZGL" Name="Zicom Group Ltd" />
+  <SYMBOL Code="ZHGKOB" Name="ZHGKOB" />
+  <SYMBOL Code="ZHGKOD" Name="ZHGKOD" />
+  <SYMBOL Code="ZHGKOF" Name="ZHGKOF" />
+  <SYMBOL Code="ZHGKOP" Name="ZHGKOP" />
+  <SYMBOL Code="ZHGKOQ" Name="ZHGKOQ" />
+  <SYMBOL Code="ZHGKOR" Name="ZHGKOR" />
+  <SYMBOL Code="ZHGKOS" Name="ZHGKOS" />
+  <SYMBOL Code="ZHGKOT" Name="ZHGKOT" />
+  <SYMBOL Code="ZHGKOX" Name="ZHGKOX" />
+  <SYMBOL Code="ZIM" Name="Zimbabwe Platinum Mines Ltd" />
+  <SYMBOL Code="ZIP" Name="Ziptel Limited" />
+  <SYMBOL Code="ZIPKOB" Name="ZIPKOB" />
+  <SYMBOL Code="ZIPKOC" Name="Zip Co Limited.." />
+  <SYMBOL Code="ZIPKOD" Name="ZIPKOD" />
+  <SYMBOL Code="ZLD" Name="Zelda Therapeutics Limited" />
+  <SYMBOL Code="ZMI" Name="Zinc Of Ireland Nl" />
+  <SYMBOL Code="ZMM" Name="Zimi Limited" />
+  <SYMBOL Code="ZNC" Name="Zinc Co Australia Ltd" />
+  <SYMBOL Code="ZNO" Name="Zoono Group Limited" />
+  <SYMBOL Code="ZSIKOC" Name="ZSIKOC" />
+  <SYMBOL Code="ZSIKOE" Name="ZSIKOE" />
+  <SYMBOL Code="ZSIKOI" Name="ZSIKOI" />
+  <SYMBOL Code="ZSIKOJ" Name="ZSIKOJ" />
+  <SYMBOL Code="ZSIKOK" Name="ZSIKOK" />
+  <SYMBOL Code="ZSIKOL" Name="ZSIKOL" />
+  <SYMBOL Code="ZSIKOP" Name="ZSIKOP" />
+  <SYMBOL Code="ZSIKOR" Name="ZSIKOR" />
+  <SYMBOL Code="ZSIKOS" Name="ZSIKOS" />
+  <SYMBOL Code="ZSIKOT" Name="ZSIKOT" />
+  <SYMBOL Code="ZSIKOU" Name="ZSIKOU" />
+  <SYMBOL Code="ZSIKOW" Name="ZSIKOW" />
+  <SYMBOL Code="ZSIKOX" Name="ZSIKOX" />
+  <SYMBOL Code="ZSIKOZ" Name="ZSIKOZ" />
+  <SYMBOL Code="ZSIMOP" Name="ZSIMOP" />
+  <SYMBOL Code="ZYAU" Name="Anz Etfs S&amp;p/asx 300 High Yield Plus" />
+</ArrayOfSYMBOL>
