@@ -398,3 +398,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Bourse/Bourse.db
+/Bourse/Bourse.db-shm
+/Bourse/Bourse.db-wal
