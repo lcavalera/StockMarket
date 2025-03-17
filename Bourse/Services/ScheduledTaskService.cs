@@ -33,14 +33,18 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     private readonly IServiceProvider _serviceProvider;
     private readonly IConfiguration _config;
     private CookieContainer _cookies;
+    private readonly BourseContext _dbContext;
+    private readonly MLContext _mlContext;
     private readonly long _period1;
     private readonly long _period2;
     private readonly string[] _filePath;
     private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 5);
     private readonly string _apiKey;
 
-    public ScheduledTaskService(IServiceProvider serviceProvider, IConfiguration config)
+    public ScheduledTaskService(IServiceProvider serviceProvider, IConfiguration config, MLContext mlContext, BourseContext dbContext)
     {
+        _dbContext = dbContext;
+        _mlContext = mlContext;
         _cookies = new CookieContainer();
         _serviceProvider = serviceProvider;
         _filePath = ["TSX.txt", "NASDAQ.txt", "AMEX.txt", "NYSE.txt"]; //Ajouter autres bourse si necessaire
@@ -54,27 +58,27 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        // Créer un navigateur Playwright une seule fois
-        using (var playwright = await Playwright.CreateAsync())
-        {
-            var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-            {
-                Headless = true
-            });
+        //// Créer un navigateur Playwright une seule fois
+        //using (var playwright = await Playwright.CreateAsync())
+        //{
+        //    var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+        //    {
+        //        Headless = true
+        //    });
 
-            var context = await browser.NewContextAsync(new BrowserNewContextOptions
-            {
-                UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-            });
+        //    var context = await browser.NewContextAsync(new BrowserNewContextOptions
+        //    {
+        //        UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        //    });
 
-            var page = await context.NewPageAsync();
+        //    var page = await context.NewPageAsync();
 
             // Chaque bourse est gérée dans une tâche dédiée via Task.Run
             var tasks = _filePath.Select(async bourse =>
             {
                 try
                 {
-                    await GérerBourse(bourse, page, stoppingToken);
+                    await GérerBourse(bourse, stoppingToken);
                 }
                 catch (Exception ex)
                 {
@@ -85,14 +89,14 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
             await Task.WhenAll(tasks);
 
-            // Fermer le navigateur après toutes les tâches
-            await page.CloseAsync();
-            await context.CloseAsync();
-            await browser.CloseAsync();
-        }
+        //    // Fermer le navigateur après toutes les tâches
+        //    await page.CloseAsync();
+        //    await context.CloseAsync();
+        //    await browser.CloseAsync();
+        //}
     }
 
-    private async Task GérerBourse(string bourse, IPage page, CancellationToken stoppingToken)
+    private async Task GérerBourse(string bourse, CancellationToken stoppingToken)
     {
         string nomBourse = Path.GetFileNameWithoutExtension(bourse);
         Console.WriteLine($"Démarrage des tâches pour {nomBourse}...");
@@ -101,10 +105,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         {
             using (var scope = _serviceProvider.CreateScope())
             {
-                BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+                //BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
 
                 // Charger les indices
-                var indices = await dbContext.Indices
+                var indices = await _dbContext.Indices
                     .Include(i => i.TrainingData)
                     .AsNoTracking()
                     .Where(i => i.Bourse == nomBourse)
@@ -173,7 +177,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         {
                             if (indice.DateUpdated == null || indice.DateUpdated < dateDansLeFuseau)
                             {
-                                await GérerIndice(indice, nomBourse, dbContext, page, fuseHoraire, token);
+                                await GérerIndice(indice, nomBourse, fuseHoraire, token);
                             }
                         });
 
@@ -227,7 +231,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             Console.WriteLine($"Erreur pour {nomBourse} : {ex.Message}");
         }
     }
-    private async Task GérerIndice(Indice indice, string nomBourse, BourseContext dbContext, IPage page, FuseHoraire fuseHoraire, CancellationToken stoppingToken)
+    private async Task GérerIndice(Indice indice, string nomBourse, FuseHoraire fuseHoraire, CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -248,7 +252,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                 // 🔹 Mettre à jour l'historique de l'indice
                 Console.WriteLine($"Mise à jour de l'historique pour {indice.Name}...");
-                await UpdateHistorique(indice, dbContext, page, nomBourse, stoppingToken);
+                await UpdateHistorique(indice, nomBourse, stoppingToken);
 
                 // ✅ Une fois terminé, on sort de la boucle
                 break;
@@ -411,19 +415,19 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         return result;
     }
 
-    static bool HasProperty(IReadOnlyDictionary<string, dynamic> obj, string propertyName)
-    {
-        return obj != null && obj.ContainsKey(propertyName);
+    //static bool HasProperty(IReadOnlyDictionary<string, dynamic> obj, string propertyName)
+    //{
+    //    return obj != null && obj.ContainsKey(propertyName);
 
-        //if (obj == null)
-        //    return false;
-        //// Utiliser la réflexion pour obtenir les informations sur la propriété
-        //Type type = obj.GetType();
-        //PropertyInfo property = type.GetProperty("key");
+    //    //if (obj == null)
+    //    //    return false;
+    //    //// Utiliser la réflexion pour obtenir les informations sur la propriété
+    //    //Type type = obj.GetType();
+    //    //PropertyInfo property = type.GetProperty("key");
 
-        //bool hasProperty = obj.ContainsKey(propertyName);
-        //return hasProperty;
-    }
+    //    //bool hasProperty = obj.ContainsKey(propertyName);
+    //    //return hasProperty;
+    //}
     #endregion#
 
     #region updateHistory
@@ -432,8 +436,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     {
         using (var scope = _serviceProvider.CreateScope())
         {
-            var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
-            List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
+            //var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+            List<Indice> indices = await _dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
 
             foreach (var indice in indices)
             {
@@ -522,10 +526,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         Console.WriteLine("Company not found.");
                     }
 
-                    dbContext.Indices.Update(indice);
+                    _dbContext.Indices.Update(indice);
                 }
             }
-            dbContext.SaveChanges();
+            _dbContext.SaveChanges();
         }
     }
     static async Task<string> GetCompanyName(string url, string symbol, string bourse)
@@ -639,35 +643,35 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    }
     //}
 
-    private async Task<List<EarningsInfo>> GetAllEarningsInfoAsync()
+    //private async Task<List<EarningsInfo>> GetAllEarningsInfoAsync()
+    //{
+    //    int currentPage = 1;
+    //    bool morePages = true;
+    //    var allEarningsInfo = new List<EarningsInfo>();
+
+    //    while (morePages)
+    //    {
+    //        // Récupérer les informations de la page courante
+    //        var earningsInfoForPage = await GetEarningsFromZoneBourse(currentPage);
+
+    //        // Si aucune information n'est trouvée, arrêter
+    //        if (earningsInfoForPage.Count == 0)
+    //        {
+    //            morePages = false;
+    //        }
+    //        else
+    //        {
+    //            allEarningsInfo.AddRange(earningsInfoForPage);
+    //            currentPage++;
+    //        }
+    //    }
+
+    //    return allEarningsInfo;
+    //}
+
+    private async Task UpdateHistorique(Indice indice, string nomBourse, CancellationToken stoppingToken)
     {
-        int currentPage = 1;
-        bool morePages = true;
-        var allEarningsInfo = new List<EarningsInfo>();
-
-        while (morePages)
-        {
-            // Récupérer les informations de la page courante
-            var earningsInfoForPage = await GetEarningsFromZoneBourse(currentPage);
-
-            // Si aucune information n'est trouvée, arrêter
-            if (earningsInfoForPage.Count == 0)
-            {
-                morePages = false;
-            }
-            else
-            {
-                allEarningsInfo.AddRange(earningsInfoForPage);
-                currentPage++;
-            }
-        }
-
-        return allEarningsInfo;
-    }
-
-    private async Task UpdateHistorique(Indice indice, BourseContext dbContext, IPage page, string nomBourse, CancellationToken stoppingToken)
-    {
-        if (indice == null || dbContext == null)
+        if (indice == null || _dbContext == null)
         {
             Console.WriteLine($"Erreur : Indice ou contexte de base de données nul pour {nomBourse}");
             return;
@@ -681,7 +685,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         try
         {
-            float[] closePrices = dbContext.StockDatas
+            float[] closePrices = _dbContext.StockDatas
                 .Where(i => i.IndiceId == indice.Id)
                 .Select(d => d.PrevPrice)
                 .ToArray();
@@ -690,7 +694,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             string directoryPath = @$"Data/{nomBourse}"; // Remplacez par votre répertoire
 
             // Verifier si il y a dejà l'historique dans la DB pour l'indice
-            if (!dbContext.StockDatas.Any(s => s.IndiceId == indice.Id))
+            if (!_dbContext.StockDatas.Any(s => s.IndiceId == indice.Id))
             {
                 Console.WriteLine($"Aucun historique trouvé pour {indice.Name}, récupération des données...");
 
@@ -738,7 +742,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                 // 🔹 Vérifier s'il existe des fichiers plus récents
 
-                DateTime? lastDateInStockDatas = dbContext.StockDatas
+                DateTime? lastDateInStockDatas = _dbContext.StockDatas
                     .Where(i => i.IndiceId == indice.Id)
                     .OrderByDescending(i => i.Date)
                     .Select(i => i.Date)
@@ -804,7 +808,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 // Si des données d'entraînement existent, utiliser les données les plus récentes
                 if (indice.TrainingData?.Count > 0)
                 {
-                    var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
+                   var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
                    if (latestTrainingData != null)
                     {
                         if (latestTrainingData?.RSI_14 != null &&
@@ -828,6 +832,13 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                         date = DateOnly.FromDateTime(latestTrainingData.Date).ToString();
                     }
+                    indice.RegularMarketPrice = latestTrainingData.CurrentPrice;
+                    indice.RegularMarketPreviousClose = latestTrainingData.PrevPrice;
+                    indice.RegularMarketOpen = latestTrainingData.Open;
+                    indice.RegularMarketDayLow = latestTrainingData.Low;
+                    indice.RegularMarketDayHigh = latestTrainingData.High;
+                    indice.RegularMarketChange = latestTrainingData.Change;
+                    indice.RegularMarketChangePercent = latestTrainingData.ChangePercent;
                 }
 
                 // Générer une recommandation basée sur RSI
@@ -840,7 +851,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
             if (indice.DatePrevision != DateOnly.FromDateTime(dateDansLeFuseau))
             {
-                StockPrediction? prediction = await Prediction(indice);
+                StockPrediction? prediction = Prediction(indice);
 
                 if (prediction != null)
                 {
@@ -874,19 +885,19 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         break;
                     }
 
-                    var existingIndice = await dbContext.Indices
+                    var existingIndice = await _dbContext.Indices
                         .Include(i => i.TrainingData) // Charge la liste associée
                         .FirstOrDefaultAsync(i => i.Id == indice.Id);
 
                     if (existingIndice == null)
                     {
                         Console.WriteLine($"Ajout de l'indice {indice.Symbol} (ID: {indice.Id}) à la base.");
-                        await dbContext.Indices.AddAsync(indice);
+                        await _dbContext.Indices.AddAsync(indice);
                     }
                     else
                     {
                         Console.WriteLine($"Mise à jour de l'indice {indice.Symbol} (ID: {indice.Id}).");
-                        dbContext.Entry(existingIndice).CurrentValues.SetValues(indice);
+                        _dbContext.Entry(existingIndice).CurrentValues.SetValues(indice);
 
                         // Vérifier si `trainingData` doit être mis à jour
                         if (indice.TrainingData != null)
@@ -899,7 +910,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         }
                     }
 
-                    await dbContext.SaveChangesAsync();
+                    await _dbContext.SaveChangesAsync();
                     return; // Succès, on sort de la boucle
                 }
                 catch (DbUpdateException ex)
@@ -1040,14 +1051,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         return defaultValue;
     }
 
-    public async Task<StockPrediction?> Prediction(Indice indice)
+    public StockPrediction? Prediction(Indice indice)
     {
-        // Limiter le pool de threads pour contrôler la charge
-        System.Threading.ThreadPool.SetMinThreads(1, 1);
-        System.Threading.ThreadPool.SetMaxThreads(4, 4); // Par exemple, maximum 4 threads
-
-        // Créer un contexte ML.NET
-        var context = new MLContext();
 
         // Vérifier s'il y a assez de données pour l'entraînement
         if (indice.TrainingData == null || !indice.TrainingData.Any())
@@ -1057,11 +1062,11 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
 
         // Convertir la liste de données en IDataView
-        var trainingDataView = context.Data.LoadFromEnumerable(indice.TrainingData);
+        var trainingDataView = _mlContext.Data.LoadFromEnumerable(indice.TrainingData);
 
         // Définir le pipeline d'apprentissage (Classification)
-        var pipeline = context.Transforms.Concatenate("Features", nameof(StockData.CurrentPrice), nameof(StockData.Open), nameof(StockData.High), nameof(StockData.Low), nameof(StockData.RSI_14), nameof(StockData.SMA_14))
-            .Append(context.BinaryClassification.Trainers.SdcaLogisticRegression(
+        var pipeline = _mlContext.Transforms.Concatenate("Features", nameof(StockData.CurrentPrice), nameof(StockData.Open), nameof(StockData.High), nameof(StockData.Low), nameof(StockData.RSI_14), nameof(StockData.SMA_14))
+            .Append(_mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(
                 labelColumnName: nameof(StockData.IsIncreasing),
                 featureColumnName: "Features",
                 maximumNumberOfIterations: 100));
@@ -1069,8 +1074,9 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         // Entraîner le modèle
         var model = pipeline.Fit(trainingDataView);
 
-        // Faire des prédictions
-        var predictionFunction = context.Model.CreatePredictionEngine<StockData, StockPrediction>(model);
+        // Dernière donnée pour la prédiction
+        var lastData = indice.TrainingData.OrderByDescending(t => t.Id).FirstOrDefault();
+        if (lastData == null) return null;
 
         // Créer un échantillon avec toutes les caractéristiques
         var sampleData = new StockData
@@ -1079,15 +1085,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             Open = (float)indice.RegularMarketOpen,
             High = (float)indice.RegularMarketDayHigh,
             Low = (float)indice.RegularMarketDayLow,
-            RSI_14 = indice.TrainingData
-                .Where(t => t.Id == indice.TrainingData.Max(t => t.Id)) // Sélectionne le dernier élément par ID
-                .Select(t => t.RSI_14) // Sélectionne la valeur RSI_14
-                .FirstOrDefault(),
-            SMA_14 = indice.TrainingData
-                .Where(t => t.Id == indice.TrainingData.Max(t => t.Id)) // Sélectionne le dernier élément par ID
-                .Select(t => t.SMA_14) // Sélectionne la valeur SMA_14
-                .FirstOrDefault()
+            RSI_14 = lastData.RSI_14,
+            SMA_14 = lastData.SMA_14
         };
+
+        // Faire des prédictions
+        var predictionFunction = _mlContext.Model.CreatePredictionEngine<StockData, StockPrediction>(model);
 
         // Faire une prédiction sur l'échantillon
         var prediction = predictionFunction.Predict(sampleData);
@@ -1133,28 +1136,28 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             dateNext = dateNext.AddDays(1);
         }
     }
-    private string GetDecimalValue(HtmlDocument doc, string xpath)
-    {
-        var node = doc.DocumentNode.SelectSingleNode(xpath);
-        return node != null && decimal.TryParse(node.InnerText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value)
-            ? value.ToString()
-            : "0";
-    }
+    //private string GetDecimalValue(HtmlDocument doc, string xpath)
+    //{
+    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
+    //    return node != null && decimal.TryParse(node.InnerText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value)
+    //        ? value.ToString()
+    //        : "0";
+    //}
 
-    private string GetLongValue(HtmlDocument doc, string xpath)
-    {
-        var node = doc.DocumentNode.SelectSingleNode(xpath);
-        return node != null && long.TryParse(node.InnerText.Replace(",", ""), out long value)
-            ? value.ToString()
-            : "0";
-    }
+    //private string GetLongValue(HtmlDocument doc, string xpath)
+    //{
+    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
+    //    return node != null && long.TryParse(node.InnerText.Replace(",", ""), out long value)
+    //        ? value.ToString()
+    //        : "0";
+    //}
 
     private async Task SaveHistory(string filePath, string nomBourse, CancellationToken stoppingToken)
     {
         using (var scope = _serviceProvider.CreateScope())
         {
-            var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
-            List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
+            //var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+            List<Indice> indices = await _dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
 
             string header = "<ticker>,<date>,<open>,<high>,<low>,<close>,<vol>";
 
@@ -1590,30 +1593,30 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
     }
 
-    private static string GetFieldValueSafely(Security data, Indice indice, Field field)
-    {
-        try
-        {
-            return data[field]?.ToString() ?? GetPreviousValue(indice, field);
-        }
-        catch (KeyNotFoundException)
-        {
-            return GetPreviousValue(indice, field);
-        }
-    }
+    //private static string GetFieldValueSafely(Security data, Indice indice, Field field)
+    //{
+    //    try
+    //    {
+    //        return data[field]?.ToString() ?? GetPreviousValue(indice, field);
+    //    }
+    //    catch (KeyNotFoundException)
+    //    {
+    //        return GetPreviousValue(indice, field);
+    //    }
+    //}
 
-    private static string GetPreviousValue(Indice indice, Field field)
-    {
-        return field switch
-        {
-            Field.RegularMarketPrice => indice.RegularMarketPrice?.ToString(),
-            Field.RegularMarketOpen => indice.RegularMarketOpen?.ToString(),
-            Field.RegularMarketDayHigh => indice.RegularMarketDayHigh?.ToString(),
-            Field.RegularMarketDayLow => indice.RegularMarketDayLow?.ToString(),
-            Field.RegularMarketVolume => indice.RegularMarketVolume?.ToString(),
-            _ => "0"  // Valeur par défaut si le champ n'existe pas dans Indice
-        };
-    }
+    //private static string GetPreviousValue(Indice indice, Field field)
+    //{
+    //    return field switch
+    //    {
+    //        Field.RegularMarketPrice => indice.RegularMarketPrice?.ToString() ?? "0",
+    //        Field.RegularMarketOpen => indice.RegularMarketOpen?.ToString() ?? "0",
+    //        Field.RegularMarketDayHigh => indice.RegularMarketDayHigh?.ToString() ?? "0",
+    //        Field.RegularMarketDayLow => indice.RegularMarketDayLow?.ToString() ?? "0",
+    //        Field.RegularMarketVolume => indice.RegularMarketVolume?.ToString() ?? "0",
+    //        _ => "0"  // Valeur par défaut si le champ n'existe pas dans Indice
+    //    };
+    //}
 
     private async Task<DateTime> GetLastDateHistory(string bourse)
     {
@@ -1653,30 +1656,30 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
     }
 
-    private string GetTimezoneName(string bourse)
-    {
-        // Utilisation de noms de bourses en minuscule pour assurer la compatibilité
-        switch (bourse.ToLower())
-        {
-            case "tsx":
-                return "America/Toronto";
+    //private string GetTimezoneName(string bourse)
+    //{
+    //    // Utilisation de noms de bourses en minuscule pour assurer la compatibilité
+    //    switch (bourse.ToLower())
+    //    {
+    //        case "tsx":
+    //            return "America/Toronto";
 
-            case "nyse":
-            case "nasdaq":
-            case "amex":
-                return "America/New_York";
+    //        case "nyse":
+    //        case "nasdaq":
+    //        case "amex":
+    //            return "America/New_York";
 
-            // Ajoutez d'autres bourses ici si nécessaire
-            case "lse": // Exemple pour le London Stock Exchange
-                return "Europe/London";
+    //        // Ajoutez d'autres bourses ici si nécessaire
+    //        case "lse": // Exemple pour le London Stock Exchange
+    //            return "Europe/London";
 
-            case "tse": // Exemple pour la Tokyo Stock Exchange
-                return "Asia/Tokyo";
+    //        case "tse": // Exemple pour la Tokyo Stock Exchange
+    //            return "Asia/Tokyo";
 
-            default:
-                throw new ArgumentException($"Fuseau horaire non reconnu pour la bourse : {bourse}");
-        }
-    }
+    //        default:
+    //            throw new ArgumentException($"Fuseau horaire non reconnu pour la bourse : {bourse}");
+    //    }
+    //}
 
     static DateTime? GetClosestDateToToday(IEnumerable<string> filePaths)
     {
@@ -1733,39 +1736,39 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     #endregion
 
     #region financialData
-    private async Task<DateTime[]> GetFinancialDataAsync(Indice indice, BourseContext dbContext)
-    {
-        // Charger les horaires de la bourse
-        FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+    //private async Task<DateTime[]> GetFinancialDataAsync(Indice indice)
+    //{
+    //    // Charger les horaires de la bourse
+    //    FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
 
-        // Convertir la date donnée dans le fuseau horaire de la bourse
-        DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+    //    // Convertir la date donnée dans le fuseau horaire de la bourse
+    //    DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
-        var datesList = new List<DateTime>();
+    //    var datesList = new List<DateTime>();
 
-        var indiceRef = dbContext.Indices.Where(i => i.Id == indice.Id).SingleOrDefault();
+    //    var indiceRef = _dbContext.Indices.Where(i => i.Id == indice.Id).SingleOrDefault();
         
-        if (indiceRef == null) 
-        { 
-            return datesList.ToArray();
-        }
+    //    if (indiceRef == null) 
+    //    { 
+    //        return datesList.ToArray();
+    //    }
 
-        if(indiceRef.DatesExercicesFinancieres.FirstOrDefault() != DateTime.Parse("0001-01-01 00:00:00"))
-        {
-            DateTime[] dates = indiceRef.DatesExercicesFinancieres;
+    //    if(indiceRef.DatesExercicesFinancieres.FirstOrDefault() != DateTime.Parse("0001-01-01 00:00:00"))
+    //    {
+    //        DateTime[] dates = indiceRef.DatesExercicesFinancieres;
 
-            foreach (DateTime date in dates)
-            {
-                if (date < dateDansLeFuseau)
-                {
-                    datesList.Add(date.AddYears(1));
-                }
+    //        foreach (DateTime date in dates)
+    //        {
+    //            if (date < dateDansLeFuseau)
+    //            {
+    //                datesList.Add(date.AddYears(1));
+    //            }
 
-                datesList.Add(date);
-            }
-        }
+    //            datesList.Add(date);
+    //        }
+    //    }
 
-        return datesList.ToArray();
+    //    return datesList.ToArray();
 
         //// Yahoo Finance Api implementation
         //try
@@ -1844,7 +1847,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         //    return datesList.ToArray(); // Convertit la liste en tableau
         //}
-    }
+    //}
 
     static async Task<List<EarningsInfo>> GetEarningsFromZoneBourse(int pageNumber)
     {
@@ -2165,116 +2168,116 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    return financialDates.ToArray();
     //}
 
-    private async Task GetAnalysisIndiceYhaooFromRSI(Indice indice, BourseContext dbContext)
-    {
-        // Charger les horaires de la bourse
-        FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
-        // Convertir la date donnée dans le fuseau horaire de la bourse
-        DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+    //private async Task GetAnalysisIndiceYhaooFromRSI(Indice indice)
+    //{
+    //    // Charger les horaires de la bourse
+    //    FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+    //    // Convertir la date donnée dans le fuseau horaire de la bourse
+    //    DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
-        try
-        {
-            decimal rsi = 50;
-            string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
+    //    try
+    //    {
+    //        decimal rsi = 50;
+    //        string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
 
-            if(indice.TrainingData.Count > 0)
-            {
-                // Convertir RSI en decimal
-                rsi = (decimal)indice.TrainingData.OrderByDescending(t => t.Date).SingleOrDefault().RSI_14;
-                date = indice.TrainingData.OrderByDescending(t => t.Date).SingleOrDefault().Date.ToString();
-            }
+    //        if(indice.TrainingData.Count > 0)
+    //        {
+    //            // Convertir RSI en decimal
+    //            rsi = (decimal)indice.TrainingData.OrderByDescending(t => t.Date).SingleOrDefault().RSI_14;
+    //            date = indice.TrainingData.OrderByDescending(t => t.Date).SingleOrDefault().Date.ToString();
+    //        }
 
-            // Générer une recommandation basée sur RSI
-            string recommendation = await GetRecommendationBasedOnRSI(rsi);
+    //        // Générer une recommandation basée sur RSI
+    //        string recommendation = await GetRecommendationBasedOnRSI(rsi);
 
-            // Mise à jour de l'indice dans la base de données
-            indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            indice.Raccomandation = recommendation;
+    //        // Mise à jour de l'indice dans la base de données
+    //        indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+    //        indice.Raccomandation = recommendation;
 
-            dbContext.Indices.Update(indice);
-            await dbContext.SaveChangesAsync();
+    //        _dbContext.Indices.Update(indice);
+    //        await _dbContext.SaveChangesAsync();
 
-            Console.WriteLine($"RSI analysis updated for {indice.Symbol}: {recommendation} (RSI: {rsi})");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error while fetching RSI analysis for {indice.Symbol}: {ex.Message}");
-        }
-    }
+    //        Console.WriteLine($"RSI analysis updated for {indice.Symbol}: {recommendation} (RSI: {rsi})");
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine($"Error while fetching RSI analysis for {indice.Symbol}: {ex.Message}");
+    //    }
+    //}
 
-    private async Task GetAnalysisIndiceFromRSI(Indice indice, BourseContext dbContext)
-    {
-        try
-        {
-            // Construire l'URL pour récupérer les données RSI
-            string symbol = indice.Symbol;
-            string url = $"https://www.alphavantage.co/query?function=RSI&symbol={symbol}&entitlement=delayed&interval=daily&time_period=14&series_type=close&apikey={_apiKey}";
+    //private async Task GetAnalysisIndiceFromRSI(Indice indice)
+    //{
+    //    try
+    //    {
+    //        // Construire l'URL pour récupérer les données RSI
+    //        string symbol = indice.Symbol;
+    //        string url = $"https://www.alphavantage.co/query?function=RSI&symbol={symbol}&entitlement=delayed&interval=daily&time_period=14&series_type=close&apikey={_apiKey}";
 
-            Console.WriteLine($"Fetching RSI analysis for: {symbol}");
+    //        Console.WriteLine($"Fetching RSI analysis for: {symbol}");
 
-            using (HttpClient client = new HttpClient())
-            {
-                // Envoyer une requête GET
-                HttpResponseMessage response = await client.GetAsync(url);
+    //        using (HttpClient client = new HttpClient())
+    //        {
+    //            // Envoyer une requête GET
+    //            HttpResponseMessage response = await client.GetAsync(url);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var jsonData = JsonSerializer.Deserialize<JsonElement>(jsonResponse);
+    //            if (response.IsSuccessStatusCode)
+    //            {
+    //                string jsonResponse = await response.Content.ReadAsStringAsync();
+    //                var jsonData = JsonSerializer.Deserialize<JsonElement>(jsonResponse);
 
-                    // Vérifier si une erreur est retournée
-                    if (jsonData.TryGetProperty("Note", out JsonElement note))
-                    {
-                        Console.WriteLine($"API Note: {note.GetString()}");
-                        return;
-                    }
+    //                // Vérifier si une erreur est retournée
+    //                if (jsonData.TryGetProperty("Note", out JsonElement note))
+    //                {
+    //                    Console.WriteLine($"API Note: {note.GetString()}");
+    //                    return;
+    //                }
 
-                    // Vérifier si les données RSI sont présentes
-                    if (jsonData.TryGetProperty("Technical Analysis: RSI", out JsonElement rsiData))
-                    {
-                        // Obtenir la valeur RSI la plus récente
-                        var latestEntry = rsiData.EnumerateObject().FirstOrDefault();
-                        if (!string.IsNullOrEmpty(latestEntry.Name))
-                        {
-                            string date = latestEntry.Name;
-                            string rsiValue = latestEntry.Value.GetProperty("RSI").GetString();
+    //                // Vérifier si les données RSI sont présentes
+    //                if (jsonData.TryGetProperty("Technical Analysis: RSI", out JsonElement rsiData))
+    //                {
+    //                    // Obtenir la valeur RSI la plus récente
+    //                    var latestEntry = rsiData.EnumerateObject().FirstOrDefault();
+    //                    if (!string.IsNullOrEmpty(latestEntry.Name))
+    //                    {
+    //                        string date = latestEntry.Name;
+    //                        string rsiValue = latestEntry.Value.GetProperty("RSI").GetString();
 
-                            // Convertir RSI en nombre
-                            decimal rsi = decimal.Parse(rsiValue, CultureInfo.InvariantCulture);
+    //                        // Convertir RSI en nombre
+    //                        decimal rsi = decimal.Parse(rsiValue, CultureInfo.InvariantCulture);
 
-                            // Générer une recommandation basée sur RSI
-                            string recommendation = await GetRecommendationBasedOnRSI(rsi);
+    //                        // Générer une recommandation basée sur RSI
+    //                        string recommendation = await GetRecommendationBasedOnRSI(rsi);
 
-                            // Mise à jour de l'indice dans la base de données
-                            indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-                            indice.Raccomandation = recommendation;
+    //                        // Mise à jour de l'indice dans la base de données
+    //                        indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+    //                        indice.Raccomandation = recommendation;
 
-                            dbContext.Indices.Update(indice);
-                            await dbContext.SaveChangesAsync();
+    //                        _dbContext.Indices.Update(indice);
+    //                        await _dbContext.SaveChangesAsync();
 
-                            Console.WriteLine($"RSI analysis updated for {symbol}: {recommendation} (RSI: {rsi})");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No valid RSI data found.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("RSI data not found in the API response.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"API call failed for {symbol}: {response.StatusCode}");
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error while fetching RSI analysis for {indice.Symbol}: {ex.Message}");
-        }
-    }
+    //                        Console.WriteLine($"RSI analysis updated for {symbol}: {recommendation} (RSI: {rsi})");
+    //                    }
+    //                    else
+    //                    {
+    //                        Console.WriteLine("No valid RSI data found.");
+    //                    }
+    //                }
+    //                else
+    //                {
+    //                    Console.WriteLine("RSI data not found in the API response.");
+    //                }
+    //            }
+    //            else
+    //            {
+    //                Console.WriteLine($"API call failed for {symbol}: {response.StatusCode}");
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine($"Error while fetching RSI analysis for {indice.Symbol}: {ex.Message}");
+    //    }
+    //}
 
     // Méthode pour déduire une recommandation basée sur RSI
     private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
@@ -2301,28 +2304,28 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
     }
 
-    // Méthode pour convertir RGB en HEX
-    static string RgbToHex(string rgb)
-    {
-        var match = System.Text.RegularExpressions.Regex.Match(rgb, @"rgb\((\d+),\s*(\d+),\s*(\d+)\)");
-        if (match.Success)
-        {
-            int r = int.Parse(match.Groups[1].Value);
-            int g = int.Parse(match.Groups[2].Value);
-            int b = int.Parse(match.Groups[3].Value);
-            return $"#{r:X2}{g:X2}{b:X2}";
-        }
-        return "#000000"; // Default noir si non valide
-    }
+    //// Méthode pour convertir RGB en HEX
+    //static string RgbToHex(string rgb)
+    //{
+    //    var match = System.Text.RegularExpressions.Regex.Match(rgb, @"rgb\((\d+),\s*(\d+),\s*(\d+)\)");
+    //    if (match.Success)
+    //    {
+    //        int r = int.Parse(match.Groups[1].Value);
+    //        int g = int.Parse(match.Groups[2].Value);
+    //        int b = int.Parse(match.Groups[3].Value);
+    //        return $"#{r:X2}{g:X2}{b:X2}";
+    //    }
+    //    return "#000000"; // Default noir si non valide
+    //}
 
-    static string ExtractDateFromFilePath(string filePath)
-    {
-        // Supposons que le format du fichier est toujours TSX_YYYYMMDD.txt
-        // On isole le segment "YYYYMMDD" entre "_" et "."
-        int underscoreIndex = filePath.IndexOf('_') + 1;
-        int dotIndex = filePath.LastIndexOf('.');
-        return filePath.Substring(underscoreIndex, dotIndex - underscoreIndex);
-    }
+    //static string ExtractDateFromFilePath(string filePath)
+    //{
+    //    // Supposons que le format du fichier est toujours TSX_YYYYMMDD.txt
+    //    // On isole le segment "YYYYMMDD" entre "_" et "."
+    //    int underscoreIndex = filePath.IndexOf('_') + 1;
+    //    int dotIndex = filePath.LastIndexOf('.');
+    //    return filePath.Substring(underscoreIndex, dotIndex - underscoreIndex);
+    //}
 
     public static float[] CalculateSMA(float[] closePrices, int period)
     {

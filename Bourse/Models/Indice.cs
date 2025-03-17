@@ -14,6 +14,7 @@ namespace Bourse.Models
         public string? Name { get; set; }
 
         [DisplayName("Price")]
+        [DisplayFormat(DataFormatString = "{0:F4}")]
         public double? RegularMarketPrice { get; set; }
 
         [DisplayName("Change")]
@@ -21,15 +22,19 @@ namespace Bourse.Models
         public double? RegularMarketChange { get; set; }
 
         [DisplayName("Open")]
+        [DisplayFormat(DataFormatString = "{0:F4}")]
         public double? RegularMarketOpen { get; set; }
 
         [DisplayName("Prev.Close")]
+        [DisplayFormat(DataFormatString = "{0:F4}")]
         public double? RegularMarketPreviousClose { get; set; }
 
         [DisplayName("Day High")]
+        [DisplayFormat(DataFormatString = "{0:F4}")]
         public double? RegularMarketDayHigh { get; set; }
 
         [DisplayName("Day Low")]
+        [DisplayFormat(DataFormatString = "{0:F4}")]
         public double? RegularMarketDayLow { get; set; }
 
         [DisplayName("(%)")]
