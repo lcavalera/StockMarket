@@ -25,33 +25,28 @@ using System.Security.Principal;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading;
 using YahooFinanceApi;
 using YahooQuotesApi;
 
 public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly IConfiguration _config;
-    private CookieContainer _cookies;
-    private readonly BourseContext _dbContext;
+    private readonly IServiceScopeFactory _scopeFactory;
+    //private readonly IConfiguration _config;
+    //private CookieContainer _cookies;
     private readonly MLContext _mlContext;
-    private readonly long _period1;
-    private readonly long _period2;
     private readonly string[] _filePath;
     private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 5);
     private readonly string _apiKey;
 
-    public ScheduledTaskService(IServiceProvider serviceProvider, IConfiguration config, MLContext mlContext, BourseContext dbContext)
+    public ScheduledTaskService(IServiceScopeFactory scopeFactory, MLContext mlContext)
     {
-        _dbContext = dbContext;
         _mlContext = mlContext;
-        _cookies = new CookieContainer();
-        _serviceProvider = serviceProvider;
+        //_cookies = new CookieContainer();
+        _scopeFactory = scopeFactory;
         _filePath = ["TSX.txt", "NASDAQ.txt", "AMEX.txt", "NYSE.txt"]; //Ajouter autres bourse si necessaire
-        _period1 = DateTimeOffset.Now.AddYears(-1).ToUnixTimeSeconds(); ; // 2 ans en arriere
-        _period2 = DateTimeOffset.Now.ToUnixTimeSeconds(); // Date actuelle
-        _config = config;
-        _apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API
+        //_config = config;
+        _apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API Alpha Vantage
     }
 
     // NOTE : AJOUTER JOURNALISATION SERILOG ou NLOG
@@ -73,8 +68,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         //    var page = await context.NewPageAsync();
 
-            // Chaque bourse est gérée dans une tâche dédiée via Task.Run
-            var tasks = _filePath.Select(async bourse =>
+        // Chaque bourse est gérée dans une tâche dédiée via Task.Run
+        var tasks = _filePath.Select(async bourse =>
             {
                 try
                 {
@@ -103,12 +98,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         try
         {
-            using (var scope = _serviceProvider.CreateScope())
+            using (var scope = _scopeFactory.CreateScope())
             {
-                //BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+                BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
 
                 // Charger les indices
-                var indices = await _dbContext.Indices
+                var indices = await dbContext.Indices
                     .Include(i => i.TrainingData)
                     .AsNoTracking()
                     .Where(i => i.Bourse == nomBourse)
@@ -315,6 +310,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //}
 
     #region utilities
+
     private async Task WaitUntilMarketOpens(CancellationToken stoppingToken, FuseHoraire fuseHoraire)
     {
         // Obtenir l'heure actuelle dans le fuseau horaire de la bourse
@@ -415,6 +411,72 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         return result;
     }
 
+    // Méthode utilitaire pour gérer les chaînes vides ou nulles
+    private float ParseFloatOrDefault(string input, float defaultValue = 0f)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return defaultValue;
+
+        if (float.TryParse(input.Replace(" ", ""), NumberStyles.Any, CultureInfo.InvariantCulture, out float result))
+            return result;
+
+        Console.WriteLine($"⚠️ Impossible de convertir '{input}' en float. Valeur par défaut utilisée : {defaultValue}");
+        return defaultValue;
+    }
+
+    static DateTime? GetClosestDateToToday(IEnumerable<string> filePaths)
+    {
+        try
+        {
+            // Extraire les dates valides à partir des noms de fichiers
+            var validDates = filePaths
+                .Select(file => ExtractDateFromFileName(file)) // Extraire la date
+                .Where(date => date.HasValue) // Garder uniquement les dates valides
+                .Select(date => date.Value) // Retirer le Nullable<DateTime>
+                .ToList();
+
+            if (!validDates.Any())
+            {
+                return null; // Retourner null si aucune date valide
+            }
+
+            // Trouver la date la plus proche d'aujourd'hui
+            DateTime today = DateTime.Today;
+            return validDates
+                .OrderBy(date => Math.Abs((date - today).Days)) // Trier par proximité
+                .First(); // Prendre la date la plus proche
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur : {ex.Message}");
+            return null; // Retourner null en cas d'erreur
+        }
+    }
+
+    static DateTime? ExtractDateFromFileName(string filePath)
+    {
+        try
+        {
+            // Exemple : TSX_20241122.txt => Extraire "20241122"
+            string fileName = Path.GetFileNameWithoutExtension(filePath); // Nom sans extension
+            string datePart = fileName.Split('_')[1]; // Extraire la partie après "_"
+
+            // Convertir la chaîne en DateTime
+            if (DateTime.TryParseExact(datePart, "yyyyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime date))
+            {
+                return date;
+            }
+            else
+            {
+                return null; // Retourner null si le format est invalide
+            }
+        }
+        catch
+        {
+            return null; // Retourner null en cas d'erreur
+        }
+    }
+
     //static bool HasProperty(IReadOnlyDictionary<string, dynamic> obj, string propertyName)
     //{
     //    return obj != null && obj.ContainsKey(propertyName);
@@ -432,510 +494,278 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     #region updateHistory
 
-    private async Task UpdateEarningDates(string nomBourse, CancellationToken stoppingToken)
-    {
-        using (var scope = _serviceProvider.CreateScope())
-        {
-            //var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
-            List<Indice> indices = await _dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
-
-            foreach (var indice in indices)
-            {
-                string? name = indice.Name;
-                if (name != null)
-                {
-                    // Liste des mots à ignorer
-                    var motsASupprimer = new HashSet<string> { "Inc", "The" };
-
-                    // Séparer le nom en mots
-                    var words = name.Split(' ');
-
-                    // Trouver le premier mot valide (qui n'est pas "Inc" ou "The")
-                    name = words.FirstOrDefault(word => !motsASupprimer.Contains(word)) ?? string.Empty;
-                }
-
-                Console.WriteLine(name);
-
-
-                string? symbolCut = indice.Symbol?.EndsWith(".TO") == true ? indice.Symbol[..^3] : indice.Symbol;
-                string? bourse;
-
-                switch (indice.Bourse){
-                    case "TSX":
-                        bourse = "Toronto";
-                        break;
-                    case "NASDAQ":
-                        bourse = "Nasdaq";
-                        break;
-                    case "AMEX":
-                        bourse = "Nyse";
-                        break;
-                    case "NYSE":
-                        bourse = "Nyse";
-                        break;
-                    default:
-                        bourse = indice.Bourse;
-                        break;
-                }
-
-                if (symbolCut != null && bourse != null)
-                {
-                    string searchUrl;
-                    string urlCompanyName = string.Empty;
-
-                    if (symbolCut.Length > 2)
-                    {
-                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={symbolCut}";
-                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, bourse);
-                    }
-                    else
-                    {
-                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={name}";
-                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, string.Empty);
-                    }
-
-                    if (string.IsNullOrEmpty(urlCompanyName))
-                    {
-                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={name}";
-                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, string.Empty);
-                    }
-
-                    if (!string.IsNullOrEmpty(urlCompanyName))
-                    {
-                        Console.WriteLine($"Company Name: {urlCompanyName}");
-                        string agendaUrl = $"https://www.zonebourse.com{urlCompanyName}agenda/";
-                        List<string> dates = await GetFinancialDates(agendaUrl);
-
-                        string format = "dd/MM/yyyy"; // Format attendu
-                        CultureInfo culture = CultureInfo.InvariantCulture; // Culture indépendante
-
-                        indice.DatesExercicesFinancieres = dates
-                            .Select(date =>
-                            {
-                                DateTime parsedDate;
-                                return DateTime.TryParseExact(date, format, culture, DateTimeStyles.None, out parsedDate)
-                                    ? parsedDate
-                                    : (DateTime?)null;
-                            })
-                            .Where(d => d.HasValue) // Filtre les valeurs null (dates invalides)
-                            .Select(d => d.Value)
-                            .ToArray();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Company not found.");
-                    }
-
-                    _dbContext.Indices.Update(indice);
-                }
-            }
-            _dbContext.SaveChanges();
-        }
-    }
-    static async Task<string> GetCompanyName(string url, string symbol, string bourse)
-    {
-        using HttpClient client = new HttpClient();
-        var response = await client.GetStringAsync(url);
-
-        HtmlDocument doc = new HtmlDocument();
-        doc.LoadHtml(response);
-
-        HtmlNode node;
-
-        if(bourse != null)
-        {
-            node = doc.DocumentNode.SelectSingleNode($"//tr[td[normalize-space() = '{symbol}'] and td[contains(normalize-space(), '{bourse}')]]");
-        }
-        else
-        {
-            node = doc.DocumentNode.SelectSingleNode($"//tr[td[normalize-space() = '{symbol}']]");
-        }
-
-        if(node == null)
-        {
-            node = doc.DocumentNode.SelectSingleNode($"//tr[td[contains(normalize-space(), '{symbol}')] and td[contains(normalize-space(), '{bourse}')]]");
-        }
-
-        string href = string.Empty;
-
-        if (node != null)
-        {
-            // Sélectionner le premier lien <a> dans ce <tr>
-            var linkNode = node.SelectSingleNode(".//a[@href]");
-
-            if (linkNode != null)
-            {
-                href = linkNode.GetAttributeValue("href", string.Empty);
-                Console.WriteLine("Lien trouvé : " + href);
-            }
-            else
-            {
-                Console.WriteLine("Aucun lien <a> trouvé dans le <tr>.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Aucun <tr> correspondant trouvé.");
-        }
-        return href;
-    }
-    static async Task<List<string>> GetFinancialDates(string url)
-    {
-        List<string> dates = new List<string>();
-        using HttpClient client = new HttpClient();
-        var response = await client.GetStringAsync(url);
-
-        HtmlDocument doc = new HtmlDocument();
-        doc.LoadHtml(response);
-
-        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@id, 'next-events-card')]//table[contains(@class, 'table--bordered')]//td[@class='table-child--w130']");
-
-        if (nodes != null)
-        {
-            foreach (var node in nodes)
-            {
-                dates.Add(node.InnerText.Trim());
-            }
-        }
-        return dates;
-    }
-
-    //private async Task UpdateEarningDates(string nomBourse, CancellationToken stoppingToken)
-    //{
-    //    using (var scope = _serviceProvider.CreateScope())
-    //    {
-    //        var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
-    //        List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
-
-    //        //Récupérer la liste des entreprises dont la date des états financières est proche
-    //        var companyEarningsDates = await GetAllEarningsInfoAsync();
-
-    //        foreach (var indice in indices)
-    //        {
-    //            List<DateTime> earningsDates = new();
-
-    //            //EarningsInfo? earningsInfo = companyEarningsDates.FirstOrDefault(c => c.Symbol == indice.Symbol);
-
-    //            EarningsInfo? earningsInfo = companyEarningsDates.FirstOrDefault(c => c.Symbol == indice.Symbol);
-
-    //            if (earningsInfo != null) 
-    //            {
-    //                indice.EarningsInfo = earningsInfo;
-    //                //earningsDates.Add(earningsInfo.Date);
-    //            }
-
-    //            //var earningsDates = await GetFinancialDataYahooAsync(indice, dbContext);
-
-    //            //if (earningsDates != null && earningsDates.Count > 0)
-    //            //{
-    //            //    indice.DatesExercicesFinancieres = earningsDates.ToArray();
-
-    //            //}
-    //            //else
-    //            //{
-    //            //    indice.DatesExercicesFinancieres = new DateTime[] { new DateTime() };
-    //            //    Console.WriteLine($"Aucune donnée trouvée pour le symbole {indice.Symbol}.");
-    //            //}
-
-    //            dbContext.Indices.Update(indice);
-    //        }
-    //        dbContext.SaveChanges();
-    //    }
-    //}
-
-    //private async Task<List<EarningsInfo>> GetAllEarningsInfoAsync()
-    //{
-    //    int currentPage = 1;
-    //    bool morePages = true;
-    //    var allEarningsInfo = new List<EarningsInfo>();
-
-    //    while (morePages)
-    //    {
-    //        // Récupérer les informations de la page courante
-    //        var earningsInfoForPage = await GetEarningsFromZoneBourse(currentPage);
-
-    //        // Si aucune information n'est trouvée, arrêter
-    //        if (earningsInfoForPage.Count == 0)
-    //        {
-    //            morePages = false;
-    //        }
-    //        else
-    //        {
-    //            allEarningsInfo.AddRange(earningsInfoForPage);
-    //            currentPage++;
-    //        }
-    //    }
-
-    //    return allEarningsInfo;
-    //}
-
     private async Task UpdateHistorique(Indice indice, string nomBourse, CancellationToken stoppingToken)
     {
-        if (indice == null || _dbContext == null)
+        using (var scope = _scopeFactory.CreateScope())
         {
-            Console.WriteLine($"Erreur : Indice ou contexte de base de données nul pour {nomBourse}");
-            return;
-        }
+            BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
 
-        // Charger les horaires de la bourse
-        FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
-
-        // Convertir la date donnée dans le fuseau horaire de la bourse
-        DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
-
-        try
-        {
-            float[] closePrices = _dbContext.StockDatas
-                .Where(i => i.IndiceId == indice.Id)
-                .Select(d => d.PrevPrice)
-                .ToArray();
-
-            // Spécifiez le chemin du répertoire contenant les fichiers .txt pour recuperer les symboles
-            string directoryPath = @$"Data/{nomBourse}"; // Remplacez par votre répertoire
-
-            // Verifier si il y a dejà l'historique dans la DB pour l'indice
-            if (!_dbContext.StockDatas.Any(s => s.IndiceId == indice.Id))
+            if (indice == null || dbContext == null)
             {
-                Console.WriteLine($"Aucun historique trouvé pour {indice.Name}, récupération des données...");
+                Console.WriteLine($"Erreur : Indice ou contexte de base de données nul pour {nomBourse}");
+                return;
+            }
 
-                try
+            // Charger les horaires de la bourse
+            FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+
+            // Convertir la date donnée dans le fuseau horaire de la bourse
+            DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+            try
+            {
+                float[] closePrices = dbContext.StockDatas
+                    .Where(i => i.IndiceId == indice.Id)
+                    .Select(d => d.PrevPrice)
+                    .ToArray();
+
+                // Spécifiez le chemin du répertoire contenant les fichiers .txt pour recuperer les symboles
+                string directoryPath = @$"Data/{nomBourse}"; // Remplacez par votre répertoire
+
+                // Verifier si il y a dejà l'historique dans la DB pour l'indice
+                if (!dbContext.StockDatas.Any(s => s.IndiceId == indice.Id))
                 {
-                    // Récupère tous les fichiers .txt du répertoire hystorique
-                    List<string> txtFiles = Directory.GetFiles(directoryPath, "*.txt")
-                        .ToList();
+                    Console.WriteLine($"Aucun historique trouvé pour {indice.Name}, récupération des données...");
 
-                    if (!string.IsNullOrEmpty(indice.Symbol))
+                    try
                     {
-                        // Ajout les historiques manquantes dans StockDatas
-                        indice.TrainingData = AjoutStockData(txtFiles, indice.Symbol, closePrices);
+                        // Récupère tous les fichiers .txt du répertoire hystorique
+                        List<string> txtFiles = Directory.GetFiles(directoryPath, "*.txt")
+                            .ToList();
+
+                        if (!string.IsNullOrEmpty(indice.Symbol))
+                        {
+                            // Ajout les historiques manquantes dans StockDatas
+                            indice.TrainingData = AjoutStockData(txtFiles, indice.Symbol, closePrices);
+                        }
+
+                    }
+                    catch (DirectoryNotFoundException e)
+                    {
+                        Console.WriteLine($"Erreur : Le répertoire spécifié n'existe pas. {e.Message}");
+                    }
+                    catch (UnauthorizedAccessException e)
+                    {
+                        Console.WriteLine($"Erreur : Accès refusé au répertoire. {e.Message}");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Une erreur s'est produite : {e.Message}");
+                    }
+                }
+                else
+                {
+                    // 🔹 Calculs des indicateurs financiers
+
+                    //if (closePrices.Length > 0)
+                    //{
+                    //    float[] sma14 = CalculateSMA(closePrices, 14);
+                    //    float[] rsi14 = CalculateRSI(closePrices, 14);
+
+                    //    for (int i = 0; i < indice.TrainingData.Count; i++)
+                    //    {
+                    //        indice.TrainingData[i].RSI_14 = rsi14[i] != null ? rsi14[i] : 0;
+                    //        indice.TrainingData[i].SMA_14 = sma14[i] != null ? sma14[i] : indice.TrainingData[i].CurrentPrice;
+                    //    }
+                    //}
+
+                    // 🔹 Vérifier s'il existe des fichiers plus récents
+
+                    DateTime? lastDateInStockDatas = dbContext.StockDatas
+                        .Where(i => i.IndiceId == indice.Id)
+                        .OrderByDescending(i => i.Date)
+                        .Select(i => i.Date)
+                        .FirstOrDefault();
+
+                    // Gérer le cas où aucune donnée n'existe dans StockDatas
+                    lastDateInStockDatas ??= dateDansLeFuseau.AddDays(-2);
+
+                    try
+                    {
+
+                        // Trouver les fichiers avec des dates supérieures à la dernière date
+                        List<string> newFiles = Directory.GetFiles(directoryPath, "*.txt")
+                            .Where(file =>
+                            {
+
+                                string fileName = Path.GetFileNameWithoutExtension(file); // Nom du fichier sans extension
+                                int underscoreIndex = fileName.LastIndexOf('_'); // Recherche du dernier underscore
+
+                                if (underscoreIndex != -1 && underscoreIndex < fileName.Length - 1)
+                                {
+                                    string potentialDate = fileName[(underscoreIndex + 1)..];
+
+                                    // Vérification si la chaîne extraite est une date valide (format "yyyyMMdd")
+                                    if (DateTime.TryParseExact(potentialDate, "yyyyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime fileDate))
+                                    {
+                                        return fileDate > lastDateInStockDatas; // Garder les fichiers dont la date est supérieure
+                                    }
+                                }
+                                return false; // Ignorer les fichiers mal formés
+
+                            })
+                            .OrderBy(file => file) // Optionnel : Trier par nom de fichier
+                            .ToList();
+
+                        if (!string.IsNullOrEmpty(indice.Symbol) && newFiles.Count > 0)
+                        {
+                            // Ajout les historiques manquantes dans StockDatas
+                            indice.TrainingData.AddRange(AjoutStockData(newFiles, indice.Symbol, closePrices));
+                        }
+
+                    }
+                    catch (DirectoryNotFoundException e)
+                    {
+                        Console.WriteLine($"Erreur : Le répertoire spécifié n'existe pas. {e.Message}");
+                    }
+                    catch (UnauthorizedAccessException e)
+                    {
+                        Console.WriteLine($"Erreur : Accès refusé au répertoire. {e.Message}");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Une erreur s'est produite : {e.Message}");
                     }
 
                 }
-                catch (DirectoryNotFoundException e)
+
+                if (indice.DateUpdated != dateDansLeFuseau)
                 {
-                    Console.WriteLine($"Erreur : Le répertoire spécifié n'existe pas. {e.Message}");
-                }
-                catch (UnauthorizedAccessException e)
-                {
-                    Console.WriteLine($"Erreur : Accès refusé au répertoire. {e.Message}");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Une erreur s'est produite : {e.Message}");
-                }
-            }
-            else
-            {
-                // 🔹 Calculs des indicateurs financiers
+                    decimal rsi = 50;
+                    string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
 
-                //if (closePrices.Length > 0)
-                //{
-                //    float[] sma14 = CalculateSMA(closePrices, 14);
-                //    float[] rsi14 = CalculateRSI(closePrices, 14);
-
-                //    for (int i = 0; i < indice.TrainingData.Count; i++)
-                //    {
-                //        indice.TrainingData[i].RSI_14 = rsi14[i] != null ? rsi14[i] : 0;
-                //        indice.TrainingData[i].SMA_14 = sma14[i] != null ? sma14[i] : indice.TrainingData[i].CurrentPrice;
-                //    }
-                //}
-
-                // 🔹 Vérifier s'il existe des fichiers plus récents
-
-                DateTime? lastDateInStockDatas = _dbContext.StockDatas
-                    .Where(i => i.IndiceId == indice.Id)
-                    .OrderByDescending(i => i.Date)
-                    .Select(i => i.Date)
-                    .FirstOrDefault();
-
-                // Gérer le cas où aucune donnée n'existe dans StockDatas
-                lastDateInStockDatas ??= dateDansLeFuseau.AddDays(-2);
-
-                try
-                {
-
-                    // Trouver les fichiers avec des dates supérieures à la dernière date
-                    List<string> newFiles = Directory.GetFiles(directoryPath, "*.txt")
-                        .Where(file =>
+                    // Si des données d'entraînement existent, utiliser les données les plus récentes
+                    if (indice.TrainingData?.Count > 0)
+                    {
+                        var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
+                        if (latestTrainingData != null)
                         {
-
-                            string fileName = Path.GetFileNameWithoutExtension(file); // Nom du fichier sans extension
-                            int underscoreIndex = fileName.LastIndexOf('_'); // Recherche du dernier underscore
-
-                            if (underscoreIndex != -1 && underscoreIndex < fileName.Length - 1)
+                            if (latestTrainingData?.RSI_14 != null &&
+                                !float.IsNaN(latestTrainingData.RSI_14) &&
+                                !float.IsInfinity(latestTrainingData.RSI_14))
                             {
-                                string potentialDate = fileName[(underscoreIndex + 1)..];
-
-                                // Vérification si la chaîne extraite est une date valide (format "yyyyMMdd")
-                                if (DateTime.TryParseExact(potentialDate, "yyyyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime fileDate))
+                                try
                                 {
-                                    return fileDate > lastDateInStockDatas; // Garder les fichiers dont la date est supérieure
+                                    rsi = Convert.ToDecimal(latestTrainingData.RSI_14);
+                                }
+                                catch (OverflowException)
+                                {
+                                    Console.WriteLine($"⚠️ RSI_14 dépasse les limites du Decimal : {latestTrainingData.RSI_14}");
+                                    rsi = 50; // Valeur par défaut en cas d'erreur
                                 }
                             }
-                            return false; // Ignorer les fichiers mal formés
+                            else
+                            {
+                                Console.WriteLine("⚠️ RSI_14 est invalide ou null, valeur par défaut utilisée.");
+                            }
 
-                        })
-                        .OrderBy(file => file) // Optionnel : Trier par nom de fichier
-                        .ToList();
-
-                    if (!string.IsNullOrEmpty(indice.Symbol) && newFiles.Count > 0)
-                    {
-                        // Ajout les historiques manquantes dans StockDatas
-                        indice.TrainingData.AddRange(AjoutStockData(newFiles, indice.Symbol, closePrices));
+                            date = DateOnly.FromDateTime(latestTrainingData.Date).ToString();
+                        }
+                        indice.RegularMarketPrice = latestTrainingData.CurrentPrice;
+                        indice.RegularMarketPreviousClose = latestTrainingData.PrevPrice;
+                        indice.RegularMarketOpen = latestTrainingData.Open;
+                        indice.RegularMarketDayLow = latestTrainingData.Low;
+                        indice.RegularMarketDayHigh = latestTrainingData.High;
+                        indice.RegularMarketChange = latestTrainingData.Change;
+                        indice.RegularMarketChangePercent = latestTrainingData.ChangePercent;
                     }
 
-                }
-                catch (DirectoryNotFoundException e)
-                {
-                    Console.WriteLine($"Erreur : Le répertoire spécifié n'existe pas. {e.Message}");
-                }
-                catch (UnauthorizedAccessException e)
-                {
-                    Console.WriteLine($"Erreur : Accès refusé au répertoire. {e.Message}");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Une erreur s'est produite : {e.Message}");
+                    // Générer une recommandation basée sur RSI
+                    string recommendation = await GetRecommendationBasedOnRSI(rsi);
+
+                    // Mise à jour de l'indice dans la base de données
+                    indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                    indice.Raccomandation = recommendation;
                 }
 
-            }
-
-            if (indice.DateUpdated != dateDansLeFuseau)
-            {
-                decimal rsi = 50;
-                string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
-
-                // Si des données d'entraînement existent, utiliser les données les plus récentes
-                if (indice.TrainingData?.Count > 0)
+                if (indice.DatePrevision != DateOnly.FromDateTime(dateDansLeFuseau))
                 {
-                   var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
-                   if (latestTrainingData != null)
+                    StockPrediction? prediction = Prediction(indice);
+
+                    if (prediction != null)
                     {
-                        if (latestTrainingData?.RSI_14 != null &&
-                            !float.IsNaN(latestTrainingData.RSI_14) &&
-                            !float.IsInfinity(latestTrainingData.RSI_14))
+                        indice.IsIncreasing = prediction.IsIncreasing;
+
+                        if (float.IsNaN(prediction.Probability) || float.IsInfinity(prediction.Probability))
                         {
-                            try
-                            {
-                                rsi = Convert.ToDecimal(latestTrainingData.RSI_14);
-                            }
-                            catch (OverflowException)
-                            {
-                                Console.WriteLine($"⚠️ RSI_14 dépasse les limites du Decimal : {latestTrainingData.RSI_14}");
-                                rsi = 50; // Valeur par défaut en cas d'erreur
-                            }
+                            Console.WriteLine($"Correction de Probability NaN/Infini pour l'indice {indice.Id}");
+                            prediction.Probability = 0; // Mets une valeur par défaut ou un calcul de secours
+                        }
+                        indice.Probability = prediction.Probability;
+                    }
+                    indice.DatePrevision = DateOnly.FromDateTime(dateDansLeFuseau);
+                }
+
+                // 🔹 Sauvegarde des modifications dans la DB avec gestion des verrous
+
+                // Definitions des parametres de mise à jour du DB
+                int maxRetries = 5;
+                int delay = 1000; // in milliseconds
+
+
+                for (int retry = 0; retry < maxRetries; retry++)
+                {
+                    try
+                    {
+                        // Vérifie si l'indice a un ID valide
+                        if (indice.Id == 0)
+                        {
+                            Console.WriteLine("Erreur : Indice.Id est 0, impossible de l'ajouter !");
+                            break;
+                        }
+
+                        var existingIndice = await dbContext.Indices
+                            .Include(i => i.TrainingData) // Charge la liste associée
+                            .FirstOrDefaultAsync(i => i.Id == indice.Id);
+
+                        if (existingIndice == null)
+                        {
+                            Console.WriteLine($"Ajout de l'indice {indice.Symbol} (ID: {indice.Id}) à la base.");
+                            await dbContext.Indices.AddAsync(indice);
                         }
                         else
                         {
-                            Console.WriteLine("⚠️ RSI_14 est invalide ou null, valeur par défaut utilisée.");
+                            Console.WriteLine($"Mise à jour de l'indice {indice.Symbol} (ID: {indice.Id}).");
+                            dbContext.Entry(existingIndice).CurrentValues.SetValues(indice);
+
+                            // Vérifier si `trainingData` doit être mis à jour
+                            if (indice.TrainingData != null)
+                            {
+                                // Suppression des anciennes valeurs si nécessaire
+                                existingIndice.TrainingData.Clear();
+
+                                // Ajout des nouvelles données
+                                existingIndice.TrainingData.AddRange(indice.TrainingData);
+                            }
                         }
 
-                        date = DateOnly.FromDateTime(latestTrainingData.Date).ToString();
+                        await dbContext.SaveChangesAsync();
+                        return; // Succès, on sort de la boucle
                     }
-                    indice.RegularMarketPrice = latestTrainingData.CurrentPrice;
-                    indice.RegularMarketPreviousClose = latestTrainingData.PrevPrice;
-                    indice.RegularMarketOpen = latestTrainingData.Open;
-                    indice.RegularMarketDayLow = latestTrainingData.Low;
-                    indice.RegularMarketDayHigh = latestTrainingData.High;
-                    indice.RegularMarketChange = latestTrainingData.Change;
-                    indice.RegularMarketChangePercent = latestTrainingData.ChangePercent;
-                }
-
-                // Générer une recommandation basée sur RSI
-                string recommendation = await GetRecommendationBasedOnRSI(rsi);
-
-                // Mise à jour de l'indice dans la base de données
-                indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-                indice.Raccomandation = recommendation;
-            }
-
-            if (indice.DatePrevision != DateOnly.FromDateTime(dateDansLeFuseau))
-            {
-                StockPrediction? prediction = Prediction(indice);
-
-                if (prediction != null)
-                {
-                    indice.IsIncreasing = prediction.IsIncreasing;
-
-                    if (float.IsNaN(prediction.Probability) || float.IsInfinity(prediction.Probability))
+                    catch (DbUpdateException ex)
                     {
-                        Console.WriteLine($"Correction de Probability NaN/Infini pour l'indice {indice.Id}");
-                        prediction.Probability = 0; // Mets une valeur par défaut ou un calcul de secours
-                    }
-                    indice.Probability = prediction.Probability;
-                }
-                indice.DatePrevision = DateOnly.FromDateTime(dateDansLeFuseau);
-            }
-
-            // 🔹 Sauvegarde des modifications dans la DB avec gestion des verrous
-
-            // Definitions des parametres de mise à jour du DB
-            int maxRetries = 5;
-            int delay = 1000; // in milliseconds
-
-
-            for (int retry = 0; retry < maxRetries; retry++)
-            {
-                try
-                {
-                    // Vérifie si l'indice a un ID valide
-                    if (indice.Id == 0)
-                    {
-                        Console.WriteLine("Erreur : Indice.Id est 0, impossible de l'ajouter !");
-                        break;
-                    }
-
-                    var existingIndice = await _dbContext.Indices
-                        .Include(i => i.TrainingData) // Charge la liste associée
-                        .FirstOrDefaultAsync(i => i.Id == indice.Id);
-
-                    if (existingIndice == null)
-                    {
-                        Console.WriteLine($"Ajout de l'indice {indice.Symbol} (ID: {indice.Id}) à la base.");
-                        await _dbContext.Indices.AddAsync(indice);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Mise à jour de l'indice {indice.Symbol} (ID: {indice.Id}).");
-                        _dbContext.Entry(existingIndice).CurrentValues.SetValues(indice);
-
-                        // Vérifier si `trainingData` doit être mis à jour
-                        if (indice.TrainingData != null)
+                        Console.WriteLine($"Erreur DB: {ex.Message}");
+                        if (ex.InnerException != null)
                         {
-                            // Suppression des anciennes valeurs si nécessaire
-                            existingIndice.TrainingData.Clear();
-
-                            // Ajout des nouvelles données
-                            existingIndice.TrainingData.AddRange(indice.TrainingData);
+                            Console.WriteLine($"Détails internes: {ex.InnerException.Message}");
                         }
+                        await Task.Delay(delay);
+                        delay *= 2; // Augmente le temps d'attente en cas de problème
                     }
-
-                    await _dbContext.SaveChangesAsync();
-                    return; // Succès, on sort de la boucle
-                }
-                catch (DbUpdateException ex)
-                {
-                    Console.WriteLine($"Erreur DB: {ex.Message}");
-                    if (ex.InnerException != null)
+                    catch (SqliteException ex) when (ex.SqliteErrorCode == 5) // Error 5 is database lock
                     {
-                        Console.WriteLine($"Détails internes: {ex.InnerException.Message}");
+                        Console.WriteLine("Base de données verrouillée, nouvel essai...");
+                        await Task.Delay(delay); // Wait before retrying
+                        delay *= 2; // Optionally, use exponential backoff
                     }
-                    await Task.Delay(delay);
-                    delay *= 2; // Augmente le temps d'attente en cas de problème
-                }
-                catch (SqliteException ex) when (ex.SqliteErrorCode == 5) // Error 5 is database lock
-                {
-                    Console.WriteLine("Base de données verrouillée, nouvel essai...");
-                    await Task.Delay(delay); // Wait before retrying
-                    delay *= 2; // Optionally, use exponential backoff
-                }
 
+                }
             }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Une erreur s'est produite : {ex.Message}");
-            Console.WriteLine($"Error querying Yahoo Finance API for symbol: {indice.Symbol}");
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Une erreur s'est produite : {ex.Message}");
+                Console.WriteLine($"Error querying Yahoo Finance API for symbol: {indice.Symbol}");
+            }
         }
     }
 
@@ -1038,19 +868,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         return trainingData;
     }
 
-    // Méthode utilitaire pour gérer les chaînes vides ou nulles
-    private float ParseFloatOrDefault(string input, float defaultValue = 0f)
-    {
-        if (string.IsNullOrWhiteSpace(input))
-            return defaultValue;
-
-        if (float.TryParse(input.Replace(" ", ""), NumberStyles.Any, CultureInfo.InvariantCulture, out float result))
-            return result;
-
-        Console.WriteLine($"⚠️ Impossible de convertir '{input}' en float. Valeur par défaut utilisée : {defaultValue}");
-        return defaultValue;
-    }
-
     public StockPrediction? Prediction(Indice indice)
     {
 
@@ -1099,6 +916,76 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         return prediction;
     }
+
+    //private async Task UpdateEarningDates(string nomBourse, CancellationToken stoppingToken)
+    //{
+    //    using (var scope = _serviceProvider.CreateScope())
+    //    {
+    //        var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+    //        List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
+
+    //        //Récupérer la liste des entreprises dont la date des états financières est proche
+    //        var companyEarningsDates = await GetAllEarningsInfoAsync();
+
+    //        foreach (var indice in indices)
+    //        {
+    //            List<DateTime> earningsDates = new();
+
+    //            //EarningsInfo? earningsInfo = companyEarningsDates.FirstOrDefault(c => c.Symbol == indice.Symbol);
+
+    //            EarningsInfo? earningsInfo = companyEarningsDates.FirstOrDefault(c => c.Symbol == indice.Symbol);
+
+    //            if (earningsInfo != null) 
+    //            {
+    //                indice.EarningsInfo = earningsInfo;
+    //                //earningsDates.Add(earningsInfo.Date);
+    //            }
+
+    //            //var earningsDates = await GetFinancialDataYahooAsync(indice, dbContext);
+
+    //            //if (earningsDates != null && earningsDates.Count > 0)
+    //            //{
+    //            //    indice.DatesExercicesFinancieres = earningsDates.ToArray();
+
+    //            //}
+    //            //else
+    //            //{
+    //            //    indice.DatesExercicesFinancieres = new DateTime[] { new DateTime() };
+    //            //    Console.WriteLine($"Aucune donnée trouvée pour le symbole {indice.Symbol}.");
+    //            //}
+
+    //            dbContext.Indices.Update(indice);
+    //        }
+    //        dbContext.SaveChanges();
+    //    }
+    //}
+
+    //private async Task<List<EarningsInfo>> GetAllEarningsInfoAsync()
+    //{
+    //    int currentPage = 1;
+    //    bool morePages = true;
+    //    var allEarningsInfo = new List<EarningsInfo>();
+
+    //    while (morePages)
+    //    {
+    //        // Récupérer les informations de la page courante
+    //        var earningsInfoForPage = await GetEarningsFromZoneBourse(currentPage);
+
+    //        // Si aucune information n'est trouvée, arrêter
+    //        if (earningsInfoForPage.Count == 0)
+    //        {
+    //            morePages = false;
+    //        }
+    //        else
+    //        {
+    //            allEarningsInfo.AddRange(earningsInfoForPage);
+    //            currentPage++;
+    //        }
+    //    }
+
+    //    return allEarningsInfo;
+    //}
+
     #endregion#
 
     #region saveHistory
@@ -1136,28 +1023,14 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             dateNext = dateNext.AddDays(1);
         }
     }
-    //private string GetDecimalValue(HtmlDocument doc, string xpath)
-    //{
-    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
-    //    return node != null && decimal.TryParse(node.InnerText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value)
-    //        ? value.ToString()
-    //        : "0";
-    //}
-
-    //private string GetLongValue(HtmlDocument doc, string xpath)
-    //{
-    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
-    //    return node != null && long.TryParse(node.InnerText.Replace(",", ""), out long value)
-    //        ? value.ToString()
-    //        : "0";
-    //}
 
     private async Task SaveHistory(string filePath, string nomBourse, CancellationToken stoppingToken)
     {
-        using (var scope = _serviceProvider.CreateScope())
+        using (var scope = _scopeFactory.CreateScope())
         {
-            //var dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
-            List<Indice> indices = await _dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
+            BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+
+            List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
 
             string header = "<ticker>,<date>,<open>,<high>,<low>,<close>,<vol>";
 
@@ -1593,31 +1466,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
     }
 
-    //private static string GetFieldValueSafely(Security data, Indice indice, Field field)
-    //{
-    //    try
-    //    {
-    //        return data[field]?.ToString() ?? GetPreviousValue(indice, field);
-    //    }
-    //    catch (KeyNotFoundException)
-    //    {
-    //        return GetPreviousValue(indice, field);
-    //    }
-    //}
-
-    //private static string GetPreviousValue(Indice indice, Field field)
-    //{
-    //    return field switch
-    //    {
-    //        Field.RegularMarketPrice => indice.RegularMarketPrice?.ToString() ?? "0",
-    //        Field.RegularMarketOpen => indice.RegularMarketOpen?.ToString() ?? "0",
-    //        Field.RegularMarketDayHigh => indice.RegularMarketDayHigh?.ToString() ?? "0",
-    //        Field.RegularMarketDayLow => indice.RegularMarketDayLow?.ToString() ?? "0",
-    //        Field.RegularMarketVolume => indice.RegularMarketVolume?.ToString() ?? "0",
-    //        _ => "0"  // Valeur par défaut si le champ n'existe pas dans Indice
-    //    };
-    //}
-
     private async Task<DateTime> GetLastDateHistory(string bourse)
     {
         string nomBourse = Path.GetFileNameWithoutExtension(bourse);
@@ -1652,9 +1500,50 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         else
         {
             Console.WriteLine("Aucune date valide trouvée parmi les fichiers.");
-            return dateDansLeFuseau;    
+            return dateDansLeFuseau;
         }
     }
+
+    //private string GetDecimalValue(HtmlDocument doc, string xpath)
+    //{
+    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
+    //    return node != null && decimal.TryParse(node.InnerText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value)
+    //        ? value.ToString()
+    //        : "0";
+    //}
+
+    //private string GetLongValue(HtmlDocument doc, string xpath)
+    //{
+    //    var node = doc.DocumentNode.SelectSingleNode(xpath);
+    //    return node != null && long.TryParse(node.InnerText.Replace(",", ""), out long value)
+    //        ? value.ToString()
+    //        : "0";
+    //}
+
+    //private static string GetFieldValueSafely(Security data, Indice indice, Field field)
+    //{
+    //    try
+    //    {
+    //        return data[field]?.ToString() ?? GetPreviousValue(indice, field);
+    //    }
+    //    catch (KeyNotFoundException)
+    //    {
+    //        return GetPreviousValue(indice, field);
+    //    }
+    //}
+
+    //private static string GetPreviousValue(Indice indice, Field field)
+    //{
+    //    return field switch
+    //    {
+    //        Field.RegularMarketPrice => indice.RegularMarketPrice?.ToString() ?? "0",
+    //        Field.RegularMarketOpen => indice.RegularMarketOpen?.ToString() ?? "0",
+    //        Field.RegularMarketDayHigh => indice.RegularMarketDayHigh?.ToString() ?? "0",
+    //        Field.RegularMarketDayLow => indice.RegularMarketDayLow?.ToString() ?? "0",
+    //        Field.RegularMarketVolume => indice.RegularMarketVolume?.ToString() ?? "0",
+    //        _ => "0"  // Valeur par défaut si le champ n'existe pas dans Indice
+    //    };
+    //}
 
     //private string GetTimezoneName(string bourse)
     //{
@@ -1681,61 +1570,273 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    }
     //}
 
-    static DateTime? GetClosestDateToToday(IEnumerable<string> filePaths)
-    {
-        try
-        {
-            // Extraire les dates valides à partir des noms de fichiers
-            var validDates = filePaths
-                .Select(file => ExtractDateFromFileName(file)) // Extraire la date
-                .Where(date => date.HasValue) // Garder uniquement les dates valides
-                .Select(date => date.Value) // Retirer le Nullable<DateTime>
-                .ToList();
-
-            if (!validDates.Any())
-            {
-                return null; // Retourner null si aucune date valide
-            }
-
-            // Trouver la date la plus proche d'aujourd'hui
-            DateTime today = DateTime.Today;
-            return validDates
-                .OrderBy(date => Math.Abs((date - today).Days)) // Trier par proximité
-                .First(); // Prendre la date la plus proche
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Erreur : {ex.Message}");
-            return null; // Retourner null en cas d'erreur
-        }
-    }
-
-    static DateTime? ExtractDateFromFileName(string filePath)
-    {
-        try
-        {
-            // Exemple : TSX_20241122.txt => Extraire "20241122"
-            string fileName = Path.GetFileNameWithoutExtension(filePath); // Nom sans extension
-            string datePart = fileName.Split('_')[1]; // Extraire la partie après "_"
-
-            // Convertir la chaîne en DateTime
-            if (DateTime.TryParseExact(datePart, "yyyyMMdd", null, System.Globalization.DateTimeStyles.None, out DateTime date))
-            {
-                return date;
-            }
-            else
-            {
-                return null; // Retourner null si le format est invalide
-            }
-        }
-        catch
-        {
-            return null; // Retourner null en cas d'erreur
-        }
-    }
     #endregion
 
     #region financialData
+    private async Task UpdateEarningDates(string nomBourse, CancellationToken stoppingToken)
+    {
+        using (var scope = _scopeFactory.CreateScope())
+        {
+            BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+            List<Indice> indices = await dbContext.Indices.Include(i => i.TrainingData).Where(i => i.Bourse == nomBourse).ToListAsync();
+
+            foreach (var indice in indices)
+            {
+                string? name = indice.Name;
+                if (name != null)
+                {
+                    // Liste des mots à ignorer
+                    var motsASupprimer = new HashSet<string> { "Inc", "The" };
+
+                    // Séparer le nom en mots
+                    var words = name.Split(' ');
+
+                    // Trouver le premier mot valide (qui n'est pas "Inc" ou "The")
+                    name = words.FirstOrDefault(word => !motsASupprimer.Contains(word)) ?? string.Empty;
+                }
+
+                Console.WriteLine(name);
+
+
+                string? symbolCut = indice.Symbol?.EndsWith(".TO") == true ? indice.Symbol[..^3] : indice.Symbol;
+                string? bourse;
+
+                switch (indice.Bourse)
+                {
+                    case "TSX":
+                        bourse = "Toronto";
+                        break;
+                    case "NASDAQ":
+                        bourse = "Nasdaq";
+                        break;
+                    case "AMEX":
+                        bourse = "Nyse";
+                        break;
+                    case "NYSE":
+                        bourse = "Nyse";
+                        break;
+                    default:
+                        bourse = indice.Bourse;
+                        break;
+                }
+
+                if (symbolCut != null && bourse != null)
+                {
+                    string searchUrl;
+                    string urlCompanyName = string.Empty;
+
+                    if (symbolCut.Length > 2)
+                    {
+                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={symbolCut}";
+                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, bourse);
+                    }
+                    else
+                    {
+                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={name}";
+                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, string.Empty);
+                    }
+
+                    if (string.IsNullOrEmpty(urlCompanyName))
+                    {
+                        searchUrl = $"https://www.zonebourse.com/recherche/instruments?q={name}";
+                        urlCompanyName = await GetCompanyName(searchUrl, symbolCut, string.Empty);
+                    }
+
+                    if (!string.IsNullOrEmpty(urlCompanyName))
+                    {
+                        Console.WriteLine($"Company Name: {urlCompanyName}");
+                        string agendaUrl = $"https://www.zonebourse.com{urlCompanyName}agenda/";
+                        List<string> dates = await GetFinancialDates(agendaUrl);
+
+                        string format = "dd/MM/yyyy"; // Format attendu
+                        CultureInfo culture = CultureInfo.InvariantCulture; // Culture indépendante
+
+                        indice.DatesExercicesFinancieres = dates
+                            .Select(date =>
+                            {
+                                DateTime parsedDate;
+                                return DateTime.TryParseExact(date, format, culture, DateTimeStyles.None, out parsedDate)
+                                    ? parsedDate
+                                    : (DateTime?)null;
+                            })
+                            .Where(d => d.HasValue) // Filtre les valeurs null (dates invalides)
+                            .Select(d => d.Value)
+                            .ToArray();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Company not found.");
+                    }
+
+                    dbContext.Indices.Update(indice);
+                }
+            }
+            dbContext.SaveChanges();
+        }
+    }
+
+    static async Task<string> GetCompanyName(string url, string symbol, string bourse)
+    {
+        using HttpClient client = new HttpClient();
+        var response = await client.GetStringAsync(url);
+
+        HtmlDocument doc = new HtmlDocument();
+        doc.LoadHtml(response);
+
+        HtmlNode node;
+
+        if (bourse != null)
+        {
+            node = doc.DocumentNode.SelectSingleNode($"//tr[td[normalize-space() = '{symbol}'] and td[contains(normalize-space(), '{bourse}')]]");
+        }
+        else
+        {
+            node = doc.DocumentNode.SelectSingleNode($"//tr[td[normalize-space() = '{symbol}']]");
+        }
+
+        if (node == null)
+        {
+            node = doc.DocumentNode.SelectSingleNode($"//tr[td[contains(normalize-space(), '{symbol}')] and td[contains(normalize-space(), '{bourse}')]]");
+        }
+
+        string href = string.Empty;
+
+        if (node != null)
+        {
+            // Sélectionner le premier lien <a> dans ce <tr>
+            var linkNode = node.SelectSingleNode(".//a[@href]");
+
+            if (linkNode != null)
+            {
+                href = linkNode.GetAttributeValue("href", string.Empty);
+                Console.WriteLine("Lien trouvé : " + href);
+            }
+            else
+            {
+                Console.WriteLine("Aucun lien <a> trouvé dans le <tr>.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Aucun <tr> correspondant trouvé.");
+        }
+        return href;
+    }
+
+    static async Task<List<string>> GetFinancialDates(string url)
+    {
+        List<string> dates = new List<string>();
+        using HttpClient client = new HttpClient();
+        var response = await client.GetStringAsync(url);
+
+        HtmlDocument doc = new HtmlDocument();
+        doc.LoadHtml(response);
+
+        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@id, 'next-events-card')]//table[contains(@class, 'table--bordered')]//td[@class='table-child--w130']");
+
+        if (nodes != null)
+        {
+            foreach (var node in nodes)
+            {
+                dates.Add(node.InnerText.Trim());
+            }
+        }
+        return dates;
+    }
+
+    // Méthode pour déduire une recommandation basée sur RSI
+    private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
+    {
+        if (rsi < 30)
+        {
+            return "Strong Buy"; // Survendu
+        }
+        else if (rsi < 40)
+        {
+            return "Buy";
+        }
+        else if (rsi > 70)
+        {
+            return "Strong Sell"; // Suracheté
+        }
+        else if (rsi > 60)
+        {
+            return "Sell";
+        }
+        else
+        {
+            return "Hold"; // Zone neutre
+        }
+    }
+
+    public static float[] CalculateSMA(float[] closePrices, int period)
+    {
+        if (closePrices == null || closePrices.Length == 0 || period <= 0)
+            return Array.Empty<float>();
+
+        int length = closePrices.Length;
+        var sma = new float[length];
+        float sum = 0;
+
+        for (int i = 0; i < length; i++)
+        {
+            sum += closePrices[i];
+
+            if (i >= period - 1)
+            {
+                sma[i] = sum / period;
+                sum -= closePrices[i - period + 1];
+            }
+            else
+            {
+                sma[i] = 0; // Pas assez de données
+            }
+        }
+
+        return sma;
+    }
+
+    public static float[] CalculateRSI(float[] closePrices, int period)
+    {
+        if (closePrices == null || closePrices.Length == 0 || period <= 0)
+            return Array.Empty<float>();
+
+        int length = closePrices.Length;
+        var rsi = new float[length];
+        float gain = 0, loss = 0;
+
+        if (length < period)
+            period = length;
+
+        // Calcul des gains et pertes initiaux
+        for (int i = 1; i < period; i++)
+        {
+            float change = closePrices[i] - closePrices[i - 1];
+            if (change > 0)
+                gain += change;
+            else if (change < 0)
+                loss -= change;
+        }
+
+        gain /= (period - 1);
+        loss /= (period - 1);
+
+        // Éviter la division par zéro
+        rsi[period - 1] = loss == 0 ? 100 : 100 - (100 / (1 + gain / loss));
+
+        // Calcul du RSI pour le reste des données
+        for (int i = period; i < length; i++)
+        {
+            float change = closePrices[i] - closePrices[i - 1];
+            gain = (gain * (period - 1) + Math.Max(change, 0)) / period;
+            loss = (loss * (period - 1) + Math.Max(-change, 0)) / period;
+
+            rsi[i] = loss == 0 ? 100 : 100 - (100 / (1 + gain / loss));
+        }
+
+        return rsi;
+    }
+
     //private async Task<DateTime[]> GetFinancialDataAsync(Indice indice)
     //{
     //    // Charger les horaires de la bourse
@@ -1747,7 +1848,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    var datesList = new List<DateTime>();
 
     //    var indiceRef = _dbContext.Indices.Where(i => i.Id == indice.Id).SingleOrDefault();
-        
+
     //    if (indiceRef == null) 
     //    { 
     //        return datesList.ToArray();
@@ -1770,181 +1871,181 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     //    return datesList.ToArray();
 
-        //// Yahoo Finance Api implementation
-        //try
-        //{
-        //    // Récupérer les données historiques via Yahoo Finance API
-        //    var history = await Yahoo.GetHistoricalAsync(symbol, DateTime.Now.AddYears(-1), DateTime.Now, Period.Daily);
+    //// Yahoo Finance Api implementation
+    //try
+    //{
+    //    // Récupérer les données historiques via Yahoo Finance API
+    //    var history = await Yahoo.GetHistoricalAsync(symbol, DateTime.Now.AddYears(-1), DateTime.Now, Period.Daily);
 
-        //    if (history != null && history.Count > 0)
-        //    {
-        //        // Filtrer les données pour obtenir des informations sur la période trimestrielle
-        //        var quarterlyData = GetQuarterlyData(history);
+    //    if (history != null && history.Count > 0)
+    //    {
+    //        // Filtrer les données pour obtenir des informations sur la période trimestrielle
+    //        var quarterlyData = GetQuarterlyData(history);
 
-        //        // Afficher ou traiter les données trimestrielles
-        //        foreach (var quarter in quarterlyData)
-        //        {
-        //            Console.WriteLine($"Quarter Ending: {quarter.Key.ToShortDateString()}");
-        //            foreach (var data in quarter.Value)
-        //            {
-        //                datesList.Add(data.DateTime.AddYears(1));
-        //                Console.WriteLine($"Date: {data.DateTime.AddYears(1)}, Close: {data.Close}");
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine($"No historical data found for {symbol}.");
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    Console.WriteLine($"Error while fetching quarterly data for {symbol}: {ex.Message}");
-        //}
-
-        //return datesList.ToArray(); // Retourne la liste des dates sous forme de tableau
-
-
-        //// Alpha Vantage Api implementation
-        //string baseUrl = "https://www.alphavantage.co/query";
-        //string function = "BALANCE_SHEET"; // Utilisez une fonction adaptée, comme BALANCE_SHEET ou INCOME_STATEMENT
-
-        //string url = $"{baseUrl}?function={function}&symbol={symbol}&entitlement=delayed&apikey={_apiKey}";
-
-        //using (HttpClient client = new HttpClient())
-        //{
-        //    try
-        //    {
-        //        HttpResponseMessage response = await client.GetAsync(url);
-        //        response.EnsureSuccessStatusCode();
-
-        //        string responseBody = await response.Content.ReadAsStringAsync();
-        //        JObject data = JObject.Parse(responseBody);
-
-        //        // Exemple : Parcourir les dates des bilans
-        //        var quarterlyReports = data["quarterlyReports"];
-        //        if (quarterlyReports != null)
-        //        {
-        //            foreach (var report in quarterlyReports)
-        //            {
-        //                string fiscalDateEnding = report["fiscalDateEnding"]?.ToString();
-        //                if (DateTime.TryParseExact(fiscalDateEnding, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fiscalDate))
-        //                {
-        //                    if (fiscalDate.AddYears(1) > DateTime.Now)
-        //                        datesList.Add(fiscalDate.AddYears(1));
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Aucun rapport trimestriel trouvé.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Erreur : {ex.Message}");
-        //    }
-
-        //    return datesList.ToArray(); // Convertit la liste en tableau
-        //}
+    //        // Afficher ou traiter les données trimestrielles
+    //        foreach (var quarter in quarterlyData)
+    //        {
+    //            Console.WriteLine($"Quarter Ending: {quarter.Key.ToShortDateString()}");
+    //            foreach (var data in quarter.Value)
+    //            {
+    //                datesList.Add(data.DateTime.AddYears(1));
+    //                Console.WriteLine($"Date: {data.DateTime.AddYears(1)}, Close: {data.Close}");
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine($"No historical data found for {symbol}.");
+    //    }
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine($"Error while fetching quarterly data for {symbol}: {ex.Message}");
     //}
 
-    static async Task<List<EarningsInfo>> GetEarningsFromZoneBourse(int pageNumber)
-    {
-        string url = "https://www.zonebourse.com/bourse/agenda/financier/amerique-du-nord/?p={pageNumber}";
-        var earningsList = new List<EarningsInfo>();
+    //return datesList.ToArray(); // Retourne la liste des dates sous forme de tableau
 
-        using (HttpClient client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
 
-            try
-            {
-                var response = await client.GetStringAsync(url);
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(response);
+    //// Alpha Vantage Api implementation
+    //string baseUrl = "https://www.alphavantage.co/query";
+    //string function = "BALANCE_SHEET"; // Utilisez une fonction adaptée, comme BALANCE_SHEET ou INCOME_STATEMENT
 
-                // Sélection des lignes du tableau des résultats financiers
-                var rows = htmlDoc.DocumentNode.SelectNodes("//table[contains(@class, 'table table--small table--bordered table--hover table--fixed table--stock')]//tr");
+    //string url = $"{baseUrl}?function={function}&symbol={symbol}&entitlement=delayed&apikey={_apiKey}";
 
-                if (rows != null)
-                {
-                    foreach (var row in rows)
-                    {
-                        var columns = row.SelectNodes("td");
-                        if (columns != null && columns.Count >= 3)
-                        {
-                            string dateText = columns[2].InnerText.Trim();
-                            string companyName = columns[1].InnerText.Trim();
+    //using (HttpClient client = new HttpClient())
+    //{
+    //    try
+    //    {
+    //        HttpResponseMessage response = await client.GetAsync(url);
+    //        response.EnsureSuccessStatusCode();
 
-                            // Récupération de l'URL vers la fiche entreprise
-                            var linkNode = columns[1].SelectSingleNode(".//a");
-                            string companyUrl = linkNode?.GetAttributeValue("href", null);
+    //        string responseBody = await response.Content.ReadAsStringAsync();
+    //        JObject data = JObject.Parse(responseBody);
 
-                            if (DateTime.TryParseExact(dateText, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime earningsDate) && companyUrl != null)
-                            {
-                                string fullCompanyUrl = "https://www.zonebourse.com" + companyUrl;
-                                string symbol = await GetSymbolFromCompanyPage(fullCompanyUrl);
+    //        // Exemple : Parcourir les dates des bilans
+    //        var quarterlyReports = data["quarterlyReports"];
+    //        if (quarterlyReports != null)
+    //        {
+    //            foreach (var report in quarterlyReports)
+    //            {
+    //                string fiscalDateEnding = report["fiscalDateEnding"]?.ToString();
+    //                if (DateTime.TryParseExact(fiscalDateEnding, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fiscalDate))
+    //                {
+    //                    if (fiscalDate.AddYears(1) > DateTime.Now)
+    //                        datesList.Add(fiscalDate.AddYears(1));
+    //                }
+    //            }
+    //        }
+    //        else
+    //        {
+    //            Console.WriteLine("Aucun rapport trimestriel trouvé.");
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine($"Erreur : {ex.Message}");
+    //    }
 
-                                earningsList.Add(new EarningsInfo
-                                {
-                                    Date = earningsDate,
-                                    Company = companyName,
-                                    Symbol = symbol,
-                                    Url = fullCompanyUrl
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-            catch (HttpRequestException ex)
-            {
-                Console.WriteLine($"Erreur HTTP: {ex.Message}");
-            }
-        }
+    //    return datesList.ToArray(); // Convertit la liste en tableau
+    //}
+    //}
 
-        return earningsList;
-    }
+    //static async Task<List<EarningsInfo>> GetEarningsFromZoneBourse(int pageNumber)
+    //{
+    //    string url = "https://www.zonebourse.com/bourse/agenda/financier/amerique-du-nord/?p={pageNumber}";
+    //    var earningsList = new List<EarningsInfo>();
 
-    static async Task<string> GetSymbolFromCompanyPage(string companyUrl)
-    {
-        using (HttpClient client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+    //    using (HttpClient client = new HttpClient())
+    //    {
+    //        client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
 
-            try
-            {
-                var response = await client.GetStringAsync(companyUrl);
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(response);
+    //        try
+    //        {
+    //            var response = await client.GetStringAsync(url);
+    //            var htmlDoc = new HtmlDocument();
+    //            htmlDoc.LoadHtml(response);
 
-                // Extraction du symbole (souvent dans un méta tag ou dans un div)
-                var symbolNode = htmlDoc.DocumentNode.SelectSingleNode("//meta[@name='keywords']");
+    //            // Sélection des lignes du tableau des résultats financiers
+    //            var rows = htmlDoc.DocumentNode.SelectNodes("//table[contains(@class, 'table table--small table--bordered table--hover table--fixed table--stock')]//tr");
 
-                if (symbolNode != null)
-                {
-                    string title = symbolNode.GetAttributeValue("content", "").Trim();
-                    string[] parts = title.Split(',');
+    //            if (rows != null)
+    //            {
+    //                foreach (var row in rows)
+    //                {
+    //                    var columns = row.SelectNodes("td");
+    //                    if (columns != null && columns.Count >= 3)
+    //                    {
+    //                        string dateText = columns[2].InnerText.Trim();
+    //                        string companyName = columns[1].InnerText.Trim();
 
-                    for (int i = 0; i < parts.Length - 1; i++)  // Évite l'erreur d'index hors limites
-                    {
-                        string text = parts[i].Trim();
-                        if (parts[i].Trim().Contains("cours") && parts[i].Trim().Contains("Action"))
-                        {
-                            return parts[i + 1].Trim();  // Retourne l'élément suivant
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erreur lors de la récupération du symbole : {ex.Message}");
-            }
-        }
+    //                        // Récupération de l'URL vers la fiche entreprise
+    //                        var linkNode = columns[1].SelectSingleNode(".//a");
+    //                        string companyUrl = linkNode?.GetAttributeValue("href", null);
 
-        return "N/A";
-    }
+    //                        if (DateTime.TryParseExact(dateText, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime earningsDate) && companyUrl != null)
+    //                        {
+    //                            string fullCompanyUrl = "https://www.zonebourse.com" + companyUrl;
+    //                            string symbol = await GetSymbolFromCompanyPage(fullCompanyUrl);
+
+    //                            earningsList.Add(new EarningsInfo
+    //                            {
+    //                                Date = earningsDate,
+    //                                Company = companyName,
+    //                                Symbol = symbol,
+    //                                Url = fullCompanyUrl
+    //                            });
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        catch (HttpRequestException ex)
+    //        {
+    //            Console.WriteLine($"Erreur HTTP: {ex.Message}");
+    //        }
+    //    }
+
+    //    return earningsList;
+    //}
+
+    //static async Task<string> GetSymbolFromCompanyPage(string companyUrl)
+    //{
+    //    using (HttpClient client = new HttpClient())
+    //    {
+    //        client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+
+    //        try
+    //        {
+    //            var response = await client.GetStringAsync(companyUrl);
+    //            var htmlDoc = new HtmlDocument();
+    //            htmlDoc.LoadHtml(response);
+
+    //            // Extraction du symbole (souvent dans un méta tag ou dans un div)
+    //            var symbolNode = htmlDoc.DocumentNode.SelectSingleNode("//meta[@name='keywords']");
+
+    //            if (symbolNode != null)
+    //            {
+    //                string title = symbolNode.GetAttributeValue("content", "").Trim();
+    //                string[] parts = title.Split(',');
+
+    //                for (int i = 0; i < parts.Length - 1; i++)  // Évite l'erreur d'index hors limites
+    //                {
+    //                    string text = parts[i].Trim();
+    //                    if (parts[i].Trim().Contains("cours") && parts[i].Trim().Contains("Action"))
+    //                    {
+    //                        return parts[i + 1].Trim();  // Retourne l'élément suivant
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Console.WriteLine($"Erreur lors de la récupération du symbole : {ex.Message}");
+    //        }
+    //    }
+
+    //    return "N/A";
+    //}
 
     // Modèle pour stocker les informations des résultats financiers
 
@@ -2013,56 +2114,56 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //            return earningsDates.ToArray();
     //        }
 
-            //var securitiesQuery = Yahoo.Symbols(symbol);
+    //var securitiesQuery = Yahoo.Symbols(symbol);
 
-            //if (securitiesQuery == null)
-            //{
-            //    throw new NullReferenceException("L'objet Yahoo.Symbols(symbol) est null.");
-            //}
+    //if (securitiesQuery == null)
+    //{
+    //    throw new NullReferenceException("L'objet Yahoo.Symbols(symbol) est null.");
+    //}
 
-            //var securitiesFields = securitiesQuery.Fields(Field.EarningsTimestamp);
+    //var securitiesFields = securitiesQuery.Fields(Field.EarningsTimestamp);
 
-            //if (securitiesFields == null)
-            //{
-            //    throw new NullReferenceException("L'appel à .Fields() a retourné null.");
-            //}
+    //if (securitiesFields == null)
+    //{
+    //    throw new NullReferenceException("L'appel à .Fields() a retourné null.");
+    //}
 
-            //try
-            //{
-            //    var securities = await securitiesFields.QueryAsync();
-            //    if (securities == null)
-            //    {
-            //        throw new NullReferenceException("L'appel à QueryAsync() a retourné null.");
-            //    }
+    //try
+    //{
+    //    var securities = await securitiesFields.QueryAsync();
+    //    if (securities == null)
+    //    {
+    //        throw new NullReferenceException("L'appel à QueryAsync() a retourné null.");
+    //    }
 
-            //    if (securities.ContainsKey(symbol))
-            //    {
-            //        var data = securities[symbol];
+    //    if (securities.ContainsKey(symbol))
+    //    {
+    //        var data = securities[symbol];
 
-            //        DateTime earningDate;
+    //        DateTime earningDate;
 
-            //        if (data.Fields.TryGetValue("EarningsTimestamp", out object value))
-            //        {
-            //            earningDate = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(value)).DateTime;
+    //        if (data.Fields.TryGetValue("EarningsTimestamp", out object value))
+    //        {
+    //            earningDate = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(value)).DateTime;
 
-            //        }
-            //        else
-            //        {
-            //            earningDate = new DateTime();
-            //        }
-            //        datesList.Add(earningDate);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine($"Symbol '{symbol}' not found in the response.");
-            //    }
+    //        }
+    //        else
+    //        {
+    //            earningDate = new DateTime();
+    //        }
+    //        datesList.Add(earningDate);
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine($"Symbol '{symbol}' not found in the response.");
+    //    }
 
-            //    await Task.Delay(1000);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Erreur lors de QueryAsync : " + ex.Message);
-            //}
+    //    await Task.Delay(1000);
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine("Erreur lors de QueryAsync : " + ex.Message);
+    //}
 
     //    }
     //    catch (Flurl.Http.FlurlHttpException ex)
@@ -2279,31 +2380,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    }
     //}
 
-    // Méthode pour déduire une recommandation basée sur RSI
-    private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
-    {
-        if (rsi < 30)
-        {
-            return "Strong Buy"; // Survendu
-        }
-        else if (rsi < 40)
-        {
-            return "Buy";
-        }
-        else if (rsi > 70)
-        {
-            return "Strong Sell"; // Suracheté
-        }
-        else if (rsi > 60)
-        {
-            return "Sell";
-        }
-        else
-        {
-            return "Hold"; // Zone neutre
-        }
-    }
-
     //// Méthode pour convertir RGB en HEX
     //static string RgbToHex(string rgb)
     //{
@@ -2326,76 +2402,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    int dotIndex = filePath.LastIndexOf('.');
     //    return filePath.Substring(underscoreIndex, dotIndex - underscoreIndex);
     //}
-
-    public static float[] CalculateSMA(float[] closePrices, int period)
-    {
-        if (closePrices == null || closePrices.Length == 0 || period <= 0)
-            return Array.Empty<float>();
-
-        int length = closePrices.Length;
-        var sma = new float[length];
-        float sum = 0;
-
-        for (int i = 0; i < length; i++)
-        {
-            sum += closePrices[i];
-
-            if (i >= period - 1)
-            {
-                sma[i] = sum / period;
-                sum -= closePrices[i - period + 1];
-            }
-            else
-            {
-                sma[i] = 0; // Pas assez de données
-            }
-        }
-
-        return sma;
-    }
-
-
-    public static float[] CalculateRSI(float[] closePrices, int period)
-    {
-        if (closePrices == null || closePrices.Length == 0 || period <= 0)
-            return Array.Empty<float>();
-
-        int length = closePrices.Length;
-        var rsi = new float[length];
-        float gain = 0, loss = 0;
-
-        if (length < period)
-            period = length;
-
-        // Calcul des gains et pertes initiaux
-        for (int i = 1; i < period; i++)
-        {
-            float change = closePrices[i] - closePrices[i - 1];
-            if (change > 0) 
-                gain += change;
-            else if (change < 0) 
-                loss -= change;
-        }
-
-        gain /= (period - 1);
-        loss /= (period - 1);
-
-        // Éviter la division par zéro
-        rsi[period - 1] = loss == 0 ? 100 : 100 - (100 / (1 + gain / loss));
-
-        // Calcul du RSI pour le reste des données
-        for (int i = period; i < length; i++)
-        {
-            float change = closePrices[i] - closePrices[i - 1];
-            gain = (gain * (period - 1) + Math.Max(change, 0)) / period;
-            loss = (loss * (period - 1) + Math.Max(-change, 0)) / period;
-
-            rsi[i] = loss == 0 ? 100 : 100 - (100 / (1 + gain / loss));
-        }
-
-        return rsi;
-    }
-
 
     #endregion#
 
