@@ -1,4 +1,4 @@
-﻿@model Bourse.Models.Indice
+﻿@model Bourse.Models.DTO.IndiceDTO
 
 @{
     ViewData["Title"] = "Details";
@@ -8,13 +8,13 @@
     <h1>@Html.DisplayFor(model => model.Symbol): @Html.DisplayFor(model => model.Name)</h1>
     <hr />
     <div>
-        @if (ViewData["ReturnUrl"]?.ToString() == "Forecasts")
+        @if (ViewData["ReturnUrl"]?.ToString() == "ForecastsDTO")
         {
-            <a asp-action="Forecasts">Back to Forecasts</a>
+            <a asp-action="ForecastsDTO">Back to Forecasts</a>
         }
         else
         {
-            <a asp-action="Index">Back to Index</a>
+            <a asp-action="IndexDTO">Back to Index</a>
         }
     </div>
     <h2>Hystory Prices </h2>
@@ -53,12 +53,6 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Exchange)
-                </th>
-                <th>
-                    RSI_14
-                </th>
-                <th>
-                    SMA_14
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Raccomandation)
@@ -107,14 +101,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => modelItem.Exchange)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RSI_14Display)
-                        @* @Html.DisplayFor(modelItem => item.RSI_14 != null ? Math.Round(item.RSI_14) + " %" : "0 %") *@
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SMA_14Display)
-                        @* @Html.DisplayFor(modelItem => item.SMA_14 != null ? Math.Round(item.SMA_14) + " %" : "0 %") *@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => modelItem.Raccomandation)

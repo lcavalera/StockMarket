@@ -1,5 +1,6 @@
 using Bourse.Data;
 using Bourse.Interfaces;
+using Bourse.Mappings;
 using Bourse.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.ML;
@@ -9,6 +10,9 @@ System.Threading.ThreadPool.SetMinThreads(1, 1);
 System.Threading.ThreadPool.SetMaxThreads(4, 4); // Par exemple, maximum 4 threads
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Ajouter AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile)); // Ajoutez le profil
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -50,6 +54,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Bourse}/{action=Index}/{id?}");
+    pattern: "{controller=Bourse}/{action=IndexDTO}/{id?}");
 
 app.Run();

@@ -3,31 +3,13 @@ using Bourse.Interfaces;
 using Bourse.Models;
 using Flurl.Http;
 using HtmlAgilityPack;
-using Humanizer;
-using Humanizer.DateTimeHumanizeStrategy;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Elfie.Model;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.ML;
-using Microsoft.Playwright;
-using Newtonsoft.Json.Linq;
-using NuGet.Packaging.Signing;
-using System;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Net;
-using System.Net.Http.Headers;
-using System.Reflection;
-using System.Security.Principal;
 using System.Text;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Threading;
-using YahooFinanceApi;
-using YahooQuotesApi;
 
 public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 {
@@ -37,7 +19,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     private readonly MLContext _mlContext;
     private readonly string[] _filePath;
     private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 5);
-    private readonly string _apiKey;
+    //private readonly string _apiKey;
 
     public ScheduledTaskService(IServiceScopeFactory scopeFactory, MLContext mlContext)
     {
@@ -46,7 +28,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         _scopeFactory = scopeFactory;
         _filePath = ["TSX.txt", "NASDAQ.txt", "AMEX.txt", "NYSE.txt"]; //Ajouter autres bourse si necessaire
         //_config = config;
-        _apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API Alpha Vantage
+        //_apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API Alpha Vantage
     }
 
     // NOTE : AJOUTER JOURNALISATION SERILOG ou NLOG
@@ -188,6 +170,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         await WaitUntilMarketOpens(stoppingToken, fuseHoraire);
                     }
                 }
+
                 //// Verifier si on est dans l'horaire de la bourse correspondant
                 //if (!EstDansLesHorairesBourse(nomBourse.ToLower()))
                 //{
@@ -1026,6 +1009,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     private async Task SaveHistory(string filePath, string nomBourse, CancellationToken stoppingToken)
     {
+        // ---- NOTES ----
+        // AJOUTER ALPHA VANATAGE IMPLEMENTATION POUR LA SAUVEGARDE JOURNALIER.
+        // SUPPRIMER ZONEBOURSE IMPLEMENTATION ET LA GARDER JUSTE POUR LES DATES DES ETATS FINANCIERES
+
         using (var scope = _scopeFactory.CreateScope())
         {
             BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
@@ -1645,7 +1632,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     if (!string.IsNullOrEmpty(urlCompanyName))
                     {
                         Console.WriteLine($"Company Name: {urlCompanyName}");
-                        string agendaUrl = $"https://www.zonebourse.com{urlCompanyName}agenda/";
+
+                        string agendaUrl = $"https://www.zonebourse.com{urlCompanyName.TrimEnd('/')}/agenda/";
                         List<string> dates = await GetFinancialDates(agendaUrl);
 
                         string format = "dd/MM/yyyy"; // Format attendu
@@ -1726,47 +1714,92 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     static async Task<List<string>> GetFinancialDates(string url)
     {
         List<string> dates = new List<string>();
-        using HttpClient client = new HttpClient();
-        var response = await client.GetStringAsync(url);
-
-        HtmlDocument doc = new HtmlDocument();
-        doc.LoadHtml(response);
-
-        var nodes = doc.DocumentNode.SelectNodes("//div[contains(@id, 'next-events-card')]//table[contains(@class, 'table--bordered')]//td[@class='table-child--w130']");
-
-        if (nodes != null)
+        using (HttpClient client = new HttpClient())
         {
-            foreach (var node in nodes)
+            client.Timeout = TimeSpan.FromSeconds(30); // Définir un délai d'attente de 30 secondes
+
+            try
             {
-                dates.Add(node.InnerText.Trim());
+                // Vérifier le statut de la réponse avant de lire le contenu
+                var response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Erreur HTTP: {response.StatusCode}");
+                    return dates;
+                }
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Traiter la page HTML
+                HtmlDocument doc = new HtmlDocument();
+                doc.LoadHtml(responseContent);
+
+                // Sélectionner les éléments contenant les dates financières
+                var nodes = doc.DocumentNode.SelectNodes("//div[contains(@id, 'next-events-card')]//table[contains(@class, 'table--bordered')]//td[@class='table-child--w130']");
+
+                if (nodes != null)
+                {
+                    foreach (var node in nodes)
+                    {
+                        dates.Add(node.InnerText.Trim());
+                    }
+                }
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine($"Une erreur s'est produite lors de la demande HTTP: {e.Message}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Une erreur s'est produite: {e.Message}");
             }
         }
         return dates;
     }
 
+    //static async Task<List<string>> GetFinancialDates(string url)
+    //{
+    //    List<string> dates = new List<string>();
+    //    using HttpClient client = new HttpClient();
+    //    var response = await client.GetStringAsync(url);
+
+    //    HtmlDocument doc = new HtmlDocument();
+    //    doc.LoadHtml(response);
+
+    //    var nodes = doc.DocumentNode.SelectNodes("//div[contains(@id, 'next-events-card')]//table[contains(@class, 'table--bordered')]//td[@class='table-child--w130']");
+
+    //    if (nodes != null)
+    //    {
+    //        foreach (var node in nodes)
+    //        {
+    //            dates.Add(node.InnerText.Trim());
+    //        }
+    //    }
+    //    return dates;
+    //}
+
     // Méthode pour déduire une recommandation basée sur RSI
     private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
     {
-        if (rsi < 30)
+        // Calcul inversé
+        return rsi switch
         {
-            return "Strong Buy"; // Survendu
-        }
-        else if (rsi < 40)
-        {
-            return "Buy";
-        }
-        else if (rsi > 70)
-        {
-            return "Strong Sell"; // Suracheté
-        }
-        else if (rsi > 60)
-        {
-            return "Sell";
-        }
-        else
-        {
-            return "Hold"; // Zone neutre
-        }
+            < 30 => "Strong Sell",    // Survendu
+            < 40 => "Sell",
+            > 70 => "Strong Buy",   // Suracheté
+            > 60 => "Buy",
+            _ => "Hold"              // Zone neutre
+        };
+
+        //// Calcul regulier
+        //return rsi switch
+        //{
+        //    < 30 => "Strong Buy",    // Survendu
+        //    < 40 => "Buy",
+        //    > 70 => "Strong Sell",   // Suracheté
+        //    > 60 => "Sell",
+        //    _ => "Hold"              // Zone neutre
+        //};
     }
 
     public static float[] CalculateSMA(float[] closePrices, int period)

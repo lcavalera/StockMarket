@@ -1,15 +1,15 @@
-﻿@model IEnumerable<Bourse.Models.Indice>
+﻿@model IEnumerable<Bourse.Models.DTO.IndiceDTO>
 
 @{
-    ViewData["Title"] = "Forecasts";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Forecasts of stock titles</h1>
+<h1>List of stock titles</h1>
 <table>
     <tr>
         <td>
             <div class="bloc">
-                <form asp-action="Forecasts" method="get">
+                <form asp-action="Index" method="get">
                     <div class="form-actions no-color">
                         <p>
                             Filter by Bourse:
@@ -17,7 +17,7 @@
                                 <option value="">All Exchanges</option>
                                 @foreach (var exchange in ViewBag.Exchanges)
                                 {
-                                    // Calculer si l'option doit être sélectionnée
+                                // Calculer si l'option doit être sélectionnée
                                     var select = (ViewData["ExchangeFiltre"]?.ToString() == exchange.Key) ? true : false;
 
                                     <option value="@exchange.Key" selected="@select">
@@ -33,7 +33,7 @@
         </td>
         <td>
             <div class="bloc">
-                <form asp-action="Forecasts" method="get">
+                <form asp-action="Index" method="get">
                     <div class="form-actions no-color">
                         <p>
                             Search for a stock title: <input type="text" name="filtre" value="@ViewData["actifFiltre"]" />
@@ -48,7 +48,7 @@
                 <div class="form-actions no-color">
                     <p>
                         Historical date: @ViewBag.DateReset
-                        <a asp-action="Forecasts" asp-route-resethistorique="true" class="btn btn-primary">Reset historique</a>
+                        <a asp-action="Index" asp-route-resethistorique="true" class="btn btn-primary">Reset historique</a>
                     </p>
                 </div>
             </div>
@@ -95,7 +95,7 @@
     <thead>
         <tr>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Symbol), "Forecasts", new { sortOrder = ViewBag.SymbolSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Symbol), "Index", new { sortOrder = ViewBag.SymbolSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "symbol_asc", "symbol_desc"))
             </th>
             <th>
@@ -105,53 +105,36 @@
                 @Html.DisplayNameFor(model => model.RegularMarketPreviousClose)
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketPrice), "Forecasts", new { sortOrder = ViewBag.PriceSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketPrice), "Index", new { sortOrder = ViewBag.PriceSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "price_asc", "price_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketChange), "Forecasts", new { sortOrder = ViewBag.ChangeSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketChange), "Index", new { sortOrder = ViewBag.ChangeSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "change_asc", "change_desc"))
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.QuoteType)
             </th>
             <th style="width:100px">
-                @Html.ActionLink(Html.DisplayNameFor(model => model.DatesExercicesFinancieres), "Forecasts", new { sortOrder = ViewBag.DatesExercFinancParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.DatesExercicesFinancieres), "Index", new { sortOrder = ViewBag.DatesExercFinancParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "exercfinanc_asc", "exercfinanc_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Bourse), "Forecasts", new { sortOrder = ViewBag.BourseParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Bourse), "Index", new { sortOrder = ViewBag.BourseParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "bourse_asc", "bourse_desc"))
             </th>
-            @*             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Exchange), "Forecasts", new { sortOrder = ViewBag.ExchangeSortParm }, new { @class = "no-underline" })
-                @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "exchange_asc", "exchange_desc"))
-            </th> *@
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Label), "Forecasts", new { sortOrder = ViewBag.LabelSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Label), "Index", new { sortOrder = ViewBag.LabelSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "label_asc", "label_desc"))
-            </th>
-            <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.IsIncreasing), "Forecasts", new { sortOrder = ViewBag.ActionSortParm }, new { @class = "no-underline" })
-                @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "action_asc", "action_desc"))
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Raccomandation)
             </th>
-            <th>
-                RSI_14
-            </th>
-            <th>
-                SMA_14
-            </th>
             <th style="width:100px">
                 @Html.DisplayNameFor(model => model.DateUpdated)
             </th>
-@*             <th>
-                @Html.DisplayNameFor(model => model.imageAnalysis)
-            </th> *@
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Probability), "Forecasts", new { sortOrder = ViewBag.ProbSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Probability), "IndexDTO", new { sortOrder = ViewBag.ProbSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "prob_asc", "prob_desc"))
             </th>
             <th></th>
@@ -190,42 +173,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Bourse)
                 </td>
-                @*                 <td>
-                    @Html.DisplayFor(modelItem => item.Exchange)
-                </td> *@
                 <td class="@(item.Label ? "color-positive" : "color-negative")">
                     @(item.Label ? "UP" : "DOWN")
-                </td>
-                <td class="@(item.IsIncreasing ? "color-positive" : "color-negative")">
-                    @(item.IsIncreasing ? "BUY" : "SELL")
                 </td>
                 <td style="color:@GetRaccomandationColor(item.Raccomandation); font-weight: bold">
                     @Html.DisplayFor(modelItem => item.Raccomandation)
                 </td>
                 <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.LastOrDefault().RSI_14Display
-                        : "0 %")
-                </td>
-                <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.LastOrDefault().SMA_14Display
-                        : "0")
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.DateUpdated)
                 </td>
-@*                 <td>
-                    <img src="@Url.Action("GetImage", "Bourse", new { id = item.Id })" alt="Canvas Image" style="max-width: 100%; height: auto;" />
-                </td> *@
-                <td class="@(item.IsIncreasing ? "color-positive" : "color-negative")">
+                <td class="@(item.Probability > 0.49 ? "color-positive" : "color-negative")">
                     @DisplayProbability(item.Probability)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Symbol" asp-route-returnUrl="Forecasts">Details</a>
+                    <a asp-action="DetailsDTO" asp-route-id="@item.Symbol" asp-route-returnUrl="IndexDTO">Details</a>
 
                     @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
-                    @* @Html.ActionLink("Details", "Details", new { item = item.Symbol }) *@
+                    @* @Html.ActionLink("Details", "DetailsDTO", new { item=item.Symbol }) *@
                     @* @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
                 </td>
             </tr>
@@ -235,29 +199,29 @@
 
 <style>
     .color-positive {
-        color: green;
-        font-weight: bold;
+    color: green;
+    font-weight: bold;
     }
 
     .color-negative {
-        color: lightcoral;
-        font-weight: bold;
+    color: lightcoral;
+    font-weight: bold;
     }
 
     a.no-underline {
-        text-decoration: none; /* Supprime le soulignement */
-        color: inherit; /* Prend la couleur du texte environnant */
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit; /* Prend la couleur du texte environnant */
     }
 
-    .fleches {
-        color: darkblue;
+    .fleches{
+    color: darkblue;
     }
 
-    .bloc {
-        display: flex;
-        justify-content: space-between; /* Répartir l'espace entre les divs */
-        align-items: flex-start; /* Aligner les divs en haut */
-        padding: 10px;
+    .bloc{
+    display: flex;
+    justify-content: space-between; /* Répartir l'espace entre les divs */
+    align-items: flex-start; /* Aligner les divs en haut */
+    padding: 10px;
     }
 
     .nobreak-date {
@@ -271,15 +235,6 @@
         if (currentSort == columnSortAsc) return "&#x25BC;"; // Descending arrow
         if (currentSort == columnSortDesc) return "&#x25B2;"; // Ascending arrow
         return string.Empty;
-    }
-}
-
-@functions {
-    string DisplayProbability(double? probability)
-    {
-        return probability.HasValue && probability > 0
-            ? $"{(int)(probability.Value * 100)} %"
-            : "N/A";
     }
 }
 
@@ -299,6 +254,15 @@
 }
 
 @functions {
+    string DisplayProbability(double? probability)
+    {
+        return probability.HasValue && probability > 0
+            ? $"{(int)(probability.Value * 100)} %"
+            : "N/A";
+    }
+}
+
+@functions {
     public List<string> FormattedDate(DateTime[]? Dates)
     {
         var DatesExercicFinanc = new List<string>();
@@ -308,8 +272,7 @@
             return new List<string> { "N/A" };
         }
 
-        foreach (var date in Dates.OrderBy(d => d.Date))
-        {
+        foreach(var date in Dates.OrderBy(d=> d.Date)){
 
             DatesExercicFinanc.Add(date == DateTime.MinValue
                 ? "N/A"

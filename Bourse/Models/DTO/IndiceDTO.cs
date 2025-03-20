@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
-namespace Bourse.Models
+namespace Bourse.Models.DTO
 {
-    public class Indice
+    public class IndiceDTO
     {
         public int Id { get; set; }
 
@@ -59,13 +59,10 @@ namespace Bourse.Models
 
         [DisplayName("État Financier")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime[] DatesExercicesFinancieres { get; set; } = new DateTime[] {new DateTime()};
+        public DateTime[] DatesExercicesFinancieres { get; set; } = new DateTime[] { new DateTime() };
 
         [DisplayName("Tendance")]
-        public bool Label { get { return RegularMarketChangePercent > 0 ? true : false ; } }
-
-        [DisplayName("Predict")]
-        public bool IsIncreasing { get; set; }
+        public bool Label { get { return RegularMarketChangePercent > 0 ? true : false; } }
 
         [DisplayName("Prob.")]
         public float Probability { get; set; }
@@ -73,16 +70,11 @@ namespace Bourse.Models
         [DisplayName("Analysis")]
         public string? Raccomandation { get; set; }
 
-        [DisplayName("Image")]
-        public byte[]? imageAnalysis { get; set; }
-
         [DisplayName("Update")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? DateUpdated { get; set; }
 
-        public DateOnly DatePrevision { get; set; }
-
         public virtual List<StockData>? TrainingData { get; set; }
-       
+
     }
 }

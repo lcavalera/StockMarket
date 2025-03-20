@@ -56,6 +56,41 @@
     </tr>
 </table>
 
+@if (ViewData["TotalPages"] != null)
+{
+    var currentPage = (int)ViewData["CurrentPage"];
+    var totalPages = (int)ViewData["TotalPages"];
+    var pageSize = (int)ViewData["PageSize"];
+    string sortOrder = ViewData["CurrentSort"]?.ToString();
+    string filtre = ViewData["actifFiltre"]?.ToString();
+    string exchangeFiltre = ViewData["ExchangeFiltre"]?.ToString();
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @if (currentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Previous</a>
+                </li>
+            }
+
+            @for (int i = Math.Max(1, currentPage - 4); i <= Math.Min(totalPages, currentPage + 4); i++)
+            {
+                <li class="page-item @(i == currentPage ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">@i</a>
+                </li>
+            }
+
+            @if (currentPage < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -144,7 +179,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.QuoteType)
                 </td>
-                <td>
+                <td class="nobreak-date">
                     @foreach (var date in FormattedDate(item.DatesExercicesFinancieres))
                     {
                         <span>@date</span>
@@ -187,8 +222,10 @@
                     @DisplayProbability(item.Probability)
                 </td>
                 <td>
+                    <a asp-action="Details" asp-route-id="@item.Symbol" asp-route-returnUrl="Index">Details</a>
+
                     @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
-                    @Html.ActionLink("Details", "Details", new { item=item.Symbol })
+                    @* @Html.ActionLink("Details", "Details", new { item=item.Symbol }) *@
                     @* @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
                 </td>
             </tr>
@@ -222,6 +259,11 @@
     align-items: flex-start; /* Aligner les divs en haut */
     padding: 10px;
     }
+
+    .nobreak-date {
+        white-space: nowrap; /* Empêche le retour à la ligne dans une date */
+    }
+
 </style>
 
 @functions {

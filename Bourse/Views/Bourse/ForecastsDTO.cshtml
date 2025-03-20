@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Bourse.Models.Indice>
+﻿@model IEnumerable<Bourse.Models.DTO.IndiceDTO>
 
 @{
     ViewData["Title"] = "Forecasts";
@@ -123,35 +123,18 @@
                 @Html.ActionLink(Html.DisplayNameFor(model => model.Bourse), "Forecasts", new { sortOrder = ViewBag.BourseParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "bourse_asc", "bourse_desc"))
             </th>
-            @*             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Exchange), "Forecasts", new { sortOrder = ViewBag.ExchangeSortParm }, new { @class = "no-underline" })
-                @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "exchange_asc", "exchange_desc"))
-            </th> *@
             <th>
                 @Html.ActionLink(Html.DisplayNameFor(model => model.Label), "Forecasts", new { sortOrder = ViewBag.LabelSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "label_asc", "label_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.IsIncreasing), "Forecasts", new { sortOrder = ViewBag.ActionSortParm }, new { @class = "no-underline" })
-                @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "action_asc", "action_desc"))
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Raccomandation)
-            </th>
-            <th>
-                RSI_14
-            </th>
-            <th>
-                SMA_14
             </th>
             <th style="width:100px">
                 @Html.DisplayNameFor(model => model.DateUpdated)
             </th>
-@*             <th>
-                @Html.DisplayNameFor(model => model.imageAnalysis)
-            </th> *@
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Probability), "Forecasts", new { sortOrder = ViewBag.ProbSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Probability), "ForecastsDTO", new { sortOrder = ViewBag.ProbSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "prob_asc", "prob_desc"))
             </th>
             <th></th>
@@ -190,42 +173,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Bourse)
                 </td>
-                @*                 <td>
-                    @Html.DisplayFor(modelItem => item.Exchange)
-                </td> *@
                 <td class="@(item.Label ? "color-positive" : "color-negative")">
                     @(item.Label ? "UP" : "DOWN")
-                </td>
-                <td class="@(item.IsIncreasing ? "color-positive" : "color-negative")">
-                    @(item.IsIncreasing ? "BUY" : "SELL")
                 </td>
                 <td style="color:@GetRaccomandationColor(item.Raccomandation); font-weight: bold">
                     @Html.DisplayFor(modelItem => item.Raccomandation)
                 </td>
                 <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.LastOrDefault().RSI_14Display
-                        : "0 %")
-                </td>
-                <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.LastOrDefault().SMA_14Display
-                        : "0")
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.DateUpdated)
                 </td>
-@*                 <td>
-                    <img src="@Url.Action("GetImage", "Bourse", new { id = item.Id })" alt="Canvas Image" style="max-width: 100%; height: auto;" />
-                </td> *@
-                <td class="@(item.IsIncreasing ? "color-positive" : "color-negative")">
+                <td class="@(item.Probability > 0.49 ? "color-positive" : "color-negative")">
                     @DisplayProbability(item.Probability)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Symbol" asp-route-returnUrl="Forecasts">Details</a>
+                    <a asp-action="DetailsDTO" asp-route-id="@item.Symbol" asp-route-returnUrl="ForecastsDTO">Details</a>
 
                     @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
-                    @* @Html.ActionLink("Details", "Details", new { item = item.Symbol }) *@
+                    @* @Html.ActionLink("Details", "DetailsDTO", new { item = item.Symbol }) *@
                     @* @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
                 </td>
             </tr>
