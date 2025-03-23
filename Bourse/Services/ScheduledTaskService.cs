@@ -228,9 +228,16 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 // 🔹 Attente d'accès au sémaphore pour éviter trop de tâches concurrentes
                 await _semaphore.WaitAsync(stoppingToken);
 
-                // 🔹 Mettre à jour l'historique de l'indice
-                Console.WriteLine($"Mise à jour de l'historique pour {indice.Name}...");
-                await UpdateHistorique(indice, nomBourse, stoppingToken);
+                // Convertir la date donnée dans le fuseau horaire de la bourse
+                DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+                if (indice.DateUpdated.AddDays(1).DayOfWeek != DayOfWeek.Saturday && indice.DateUpdated.AddDays(1).DayOfWeek != DayOfWeek.Sunday && !fuseHoraire.JoursFeries.Contains(indice.DateUpdated.AddDays(1)))
+                {
+                    // 🔹 Mettre à jour l'historique de l'indice
+                    Console.WriteLine($"Mise à jour de l'historique pour {indice.Name}...");
+                    await UpdateHistorique(indice, nomBourse, stoppingToken);
+
+                }
 
                 // ✅ Une fois terminé, on sort de la boucle
                 break;
@@ -1781,25 +1788,25 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     // Méthode pour déduire une recommandation basée sur RSI
     private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
     {
-        // Calcul inversé
-        return rsi switch
-        {
-            < 30 => "Strong Sell",    // Survendu
-            < 40 => "Sell",
-            > 70 => "Strong Buy",   // Suracheté
-            > 60 => "Buy",
-            _ => "Hold"              // Zone neutre
-        };
-
-        //// Calcul regulier
+        //// Calcul inversé
         //return rsi switch
         //{
-        //    < 30 => "Strong Buy",    // Survendu
-        //    < 40 => "Buy",
-        //    > 70 => "Strong Sell",   // Suracheté
-        //    > 60 => "Sell",
+        //    < 30 => "Strong Sell",    // Survendu
+        //    < 40 => "Sell",
+        //    > 70 => "Strong Buy",   // Suracheté
+        //    > 60 => "Buy",
         //    _ => "Hold"              // Zone neutre
         //};
+
+        // Calcul regulier
+        return rsi switch
+        {
+            < 30 => "Strong Buy",    // Survendu
+            < 40 => "Buy",
+            > 70 => "Strong Sell",   // Suracheté
+            > 60 => "Sell",
+            _ => "Hold"              // Zone neutre
+        };
     }
 
     public static float[] CalculateSMA(float[] closePrices, int period)

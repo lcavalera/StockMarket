@@ -78,7 +78,7 @@ namespace Bourse.Models
 
         [DisplayName("Update")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? DateUpdated { get; set; }
+        public DateTime DateUpdated { get; set; }
 
         public DateOnly DatePrevision { get; set; }
 

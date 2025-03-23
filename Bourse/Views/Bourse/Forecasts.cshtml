@@ -70,21 +70,21 @@
             @if (currentPage > 1)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Previous</a>
+                    <a class="page-link" href="@Url.Action("Forecasts", new { page = currentPage - 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Previous</a>
                 </li>
             }
 
             @for (int i = Math.Max(1, currentPage - 4); i <= Math.Min(totalPages, currentPage + 4); i++)
             {
                 <li class="page-item @(i == currentPage ? "active" : "")">
-                    <a class="page-link" href="@Url.Action("Index", new { page = i, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">@i</a>
+                    <a class="page-link" href="@Url.Action("Forecasts", new { page = i, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">@i</a>
                 </li>
             }
 
             @if (currentPage < totalPages)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Next</a>
+                    <a class="page-link" href="@Url.Action("Forecasts", new { page = currentPage + 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Next</a>
                 </li>
             }
         </ul>

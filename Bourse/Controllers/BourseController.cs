@@ -240,7 +240,6 @@ namespace Bourse.Controllers
                 }
 
             }
-
             _indicesDTO = _indicesDTO
                 .Where(i =>
                     //(i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() > DateTime.Now &&
@@ -249,11 +248,26 @@ namespace Bourse.Controllers
                     //i.QuoteType != "ETF" &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
                     (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
-                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") ||
-                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell"))
+                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.65 && i.Probability != 0) ||
+                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && (i.Probability < 0.35 && i.Probability != 0) ||
+                    (i.Raccomandation == "Hold" && (i.Probability > 0.75 || i.Probability < 0.20) && i.Probability != 0))
                 )
                 .OrderByDescending(i => i.Probability)  // Tri par Probability décroissant
                 .ThenBy(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()); // Tri par la première date croissante
+
+            //_indicesDTO = _indicesDTO
+            //    .Where(i =>
+            //        //(i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() > DateTime.Now &&
+            //        //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() < DateTime.Now.AddDays(90) &&
+            //        //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() != DateTime.MinValue) &&
+            //        //i.QuoteType != "ETF" &&
+            //        i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
+            //        (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
+            //        ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") ||
+            //        (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell"))
+            //    )
+            //    .OrderByDescending(i => i.Probability)  // Tri par Probability décroissant
+            //    .ThenBy(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()); // Tri par la première date croissante
 
             ViewData["DateReset"] = _dateHistorique.ToString("yyyy-MM-dd");
 

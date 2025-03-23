@@ -9,7 +9,7 @@
     <tr>
         <td>
             <div class="bloc">
-                <form asp-action="Index" method="get">
+                <form asp-action="IndexDTO" method="get">
                     <div class="form-actions no-color">
                         <p>
                             Filter by Bourse:
@@ -33,7 +33,7 @@
         </td>
         <td>
             <div class="bloc">
-                <form asp-action="Index" method="get">
+                <form asp-action="IndexDTO" method="get">
                     <div class="form-actions no-color">
                         <p>
                             Search for a stock title: <input type="text" name="filtre" value="@ViewData["actifFiltre"]" />
@@ -48,7 +48,7 @@
                 <div class="form-actions no-color">
                     <p>
                         Historical date: @ViewBag.DateReset
-                        <a asp-action="Index" asp-route-resethistorique="true" class="btn btn-primary">Reset historique</a>
+                        <a asp-action="IndexDTO" asp-route-resethistorique="true" class="btn btn-primary">Reset historique</a>
                     </p>
                 </div>
             </div>
@@ -70,21 +70,21 @@
             @if (currentPage > 1)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Previous</a>
+                    <a class="page-link" href="@Url.Action("IndexDTO", new { page = currentPage - 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Previous</a>
                 </li>
             }
 
             @for (int i = Math.Max(1, currentPage - 4); i <= Math.Min(totalPages, currentPage + 4); i++)
             {
                 <li class="page-item @(i == currentPage ? "active" : "")">
-                    <a class="page-link" href="@Url.Action("Index", new { page = i, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">@i</a>
+                    <a class="page-link" href="@Url.Action("IndexDTO", new { page = i, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">@i</a>
                 </li>
             }
 
             @if (currentPage < totalPages)
             {
                 <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Next</a>
+                    <a class="page-link" href="@Url.Action("IndexDTO", new { page = currentPage + 1, pageSize = pageSize, sortOrder = sortOrder, filtre = filtre, exchangeFiltre = exchangeFiltre })">Next</a>
                 </li>
             }
         </ul>
