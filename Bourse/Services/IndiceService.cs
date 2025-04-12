@@ -24,13 +24,16 @@ namespace Bourse.Services
 
         public async Task<IQueryable<Indice>> ObtenirTout()
         {
-            return _context.Indices.Include(i => i.TrainingData).AsQueryable();
+            return _context.Indices.Include(i => i.TrainingData)
+                .AsSplitQuery()
+                .AsQueryable();
         }
 
         public async Task<IQueryable<IndiceDTO>> ObtenirToutDTO()
         {
             return _context.Indices
                 .Include(i => i.TrainingData)
+                .AsSplitQuery()
                 .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
         }
 
@@ -39,6 +42,7 @@ namespace Bourse.Services
             return _context.Indices
                 .Include(i => i.TrainingData)
                 .Where(i => i.Symbol.ToUpper().Contains(name.ToUpper()) || i.Name.ToLower().Contains(name.ToLower()))
+                .AsSplitQuery()
                 .AsQueryable();
         }
 
@@ -47,12 +51,15 @@ namespace Bourse.Services
             return _context.Indices
                 .Include(i => i.TrainingData)
                 .Where(i => i.Symbol.ToUpper().Contains(name.ToUpper()) || i.Name.ToLower().Contains(name.ToLower()))
+                .AsSplitQuery()
                 .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
         }
 
         public async Task<Indice?> ObtenirSelonSymbol(string symbol)
         {
-            return await _context.Indices.Include(i => i.TrainingData).SingleOrDefaultAsync(i => i.Symbol == symbol);
+            return await _context.Indices
+                .Include(i => i.TrainingData)
+                .SingleOrDefaultAsync(i => i.Symbol == symbol);
         }
 
         public async Task<IndiceDTO?> ObtenirSelonSymbolDTO(string symbol)
@@ -64,7 +71,9 @@ namespace Bourse.Services
 
         public async Task<Indice?> ObtenirSelonId(int id)
         {
-            return await _context.Indices.Include(i => i.TrainingData).SingleOrDefaultAsync(i => i.Id == id);
+            return await _context.Indices
+                .Include(i => i.TrainingData)
+                .SingleOrDefaultAsync(i => i.Id == id);
         }
 
         public async Task<IndiceDTO?> ObtenirSelonIdDTO(int id)

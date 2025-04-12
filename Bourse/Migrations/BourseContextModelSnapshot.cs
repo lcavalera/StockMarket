@@ -29,7 +29,7 @@ namespace Bourse.Migrations
                     b.Property<DateOnly>("DatePrevision")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime?>("DateUpdated")
+                    b.Property<DateTime>("DateUpdated")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DatesExercicesFinancieres")
@@ -61,12 +61,6 @@ namespace Bourse.Migrations
                     b.Property<string>("Raccomandation")
                         .HasColumnType("TEXT");
 
-                    b.Property<double?>("RegularMarketChange")
-                        .HasColumnType("REAL");
-
-                    b.Property<double?>("RegularMarketChangePercent")
-                        .HasColumnType("REAL");
-
                     b.Property<double?>("RegularMarketDayHigh")
                         .HasColumnType("REAL");
 
@@ -89,9 +83,6 @@ namespace Bourse.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<byte[]>("imageAnalysis")
-                        .HasColumnType("BLOB");
-
                     b.HasKey("Id");
 
                     b.ToTable("Indices");
@@ -103,11 +94,26 @@ namespace Bourse.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<float>("AverageVolume")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("BollingerLower")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("BollingerUpper")
+                        .HasColumnType("REAL");
+
                     b.Property<float>("CurrentPrice")
                         .HasColumnType("REAL");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
+
+                    b.Property<float>("EMA_14")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("FuturePrice")
+                        .HasColumnType("REAL");
 
                     b.Property<float>("High")
                         .HasColumnType("REAL");
@@ -116,6 +122,9 @@ namespace Bourse.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<float>("Low")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("MACD")
                         .HasColumnType("REAL");
 
                     b.Property<float>("Open")

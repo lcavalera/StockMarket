@@ -19,7 +19,7 @@ namespace Bourse.Models
 
         [DisplayName("Change")]
         [DisplayFormat(DataFormatString = "{0:F5}", ApplyFormatInEditMode = true)]
-        public double? RegularMarketChange { get; set; }
+        public double? RegularMarketChange => RegularMarketPrice - RegularMarketPreviousClose;
 
         [DisplayName("Open")]
         [DisplayFormat(DataFormatString = "{0:F4}")]
@@ -39,7 +39,7 @@ namespace Bourse.Models
 
         [DisplayName("(%)")]
         [DisplayFormat(DataFormatString = "{0:F3}")]
-        public double? RegularMarketChangePercent { get; set; }
+        public double? RegularMarketChangePercent => RegularMarketPreviousClose == 0 ? 0 : ((RegularMarketPrice - RegularMarketPreviousClose) / RegularMarketPreviousClose) * 100;
 
         [DisplayName("Volume")]
         public long? RegularMarketVolume { get; set; }
@@ -72,9 +72,6 @@ namespace Bourse.Models
 
         [DisplayName("Analysis")]
         public string? Raccomandation { get; set; }
-
-        [DisplayName("Image")]
-        public byte[]? imageAnalysis { get; set; }
 
         [DisplayName("Update")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

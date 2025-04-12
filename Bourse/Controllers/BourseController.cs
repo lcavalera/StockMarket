@@ -10,6 +10,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Bourse.Controllers
 {
+    [Route("/")]
     public class BourseController : Controller
     {
         private readonly ILogger<BourseController> _logger;
@@ -30,7 +31,155 @@ namespace Bourse.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        // GET: TSXController
+        // GET: BourseController
+        [HttpGet("IndexDTOApi")]
+        public async Task<IActionResult> IndexDTOApi(string filtre, string exchangeFiltre, string sortOrder, int page = 1, int pageSize = 50, bool resethistorique = false)
+        {
+            if (resethistorique)
+            {
+                using (StreamWriter sw = new StreamWriter(_cheminFichier))
+                {
+                    sw.WriteLineAsync(DateTime.Now.ToString());
+                }
+
+                //await _service.DeleteHistoriqueRealPrices();
+            }
+
+            ViewBag.Exchanges = new List<dynamic> { new { Key = "NYC", Value = "New York" }, new { Key = "TOR", Value = "Toronto" } };
+
+            ViewBag.CurrentSort = sortOrder;
+
+            ViewBag.SymbolSortParm = String.IsNullOrEmpty(sortOrder) ? "symbol_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "price_desc" ? "price_asc" : "price_desc";
+            ViewBag.ChangeSortParm = sortOrder == "change_asc" ? "change_desc" : "change_asc";
+            ViewBag.DatesExercFinancParm = sortOrder == "exercfinanc_asc" ? "exercfinanc_desc" : "exercfinanc_asc";
+            ViewBag.BourseParm = sortOrder == "bourse_asc" ? "bourse_desc" : "bourse_asc";
+            ViewBag.LabelSortParm = sortOrder == "label_asc" ? "label_desc" : "label_asc";
+            ViewBag.ProbSortParm = sortOrder == "prob_desc" ? "prob_asc" : "prob_desc";
+
+            if (filtre is null)
+            {
+                using (StreamReader sr = new StreamReader(_cheminFichier))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string ligne = await sr.ReadLineAsync();
+                        if (!string.IsNullOrEmpty(ligne))
+                        {
+                            //while (ligne != null)
+                            //{
+                            _dateHistorique = DateTime.Parse(ligne);
+                            //}
+                        }
+                    }
+                }
+
+                _indicesDTO = await _service.ObtenirToutDTO();
+
+            }
+            else
+            {
+                ViewData["actifFiltre"] = filtre;
+                _indicesDTO = await _service.ObtenirSelonNameDTO(filtre);
+            }
+
+            // Stocker le filtre actif
+            ViewData["ExchangeFiltre"] = exchangeFiltre;
+
+            if (!string.IsNullOrEmpty(exchangeFiltre))
+            {
+                if (exchangeFiltre == "TOR")
+                {
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == exchangeFiltre);
+                }
+                else
+                {
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR");
+                }
+
+            }
+
+            ViewData["DateReset"] = _dateHistorique.ToString("yyyy-MM-dd");
+
+            switch (sortOrder)
+            {
+                case "symbol_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Symbol);
+                    break;
+                case "price_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketPrice);
+                    break;
+                case "price_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketPrice);
+                    break;
+                case "change_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketChange);
+                    break;
+                case "change_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketChange);
+                    break;
+                case "exercfinanc_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault());
+                    break;
+                case "exercfinanc_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault());
+                    break;
+                case "exchange_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Exchange);
+                    break;
+                case "exchange_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Exchange);
+                    break;
+                case "label_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Label);
+                    break;
+                case "label_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Label);
+                    break;
+                case "prob_asc":
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Probability);
+                    break;
+                case "prob_desc":
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Probability);
+                    break;
+                default:
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Symbol);  // Par défaut, tri croissant sur le prix
+                    break;
+            }
+
+            // Pagination
+            var paginatedList = await PaginatedList<IndiceDTO>.CreateAsync(_indicesDTO, page, pageSize);
+
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = paginatedList.TotalPages;
+            ViewData["PageSize"] = pageSize;
+
+            return Ok(new
+            {
+                items = paginatedList, // les données paginées
+                currentPage = paginatedList.PageIndex,
+                totalPages = paginatedList.TotalPages,
+                pageSize = pageSize
+            });
+        }
+
+        // GET: TSXController/DetailsDTO/5
+        [HttpGet("DetailsDTOApi/{item}")]
+        public async Task<IActionResult> DetailsDTOApi(string item, string returnUrl, bool resethistorique = false)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+
+            IndiceDTO indiceDTO = await _service.ObtenirSelonSymbolDTO(item);
+            if (indiceDTO == null)
+            {
+                _logger.LogError($"Une erreur c'est produite lors de la récupération d'une indice. Symbol = {item}");
+                return NotFound();
+
+            }
+            return Ok(indiceDTO);
+        }
+        // GET: BourseController
+        [HttpGet("IndexDTO")]
         public async Task<IActionResult> IndexDTO(string filtre, string exchangeFiltre, string sortOrder, int page = 1, int pageSize = 50, bool resethistorique = false)
         {
             if (resethistorique)
@@ -240,6 +389,16 @@ namespace Bourse.Controllers
                 }
 
             }
+
+            //// Définir l'ordre des recommandations
+            //var recommendationOrder = new Dictionary<string, int>
+            //{
+            //    { "Strong Buy", 1 },
+            //    { "Buy", 2 },
+            //    { "Strong Sell", 3 },
+            //    { "Sell", 4 }
+            //};
+
             _indicesDTO = _indicesDTO
                 .Where(i =>
                     //(i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() > DateTime.Now &&
@@ -248,12 +407,27 @@ namespace Bourse.Controllers
                     //i.QuoteType != "ETF" &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
                     (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
-                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.65 && i.Probability != 0) ||
-                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && (i.Probability < 0.35 && i.Probability != 0) ||
-                    (i.Raccomandation == "Hold" && (i.Probability > 0.75 || i.Probability < 0.20) && i.Probability != 0))
+                    //(i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy" ||
+                    //i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell" ||
+                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.45 && i.Probability != 0) ||
+                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && (i.Probability < 0.55 && i.Probability != 0) 
+                    //|| (i.Raccomandation == "Hold" && (i.Probability > 0.75 || i.Probability < 0.20) && i.Probability != 0)
+                    )
                 )
-                .OrderByDescending(i => i.Probability)  // Tri par Probability décroissant
-                .ThenBy(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()); // Tri par la première date croissante
+                .Select(i => new
+                {
+                    Indice = i,
+                    RecommendationOrder = i.Raccomandation == "Strong Buy" ? 1 :
+                         i.Raccomandation == "Buy" ? 2 :
+                         i.Raccomandation == "Strong Sell" ? 3 :
+                         i.Raccomandation == "Sell" ? 4 :
+                         5,
+                    FirstDate = i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()
+                })
+                .OrderBy(i => i.RecommendationOrder) // Trier par recommandation
+                .ThenByDescending(i => i.Indice.Probability)
+                .ThenBy(i => i.FirstDate)
+                .Select(i => i.Indice);
 
             //_indicesDTO = _indicesDTO
             //    .Where(i =>
@@ -544,6 +718,15 @@ namespace Bourse.Controllers
 
             }
 
+            //// Définir l'ordre des recommandations
+            //var recommendationOrder = new Dictionary<string, int>
+            //{
+            //    { "Strong Buy", 1 },
+            //    { "Buy", 2 },
+            //    { "Strong Sell", 3 },
+            //    { "Sell", 4 }
+            //};
+
             _indices = _indices
                 .Where(i =>
                     //(i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() > DateTime.Now &&
@@ -552,12 +735,27 @@ namespace Bourse.Controllers
                     //i.QuoteType != "ETF" &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
                     (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
-                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.65 && i.Probability != 0) ||
-                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && (i.Probability < 0.35 && i.Probability != 0) ||
-                    (i.Raccomandation == "Hold" && (i.Probability > 0.75 || i.Probability < 0.20) && i.Probability != 0))
+                    //(i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy" ||
+                    //i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell" ||
+                    ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.45 && i.Probability != 0) ||
+                    (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && (i.Probability < 0.55 && i.Probability != 0)
+                    //|| (i.Raccomandation == "Hold" && (i.Probability > 0.75 || i.Probability < 0.20) && i.Probability != 0)
+                    )
                 )
-                .OrderByDescending(i => i.Probability)  // Tri par Probability décroissant
-                .ThenBy(i => i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()); // Tri par la première date croissante
+                .Select(i => new
+                {
+                    Indice = i,
+                    RecommendationOrder = i.Raccomandation == "Strong Buy" ? 1 :
+                         i.Raccomandation == "Buy" ? 2 :
+                         i.Raccomandation == "Strong Sell" ? 3 :
+                         i.Raccomandation == "Sell" ? 4 :
+                         5,
+                    FirstDate = i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault()
+                })
+                .OrderBy(i => i.RecommendationOrder) // Trier par recommandation
+                .ThenByDescending(i => i.Indice.Probability)
+                .ThenBy(i => i.FirstDate)
+                .Select(i => i.Indice);
 
             ViewData["DateReset"] = _dateHistorique.ToString("yyyy-MM-dd");
 

@@ -13,5 +13,8 @@ namespace Bourse.Models
 
         // Champ supplémentaire pour la marge (score brut de la prédiction)
         public float Score { get; set; }
+
+        //[ColumnName("Score")] // La valeur prédite
+        //public float PredictedPrice { get; set; }
     }
 }

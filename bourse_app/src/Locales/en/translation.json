@@ -1,0 +1,496 @@
+{
+    "header": {
+        "title": "WAHTA’ MUSEUM-CLASSROOM PORTAL",
+        "home": "Home",
+        "list": "List",
+        "forecasts" : "Forecasts",
+        "about": "About",
+        "resources": "Resources",
+        "contact": "Contact",
+        "zoneWahta": "Zone Wahta’",
+        "buttons": {
+            "login": "Login",
+            "register": "Sign up",
+            "schoolPage": "Back to school"
+        }
+    },
+    "footer": {
+        "title" : "Produced by PRX",
+        "bloc1": {
+            "title": "Policy",
+            "link1": "Privacy Policy",
+            "link2": "Rights and use"
+        },
+        "bloc2": {
+            "title": "Documentation",
+            "link1": "Use",
+            "link2": "FAQ"
+        },
+        "bloc3": {
+            "title": "Contact us",
+            "link1": "Contact form",
+            "link2": "Phone: 418 842-3740"
+        }
+    },
+    "home": {
+        "welcome": "Welcome to the StockRank portal",
+        "description": "StockRank is a stock market analysis website that provides daily forecasts and financial statement release dates for companies.",
+        "buttonInscription": "Sign up",
+        "subtitle": "Sign up to get access to forecasts and other features."
+    },
+    "loginform": {
+        "title": "Login",
+        "label":{
+            "email": "E-mail",
+            "password": "Password"
+        },
+        "input": {
+            "email": "Enter your email",
+            "password": "Enter your password"
+        },
+        "button": "Login",
+        "link": "Forgot your password?"
+    },
+    "list":{
+        "title" : "List of stock titles",
+        "filter" : "All Exchanges",
+        "search" : "Filter by name",
+        "page" : "page",
+        "on" : "on",
+        "button-previous" : "Previous",
+        "button-next" : "Next",
+        "table" : {
+            "symbol" : "Symbol",
+            "name" : "Name",
+            "close" : "Close",
+            "price" : "Price",
+            "change" : "Change",
+            "type" : "Type",
+            "dates" : "Financ. Dates",
+            "exchange" : "Exchange",
+            "label" : "Trend",
+            "recommendation" : "Analysis",
+            "updated" : "Updated",
+            "probability" : "Probability"
+        },
+        "resultat" : "No results"
+    },
+    "details" :{
+        "loading" : "Loading...",
+        "back" : "Back to",
+        "history" : "Price history",
+        "table" : {
+            "price" : "Price",
+            "change" : "Change",
+            "open" : "Open",
+            "%change" : "% Change",
+            "prevClose" : "Prev. Close",
+            "high" : "High",
+            "low" : "Low",
+            "volume" : "Volume",          
+            "type" : "Type",
+            "stockmarket" : "Stock Market",
+            "exchange" : "Exchange",
+            "date" : "Date"
+        }
+    },
+    "about": {
+        "bloc1": {
+            "title": "The story",
+            "description": "The Wahta’ school is an elementary school in the Huron-Wendat community. It welcomes all students from its community and those residing in Wendake, from kindergarten 4 years old to 6th grade. It stands out for its culture and the fact that it is a school of choice committed to its community, listening to the needs and ensuring the success of each one. The Classe-Musée portal was born from an educational project carried out to create augmented reality projects with students. By experimenting with augmented reality, it quickly became clear that this tool has the potential to inform on any subject. You can use it in tourism, culture, education and at the commercial level to carry out stimulating projects using augmented reality."
+        },
+        "bloc2": {
+            "title": "Start",
+            "description": "Start according to your needs and ambitions with our packages that grow with you, or ask for a quote for solutions adapted to your environment, whether at school, at the museum or even in business."
+        },
+        "bloc3": {
+            "title": "For whom",
+            "description": "PORTAIL CLASSE-MUSÉE respects both the independent user and the one who wants a turnkey solution. In fact, we want to democratize access to augmented reality as well as other services of the same nature such as 360-3D virtual tours, games for learning while having fun, animated video, etc."
+        },
+        "bloc4": {
+            "title": "",
+            "description": "ACT 25: The person responsible for the protection of personal information is Mr. XXXX, whom you can contact at info@edu.wendake.ca at any time. Wahta’ School will take rapid measures in the event of a data leak to minimize the risks and inform the Commission d’accès à l’information du Québec and the persons concerned. An incident register will also be kept and available upon request."
+        }
+    },
+    "resources": {
+        "title": "Augmented reality",
+        "subtitle": "Mobile application and programming",
+        "description": "Do you have a project? We have the solution!",
+        "bloc1": {
+            "title": "Mobile application",
+            "description": "The Wahta' mobile application allows you to access your project and view the visitor-customer-user experiences created and programmed in augmented reality"
+        },
+        "bloc2": {
+            "title": "Our programming platform",
+            "description": "The platform will allow you to easily program multiple AR projects that will be available for free and automatically in private or public mode. In places with difficult Wi-Fi access, you will be able to view your project on your digital device after downloading it, even on top of a mountain!"
+        }
+    },
+    "contact": {
+        "title": "Contact us",
+        "telephone": "Phone : 418 842-3740",
+        "fax": "Fax : 418 842-2084",
+        "service": "Daycare service: 418 842-3740 ext. 3104",
+        "transport": "School transportation: 418 845-0845",
+        "form": "Contact form",
+        "language":"EN"
+    },
+    "conf": {
+        "title": "Privacy Policy",
+        "description1": "This privacy policy applies to the site ",
+        "description2": "and the WAHTA application, both of which are owned by Jean-Philippe Payer. Its purpose is to inform users about the personal data collected and how it is used. It also details the commitment and measures taken to ensure the security of the latter.",
+        "subtitle1": "Developer",
+        "paragraph1-1": "Gabriel Chalifour is the developer of the site ",
+        "paragraph1-2": " as well as the WAHTA application.",
+        "paragraph1-3": "You can contact him at ",
+        "subtitle2": "Usefulness of the application and website",
+        "paragraph2": "The website is used to create augmented reality projects and experiences in education, culture, tourism, and commerce that will be used by users in various environments using the WAHTA application. Jean-Philippe Payer owns all rights to the mobile application and the web platform. WAHTA or Jean-Philippe Payer are not responsible for the augmented realities created and used by users of the programming packages. Any content programmed by users that is illicit, sexist, homophobic, sexual, or physically or verbally violent is not the responsibility of Jean-Philippe Payer or WAHTA. Consequently, Jean-Philippe Payer or WAHTA cannot be held responsible for the programming of the content and cannot be sued by anyone.",
+        "subtitle3-1": "Types of data collected",
+        "subtitle3-2": "Website",
+        "paragraph3-1": "When you visit ",
+        "paragraph3-2": ", we automatically collect information about your device and your interaction with our site through the Google Analytics tool. This includes the following data: ",
+        "itemList1":"IP address",
+        "itemList2":"Place",
+        "itemList3":"Hardware and software details",
+        "itemList4":"Links that the user clicks on",
+        "paragraph3-3": "Other data is collected non-automatically during one of the following actions:",
+        "itemList5":"Contact form",
+        "itemList6":"Account creation",
+        "itemList7":"Account modification",
+        "itemList8":"Adding and Editing Users to an Account",
+        "paragraph3-4": "This includes the following data : ",
+        "itemList9":"Last Name",
+        "itemList10":"First name",
+        "itemList11":"Email address",
+        "itemList12":"Phone number",
+        "itemList13":"Password to log in to our website",
+        "subtitle4": "Application",
+        "paragraph4": "The WAHTA application requires access to the camera and storage of the device on which it is installed but does not collect or process any personal information of the user. The application loads and processes on the user's device only the projects created by him or other users on the web platform.",
+        "subtitle5": "Use of data",
+        "paragraph5-1": "The data we collect on our website is for the purpose of offering you a portal for creating and modifying educational projects. Projects that will subsequently be available on the WAHTA application.",
+        "paragraph5-2": "Projects created on this platform are composed of a sequential project number, a name and various elements such as: images, sounds, videos, pdfs, 3d models or internet links. This data is saved on our platform as well as on Amazon's AWS service.",
+        "paragraph5-3": "The WAHTA application simply retrieves this data to copy it to the user's device in order to display it in their real environment through the camera or, in the case of pdf or web links, through the device's browser or viewer.",
+        "paragraph5-4": "In addition, the data collected through Google Analytics is for the purpose of generating statistics to improve the user experience on the site. ",
+        "subtitle6-1": "What is a cookie and how are cookies used? ",
+        "subtitle6-2": "on the Wahta Class-Museum website? ",
+        "paragraph6-1": "Cookies are files created by your web browser to remember your preferences and actions on the websites you visit. They do not contain personal information but allow us to store data such as the items in your shopping cart or your login settings. Cookies collect information to improve visitors' online experience by helping us understand how they use our websites, including the number of visits, the origins of visitors and the devices or browsers used. This data helps ensure optimal access to the sites on users' preferred devices. The information collected by cookies helps us gather information about visitors' preferences and how they interact with our content. With this data, we can offer relevant information from the start of their visit to the site. Although the information collected via cookies does not allow you to be personally identified, with your permission, we can identify you if you log in to one of our websites or applications. The 'cookies' used by the site are as follows: ",
+        "itemList14": "Functional cookies",
+        "paragraph6-2": "These cookies are necessary for the website to function properly and cannot be disabled. They include basic preferences such as language and session, and are essential for evaluating the site's performance. Their authorization is required to use the site, although you can block them in your browser. These cookies do not store any personal information.",
+        "itemList15": "Analytical cookies",
+        "paragraph6-3": "These cookies collect data about your interaction with our services to measure things like length of visit, part of the site visited and traffic sources. This information helps us improve performance and content by creating better features for a better online experience. The data collected is anonymous, aggregated and not used for advertising or profiling purposes. We may use cookies to know your preferences and track your activities on the website ",
+        "subtitle7": "Sharing information with a third party",
+        "paragraph7-1": "At no time do we sell or rent your personal information to third parties as required by law.",
+        "paragraph7-2": "However, we reserve the right to communicate your personal information in cases required by law, in the context of legal acts, in response to the request of authorities responsible for the application of the Law.",
+        "subtitle8": "International reach",
+        "paragraph8-1": "User data from the Classe-Musée Wahta website can be viewed, processed and collected from anywhere in the world. However, it is only available in the following languages:",
+        "itemList16": "French",
+        "itemList17": "English",
+        "paragraph8-2": "The WAHTA application is only accessible from the following countries: South Africa, Germany, Australia, Belgium, Brazil, Canada, Finland, France, Haiti, Morocco, Mexico, Norway, New Zealand, Poland, Portugal, Peru, Switzerland, Turkey, Egypt, United States in the languages:",
+        "itemList18": "French",
+        "itemList19": "English",
+        "itemList20": "Spanish",
+        "itemList21": "Arab",
+        "subtitle9": "Retention of personal data",
+        "paragraph9-1": "We only retain your personal information for as long as it is reasonably necessary for the purposes set out in this policy or as required by law. You can contact us at ",
+        "paragraph9-2": " if you wish to make changes or delete the data associated with you.",
+        "subtitle10": "Incident management",
+        "paragraph10": "In the event of a leak of your personal data, we undertake to keep you informed as well as the Commission d’accès à l’Information du Québec.",
+        "subtitle11": "User Rights and Data Protection Officer",
+        "paragraph11-1": "If you are a resident of Quebec, in accordance with Law 25, you benefit from specific rights concerning your personal data: ",
+        "itemList22": "Droit d’être informé",
+        "itemList23": "Droit d’accès",
+        "itemList24": "Droit à la rectification",
+        "itemList25": "Droit à la portabilité des données",
+        "paragraph11-2": "Vous avez le droit de vous opposer à l’utilisation de vos données et de les retirer.",
+        "paragraph11-3": "Pour exercer ces droits, contactez notre responsable de la protection des données personnelles : ",
+        "itemList26": "Gabriel Chalifour",
+        "itemList27": "IT Manager",
+        "itemList28": "(+1)418 655 7010",
+        "subtitle12": "Right of access and rectification",
+        "paragraph12": "You can consult, modify or delete your data by contacting the personal data protection officer at the contact details above.",
+        "subtitle13": "Consent and Withdrawal",
+        "paragraph13": "You can visit our site without revealing your identity. However, some features require the collection of personal data. You always have the choice not to provide this information. You do not need to reveal your identity when browsing the WAHTA Application.",
+        "subtitle14": "Minors",
+        "paragraph14": "Law 25 specifies that persons under the age of 14 are considered minors for the purposes of data collection. Their personal information may not be collected from them without the consent of the holder of parental authority or guardian, except when this collection will clearly be for the benefit of this minor.",
+        "itemList29": "Parental supervision is strongly recommended when the application is used by children or minors.",
+        "subtitle15": "External links",
+        "paragraph15": "The Wahta Class-Museum website and the WAHTA application may contain links to other sites. We are not responsible for their privacy practices and policies.",
+        "subtitle16": "Last updated: Monday, September 23, 2024",
+        "paragraph16-1": "If you have any questions regarding this privacy policy, you can contact us ",
+        "paragraph16-2": "By using our WAHTA application, you agree to the terms of this privacy policy.",
+        "link": "Download the full document here"
+    },
+    "droits": {
+        "title": "Rights and Use",
+        "description": "You acknowledge that you use the information and data, including scores, reports, data and statistics, provided through this website at your sole and exclusive risk. Under no circumstances will Wahta’ or the Wahta’ Released Parties involved in creating, producing or delivering this website or the content contained herein be liable for any loss, injury, claim, liability or damage of any kind resulting in any way from: (a) any content or material downloaded from this website; (b) any links provided on this website; (c) any errors or omissions in the data found on this website; (d) the unavailability or delay of such data; or (e) your use of the data found on this website or any conclusions you draw therefrom, whether or not you have received any assistance from Wahta’ or its employees with respect to such data. You hereby agree to release and hold harmless Wahta’ and its parties released for all matters described in this section.",
+        "link": "Download the full document here"
+    },
+    "use": {
+        "title": "User Manual",
+        "description": "Visit the FAQ page if you need help!",
+        "link": "Download the PDF document here"
+    },
+    "faq": {
+        "title": "How can we help you?",
+        "searchform": {
+            "title": "Ask your question or enter keywords",
+            "input": "Enter your question here...",
+            "button": "Search"
+        },
+        "datatable": {
+            "col1": {
+                "title": "Select a topic"
+            },
+            "col2": {
+                "title": "FAQ >",
+                "noresult": "No results"
+            },
+            "items": {
+                "1": {
+                    "name": "Frequently Asked Questions",
+                    "details": {
+                        "1": "How to use the Wahta’ museum-classroom portal ?",
+                        "2": "Title of question 2",
+                        "3": "Title of question 3",
+                        "4": "Title of question 4"
+                    }
+                },
+                "2": {
+                    "name": "Subject 2",
+                    "details": {
+                        "1": "Title of question 1",
+                        "2": "Title of question 2",
+                        "3": "Title of question 3",
+                        "4": "Title of question 4"
+                    }
+                },
+                "3": {
+                    "name": "Subject 3",
+                    "details": {
+                        "1": "Title of question 1",
+                        "2": "Title of question 2",
+                        "3": "Title of question 3",
+                        "4": "Title of question 4"
+                    }
+                },
+                "4": {
+                    "name": "Subject 4",
+                    "details": {
+                        "1": "Title of question 1",
+                        "2": "Title of question 2",
+                        "3": "Title of question 3",
+                        "4": "Title of question 4"
+                    }
+                }
+            }
+        }
+    },
+    "register": {
+        "title": "Register your school",
+        "firstname": "First name",
+        "input-firstname": "Enter your first name",
+        "error-firstname": "First name is required",
+        "lastname": "Last name",
+        "input-lastname": "Enter your name",
+        "error-lastname": "Last name is required",
+        "phone": "Phone",
+        "input-phone": "Enter the phone",
+        "error-phone": "Phone is required",
+        "extensionNumber": "Ext.Number",
+        "input-extensionNumber": "Ext.Number",
+        "error-extensionNumber": "The extension number must be positive",
+        "schoolName": "Name of the school",
+        "input-schoolName": "Enter the name of the school",
+        "error-schoolName": "School name is required",
+        "role": "Role",
+        "input-role": {
+            "option1": "Select the role",
+            "option2": "Administrator",
+            "option3": "Director",
+            "option4": "Public",
+            "option5": "Other"
+        },
+        "error-role": "The role is required",
+        "nrStudents": "Number of students",
+        "input-nrStudents": "Enter the number of students",
+        "error-nrStudents1": "The number of students must be positive",
+        "error-nrStudents2": "The number of students is required",
+        "address": "Address",  
+        "input-address": "Enter the address",
+        "error-address": "Address is required",
+        "city": "City",  
+        "input-city": "Enter the city",
+        "error-city": "The city is required",
+        "zipCode": "Postal code",  
+        "input-zipCode": "Enter the postal code",
+        "error-zipCode": "Postal code is required",
+        "email": "E-mail",  
+        "input-email": "Enter email",
+        "error-email1": "Invalid email address",
+        "error-email2": "Email is required",
+        "password": "Password",  
+        "input-password": "Enter password",
+        "error-password1": "Password must contain at least 6 characters",
+        "error-password2": "Password is required",
+        "confirmPassword": "Confirm password",  
+        "input-confirmPassword": "Enter password confirmation",
+        "error-confirmPassword1": "Passwords must match",
+        "error-confirmPassword2": "Confirm password is required",
+        "button": "Register",
+        "link": "Already registered ?",
+        "checkbox1": "Memorizing my choices",
+        "checkbox2": "By registering, you agree to our ",
+        "checkbox3": "terms of use",
+        "error-checkbox3": "Confirm the terms of use"
+    },
+    "messWaiting": {
+        "title": "Your membership application is being processed",
+        "description1": "You will receive an email regarding the outcome of your registration request.",
+        "description2": "We thank you for your trust."
+    },
+    "account_index": {
+        "title": "List of files",
+        "fileExplorer": {
+            "placeholder": "All categories",
+            "input": "Filter by name"
+        },
+        "table": {
+            "column1": "Category",
+            "column2": "Name",
+            "column3": "Size",
+            "column4": "Date modified",
+            "column5": "Image"
+        },
+        "category": {
+            "documents PDF": "Documents PDF",
+            "images": "Images",
+            "audios": "Audios",
+            "videos": "Videos"
+        },
+        "button":"Upload",
+        "titleWahta": "Welcome to the Wahta' Zone'"
+    },
+    "account_upload": {
+        "title": "Uploading files",
+        "uploadPage": {
+            "label": "Categories :",
+            "placeholder": "Select category"
+        },
+        "titleImage": "Select a file",
+        "imgUpload": "Upload",
+        "button": "Upload",
+        "error": {
+            "select_category": "Select category",
+            "select_file": "Select a file",
+            "unknown": "Unknown error"
+        },
+        "fileList": "List of files"
+    },
+    "profil": {
+        "title":"Your Profile",
+        "button1": "Save",
+        "button2": "Cancel",
+        "button3": "Edit",
+        "button4": "Change password"
+    },
+    "admin": {
+        "title": "Administrative Zone",
+        "subtitle": "Registrations",
+        "placeholder": "All registrations",
+        "inscriptions": {
+            "pending": "Pending",
+            "approved": "Approved"
+        }
+    },
+    "admin_index": {
+        "title": "List of files",
+        "fileExplorer": {
+            "placeholder": "All categories",
+            "input": "Filter by name"
+        },
+        "table": {
+            "column1": "Status",
+            "column2": "Name",
+            "column3": "Approval date",
+            "column4": "Date of receipt",
+            "column5": "Details"
+        },
+        "category": {
+            "documents PDF": "Documents PDF",
+            "images": "Images",
+            "audios": "Audios",
+            "videos": "Videos"
+        },
+        "button":"Upload",
+        "titleWahta": "Welcome to the Wahta' Zone"
+    },
+    "fileDetail": {
+        "title": "Title",
+        "artist": "Artist",
+        "rights": "Copyright",
+        "dateProd": "Production date",
+        "media": "Media",
+        "size": "Size",
+        "collection": "Collection",
+        "nrInventory": "Inventory number",
+        "category": "Category",
+        "culture": "Culture",
+        "subject": "Subject",
+        "prodLocation": "Production location",
+        "nrElement": "Number of elements",
+        "updateDate": "Last updated",
+        "button": "Back to list",
+        "button2": "Approve",
+        "button3": "Deny"
+    },
+    "fileDetailInscription": {
+        "status": "Status",
+        "dateReceived": "Receipt date",
+        "dateApproval": "Approval date",
+        "firstname": "First name",
+        "lastname": "Last name",
+        "phone": "Phone",
+        "extensionNumber": "Ext.Number",
+        "schoolName": "School name",
+        "role": "Role",
+        "nrStudents": "Number of students",
+        "address": "Address",
+        "city": "City",
+        "zipCode": "Postal code",
+        "email": "E-mail"
+    },
+    "users": {
+        "title": "List of users",
+        "fileExplorer": {
+            "placeholder": "All roles",
+            "input": "Filter by name"
+        },
+        "table": {
+            "column1": "Last Name",
+            "column2": "First Name",
+            "column3": "Role",
+            "column4": "Email",
+            "column5": "School Name"
+        },
+        "category": {
+            "Admin": "Administrator",
+            "Manager": "Director",
+            "Public": "Public",
+            "Other": "Other"
+        },
+        "button": "Back to the list of registrations",
+        "fileDetailUsers": {
+            "lastName": "Last name",
+            "firstName": "First name",
+            "email": "E-mail",
+            "role": "Role",
+            "phone": "Phone",
+            "extensionNumber": "Ext.Number",
+            "schoolName": "School name",
+            "nrStudents": "Number of students",
+            "address": "Address",
+            "city": "City",
+            "zipCode": "Postal code"
+        }
+    }
+}
+  

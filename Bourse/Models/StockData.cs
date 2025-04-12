@@ -36,5 +36,11 @@ namespace Bourse.Models
         public string RSI_14Display => RSI_14 != 0
             ? Math.Round(RSI_14) + " %"
             : "0 %";
+        public float FuturePrice { get; set; }
+        public float EMA_14 { get; set; }
+        public float BollingerUpper { get; set; }
+        public float BollingerLower { get; set; }
+        public float MACD { get; set; }
+        public float AverageVolume { get; set; }
     }
 }

@@ -1,0 +1,104 @@
+/* Home Content Styles */
+.title {
+    width: 100%;
+    padding: 0px;
+    height: 100px;
+}
+
+.column-home {
+    display: flex;
+}
+
+.column-home-left {
+    flex: 1;
+    padding: 0 40px;
+    background: none;
+    vertical-align: middle;
+}
+
+.column-home-left h2 {
+    font-size: 30px;
+    color: rgb(90, 214, 208);
+}
+
+.title h2 {
+    white-space: nowrap;
+    font-size: 36px;
+    color: rgb(172, 187, 39);
+}
+
+#subtitle{
+    color: white;
+}
+.column-home-right {
+    flex: 1;
+    padding: 0 40px;
+    border-radius: 8px;
+    background: none;
+    /* Optional different color for the right column */
+    vertical-align: top;
+}
+
+.container-form {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
+
+.container-form h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    background: lightseagreen;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 4px darkslategray;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: justify;
+    vertical-align: top;
+}
+
+.form-group {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.form-group input {
+    display: inline-flex;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: rgb(43, 126, 126);
+}
+
+.form-group input::placeholder {
+    color: lightseagreen;
+}
+
+#button-main {
+    width: 240px;
+    height: 60px;
+    margin: auto;
+    font-size: 24px;
+}
+
+#button-login {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin: auto;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}

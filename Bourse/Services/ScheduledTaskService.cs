@@ -8,7 +8,9 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.ML;
 using System.Data;
+using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 
 public class ScheduledTaskService : BackgroundService, IScheduledTaskService
@@ -127,21 +129,21 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     {
                         // 🔹 Étape 2 : Attendre la fin de la journée si on est dans un jour boursiere
 
-                        // Vérifier si c'est un jour ouvré (lundi à vendredi) et non un jour férié
-                        if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday)
-                        {
-                            // 🔹 Vérifier si nous sommes toujours le même jour avant d'attendre la fin de journée
-                            if ((dateDansLeFuseau.Hour > 16 && dateDansLeFuseau.Hour < 23) 
-                                || (dateDansLeFuseau.Hour == 23 && dateDansLeFuseau.Minute < 59))
-                            {
-                                Console.WriteLine($"Attente de la fin de la journée pour {nomBourse}...");
-                                await WaitForEndOfDay(stoppingToken, fuseHoraire);
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Minuit dépassé. Passer directement à la prochaine mise à jour des earnings...");
-                            }
-                        }
+                        //// Vérifier si c'est un jour ouvré (lundi à vendredi) et non un jour férié
+                        //if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday)
+                        //{
+                        //    // 🔹 Vérifier si nous sommes toujours le même jour avant d'attendre la fin de journée
+                        //    if ((dateDansLeFuseau.Hour > 16 && dateDansLeFuseau.Hour < 23) 
+                        //        || (dateDansLeFuseau.Hour == 23 && dateDansLeFuseau.Minute < 59))
+                        //    {
+                        //        Console.WriteLine($"Attente de la fin de la journée pour {nomBourse}...");
+                        //        await WaitForEndOfDay(stoppingToken, fuseHoraire);
+                        //    }
+                        //    else
+                        //    {
+                        //        Console.WriteLine($"Minuit dépassé. Passer directement à la prochaine mise à jour des earnings...");
+                        //    }
+                        //}
 
                         // 🔹 Étape 3 : Sauvegarde de l'historique manquant
                         Console.WriteLine($"Sauvegarde des données historiques pour {nomBourse}...");
@@ -150,13 +152,16 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         // 🔹 Étape 4 : Bourse fermée, on gère les indices
                         Console.WriteLine($"Bourse {nomBourse} fermée. Lancement de la gestion des indices...");
 
-                        await Parallel.ForEachAsync(indices, stoppingToken, async (indice, token) =>
+                        if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday)
                         {
-                            if (indice.DateUpdated == null || indice.DateUpdated < dateDansLeFuseau)
+                            await Parallel.ForEachAsync(indices, stoppingToken, async (indice, token) =>
                             {
-                                await GérerIndice(indice, nomBourse, fuseHoraire, token);
-                            }
-                        });
+                                if (indice.DateUpdated == null || indice.DateUpdated < dateDansLeFuseau)
+                                {
+                                    await GérerIndice(indice, nomBourse, fuseHoraire, token);
+                                }
+                            });
+                        }
 
                         //var tasks = indices
                         //    .Where(indice => indice.DateUpdated == null || indice.DateUpdated < dateDansLeFuseau) // Filtrer les indices
@@ -219,7 +224,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 Console.WriteLine($"Marché ouvert pour {indice.Name}. Attente de la fermeture...");
 
                 // On attend la fermeture avant de recommencer le cycle
-                await WaitForEndOfDay(stoppingToken, fuseHoraire);
+                await WaitUntilMarketCloses(stoppingToken, fuseHoraire);
                 continue;
             }
 
@@ -231,14 +236,15 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 // Convertir la date donnée dans le fuseau horaire de la bourse
                 DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
-                if (indice.DateUpdated.AddDays(1).DayOfWeek != DayOfWeek.Saturday && indice.DateUpdated.AddDays(1).DayOfWeek != DayOfWeek.Sunday && !fuseHoraire.JoursFeries.Contains(indice.DateUpdated.AddDays(1)))
+                if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday && !fuseHoraire.JoursFeries.Contains(dateDansLeFuseau))
                 {
                     // 🔹 Mettre à jour l'historique de l'indice
                     Console.WriteLine($"Mise à jour de l'historique pour {indice.Name}...");
+
                     await UpdateHistorique(indice, nomBourse, stoppingToken);
 
+                    await UpdatePrediction(indice, nomBourse, stoppingToken);
                 }
-
                 // ✅ Une fois terminé, on sort de la boucle
                 break;
             }
@@ -300,6 +306,54 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //}
 
     #region utilities
+
+    private async Task WaitUntilMarketCloses(CancellationToken stoppingToken, FuseHoraire fuseHoraire)
+    {
+        // Heure actuelle dans le fuseau horaire de la bourse
+        DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+        // Heure de fermeture du marché aujourd'hui
+        DateTime marketCloseTime = now.Date.Add(fuseHoraire.Fermeture);
+
+        // Si on est déjà après la fermeture ou un jour non ouvré, trouver la prochaine fermeture valable
+        while (now > marketCloseTime ||
+               marketCloseTime.DayOfWeek == DayOfWeek.Saturday ||
+               marketCloseTime.DayOfWeek == DayOfWeek.Sunday ||
+               fuseHoraire.JoursFeries.Any(j => j.Date == marketCloseTime.Date))
+        {
+            // Avancer au prochain jour
+            marketCloseTime = marketCloseTime.AddDays(1);
+
+            // Sauter le week-end
+            if (marketCloseTime.DayOfWeek == DayOfWeek.Saturday)
+                marketCloseTime = marketCloseTime.AddDays(2);
+            else if (marketCloseTime.DayOfWeek == DayOfWeek.Sunday)
+                marketCloseTime = marketCloseTime.AddDays(1);
+        }
+
+        // Recalculer "now" après les ajustements
+        now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+        // Temps restant avant la fermeture
+        TimeSpan timeUntilClose = marketCloseTime - now;
+
+        if (timeUntilClose.TotalSeconds > 0)
+        {
+            try
+            {
+                Console.WriteLine($"Attente jusqu'à la fermeture du marché à {marketCloseTime} ({fuseHoraire.TimeZoneInfo.Id})...");
+                await Task.Delay(timeUntilClose, stoppingToken);
+            }
+            catch (TaskCanceledException)
+            {
+                Console.WriteLine("Attente de la fermeture annulée.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Le marché est déjà fermé.");
+        }
+    }
 
     private async Task WaitUntilMarketOpens(CancellationToken stoppingToken, FuseHoraire fuseHoraire)
     {
@@ -506,7 +560,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             {
                 float[] closePrices = dbContext.StockDatas
                     .Where(i => i.IndiceId == indice.Id)
-                    .Select(d => d.PrevPrice)
+                    .Select(d => d.CurrentPrice)
                     .ToArray();
 
                 // Spécifiez le chemin du répertoire contenant les fichiers .txt pour recuperer les symboles
@@ -599,6 +653,33 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                         if (!string.IsNullOrEmpty(indice.Symbol) && newFiles.Count > 0)
                         {
+                            //// NOTE --- À supprimer
+                            
+                            //float[] ema14 = Array.Empty<float>();
+                            //float[] bollUpper = Array.Empty<float>();
+                            //float[] bollLower = Array.Empty<float>();
+                            //float[] macd = Array.Empty<float>();
+                            //float[] averageVolume = Array.Empty<float>();
+
+                            //if (closePrices.Length > 14)
+                            //{
+                            //    // Mettre à l'interieur du if et supprimer l'exception
+                            //    ema14 = CalculateEMA(closePrices, 14);
+                            //    (bollUpper, bollLower) = CalculateBollingerBands(closePrices, 14);
+                            //    macd = CalculateMACD(closePrices);
+                            //    averageVolume = CalculateAverageVolume(closePrices, 14);
+                            //}
+
+                            //for (int i = 0; i < indice.TrainingData.Count -1; i++)
+                            //{
+                            //    indice.TrainingData[i].FuturePrice = indice.TrainingData[i + 1].CurrentPrice;
+                            //    indice.TrainingData[i].EMA_14 = ema14[i];
+                            //    indice.TrainingData[i].BollingerUpper = bollUpper[i];
+                            //    indice.TrainingData[i].BollingerLower = bollLower[i];
+                            //    indice.TrainingData[i].MACD = macd[i];
+                            //    indice.TrainingData[i].AverageVolume = averageVolume[i];
+                            //}
+
                             // Ajout les historiques manquantes dans StockDatas
                             indice.TrainingData.AddRange(AjoutStockData(newFiles, indice.Symbol, closePrices));
                         }
@@ -618,6 +699,100 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     }
 
                 }
+
+                // 🔹 Sauvegarde des modifications dans la DB avec gestion des verrous
+
+                // Definitions des parametres de mise à jour du DB
+                int maxRetries = 5;
+                int delay = 1000; // in milliseconds
+
+
+                for (int retry = 0; retry < maxRetries; retry++)
+                {
+                    try
+                    {
+                        // Vérifie si l'indice a un ID valide
+                        if (indice.Id == 0)
+                        {
+                            Console.WriteLine("Erreur : Indice.Id est 0, impossible de l'ajouter !");
+                            break;
+                        }
+
+                        var existingIndice = await dbContext.Indices
+                            .Include(i => i.TrainingData) // Charge la liste associée
+                            .FirstOrDefaultAsync(i => i.Id == indice.Id);
+
+                        if (existingIndice == null)
+                        {
+                            Console.WriteLine($"Ajout de l'indice {indice.Symbol} (ID: {indice.Id}) à la base.");
+                            await dbContext.Indices.AddAsync(indice);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Mise à jour de l'indice {indice.Symbol} (ID: {indice.Id}).");
+                            dbContext.Entry(existingIndice).CurrentValues.SetValues(indice);
+
+                            // Vérifier si `trainingData` doit être mis à jour
+                            if (indice.TrainingData != null)
+                            {
+                                // Suppression des anciennes valeurs si nécessaire
+                                existingIndice.TrainingData.Clear();
+
+                                // Ajout des nouvelles données
+                                existingIndice.TrainingData.AddRange(indice.TrainingData);
+                            }
+                        }
+
+                        await dbContext.SaveChangesAsync();
+                        return; // Succès, on sort de la boucle
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        Console.WriteLine($"Erreur DB: {ex.Message}");
+                        if (ex.InnerException != null)
+                        {
+                            Console.WriteLine($"Détails internes: {ex.InnerException.Message}");
+                        }
+                        await Task.Delay(delay);
+                        delay *= 2; // Augmente le temps d'attente en cas de problème
+                    }
+                    catch (SqliteException ex) when (ex.SqliteErrorCode == 5) // Error 5 is database lock
+                    {
+                        Console.WriteLine("Base de données verrouillée, nouvel essai...");
+                        await Task.Delay(delay); // Wait before retrying
+                        delay *= 2; // Optionally, use exponential backoff
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Une erreur s'est produite : {ex.Message}");
+                Console.WriteLine($"Error querying Yahoo Finance API for symbol: {indice.Symbol}");
+            }
+        }
+    }
+
+    private async Task UpdatePrediction(Indice indice, string nomBourse, CancellationToken stoppingToken)
+    {
+        using (var scope = _scopeFactory.CreateScope())
+        {
+            BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
+
+            if (indice == null || dbContext == null)
+            {
+                Console.WriteLine($"Erreur : Indice ou contexte de base de données nul pour {nomBourse}");
+                return;
+            }
+
+            // Charger les horaires de la bourse
+            FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+
+            // Convertir la date donnée dans le fuseau horaire de la bourse
+            DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+            try
+            {
 
                 if (indice.DateUpdated != dateDansLeFuseau)
                 {
@@ -656,8 +831,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         indice.RegularMarketOpen = latestTrainingData.Open;
                         indice.RegularMarketDayLow = latestTrainingData.Low;
                         indice.RegularMarketDayHigh = latestTrainingData.High;
-                        indice.RegularMarketChange = latestTrainingData.Change;
-                        indice.RegularMarketChangePercent = latestTrainingData.ChangePercent;
                     }
 
                     // Générer une recommandation basée sur RSI
@@ -674,6 +847,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                     if (prediction != null)
                     {
+
                         indice.IsIncreasing = prediction.IsIncreasing;
 
                         if (float.IsNaN(prediction.Probability) || float.IsInfinity(prediction.Probability))
@@ -763,28 +937,22 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     {
         List<Price> prices = new List<Price>();
 
-        // Parcourt et lit chaque fichier .txt
+        // Lecture des fichiers et extraction des prix
         foreach (string file in files)
         {
-            bool isFirstLine = true; // Variable pour contrôler la première ligne
-
-            // Lire chaque ligne du fichier
+            bool isFirstLine = true;
             foreach (string line in File.ReadLines(file))
             {
-                // Ignore la première ligne
                 if (isFirstLine)
                 {
                     isFirstLine = false;
-                    continue; // Passe à la ligne suivante
+                    continue;
                 }
 
                 string[] parts = line.Split(',');
 
-                if (parts.Length < 6) // Vérification
-                    continue;
 
-                //// Supprimer ".TO" si présent
-                //symbol = symbol.EndsWith(".TO") ? symbol.Substring(0, symbol.Length - 3) : symbol;
+                if (parts.Length < 6) continue;
 
                 if (parts[0] == symbol)
                 {
@@ -800,49 +968,58 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 }
             }
         }
-        //Ajout de la liste de l'historique de chaque indices
+
         var trainingData = new List<StockData>();
 
         if (prices.Count != 0)
         {
             float[] sma14 = Array.Empty<float>();
             float[] rsi14 = Array.Empty<float>();
+            float[] ema14 = Array.Empty<float>();
+            float[] bollUpper = Array.Empty<float>();
+            float[] bollLower = Array.Empty<float>();
+            float[] macd = Array.Empty<float>();
+            float[] averageVolume = Array.Empty<float>();
 
             if (closePrices.Length > 14)
             {
                 // Mettre à l'interieur du if et supprimer l'exception
                 sma14 = CalculateSMA(closePrices, 14);
                 rsi14 = CalculateRSI(closePrices, 14);
+                ema14 = CalculateEMA(closePrices, 14);
+                (bollUpper, bollLower) = CalculateBollingerBands(closePrices, 14);
+                macd = CalculateMACD(closePrices);
+                averageVolume = CalculateAverageVolume(closePrices, 14);
             }
-
 
             for (int i = 0; i < prices.Count; i++)
             {
                 var currentPrice = prices[i].Close;
-                var prevPrice = i == 0 ? prices[i].Close : prices[i - 1].Close;
-
-                // Sécuriser l'accès aux indices SMA et RSI
-                //int smaIndex = Math.Max(0, Math.Min(sma14.Length - 1, sma14.Length - (prices.Count - i)));
-                //int rsiIndex = Math.Max(0, Math.Min(rsi14.Length - 1, rsi14.Length - (prices.Count - i)));
-
-                //int smaIndex = Math.Max(0, Math.Min(sma14.Length - 1, i));
-                //int rsiIndex = Math.Max(0, Math.Min(rsi14.Length - 1, i));
+                var prevPrice = i == 0 ? closePrices.Last() : prices[i - 1].Close;
+                var futurePrice = (i < prices.Count - 1) ? prices[i + 1].Close : prices[i].Close;
 
                 int smaIndex = Math.Max((sma14.Length - prices.Count) + i, i);
                 int rsiIndex = Math.Max((rsi14.Length - prices.Count) + i, i);
+                int emaIndex = Math.Max((ema14.Length - prices.Count) + i, i);
+                int bollUpperIndex = Math.Max((bollUpper.Length - prices.Count) + i, i);
+                int bollLowerIndex = Math.Max((bollLower.Length - prices.Count) + i, i);
+                int macdIndex = Math.Max((macd.Length - prices.Count) + i, i);
+                int averageVolumeIndex = Math.Max((averageVolume.Length - prices.Count) + i, i);
 
-                float smaValue = sma14.Length > 0 ? sma14[smaIndex] : 0;
-                float rsiValue = rsi14.Length > 0 ? rsi14[rsiIndex] : 0;
-
-                // Créer une instance de StockData
                 var stockData = new StockData
                 {
                     CurrentPrice = currentPrice,
                     Open = prices[i].Open,
                     High = prices[i].High,
                     Low = prices[i].Low,
-                    SMA_14 = smaValue,
-                    RSI_14 = rsiValue,
+                    SMA_14 = sma14.Length > 0 ? sma14[smaIndex] : 0,
+                    RSI_14 = rsi14.Length > 0 ? rsi14[rsiIndex] : 0,
+                    EMA_14 = ema14.Length > 0 ? ema14[emaIndex] : 0,
+                    BollingerUpper = bollUpper.Length > 0 ? bollUpper[bollUpperIndex] : 0,
+                    BollingerLower = bollLower.Length > 0 ? bollLower[bollLowerIndex] : 0,
+                    MACD = macd.Length > 0 ? macd[macdIndex] : 0,
+                    AverageVolume = averageVolume.Length > 0 ? averageVolume[averageVolumeIndex] : 0,
+                    FuturePrice = futurePrice,
                     Date = DateTime.ParseExact(prices[i].Date, "yyyyMMdd", null),
                     PrevPrice = prevPrice
                 };
@@ -852,11 +1029,109 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
         else
         {
-            Console.WriteLine("Aucune donnée de prix chargée.");
+            Console.WriteLine("Données insuffisantes pour le calcul des indicateurs.");
         }
-
         return trainingData;
     }
+
+    //private List<StockData> AjoutStockData(List<string> files, string symbol, float[] closePrices)
+    //{
+    //    List<Price> prices = new List<Price>();
+
+    //    // Parcourt et lit chaque fichier .txt
+    //    foreach (string file in files)
+    //    {
+    //        bool isFirstLine = true; // Variable pour contrôler la première ligne
+
+    //        // Lire chaque ligne du fichier
+    //        foreach (string line in File.ReadLines(file))
+    //        {
+    //            // Ignore la première ligne
+    //            if (isFirstLine)
+    //            {
+    //                isFirstLine = false;
+    //                continue; // Passe à la ligne suivante
+    //            }
+
+    //            string[] parts = line.Split(',');
+
+    //            if (parts.Length < 6) // Vérification
+    //                continue;
+
+    //            //// Supprimer ".TO" si présent
+    //            //symbol = symbol.EndsWith(".TO") ? symbol.Substring(0, symbol.Length - 3) : symbol;
+
+    //            if (parts[0] == symbol)
+    //            {
+    //                Price price = new Price
+    //                {
+    //                    Date = parts[1],
+    //                    Open = ParseFloatOrDefault(parts[2]),
+    //                    High = ParseFloatOrDefault(parts[3]),
+    //                    Low = ParseFloatOrDefault(parts[4]),
+    //                    Close = ParseFloatOrDefault(parts[5])
+    //                };
+    //                prices.Add(price);
+    //            }
+    //        }
+    //    }
+    //    //Ajout de la liste de l'historique de chaque indices
+    //    var trainingData = new List<StockData>();
+
+    //    if (prices.Count != 0)
+    //    {
+    //        float[] sma14 = Array.Empty<float>();
+    //        float[] rsi14 = Array.Empty<float>();
+
+    //        if (closePrices.Length > 14)
+    //        {
+    //            // Mettre à l'interieur du if et supprimer l'exception
+    //            sma14 = CalculateSMA(closePrices, 14);
+    //            rsi14 = CalculateRSI(closePrices, 14);
+    //        }
+
+
+    //        for (int i = 0; i < prices.Count; i++)
+    //        {
+    //            var currentPrice = prices[i].Close;
+    //            var prevPrice = i == 0 ? prices[i].Close : prices[i - 1].Close;
+
+    //            // Sécuriser l'accès aux indices SMA et RSI
+    //            //int smaIndex = Math.Max(0, Math.Min(sma14.Length - 1, sma14.Length - (prices.Count - i)));
+    //            //int rsiIndex = Math.Max(0, Math.Min(rsi14.Length - 1, rsi14.Length - (prices.Count - i)));
+
+    //            //int smaIndex = Math.Max(0, Math.Min(sma14.Length - 1, i));
+    //            //int rsiIndex = Math.Max(0, Math.Min(rsi14.Length - 1, i));
+
+    //            int smaIndex = Math.Max((sma14.Length - prices.Count) + i, i);
+    //            int rsiIndex = Math.Max((rsi14.Length - prices.Count) + i, i);
+
+    //            float smaValue = sma14.Length > 0 ? sma14[smaIndex] : 0;
+    //            float rsiValue = rsi14.Length > 0 ? rsi14[rsiIndex] : 0;
+
+    //            // Créer une instance de StockData
+    //            var stockData = new StockData
+    //            {
+    //                CurrentPrice = currentPrice,
+    //                Open = prices[i].Open,
+    //                High = prices[i].High,
+    //                Low = prices[i].Low,
+    //                SMA_14 = smaValue,
+    //                RSI_14 = rsiValue,
+    //                Date = DateTime.ParseExact(prices[i].Date, "yyyyMMdd", null),
+    //                PrevPrice = prevPrice
+    //            };
+
+    //            trainingData.Add(stockData);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine("Aucune donnée de prix chargée.");
+    //    }
+
+    //    return trainingData;
+    //}
 
     public StockPrediction? Prediction(Indice indice)
     {
@@ -868,24 +1143,58 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             return null;
         }
 
+        foreach (var data in indice.TrainingData.Take(10))
+        {
+            Console.WriteLine($"Date: {data.Date}, CurrentPrice: {data.CurrentPrice}, FuturePrice: {data.FuturePrice}");
+        }
+
         // Convertir la liste de données en IDataView
         var trainingDataView = _mlContext.Data.LoadFromEnumerable(indice.TrainingData);
 
-        // Définir le pipeline d'apprentissage (Classification)
-        var pipeline = _mlContext.Transforms.Concatenate("Features", nameof(StockData.CurrentPrice), nameof(StockData.Open), nameof(StockData.High), nameof(StockData.Low), nameof(StockData.RSI_14), nameof(StockData.SMA_14))
-            .Append(_mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(
-                labelColumnName: nameof(StockData.IsIncreasing),
-                featureColumnName: "Features",
-                maximumNumberOfIterations: 100));
+        // Définir le pipeline de transformation
+        var pipeline = _mlContext.Transforms.Concatenate("Features",
+                nameof(StockData.CurrentPrice),
+                nameof(StockData.Open),
+                nameof(StockData.High),
+                nameof(StockData.Low),
+                nameof(StockData.RSI_14),
+                nameof(StockData.SMA_14),
+                nameof(StockData.EMA_14),
+                nameof(StockData.BollingerUpper),
+                nameof(StockData.BollingerLower),
+                nameof(StockData.MACD),
+                nameof(StockData.AverageVolume))
+        .Append(_mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(
+            labelColumnName: nameof(StockData.IsIncreasing),
+            featureColumnName: "Features"));
+
+        // Diviser les données pour la validation
+        var dataSplit = _mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.2);
 
         // Entraîner le modèle
-        var model = pipeline.Fit(trainingDataView);
+        var model = pipeline.Fit(dataSplit.TrainSet);
 
-        // Dernière donnée pour la prédiction
+        // Évaluer le modèle sur les données de test
+        var predictions = model.Transform(dataSplit.TestSet);
+        var metrics = _mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: nameof(StockData.IsIncreasing));
+
+        Console.WriteLine($"AUC: {metrics.AreaUnderRocCurve}");
+        Console.WriteLine($"Accuracy: {metrics.Accuracy}");
+        Console.WriteLine($"F1 Score: {metrics.F1Score}");
+
+        // Sauvegarde du modèle
+        string modelPath = "model.zip";  // Utilise un chemin relatif ou absolu selon tes besoins
+        _mlContext.Model.Save(model, dataSplit.TrainSet.Schema, modelPath);
+        Console.WriteLine("Modèle sauvegardé à : " + modelPath);
+
+        // Charger le modèle existant
+        var loadedModel = _mlContext.Model.Load(modelPath, out var modelSchema);
+        var predictionFunction = _mlContext.Model.CreatePredictionEngine<StockData, StockPrediction>(loadedModel);
+
+        // Obtenir la dernière donnée pour la prédiction
         var lastData = indice.TrainingData.OrderByDescending(t => t.Id).FirstOrDefault();
         if (lastData == null) return null;
 
-        // Créer un échantillon avec toutes les caractéristiques
         var sampleData = new StockData
         {
             CurrentPrice = (float)indice.RegularMarketPrice,
@@ -893,19 +1202,69 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             High = (float)indice.RegularMarketDayHigh,
             Low = (float)indice.RegularMarketDayLow,
             RSI_14 = lastData.RSI_14,
-            SMA_14 = lastData.SMA_14
+            SMA_14 = lastData.SMA_14,
+            EMA_14 = lastData.EMA_14,
+            BollingerUpper = lastData.BollingerUpper,
+            BollingerLower = lastData.BollingerLower,
+            MACD = lastData.MACD,
+            AverageVolume = lastData.AverageVolume
         };
 
-        // Faire des prédictions
-        var predictionFunction = _mlContext.Model.CreatePredictionEngine<StockData, StockPrediction>(model);
-
-        // Faire une prédiction sur l'échantillon
+        // Faire une prédiction
         var prediction = predictionFunction.Predict(sampleData);
-
-        Console.WriteLine($"La prédiction indique que le prix va {(prediction.IsIncreasing ? "augmenter" : "diminuer")}.");
+        Console.WriteLine($"Prix prédit : {prediction.IsIncreasing} avec une probabilité de {prediction.Probability}");
 
         return prediction;
     }
+
+    //public StockPrediction? Prediction(Indice indice)
+    //{
+
+    //    // Vérifier s'il y a assez de données pour l'entraînement
+    //    if (indice.TrainingData == null || !indice.TrainingData.Any())
+    //    {
+    //        Console.WriteLine("Données d'entraînement insuffisantes.");
+    //        return null;
+    //    }
+
+    //    // Convertir la liste de données en IDataView
+    //    var trainingDataView = _mlContext.Data.LoadFromEnumerable(indice.TrainingData);
+
+    //    // Définir le pipeline d'apprentissage (Classification)
+    //    var pipeline = _mlContext.Transforms.Concatenate("Features", nameof(StockData.CurrentPrice), nameof(StockData.Open), nameof(StockData.High), nameof(StockData.Low), nameof(StockData.RSI_14), nameof(StockData.SMA_14))
+    //        .Append(_mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(
+    //            labelColumnName: nameof(StockData.IsIncreasing),
+    //            featureColumnName: "Features",
+    //            maximumNumberOfIterations: 100));
+
+    //    // Entraîner le modèle
+    //    var model = pipeline.Fit(trainingDataView);
+
+    //    // Dernière donnée pour la prédiction
+    //    var lastData = indice.TrainingData.OrderByDescending(t => t.Id).FirstOrDefault();
+    //    if (lastData == null) return null;
+
+    //    // Créer un échantillon avec toutes les caractéristiques
+    //    var sampleData = new StockData
+    //    {
+    //        CurrentPrice = (float)indice.RegularMarketPrice,
+    //        Open = (float)indice.RegularMarketOpen,
+    //        High = (float)indice.RegularMarketDayHigh,
+    //        Low = (float)indice.RegularMarketDayLow,
+    //        RSI_14 = lastData.RSI_14,
+    //        SMA_14 = lastData.SMA_14
+    //    };
+
+    //    // Faire des prédictions
+    //    var predictionFunction = _mlContext.Model.CreatePredictionEngine<StockData, StockPrediction>(model);
+
+    //    // Faire une prédiction sur l'échantillon
+    //    var prediction = predictionFunction.Predict(sampleData);
+
+    //    Console.WriteLine($"La prédiction indique que le prix va {(prediction.IsIncreasing ? "augmenter" : "diminuer")}.");
+
+    //    return prediction;
+    //}
 
     //private async Task UpdateEarningDates(string nomBourse, CancellationToken stoppingToken)
     //{
@@ -988,7 +1347,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
         // Vérifier que le jour à sauvegrader est un jour boursiere et inferieur à aujourd'hui
-        while (dateNext.Date < dateDansLeFuseau.Date)
+        while (dateNext.Date <= dateDansLeFuseau.Date)
         {
 
             // Ignore les week-ends
@@ -1001,7 +1360,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 try
                 {
                     // Sauvegarde l'historique pour le jour suivant
-                    await SaveHistory(filePath, nomBourse, stoppingToken);
+                    await SaveHistory(filePath, dateNext, nomBourse, stoppingToken);
                 }
                 catch (Exception ex)
                 {
@@ -1014,7 +1373,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         }
     }
 
-    private async Task SaveHistory(string filePath, string nomBourse, CancellationToken stoppingToken)
+    private async Task SaveHistory(string filePath, DateTime dateNext, string nomBourse, CancellationToken stoppingToken)
     {
         // ---- NOTES ----
         // AJOUTER ALPHA VANATAGE IMPLEMENTATION POUR LA SAUVEGARDE JOURNALIER.
@@ -1113,7 +1472,18 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             break;
                     }
 
-                    string regularMarketTime = dateDansLeFuseau.AddDays(-1).ToString("yyyyMMdd");
+                    //string regularMarketTime;
+
+                    //// 🔹 Vérifier si nous sommes toujours le même jour avant d'attendre la fin de journée
+                    //if ((dateDansLeFuseau.Hour > 16 && dateDansLeFuseau.Hour < 23)
+                    //    || (dateDansLeFuseau.Hour == 23 && dateDansLeFuseau.Minute < 59))
+                    //{
+                    //    regularMarketTime = dateDansLeFuseau.ToString("yyyyMMdd");
+                    //}
+                    //else
+                    //{
+                    //    regularMarketTime = dateDansLeFuseau.AddDays(-1).ToString("yyyyMMdd");
+                    //}
 
                     string line;
 
@@ -1186,7 +1556,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                             line = string.Join(",",
                                 indice.Symbol,
-                                regularMarketTime,
+                                dateNext.ToString("yyyyMMdd"),
                                 ouverture,
                                 high,
                                 low,
@@ -1876,6 +2246,61 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         return rsi;
     }
+
+    private float[] CalculateEMA(float[] prices, int period)
+    {
+        float[] ema = new float[prices.Length];
+        float multiplier = 2f / (period + 1);
+        ema[0] = prices.Take(period).Average(); // Moyenne initiale
+
+        for (int i = 1; i < prices.Length; i++)
+        {
+            ema[i] = ((prices[i] - ema[i - 1]) * multiplier) + ema[i - 1];
+        }
+        return ema;
+    }
+
+    private (float[] upper, float[] lower) CalculateBollingerBands(float[] prices, int period)
+    {
+        float[] upper = new float[prices.Length];
+        float[] lower = new float[prices.Length];
+
+        for (int i = period - 1; i < prices.Length; i++)
+        {
+            float mean = prices.Skip(i - period + 1).Take(period).Average();
+            float stdDev = (float)Math.Sqrt(prices.Skip(i - period + 1).Take(period).Sum(p => Math.Pow(p - mean, 2)) / period);
+
+            upper[i] = mean + (2 * stdDev);
+            lower[i] = mean - (2 * stdDev);
+        }
+        return (upper, lower);
+    }
+
+    private float[] CalculateMACD(float[] prices)
+    {
+        float[] ema12 = CalculateEMA(prices, 12);
+        float[] ema26 = CalculateEMA(prices, 26);
+        float[] macd = new float[prices.Length];
+
+        for (int i = 0; i < prices.Length; i++)
+        {
+            macd[i] = ema12[i] - ema26[i];
+        }
+
+        return macd;
+    }
+
+    private float[] CalculateAverageVolume(float[] volumes, int period)
+    {
+        float[] avgVolume = new float[volumes.Length];
+
+        for (int i = period - 1; i < volumes.Length; i++)
+        {
+            avgVolume[i] = volumes.Skip(i - period + 1).Take(period).Average();
+        }
+        return avgVolume;
+    }
+
 
     //private async Task<DateTime[]> GetFinancialDataAsync(Indice indice)
     //{
