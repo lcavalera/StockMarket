@@ -222,7 +222,7 @@
                     @DisplayProbability(item.Probability)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Symbol" asp-route-returnUrl="Index">Details</a>
+                    <a asp-action="Details" asp-route-item="@item.Symbol" asp-route-returnUrl="Index">Details</a>
 
                     @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
                     @* @Html.ActionLink("Details", "Details", new { item=item.Symbol }) *@

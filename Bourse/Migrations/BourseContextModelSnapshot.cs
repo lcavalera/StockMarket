@@ -133,8 +133,14 @@ namespace Bourse.Migrations
                     b.Property<float>("PrevPrice")
                         .HasColumnType("REAL");
 
+                    b.Property<float>("Probability")
+                        .HasColumnType("REAL");
+
                     b.Property<float>("RSI_14")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Raccomandation")
+                        .HasColumnType("TEXT");
 
                     b.Property<float>("SMA_14")
                         .HasColumnType("REAL");

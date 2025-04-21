@@ -1,0 +1,137 @@
+.agenda-mini-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.agenda-day-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Répartir l'espace entre les éléments */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+}
+
+.agenda-day-card h3 {
+    font-size: 1.2vw;
+    text-align: center;
+    margin: 2px 0;
+    padding: 0 0 10px 0;
+}
+
+.agenda-day-card ul {
+    flex-grow: 1; /* Permet à la liste de prendre l'espace disponible */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.agenda-day-card li {
+    font-size: 0.9vw;
+    margin-bottom: 0.3rem;
+}
+
+.agenda-day-card li span.symbol {
+    font-weight: bold; /* Mettre le symbole en gras */
+}
+
+.show-more-btn {
+    margin-top: auto; /* Pousse le bouton en bas */
+    display: block;
+    margin: 10px auto; /* Centrer le bouton */
+    background-color: darkslategray;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.9vw;
+}
+
+.chargement-agenda{
+    width: 100%; /* Force la largeur à occuper toute la cellule */
+    min-width: 100%; /* Assure que la cellule a une largeur minimale de 100% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centre horizontalement */
+    justify-content: center;  /* Centre verticalement */
+    font-size: 18px;
+    font-weight: bold;
+    color: #4A4A4A;
+    text-align: center;  /* Centrer le texte */
+    margin: 40px 0px;
+}
+
+.chargement-agenda-titre{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.today {
+    font-size: 2.5em;  /* Augmente la taille de la date du jour */
+    text-align: center; /* Centrer la date */
+    padding: 5px;
+    color: red;
+    text-decoration: underline;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-height: 80%;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .popup-content h2{
+    margin-bottom: 1rem;
+  }
+
+  .close-btn {
+    margin-top: 1rem;
+    background-color: darkslategray;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .popup-content ul {
+    list-style: none; /* plus de points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .popup-content li {
+    margin-bottom: 10px; /* un petit espace entre les lignes */
+  }
+
+  .symbol {
+    font-weight: bold;
+  }

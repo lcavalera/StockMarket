@@ -1,17 +1,17 @@
-.list-title{
+.list-title, .agenda-title{
   color: white;
   text-align: center;
 }
 
 .list-container{
-    text-align: inherit;
-    display: inline-block;
-    justify-content: left;
+    display: grid;
+    grid-template-columns: 1fr;
     background-color: rgba(255, 255, 255, 0.685);
     padding: 30px;
     margin-top: 20px;
-    font-size: 18px;
-    width: 1450px;
+    width: 100%;
+    margin-left: auto;  /* Center align horizontally */
+    margin-right: auto;  /* Center align horizontally */
 }
 
 .list-filter > *{
@@ -29,10 +29,10 @@
 }
 
 .table {
-    width: 1300px;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 0.9vw;
   }
   
   .table th, 
@@ -109,13 +109,56 @@
 
   .button-pagination{
     background-color: gray;
-    height: 30px;
-    width: 100px;
+    padding: 0.5vw 1vw; /* Ajoute du padding pour respirer autour du texte */
     margin: 10px;
+    border-radius: 8px; /* Optionnel : pour arrondir un peu */
+    font-size: 1vw; /* Taille du texte */
+    white-space: nowrap; /* Pour éviter que le texte casse en deux lignes */
+    display: inline-block; /* Pour que la largeur suive le contenu */
   }
+  
   .button{
     background-color: darkslategray;
-    height: 30px;
-    width: 60px;
+    height: 2vw;
+    width: 6vw;
     margin: 10px;
+    font-size: 1vw; /* Taille fixe du texte */
+    text-align: center; /* Centrer le texte dans le bouton */
+  }
+
+  .chargement{
+    text-align: center;
+  }
+
+  .chargement-list{
+    width: 100%; /* Force la largeur à occuper toute la cellule */
+    min-width: 100%; /* Assure que la cellule a une largeur minimale de 100% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centre horizontalement */
+    justify-content: center;  /* Centre verticalement */
+    font-size: 18px;
+    font-weight: bold;
+    color: #4A4A4A;
+    text-align: center;  /* Centrer le texte */
+
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3; /* Couleur de fond du spinner */
+    border-top: 4px solid #3498db; /* Couleur de la partie tournante */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px; /* Petit espace entre le spinner et le texte */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .table td.chargement-list {
+    text-align: center;
   }

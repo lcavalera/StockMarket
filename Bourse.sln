@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bourse", "Bourse\Bourse.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AjoutSymbol", "AjoutSymbol\AjoutSymbol.csproj", "{4BCFBD2C-70E1-4C22-8E8F-74E3BC89C20B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{7D58997E-1782-482E-AF5B-D4B84FB7F07A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4BCFBD2C-70E1-4C22-8E8F-74E3BC89C20B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BCFBD2C-70E1-4C22-8E8F-74E3BC89C20B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BCFBD2C-70E1-4C22-8E8F-74E3BC89C20B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D58997E-1782-482E-AF5B-D4B84FB7F07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D58997E-1782-482E-AF5B-D4B84FB7F07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D58997E-1782-482E-AF5B-D4B84FB7F07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D58997E-1782-482E-AF5B-D4B84FB7F07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

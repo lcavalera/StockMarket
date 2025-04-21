@@ -56,7 +56,7 @@ builder.Services.AddDbContext<BourseContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
     //.UseQueryTrackingBehavior((QueryTrackingBehavior)QuerySplittingBehavior.SplitQuery);
 }, ServiceLifetime.Scoped
-); ;
+);
 
 builder.Services.AddSingleton<MLContext>(sp => new MLContext());
 

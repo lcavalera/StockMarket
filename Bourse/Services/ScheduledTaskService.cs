@@ -129,21 +129,21 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     {
                         // 🔹 Étape 2 : Attendre la fin de la journée si on est dans un jour boursiere
 
-                        //// Vérifier si c'est un jour ouvré (lundi à vendredi) et non un jour férié
-                        //if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday)
-                        //{
-                        //    // 🔹 Vérifier si nous sommes toujours le même jour avant d'attendre la fin de journée
-                        //    if ((dateDansLeFuseau.Hour > 16 && dateDansLeFuseau.Hour < 23) 
-                        //        || (dateDansLeFuseau.Hour == 23 && dateDansLeFuseau.Minute < 59))
-                        //    {
-                        //        Console.WriteLine($"Attente de la fin de la journée pour {nomBourse}...");
-                        //        await WaitForEndOfDay(stoppingToken, fuseHoraire);
-                        //    }
-                        //    else
-                        //    {
-                        //        Console.WriteLine($"Minuit dépassé. Passer directement à la prochaine mise à jour des earnings...");
-                        //    }
-                        //}
+                        // Vérifier si c'est un jour ouvré (lundi à vendredi) et non un jour férié
+                        if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday)
+                        {
+                            // 🔹 Vérifier si nous sommes toujours le même jour avant d'attendre la fin de journée
+                            if ((dateDansLeFuseau.Hour > 16 && dateDansLeFuseau.Hour < 23)
+                                || (dateDansLeFuseau.Hour == 23 && dateDansLeFuseau.Minute < 59))
+                            {
+                                Console.WriteLine($"Attente de la fin de la journée pour {nomBourse}...");
+                                await WaitForEndOfDay(stoppingToken, fuseHoraire);
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Minuit dépassé. Passer directement à la prochaine mise à jour des earnings...");
+                            }
+                        }
 
                         // 🔹 Étape 3 : Sauvegarde de l'historique manquant
                         Console.WriteLine($"Sauvegarde des données historiques pour {nomBourse}...");
@@ -653,33 +653,6 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                         if (!string.IsNullOrEmpty(indice.Symbol) && newFiles.Count > 0)
                         {
-                            //// NOTE --- À supprimer
-                            
-                            //float[] ema14 = Array.Empty<float>();
-                            //float[] bollUpper = Array.Empty<float>();
-                            //float[] bollLower = Array.Empty<float>();
-                            //float[] macd = Array.Empty<float>();
-                            //float[] averageVolume = Array.Empty<float>();
-
-                            //if (closePrices.Length > 14)
-                            //{
-                            //    // Mettre à l'interieur du if et supprimer l'exception
-                            //    ema14 = CalculateEMA(closePrices, 14);
-                            //    (bollUpper, bollLower) = CalculateBollingerBands(closePrices, 14);
-                            //    macd = CalculateMACD(closePrices);
-                            //    averageVolume = CalculateAverageVolume(closePrices, 14);
-                            //}
-
-                            //for (int i = 0; i < indice.TrainingData.Count -1; i++)
-                            //{
-                            //    indice.TrainingData[i].FuturePrice = indice.TrainingData[i + 1].CurrentPrice;
-                            //    indice.TrainingData[i].EMA_14 = ema14[i];
-                            //    indice.TrainingData[i].BollingerUpper = bollUpper[i];
-                            //    indice.TrainingData[i].BollingerLower = bollLower[i];
-                            //    indice.TrainingData[i].MACD = macd[i];
-                            //    indice.TrainingData[i].AverageVolume = averageVolume[i];
-                            //}
-
                             // Ajout les historiques manquantes dans StockDatas
                             indice.TrainingData.AddRange(AjoutStockData(newFiles, indice.Symbol, closePrices));
                         }
@@ -793,6 +766,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
             try
             {
+                var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
 
                 if (indice.DateUpdated != dateDansLeFuseau)
                 {
@@ -802,7 +776,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     // Si des données d'entraînement existent, utiliser les données les plus récentes
                     if (indice.TrainingData?.Count > 0)
                     {
-                        var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
+                        
                         if (latestTrainingData != null)
                         {
                             if (latestTrainingData?.RSI_14 != null &&
@@ -839,6 +813,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     // Mise à jour de l'indice dans la base de données
                     indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                     indice.Raccomandation = recommendation;
+                    latestTrainingData.Raccomandation = recommendation;
+                    
                 }
 
                 if (indice.DatePrevision != DateOnly.FromDateTime(dateDansLeFuseau))
@@ -856,6 +832,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             prediction.Probability = 0; // Mets une valeur par défaut ou un calcul de secours
                         }
                         indice.Probability = prediction.Probability;
+                        latestTrainingData.Probability = prediction.Probability;
                     }
                     indice.DatePrevision = DateOnly.FromDateTime(dateDansLeFuseau);
                 }
@@ -994,8 +971,21 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
             for (int i = 0; i < prices.Count; i++)
             {
-                var currentPrice = prices[i].Close;
-                var prevPrice = i == 0 ? closePrices.Last() : prices[i - 1].Close;
+                // Calcul Current Prix
+                var currentPrice = prices[i].Close == 0
+                    ? (closePrices.Last() == 0 ? closePrices[^2] : closePrices.Last())
+                    : prices[i].Close;
+
+                // Calcul Precedent Prix
+                var lastClose = closePrices.Last();
+                var fallbackClose = lastClose == 0 ? closePrices[^2] : lastClose;
+
+                var prevPrice = i == 0
+                    ? fallbackClose
+                    : i == 1
+                        ? (prices[i - 1].Close == 0 ? fallbackClose : prices[i - 1].Close)
+                        : (prices[i - 1].Close == 0 ? prices[i - 2].Close : prices[i - 1].Close);
+
                 var futurePrice = (i < prices.Count - 1) ? prices[i + 1].Close : prices[i].Close;
 
                 int smaIndex = Math.Max((sma14.Length - prices.Count) + i, i);
@@ -1347,7 +1337,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
         // Vérifier que le jour à sauvegrader est un jour boursiere et inferieur à aujourd'hui
-        while (dateNext.Date <= dateDansLeFuseau.Date)
+        while (dateNext.Date < dateDansLeFuseau.Date)
         {
 
             // Ignore les week-ends
@@ -1540,19 +1530,62 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             var htmlDoc = new HtmlDocument();
                             htmlDoc.LoadHtml(response);
 
-                            // Méthode pour récupérer la dernière valeur d'une ligne spécifique
-                            string? GetLastColumnValue(string rowLabel)
+                            // Méthode pour récupérer la valeur d'une ligne spécifique selon la Date
+                            string? GetColumnValueForDate(string rowLabel)
                             {
-                                var xpath = $"//table[@id='cotation-5days-table']//tbody//tr[td[1][normalize-space()='{rowLabel}']]//td[last()]";
-                                var node = htmlDoc.DocumentNode.SelectSingleNode(xpath);
-                                return node?.InnerText.Trim().Replace("\u00A0", "").Replace("$", "").Replace(",", ".").Replace(" ", "");
+                                var dateTarget = DateTime.ParseExact(dateNext.ToString(), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                                string formattedDate = dateTarget.ToString("dd/MM/yyyy");
+                                formattedDate = formattedDate.Replace("-", "/");
+
+                                // Cherche l'index de la colonne qui correspond à la date
+                                var headerNodes = htmlDoc.DocumentNode.SelectNodes("//table[@id='cotation-5days-table']//thead//th");
+                                int targetColumnIndex = -1;
+
+                                if(headerNodes != null)
+                                {
+                                    for (int i = 0; i < headerNodes.Count; i++)
+                                    {
+                                        var text = headerNodes[i].InnerText.Trim();
+
+                                        if (text == formattedDate)
+                                        {
+                                            targetColumnIndex = i + 1; // XPath est 1-based
+                                            break;
+                                        }
+                                    }
+
+                                    if (targetColumnIndex == -1)
+                                    {
+                                        Console.WriteLine($"⚠️ Aucune colonne de header trouvée avec cette date: {dateNext.ToString("dd/MM/yyyy")}.");
+                                        return null;
+                                    }
+
+                                    // XPath pour cibler la cellule à l’intersection du label et de la colonne de date
+                                    var xpath = $"//table[@id='cotation-5days-table']//tbody//tr[td[1][normalize-space()='{rowLabel}']]//td[{targetColumnIndex}]";
+                                    var node = htmlDoc.DocumentNode.SelectSingleNode(xpath);
+                                    return node?.InnerText.Trim().Replace("\u00A0", "").Replace("$", "").Replace(",", ".").Replace(" ", "");
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("⚠️ Aucune colonne de header trouvée dans le HTML.");
+                                    return null;
+                                }
                             }
 
-                            string? ouverture = !String.IsNullOrEmpty(GetLastColumnValue("Ouverture")) ? GetLastColumnValue("Ouverture") : "0";
-                            string? high = GetLastColumnValue("Plus haut");
-                            string? low = GetLastColumnValue("Plus bas");
-                            string? close = GetLastColumnValue("Dernier");
-                            string? volume = GetLastColumnValue("Volume");
+                            //// Méthode pour récupérer la dernière valeur d'une ligne spécifique
+                            //string? GetLastColumnValue(string rowLabel)
+                            //{
+                            //    var xpath = $"//table[@id='cotation-5days-table']//tbody//tr[td[1][normalize-space()='{rowLabel}']]//td[last()]";
+                            //    var node = htmlDoc.DocumentNode.SelectSingleNode(xpath);
+                            //    return node?.InnerText.Trim().Replace("\u00A0", "").Replace("$", "").Replace(",", ".").Replace(" ", "");
+                            //}
+
+                            string? ouverture = !String.IsNullOrEmpty(GetColumnValueForDate("Ouverture")) ? GetColumnValueForDate("Ouverture") : "0";
+                            string? high = !String.IsNullOrEmpty(GetColumnValueForDate("Plus haut")) ? GetColumnValueForDate("Plus haut") : "0";
+                            string? low = !String.IsNullOrEmpty(GetColumnValueForDate("Plus bas")) ? GetColumnValueForDate("Plus bas") : "0";
+                            string? close = !String.IsNullOrEmpty(GetColumnValueForDate("Dernier")) ? GetColumnValueForDate("Dernier") : "0";
+                            string? volume = !String.IsNullOrEmpty(GetColumnValueForDate("Volume")) ? GetColumnValueForDate("Volume") : "0";
 
                             line = string.Join(",",
                                 indice.Symbol,

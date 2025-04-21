@@ -15,22 +15,22 @@ const Details = () => {
 
   const returnUrl = new URLSearchParams(location.search).get('returnUrl') || 'list';
 
-  const getRecommendationClass = (rec: string): string => {
-    switch (rec) {
-      case 'Strong Buy':
-        return 'text-strong-buy';
-      case 'Buy':
-        return 'text-buy';
-      case 'Hold':
-        return 'text-hold';
-      case 'Sell':
-        return 'text-sell';
-      case 'Strong Sell':
-        return 'text-strong-sell';
-      default:
-        return '';
-    }
-  };
+  // const getRecommendationClass = (rec: string): string => {
+  //   switch (rec) {
+  //     case 'Strong Buy':
+  //       return 'text-strong-buy';
+  //     case 'Buy':
+  //       return 'text-buy';
+  //     case 'Hold':
+  //       return 'text-hold';
+  //     case 'Sell':
+  //       return 'text-sell';
+  //     case 'Strong Sell':
+  //       return 'text-strong-sell';
+  //     default:
+  //       return '';
+  //   }
+  // };
 
   //  Configuration for using translation with json file
   const { t } = useTranslation();
@@ -43,6 +43,17 @@ const Details = () => {
   }, [symbol]);
 
   if (!indice) return <div>{t('details.loading')}</div>;
+
+  const getRecommendationClass = (rec: string): string => {
+    switch (rec) {
+      case 'Strong Buy': return 'text-strong-buy';
+      case 'Buy': return 'text-buy';
+      case 'Hold': return 'text-hold';
+      case 'Sell': return 'text-sell';
+      case 'Strong Sell': return 'text-strong-sell';
+      default: return '';
+    }
+  };
 
   return (
     <div className='list-container'>
@@ -71,13 +82,17 @@ const Details = () => {
             <th>{t('details.table.type')}</th>
             <th>{t('details.table.stockmarket')}</th>
             <th>{t('details.table.exchange')}</th>
+            <th>Tendance</th>
+            <th>Analyses</th>
+            <th>Probabilité</th>
             <th>{t('details.table.date')}</th>
           </tr>
         </thead>
         <tbody>
           {indice.trainingData
-            .slice(-20)
-            .reverse()
+            .slice()
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // tri décroissant
+            .slice(0, 20) // prends les 20 plus récents
             .map((item, index) => (
               <tr key={index}>
                 <td>{item.currentPrice.toFixed(3)}</td>
@@ -93,6 +108,9 @@ const Details = () => {
                 <td>{indice.quoteType}</td>
                 <td>{indice.bourse}</td>
                 <td>{indice.exchange}</td>
+                <td className={item.label ? "color-positive" : "color-negative"}>{item.label ? "UP" : "DOWN"}</td>
+                <td className={`rec-cell ${getRecommendationClass(item.raccomandation)}`}>{item.raccomandation}</td>
+                <td className={item.probability > 0.49 ? "color-positive" : "color-negative"}>{(item.probability * 100).toFixed(1)}%</td>
                 <td>
                     {new Date(item.date).toLocaleDateString('en-EN', {
                         day: '2-digit',

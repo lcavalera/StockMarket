@@ -51,6 +51,12 @@
         "button": "Se connecter",
         "link": "Mot de passe oublié ?"
     },
+    "agenda" : {
+        "title" : "Agenda financier",
+        "loading" : "Chargement agenda...",
+        "button" : "Voir tout",
+        "close" : "Fermer"
+    },
     "list":{
         "title" : "Liste des titres boursiers",
         "filter" : "Tous les marchés",
@@ -73,7 +79,8 @@
             "updated" : "Mis à jour",
             "probability" : "Probabilité"
         },
-        "resultat" : "Aucun résultat"
+        "resultat" : "Aucun résultat",
+        "loading" : "Chargement liste..."
     },
     "details" :{
         "loading" : "Chargement...",
@@ -284,7 +291,7 @@
             }
         }
     },
-    "register": {
+    "registerform": {
         "title": "Inscrivez votre école",
         "firstname": "Prénom",
         "input-firstname": "Entrez votre prénom",

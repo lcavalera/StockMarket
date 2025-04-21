@@ -18,7 +18,7 @@ const Home: React.FC = () => {
                     </div>
                     <h2>{t('home.description')}</h2><br /><br />
                     <h2 id='subtitle'>{t('home.subtitle')}</h2><br />
-                    <Link to="/register"><button className="button-gray" id="button-main">{t('home.buttonInscription')}</button></Link>
+                    <Link to="/registerForm"><button className="button-gray" id="button-main">{t('home.buttonInscription')}</button></Link>
                 </div>
                 <div className="column-home-right">
                     <LoginForm />

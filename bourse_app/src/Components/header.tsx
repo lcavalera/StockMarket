@@ -15,20 +15,62 @@ const Header: React.FC<HeaderProps> = () => {
     const [isLogin, setIsLogin] = useState<boolean | false>(false);
     const [user, setUser] = useState<UserProfile | null>(null);
 
-    useEffect(() => {
-        const token = sessionStorage.getItem('token');
-        const userLogin = getUserFromSessionStorage()
-        // const user = sessionStorage.getItem('username');
+    const handleLogin = () => {
+        const token = localStorage.getItem('token'); // Je te conseille localStorage
+        const userLogin = getUserFromSessionStorage();
         if (token && userLogin) {
             setUser(userLogin);
-            setIsLogin(true)
+            setIsLogin(true);
+        } else {
+            setUser(null);
+            setIsLogin(false);
         }
-        // console.log(refreshCount)
-    }, [])
+    };
+
+    useEffect(() => {
+        handleLogin();
+    }, []);
+
+    // Expose handleLogin if needed
+    useEffect(() => {
+        const handleRefresh = () => {
+            const token = localStorage.getItem('token');
+            const userLogin = getUserFromSessionStorage();
+            if (token && userLogin) {
+                setUser(userLogin);
+                setIsLogin(true);
+            } else {
+                setUser(null);
+                setIsLogin(false);
+            }
+        };
+    
+        window.addEventListener('refresh-login', handleRefresh);
+        
+        // Initial check
+        handleRefresh();
+    
+        return () => {
+            window.removeEventListener('refresh-login', handleRefresh);
+        };
+    }, []);
+
+    // useEffect(() => {
+    //     const token = sessionStorage.getItem('token');
+    //     const userLogin = getUserFromSessionStorage()
+    //     // const user = sessionStorage.getItem('username');
+    //     if (token && userLogin) {
+    //         setUser(userLogin);
+    //         setIsLogin(true)
+    //     }
+    //     // console.log(refreshCount)
+    // }, [])
 
     //  Configuration for using translation with json file
     const { t } = useTranslation();
 
+
+    
     return (
         <header id='header' className="header">
             <Link to="/"><h1 id="titre-header">StockRank</h1></Link>

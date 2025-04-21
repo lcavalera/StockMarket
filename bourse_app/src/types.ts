@@ -12,6 +12,9 @@ export interface StockData {
   isIncreasing: boolean;
   change: number;
   changePercent: number;
+  label: boolean;
+  probability: number;
+  raccomandation: string;
   sma14: number;
   sma14Display: string;
   rsi14: number;

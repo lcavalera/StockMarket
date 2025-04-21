@@ -3,11 +3,6 @@ import axios from 'axios';
 import bcrypt from 'bcryptjs';
 
 // import { getUser, login, logout, completeLogin} from '../Data/authClientService';
-interface Inscription {
-  id: number;
-  plan: string;
-  receiptDate: Date;
-}
 
 interface UserProfile {
   id: number;
@@ -16,13 +11,10 @@ interface UserProfile {
   firstName: string;
   lastName: string;
   phone: string;
-  extensionNumber: string;
-  schoolName: string;
+  role: string;
   address: string;
   postalCode: string;
   city: string;
-  inscriptions: Inscription;
-  inscriptionsIds: number;
 }
 
 const API_BASE_URL = 'https://localhost:7157/api'; // Remplacez par l'URL de votre API

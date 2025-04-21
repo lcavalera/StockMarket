@@ -51,6 +51,12 @@
         "button": "Login",
         "link": "Forgot your password?"
     },
+    "agenda" : {
+        "title" : "Financial agenda",
+        "loading" : "Loading agenda...",
+        "button" : "See all",
+        "close" : "Close"
+    },
     "list":{
         "title" : "List of stock titles",
         "filter" : "All Exchanges",
@@ -73,7 +79,8 @@
             "updated" : "Updated",
             "probability" : "Probability"
         },
-        "resultat" : "No results"
+        "resultat" : "No results",
+        "loading" : "Loading list..."
     },
     "details" :{
         "loading" : "Loading...",

@@ -25,6 +25,15 @@ namespace Bourse.Models
         [DisplayFormat(DataFormatString = "{0:F3}")]
         public double ChangePercent => PrevPrice == 0 ? 0 : ((CurrentPrice - PrevPrice) / PrevPrice) * 100;
 
+        [DisplayName("Tendance")]
+        public bool Label { get { return ChangePercent > 0 ? true : false; } }
+
+        [DisplayName("Prob.")]
+        public float Probability { get; set; }
+
+        [DisplayName("Analysis")]
+        public string? Raccomandation { get; set; }
+
         public float SMA_14 { get; set; } // Moyenne mobile sur 14 jours
                                           // Propriété calculée pour la vue
         public string SMA_14Display => SMA_14 != 0

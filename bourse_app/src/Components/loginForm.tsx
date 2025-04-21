@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { loginApi } from '../Data/profileApi.ts';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { refreshHeaderLogin } from '../Data/dataApi.ts';
 
 // Define the shape of the form data
 interface FormData {
@@ -69,6 +70,7 @@ const LoginForm: React.FC = () => {
 
             apiCall
                 .then((data => {
+                    refreshHeaderLogin();
 
                     switch(data?.user.role){
                         case 'Admin':{
@@ -77,14 +79,7 @@ const LoginForm: React.FC = () => {
                             return
                         }
                         case 'Public':{
-                            const state = data.user.inscriptions.find(i => i.state === 'Stanby');
-                            if(state){
-                                navigate('/messwaiting')
-                                
-                            }
-                            else{
-                                navigate('/account_index')
-                            }
+                            navigate('/messwaiting') 
                             // if (rootElement) {
                             //     const headerRoot = ReactDOM.createRoot(rootElement );
                             //     // console.log(headerRoot);

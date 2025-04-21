@@ -95,7 +95,7 @@
     <thead>
         <tr>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Symbol), "Index", new { sortOrder = ViewBag.SymbolSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Symbol), "IndexDTO", new { sortOrder = ViewBag.SymbolSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "symbol_asc", "symbol_desc"))
             </th>
             <th>
@@ -105,26 +105,26 @@
                 @Html.DisplayNameFor(model => model.RegularMarketPreviousClose)
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketPrice), "Index", new { sortOrder = ViewBag.PriceSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketPrice), "IndexDTO", new { sortOrder = ViewBag.PriceSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "price_asc", "price_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketChange), "Index", new { sortOrder = ViewBag.ChangeSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.RegularMarketChange), "IndexDTO", new { sortOrder = ViewBag.ChangeSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "change_asc", "change_desc"))
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.QuoteType)
             </th>
             <th style="width:100px">
-                @Html.ActionLink(Html.DisplayNameFor(model => model.DatesExercicesFinancieres), "Index", new { sortOrder = ViewBag.DatesExercFinancParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.DatesExercicesFinancieres), "IndexDTO", new { sortOrder = ViewBag.DatesExercFinancParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "exercfinanc_asc", "exercfinanc_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Bourse), "Index", new { sortOrder = ViewBag.BourseParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Bourse), "IndexDTO", new { sortOrder = ViewBag.BourseParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "bourse_asc", "bourse_desc"))
             </th>
             <th>
-                @Html.ActionLink(Html.DisplayNameFor(model => model.Label), "Index", new { sortOrder = ViewBag.LabelSortParm }, new { @class = "no-underline" })
+                @Html.ActionLink(Html.DisplayNameFor(model => model.Label), "IndexDTO", new { sortOrder = ViewBag.LabelSortParm }, new { @class = "no-underline" })
                 @Html.Raw(RenderSortArrow(ViewBag.CurrentSort, "label_asc", "label_desc"))
             </th>
             <th>
@@ -186,7 +186,7 @@
                     @DisplayProbability(item.Probability)
                 </td>
                 <td>
-                    <a asp-action="DetailsDTO" asp-route-id="@item.Symbol" asp-route-returnUrl="IndexDTO">Details</a>
+                    <a asp-action="DetailsDTO" asp-route-item="@item.Symbol" asp-route-returnUrl="IndexDTO">Details</a>
 
                     @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) | *@
                     @* @Html.ActionLink("Details", "DetailsDTO", new { item=item.Symbol }) *@
