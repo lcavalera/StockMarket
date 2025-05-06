@@ -32,7 +32,15 @@ namespace Bourse.Controllers
             var user = new ApplicationUser
             {
                 UserName = model.UserName,
-                Email = model.Email
+                PasswordHash = model.Password,
+                Email = model.UserName,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Role = model.Role,
+                Address = model.Address,
+                PostalCode = model.PostalCode,
+                City = model.City,
+                PhoneNumber = model.Phone
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -61,7 +69,21 @@ namespace Bourse.Controllers
             }
 
             var token = GenerateJwtToken(user);
-            return Ok(new { token });
+            return Ok(new
+            {
+                token,
+                user = new
+                {
+                    user.UserName,
+                    user.Email,
+                    user.FirstName,        // Ajout de FirstName
+                    user.LastName,         // Ajout de LastName
+                    user.Address,          // Ajout de Address
+                    user.PostalCode,       // Ajout de PostalCode
+                    user.City,             // Ajout de City
+                    user.Role              // Ajout de Role
+                }
+            });
         }
 
         private string GenerateJwtToken(ApplicationUser user)
@@ -90,9 +112,15 @@ namespace Bourse.Controllers
 
     public class RegisterModel
     {
-        public string UserName { get; set; }
-        public string Email { get; set; }
+        public string UserName { get; set; } //Email
         public string Password { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Role { get; set; }
+        public string Address { get; set; }
+        public string PostalCode { get; set; }
+        public string City { get; set; }
     }
 
     public class LoginModel

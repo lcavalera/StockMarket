@@ -12,6 +12,10 @@
             "login": "Login",
             "register": "Sign up",
             "schoolPage": "Back to school"
+        },
+        "menu": {
+            "profile" : "Profile",
+            "logout" : "Logout"
         }
     },
     "footer": {
@@ -55,12 +59,17 @@
         "title" : "Financial agenda",
         "loading" : "Loading agenda...",
         "button" : "See all",
-        "close" : "Close"
+        "close" : "Close",
+        "accessPremium" : "Update your subscription to view the Agenda",
+        "upgrade" : "Update",
+        "accessLimited" : "Sign up and choose your subscription to view the Agenda",
+        "register" : "Subscribe"
     },
     "list":{
         "title" : "List of stock titles",
         "filter" : "All Exchanges",
         "search" : "Filter by name",
+        "button-search" : "Search",
         "page" : "page",
         "on" : "on",
         "button-previous" : "Previous",
@@ -71,6 +80,7 @@
             "close" : "Close",
             "price" : "Price",
             "change" : "Change",
+            "volume" : "Volume",
             "type" : "Type",
             "dates" : "Financ. Dates",
             "exchange" : "Exchange",
@@ -291,8 +301,8 @@
             }
         }
     },
-    "register": {
-        "title": "Register your school",
+    "registerform": {
+        "title": "Sign up to access more data",
         "firstname": "First name",
         "input-firstname": "Enter your first name",
         "error-firstname": "First name is required",
@@ -316,7 +326,7 @@
             "option4": "Public",
             "option5": "Other"
         },
-        "error-role": "The role is required",
+        "error-role": "Subscription selection is required",
         "nrStudents": "Number of students",
         "input-nrStudents": "Enter the number of students",
         "error-nrStudents1": "The number of students must be positive",
@@ -347,7 +357,12 @@
         "checkbox1": "Memorizing my choices",
         "checkbox2": "By registering, you agree to our ",
         "checkbox3": "terms of use",
-        "error-checkbox3": "Confirm the terms of use"
+        "error-checkbox3": "Confirm the terms of use",
+        "subscription" : "Abonnement",
+        "free" : "FREE",
+        "freeDesc" : "$0 / month",
+        "premium" : "PREMIUM",
+        "premiumDesc" : "$39.90 / month"
     },
     "messWaiting": {
         "title": "Your membership application is being processed",
@@ -498,6 +513,23 @@
             "city": "City",
             "zipCode": "Postal code"
         }
+    },
+    "payment": {
+        "title":"PREMIUM subscription",
+        "subtitle":"Enter your details",
+        "name": "Name of the holder",
+        "input-name" :"Enter the holder's name",
+        "error-name" : "Enter the holder's name",
+        "cardNumber" : "Card number",
+        "input-cardNumber" :"Enter the card number",
+        "error-number" : "Enter the 16-digit card number",
+        "expiry" : "Expiry date",
+        "error-expiry" : "Enter a correct date (MM/YY)",
+        "cvc" : "CVC",
+        "input-cvc" :"Enter the CVC code",
+        "error-cvc" : "Enter the 3-digit CVC code",
+        "payButton" : "Pay",
+        "total": "Total"
     }
 }
   

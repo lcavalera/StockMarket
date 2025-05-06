@@ -1,11 +1,13 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { loginApi } from '../Data/profileApi.ts';
+import { login } from '../Data/dataApi';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { refreshHeaderLogin } from '../Data/dataApi.ts';
+import { refreshHeaderLogin } from '../Data/dataApi';
+import { useAuth } from '../Auth/autoContext'; // <-- Import du contexte Auth
+import type { UserRole } from '../Auth/autoContext';
 
 // Define the shape of the form data
-interface FormData {
+interface LoginModel {
     username: string;
     password: string;
 }
@@ -17,25 +19,21 @@ interface FormErrors {
 }
 
 const LoginForm: React.FC = () => {
-    const [formData, setFormData] = useState<FormData>({
+    const [loginModel, setFormData] = useState<LoginModel>({
         username: '',
         password: ''
     });
 
-    // const { onRefresh } = useRefresh();
-
-    const navigate = useNavigate();
-    // const headerDomNode = document.getElementById('header');
-    // const root = document.getElementById('root');
-    // const rootElement  = document.getElementById('root');
-
     const [errors, setErrors] = useState<FormErrors>({});
+    const navigate = useNavigate();
+    const { t } = useTranslation();
+    const { login: setAuthRole } = useAuth(); // <-- Récupère la fonction pour définir le rôle
 
     // Handle input change events
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({
-            ...formData,
+            ...loginModel,
             [name]: value
         });
     };
@@ -45,12 +43,12 @@ const LoginForm: React.FC = () => {
         let valid = true;
         const newErrors: FormErrors = {};
 
-        if (!formData.username) {
+        if (!loginModel.username) {
             newErrors.username = 'Le courriel est obligatoire';
             valid = false;
         }
 
-        if (!formData.password) {
+        if (!loginModel.password) {
             newErrors.password = 'Le mot de passe est obligatoire';
             valid = false;
         }
@@ -64,92 +62,62 @@ const LoginForm: React.FC = () => {
         e.preventDefault();
 
         if (validateForm()) {
-            
-            // Handle form submission logic here
-            const apiCall = loginApi(formData);
-
-            apiCall
-                .then((data => {
-                    refreshHeaderLogin();
-
-                    switch(data?.user.role){
-                        case 'Admin':{
-                            navigate('/admin_index')
-                            // onRefresh();
-                            return
-                        }
-                        case 'Public':{
-                            navigate('/messwaiting') 
-                            // if (rootElement) {
-                            //     const headerRoot = ReactDOM.createRoot(rootElement );
-                            //     // console.log(headerRoot);
-                            //     headerRoot.render(<Layout />);
-                            // }
-                            // onRefresh();
-                            return
-                        }
-                        case 'Manager':{
-                            navigate('/account_index')
-                            // onRefresh();
-                            return
-                        }
-                        case 'Other':{
-                            navigate('/account_index')
-                            // onRefresh();
-                            return
-                        }
-                    }
-
-                }))
-                .catch(error => {
-                    console.error(error.message);
-                    alert(error.message);
+            try {
+                const data = await login({
+                    userName: loginModel.username,
+                    password: loginModel.password
                 });
 
+                refreshHeaderLogin();
+                
+                const roleFromApi = data?.user?.role?.toLowerCase(); // 'Admin' -> 'admin'
+                const validRoles: UserRole[] = ['anonymous', 'public', 'premium'];
+                
+                if (validRoles.includes(roleFromApi as UserRole)) {
+                    setAuthRole(roleFromApi as UserRole);
+                } else {
+                    setAuthRole('anonymous');
+                }
+                
 
-            // if (formData.username == 'admin@classe-museewahta.org') {
-            //     navigate('/admin_index');
-            // } else {
-            //     navigate('/account_index');
-            // };
+                navigate('/list');
 
-            // login();
-            console.log('Form submitted:', formData);
-            // Example: Send data to an API or update state
-        }
+            } catch (error: any) {
+                console.error(error.message);
+                alert(error.message);
+            }
+        }       
     };
-
-    const { t } = useTranslation();
 
     return (
         <div className="container-form">
-            <h2>{t('loginform.title')}</h2>
+            <h2 id='form-title'>{t('loginform.title')}</h2>
             <form className="login-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="username">{t('loginform.label.email')}</label><br />
+                    <label htmlFor="username">{t('loginform.label.email')}</label>
                     <input
                         placeholder={t('loginform.input.email')}
                         type="text"
                         id="username"
                         name="username"
-                        value={formData.username}
+                        value={loginModel.username}
                         onChange={handleChange} // Call the function to assign the entered value
                     />
                     {errors.username && <p className="error">{errors.username}</p>}
                 </div><br />
                 <div className="form-group">
-                    <label htmlFor="password">{t('loginform.label.password')}</label><br />
+                    <label htmlFor="password">{t('loginform.label.password')}</label>
                     <input
                         placeholder={t('loginform.input.password')}
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
+                        value={loginModel.password}
                         onChange={handleChange} // Call the function to assign the entered value
                     />
                     {errors.password && <p className="error">{errors.password}</p>}
                 </div><br />
-                <button className='button-red' id='button-login' type="submit">{t('loginform.button')}</button><br /><br />
+                <button className='button-blue' id='button-login' type="submit">{t('loginform.button')}</button><br /><br />
                 <a href="/">{t('loginform.link')}</a>
             </form>
         </div>

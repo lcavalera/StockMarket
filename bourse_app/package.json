@@ -43,6 +43,9 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "@types/react-dropzone": "^4.2.2",
     "@types/react-router-dom": "^5.3.3"
   }

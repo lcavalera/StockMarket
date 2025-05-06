@@ -7,5 +7,6 @@
         public float High { get; set; }
         public float Low { get; set; }
         public float Close {  get; set; }
+        public long Volume { get; set; }
     }
 }

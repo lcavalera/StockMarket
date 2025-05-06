@@ -1,8 +1,8 @@
 // src/components/Layout.tsx
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../Components/header.tsx';
-import Footer from '../Components/footer.tsx';
+import Header from '../Components/header';
+import Footer from '../Components/footer';
 // import '../Css/layout.css'; // Fichier CSS spécifique au layout
 
 const Layout: React.FC = () => {

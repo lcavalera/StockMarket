@@ -1,15 +1,17 @@
 import React from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getIndiceDetails } from '../Data/dataApi.ts';
-import { IndiceDTO } from '../types.ts';
-import { Button } from '../Components/ui/button.tsx';
+import { getIndiceDetails } from '../Data/dataApi';
+import { IndiceDTO } from '../types';
+import { Button } from '../Components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from "../Auth/autoContext";
 
 const Details = () => {
   const { symbol } = useParams(); // symbol
   const navigate = useNavigate();
   const location = useLocation();
+  const { role } = useAuth();
 
   const [indice, setIndice] = useState<IndiceDTO | null>(null);
 
@@ -83,8 +85,12 @@ const Details = () => {
             <th>{t('details.table.stockmarket')}</th>
             <th>{t('details.table.exchange')}</th>
             <th>Tendance</th>
-            <th>Analyses</th>
-            <th>Probabilité</th>
+            {role === 'premium' && (
+              <>
+                <th>Analyses</th>
+                <th>Probabilité</th>
+              </>
+            )}
             <th>{t('details.table.date')}</th>
           </tr>
         </thead>
@@ -104,13 +110,17 @@ const Details = () => {
                 <td>{item.prevPrice.toFixed(3)}</td>
                 <td>{item.high.toFixed(3)}</td>
                 <td>{item.low.toFixed(3)}</td>
-                <td>{indice.regularMarketVolume}</td>
+                <td>{item.volume}</td>
                 <td>{indice.quoteType}</td>
                 <td>{indice.bourse}</td>
                 <td>{indice.exchange}</td>
                 <td className={item.label ? "color-positive" : "color-negative"}>{item.label ? "UP" : "DOWN"}</td>
-                <td className={`rec-cell ${getRecommendationClass(item.raccomandation)}`}>{item.raccomandation}</td>
-                <td className={item.probability > 0.49 ? "color-positive" : "color-negative"}>{(item.probability * 100).toFixed(1)}%</td>
+                {role === 'premium' && (
+                  <>
+                    <td className={`rec-cell ${getRecommendationClass(item.raccomandation)}`}>{item.raccomandation}</td>
+                    <td className={item.probability > 0.49 ? "color-positive" : "color-negative"}>{(item.probability * 100).toFixed(1)}%</td>
+                  </>
+                )}
                 <td>
                     {new Date(item.date).toLocaleDateString('en-EN', {
                         day: '2-digit',

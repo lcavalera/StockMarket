@@ -12,6 +12,10 @@
             "login": "Connexion",
             "register": "S'inscrire",
             "schoolPage": "Retour à l'école"
+        },
+        "menu": {
+            "profile" : "Profile",
+            "logout" : "Déconnexion"
         }
     },
     "footer": {
@@ -55,12 +59,17 @@
         "title" : "Agenda financier",
         "loading" : "Chargement agenda...",
         "button" : "Voir tout",
-        "close" : "Fermer"
+        "close" : "Fermer",
+        "accessPremium" : "Mettez à jour votre abonnement pour voir l'Agenda",
+        "upgrade" : "Mise à jour",
+        "accessLimited" : "Inscrivez-vous et choisissez votre abonnement pour voir l'Agenda",
+        "register" : "Inscrivez-vous"
     },
     "list":{
         "title" : "Liste des titres boursiers",
         "filter" : "Tous les marchés",
         "search" : "Filtrer par nom",
+        "button-search" : "Rechercher",
         "page" : "page",
         "on" : "sur",
         "button-previous" : "Précédent",
@@ -74,6 +83,7 @@
             "type" : "Type",
             "dates" : "Dates Financ.",
             "exchange" : "Bourse",
+            "volume" : "Volume",
             "label" : "Tendance",
             "recommendation" : "Analyses",
             "updated" : "Mis à jour",
@@ -292,7 +302,7 @@
         }
     },
     "registerform": {
-        "title": "Inscrivez votre école",
+        "title": "Inscrivez vous pour avoir accès à plus de données",
         "firstname": "Prénom",
         "input-firstname": "Entrez votre prénom",
         "error-firstname": "Le prénom est obligatoire",
@@ -316,7 +326,7 @@
             "option4": "Public",
             "option5": "Autre"
         },
-        "error-role": "Le rôle est requis",
+        "error-role": "La sélection de l'abonnement est requise",
         "nrStudents": "Nombre d’élèves",
         "input-nrStudents": "Entrez le nombre d'élèves",
         "error-nrStudents1": "Le nombre d'étudiants doit être positif",
@@ -336,7 +346,7 @@
         "error-email2": "L'email est obligatoire",
         "password": "Mot de passe",
         "input-password": "Entrez le mot de passe",
-        "error-password1": "Le mot de passe doit contenir au moins 6 caractères",
+        "error-password1": "Le mot de passe doit contenir au moins une majuscule, un chiffre et un caractère spécial.",
         "error-password2": "Le mot de passe est requis",
         "confirmPassword": "Confirmez le mot de passe",
         "input-confirmPassword": "Entrez la confirmation du mot de passe",
@@ -347,7 +357,12 @@
         "checkbox1": "Mémoriser mes choix",
         "checkbox2": "En vous inscrivant, vous acceptez nos ",
         "checkbox3": "conditions d'utilisation",
-        "error-checkbox3": "Confirmez le conditions d'utilisation"
+        "error-checkbox3": "Confirmez le, conditions d'utilisation",
+        "subscription" : "Abonnement",
+        "free" : "FREE",
+        "freeDesc" : "0 $ / mois",
+        "premium" : "PREMIUM",
+        "premiumDesc" : "39.90 $ / mois"
     },
     "messWaiting": {
         "title": "Votre demande d'adhésion est en cours de traitement",
@@ -499,5 +514,22 @@
             "city": "Ville",
             "zipCode": "Code postal"
         }
+    },
+    "payment": {
+        "title":"Abonnement PREMIUM",
+        "subtitle":"Entrez vos coordonnées",
+        "name": "Nom du titulaire",
+        "input-name" :"Entrez le nom du titulaire",
+        "error-name" : "Entrez le nom du titulaire",
+        "cardNumber" : "Numéro de carte",
+        "input-cardNumber" :"Entrez le numéro de carte",
+        "error-number" : "Entrez le numéro de carte à 16 chiffres",
+        "expiry" : "Date d'expiration",
+        "error-expiry" : "Veuillez saisir une date correcte (MM/YY)",
+        "cvc" : "CVC",
+        "input-cvc" :"Entrez le code CVC",
+        "error-cvc" : "Entrez le code CVC à 3 chiffres",
+        "payButton" : "Payer",
+        "total": "Totale"
     }
 }

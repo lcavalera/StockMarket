@@ -13,5 +13,6 @@ namespace Bourse.Interfaces
         public Task<IQueryable<IndiceDTO>> ObtenirSelonNameDTO(string name);
         public Task<IndiceDTO> ObtenirSelonSymbolDTO(string symbol);
         public Task<IndiceDTO> ObtenirSelonIdDTO(int id);
+        public Task<List<IndiceDTO>> ObtenirAgenda(DateTime start, DateTime end);
     }
 }

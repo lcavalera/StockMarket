@@ -28,6 +28,8 @@ namespace Bourse.Models
         [DisplayName("Tendance")]
         public bool Label { get { return ChangePercent > 0 ? true : false; } }
 
+        public long? Volume { get; set; }
+
         [DisplayName("Prob.")]
         public float Probability { get; set; }
 

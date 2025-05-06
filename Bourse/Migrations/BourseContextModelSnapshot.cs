@@ -145,6 +145,9 @@ namespace Bourse.Migrations
                     b.Property<float>("SMA_14")
                         .HasColumnType("REAL");
 
+                    b.Property<long?>("Volume")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IndiceId");

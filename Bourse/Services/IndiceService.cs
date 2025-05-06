@@ -83,6 +83,20 @@ namespace Bourse.Services
                 .SingleOrDefaultAsync(i => i.Id == id));
         }
 
+        public async Task<List<IndiceDTO>> ObtenirAgenda(DateTime start, DateTime end)
+        {
+            var indices = await _context.Indices
+                .ToListAsync();
+
+            var filtered = indices
+                .Where(i => i.DatesExercicesFinancieres.Any(d => d.Date >= start.Date && d.Date <= end.Date))
+                .OrderByDescending(i => i.RegularMarketVolume)
+                .ToList();
+
+            return _mapper.Map<List<IndiceDTO>>(filtered);
+        }
+
+
         //public async Task GetImageAnalysisIndice(int id)
         //{
         //    using (var scope = _serviceProvider.CreateScope())

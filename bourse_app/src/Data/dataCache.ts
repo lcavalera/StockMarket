@@ -1,6 +1,7 @@
-import { saveAgendaData, getAgendaData } from '../Data/indexedDB.ts';
+import { saveData, getData, connexionDB } from '../Data/indexedDB';
 
 const today = new Date().toISOString().split('T')[0];
+const CACHE_EXPIRY_DAYS = 1; // Par exemple 1 jour
 
 // Clés utilisées dans IndexedDB
 const KEYS = {
@@ -9,58 +10,103 @@ const KEYS = {
   FORECASTS: 'forecastsData'
 };
 
+type KeyType = keyof typeof KEYS; // Type qui permet seulement 'AGENDA', 'LIST', 'FORECASTS'
+// ---------- UTILS ----------
+
+export async function clearAllCache() {
+  const db = await connexionDB();
+  const tx = db.transaction('store', 'readwrite');
+  const store = tx.objectStore('store');
+
+  const allKeys = await store.getAllKeys();
+  for (const key of allKeys) {
+    await store.delete(key);
+  }
+
+  await tx.done;
+  console.log('✅ Cache cleared from IndexedDB.');
+}
+
+function getListCacheKey(key: KeyType, search: string, exchange: string, sort: string, page: number): string {
+  const normalized = (str: string) => str.trim().toLowerCase() || 'all';
+  return `${KEYS[key]}_${normalized(search)}_${normalized(exchange)}_${normalized(sort)}_page${page}`;
+}
+
+function isCacheValid(date: string): boolean {
+  const cacheDate = new Date(date);
+  const now = new Date();
+  const diffTime = now.getTime() - cacheDate.getTime();
+  const diffDays = diffTime / (1000 * 3600 * 24);
+  return diffDays < CACHE_EXPIRY_DAYS;
+}
+
+async function saveCache<T>(key: string, data: T) {
+  await saveData(key, { date: today, data });
+}
+
+async function getCache<T>(key: string): Promise<T | null> {
+  const cached = await getData(key);
+  if (cached && isCacheValid(cached.date)) {
+    return cached.data as T;
+  }
+  return null;
+}
+
 // --------- AGENDA ---------
 
 export async function saveAgenda(items: any[]) {
-  await saveAgendaData(KEYS.AGENDA, { date: today, data: items });
+  await saveCache(KEYS.AGENDA, items);
 }
 
-const CACHE_EXPIRY_DAYS = 1; // Par exemple 1 jour
-
-export async function getCachedAgenda() {
-  const cached = await getAgendaData(KEYS.AGENDA);
-  if (cached && cached.date === today) {
-    // Vérification si les données sont récentes (moins de 24h)
-    const cacheDate = new Date(cached.date);
-    const currentDate = new Date();
-    const diffTime = currentDate.getTime() - cacheDate.getTime();
-    const diffDays = diffTime / (1000 * 3600 * 24); // Conversion en jours
-    if (diffDays < CACHE_EXPIRY_DAYS) {
-      return cached.data;
-    }
-  }
-  return null; // Besoin de re-fetch
+export async function getCachedAgenda(): Promise<any[] | null> {
+  return await getCache<any[]>(KEYS.AGENDA);
 }
-
 
 // --------- LIST ---------
 
-export async function saveList(data: { items: any[]; totalPages: number }) {
-  await saveAgendaData(KEYS.LIST, { date: today, data });
+export async function saveList(
+  data: { items: any[]; totalPages: number },
+  search: string,
+  exchange: string,
+  sort: string,
+  page: number
+) {
+  const key = getListCacheKey('LIST', search, exchange, sort, page);
+  await saveCache(key, data);
 }
 
-export async function getCachedList() {
-  const cached = await getAgendaData(KEYS.LIST);
-  if (cached && cached.date === today) {
-    if (cached.data && Array.isArray(cached.data.items) && typeof cached.data.totalPages === 'number') {
-      return cached.data as { items: any[]; totalPages: number };
-    }
-  }
-  return null;
+export async function getCachedList(
+  search: string,
+  exchange: string,
+  sort: string,
+  page: number
+): Promise<{ items: any[]; totalPages: number } | null> {
+  const key = getListCacheKey('LIST', search, exchange, sort, page);
+  const data = await getCache<{ items: any[]; totalPages: number }>(key);
+  return data?.items && typeof data.totalPages === 'number' ? data : null;
 }
+
 
 // --------- FORECASTS ---------
 
-export async function saveForecasts(data: { items: any[]; totalPages: number }) {
-  await saveAgendaData(KEYS.FORECASTS, { date: today, data });
+export async function saveForecasts(
+  data: { items: any[]; totalPages: number },
+  search: string,
+  exchange: string,
+  sort: string,
+  page: number
+) {
+  const key = getListCacheKey('FORECASTS', search, exchange, sort, page);
+  await saveCache(key, data);
 }
 
-export async function getCachedForecasts() {
-  const cached = await getAgendaData(KEYS.FORECASTS);
-  if (cached && cached.date === today) {
-    if (cached.data && Array.isArray(cached.data.items) && typeof cached.data.totalPages === 'number') {
-      return cached.data as { items: any[]; totalPages: number };
-    }
-  }
-  return null;
+export async function getCachedForecasts(
+  search: string,
+  exchange: string,
+  sort: string,
+  page: number
+): Promise<{ items: any[]; totalPages: number } | null> {
+  const key = getListCacheKey('FORECASTS', search, exchange, sort, page);
+  const data = await getCache<{ items: any[]; totalPages: number }>(key);
+  return data?.items && typeof data.totalPages === 'number' ? data : null;
 }

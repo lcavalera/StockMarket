@@ -33,6 +33,7 @@
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 0.9vw;
+    table-layout: fixed;  /* Ajouté pour éviter le débordement */
   }
   
   .table th, 
@@ -107,6 +108,27 @@
     text-decoration: underline;
   }
 
+  .agenda-upgrade{
+    display: flex;
+    flex-direction: column; /* bouton en dessous du texte */
+    align-items: center;     /* centrer horizontalement */
+    justify-content: center; /* centrer verticalement si nécessaire */
+    text-align: center;
+    padding: 1vw;
+  }
+
+  .agenda-upgrade p{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(49, 35, 129);;
+  }
+
+  .agenda-upgrade button{
+    margin-top: 1vw;
+    height: 3vw;
+  }
+
+
   .button-pagination{
     background-color: gray;
     padding: 0.5vw 1vw; /* Ajoute du padding pour respirer autour du texte */
@@ -120,7 +142,7 @@
   .button{
     background-color: darkslategray;
     height: 2vw;
-    width: 6vw;
+    width: 4vw;
     margin: 10px;
     font-size: 1vw; /* Taille fixe du texte */
     text-align: center; /* Centrer le texte dans le bouton */
@@ -162,3 +184,5 @@
   .table td.chargement-list {
     text-align: center;
   }
+
+  

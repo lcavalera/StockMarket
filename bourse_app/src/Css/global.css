@@ -50,7 +50,7 @@
     white-space: nowrap;
     font-size: 3vw;
     font-style: italic;
-    color: rgb(172, 187, 39);
+    color: rgb(49, 35, 129);
     padding-left: 2vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre du texte */
   }
@@ -93,8 +93,10 @@
   }
   
   .LanguageDropdown {
-    padding: 0.3vw;
+    padding: 0.5vw;
+    padding-top: 0.8vw;
     align-content: center;
+    border-radius: 10px;
   }
   
   .LanguageDropdown select{
@@ -105,7 +107,36 @@
     padding: 4px;
     color: darkslategray;
   }
-  
+
+  .LanguageDropdown:hover{
+    background-color: gray;
+  }
+
+  .globe {
+    cursor: pointer;
+    font-size: 30px;
+  }
+  .container-langues{
+    position: absolute;
+    top: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .langue{
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: 800;
+    padding: 0.5vw;
+    align-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 'background-color 0.3s'
+  }
+
   button {
     display: inline-block;
     font-size: 1vw;
@@ -114,16 +145,17 @@
     color: white;
   }
   
-  .button-red {
-    background-color: rgb(172, 187, 39);
+  .button-blue {
+    background-color: rgb(49, 35, 129);
     font-weight: 800;
-    border: solid 3px rgb(43, 126, 126);
-    color: darkslategray;
+    border: solid 3px white;
+    color: white;
     padding: 0.5vw 1vw;
   }
   
   .button-gray {
     background-color: darkslategray;
+    border: solid 3px white;
     padding: 0.5vw 1vw;
   }
   

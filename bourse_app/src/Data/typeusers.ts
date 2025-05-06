@@ -1,14 +1,12 @@
 // src/typeUsers.ts
 export interface UserProfile {
     id: number
-    email: string;
+    userName: string;
+    password: string;
     firstName: string;
     lastName: string;
     phone: string;
-    extensionNumber: string;
-    schoolName: string;
-    role: string;
-    nrStudents: string;
+    role: string; // Par défaut, l'utilisateur est "Public"
     address: string;
     postalCode: string;
     city: string;

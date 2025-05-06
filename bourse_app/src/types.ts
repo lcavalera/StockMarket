@@ -13,6 +13,7 @@ export interface StockData {
   change: number;
   changePercent: number;
   label: boolean;
+  volume: number;
   probability: number;
   raccomandation: string;
   sma14: number;

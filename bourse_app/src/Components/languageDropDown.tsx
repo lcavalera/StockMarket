@@ -15,42 +15,21 @@ const LanguageDropdown: React.FC = () => {
   return (
     <div style={{ position: 'relative' }}>
       {/* Icône du globe, au clic elle ouvre/ferme le menu */}
-      <FaGlobe
+      <FaGlobe className='globe'
         onClick={() => setIsOpen(!isOpen)} // Basculer l'état du menu
-        style={{ cursor: 'pointer', fontSize: '30px' }}
       />
       
       {/* Menu avec les options FR/EN, visible quand isOpen est true */}
       {isOpen && (
-        <div 
-          style={{
-            position: 'absolute',
-            top: '40px', // Positionner le menu sous l'icône
-            backgroundColor: '#fff',
-            border: '1px solid #ccc',
-            padding: '10px',
-            borderRadius: '5px',
-            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          <div 
-            style={{
-              cursor: 'pointer', 
-              padding: '5px',
-              transition: 'background-color 0.3s', // Transition pour l'effet de survol
-            }} 
+        <div className='container-langues'>
+          <div className='langue'
             onClick={() => handleLanguageChange('fr')}
             onMouseEnter={(e) => [e.currentTarget.style.backgroundColor = '#5a5a5a', e.currentTarget.style.color = '#f0f0f0']} // Survol
             onMouseLeave={(e) => [e.currentTarget.style.backgroundColor = 'transparent', e.currentTarget.style.color = '#221F20']} // Retirer l'effet
           >
             FR
           </div>
-          <div 
-            style={{
-              cursor: 'pointer', 
-              padding: '5px',
-              transition: 'background-color 0.3s', // Transition pour l'effet de survol
-            }} 
+          <div className='langue'
             onClick={() => handleLanguageChange('en')}
             onMouseEnter={(e) => [e.currentTarget.style.backgroundColor = '#5a5a5a', e.currentTarget.style.color = '#f0f0f0']} // Survol
             onMouseLeave={(e) => [e.currentTarget.style.backgroundColor = 'transparent', e.currentTarget.style.color = '#221F20']} // Retirer l'effet
