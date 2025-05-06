@@ -401,3 +401,5 @@ FodyWeavers.xsd
 /Bourse/Bourse.db
 /Bourse/Bourse.db-shm
 /Bourse/Bourse.db-wal
+/IdentityServer/Bourse.db
+/IdentityServer/Identity.db
