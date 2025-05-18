@@ -126,24 +126,21 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             // 🔹 Étape 1 : Bourse ouverte, on met à jour les earnings
                             Console.WriteLine($"Bourse {nomBourse} ouverte. Mise à jour des dates financières...");
                             await UpdateEarningDates(nomBourse, stoppingToken);
+
+                            // Liberer la memoire
+                            var usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
+                            Console.WriteLine($"Mémoire utilisée avant attente : {usedMemoryMB} MB");
+
+                            indices = null;
+                            GC.Collect();
+                            GC.WaitForPendingFinalizers();
+                            GC.Collect();
+
+                            usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
+                            Console.WriteLine($"Mémoire utilisée apres liberation de la mémoire : {usedMemoryMB} MB");
+
+                            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
                         }
-
-                        // Liberer la memoire
-                        var usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
-                        Console.WriteLine($"Mémoire utilisée avant attente : {usedMemoryMB} MB");
-
-                        indices = null;
-                        GC.Collect();
-                        GC.WaitForPendingFinalizers();
-                        GC.Collect();
-
-                        usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
-                        Console.WriteLine($"Mémoire utilisée apres liberation de la mémoire : {usedMemoryMB} MB");
-
-                        await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
-
-                        Console.WriteLine($"Attente de la fermeture du marché pour {nomBourse}...");
-                        await WaitForEndOfDay(stoppingToken, fuseHoraire);
 
                         // 🔹 Attendre la fermeture de la bourse
                         Console.WriteLine($"Attente de la fermeture du marché pour {nomBourse}...");
@@ -171,12 +168,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                         DateTime dateLastClose = await GetLastDateHistory(nomBourse);
 
-                        if (dateLastClose.DayOfWeek != DayOfWeek.Friday &&
-                            (dateDansLeFuseau.DayOfWeek == DayOfWeek.Saturday ||
-                            dateDansLeFuseau.DayOfWeek == DayOfWeek.Sunday ||
-                            dateDansLeFuseau.DayOfWeek == DayOfWeek.Monday
-                            ))
-                        {
+                        //if (dateLastClose.DayOfWeek != DayOfWeek.Friday &&
+                        //    (dateDansLeFuseau.DayOfWeek == DayOfWeek.Saturday ||
+                        //    dateDansLeFuseau.DayOfWeek == DayOfWeek.Sunday ||
+                        //    dateDansLeFuseau.DayOfWeek == DayOfWeek.Monday
+                        //    ))
+                        //{
                             if (indices.Any())
                             {
                                 // 🔹 Étape 3 : Sauvegarde de l'historique manquant
@@ -209,7 +206,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
                             usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
                             Console.WriteLine($"Mémoire utilisée apres liberation de la mémoire : {usedMemoryMB} MB");
-                        }
+                        //}
 
                         // 🔹 Étape 5 : Attendre l'ouverture de la bourse
                         Console.WriteLine($"Marché fermé pour {nomBourse}. En attente de l'ouverture...");
@@ -1186,13 +1183,13 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 }
                 var futurePrice = (i < prices.Count - 1) ? prices[i + 1].Close : prices[i].Close;
 
-                int smaIndex = Math.Max((sma14.Length - prices.Count) + i, i);
-                int rsiIndex = Math.Max((rsi14.Length - prices.Count) + i, i);
-                int emaIndex = Math.Max((ema14.Length - prices.Count) + i, i);
-                int bollUpperIndex = Math.Max((bollUpper.Length - prices.Count) + i, i);
-                int bollLowerIndex = Math.Max((bollLower.Length - prices.Count) + i, i);
-                int macdIndex = Math.Max((macd.Length - prices.Count) + i, i);
-                int averageVolumeIndex = Math.Max((averageVolume.Length - prices.Count) + i, i);
+                int smaIndex = SafeIndex(sma14.Length, prices.Count, i);
+                int rsiIndex = SafeIndex(rsi14.Length, prices.Count, i);
+                int emaIndex = SafeIndex(ema14.Length, prices.Count, i);
+                int bollUpperIndex = SafeIndex(bollUpper.Length, prices.Count, i);
+                int bollLowerIndex = SafeIndex(bollLower.Length, prices.Count, i);
+                int macdIndex = SafeIndex(macd.Length, prices.Count, i);
+                int averageVolumeIndex = SafeIndex(averageVolume.Length, prices.Count, i);
 
                 var stockData = new StockData
                 {
@@ -1675,10 +1672,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         {
 
             // Ignore les week-ends
-            //if (dateNext.DayOfWeek != DayOfWeek.Saturday
-            //    && dateNext.DayOfWeek != DayOfWeek.Sunday
-            //    && !fuseHoraire.JoursFeries.Any(holiday => holiday.Date == dateNext.Date))
-            //{
+            if (dateNext.DayOfWeek != DayOfWeek.Saturday
+                && dateNext.DayOfWeek != DayOfWeek.Sunday
+                && !fuseHoraire.JoursFeries.Any(holiday => holiday.Date == dateNext.Date))
+            {
                 string filePath = $"Data/{nomBourse}/{nomBourse}_{dateNext:yyyyMMdd}.txt";
 
                 try
@@ -1690,7 +1687,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 {
                     Console.WriteLine($"Erreur lors de la sauvegarde pour {dateNext:yyyy-MM-dd}: {ex.Message}");
                 }
-            //}
+            }
 
             // Passe au jour suivant
             dateNext = dateNext.AddDays(1);
@@ -2817,10 +2814,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         // Calcul regulier
         return rsi switch
         {
-            < 30 => "Strong Buy",    // Survendu
-            < 40 => "Buy",
-            > 70 => "Strong Sell",   // Suracheté
-            > 60 => "Sell",
+            <= 30 => "Strong Buy",    // Survendu
+            <= 40 => "Buy",
+            >= 70 => "Strong Sell",   // Suracheté
+            >= 60 => "Sell",
             _ => "Hold"              // Zone neutre
         };
     }
@@ -2999,6 +2996,13 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         return avgVolume;
     }
 
+    int SafeIndex(int totalLength, int itemsToMap, int i)
+    {
+        int idx = totalLength - itemsToMap + i;
+        if (idx < 0) return 0;
+        if (idx >= totalLength) return totalLength - 1;
+        return idx;
+    }
 
     //private async Task<DateTime[]> GetFinancialDataAsync(Indice indice)
     //{
