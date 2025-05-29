@@ -32,7 +32,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         _scopeFactory = scopeFactory;
         _filePath = ["TSX.txt", "NASDAQ.txt", "AMEX.txt", "NYSE.txt"]; //Ajouter autres bourse si necessaire
         //_config = config;
-        //_apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API Alpha Vantage
+        //_apiKey = "[Clé API]"; // Remplacez par votre clé API Alpha Vantage
     }
 
     // NOTE : AJOUTER JOURNALISATION SERILOG ou NLOG
