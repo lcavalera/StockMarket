@@ -22,8 +22,10 @@ namespace Bourse.Controllers
         [HttpPost("create-order")]
         public async Task<IActionResult> CreateOrder([FromBody] PaymentRequest request)
         {
-            string clientId = _config["PayPal:ClientId"];
-            string clientSecret = _config["PayPal:Secret"];
+            string clientId = _config["PayPal:ClientId"] 
+                ?? throw new InvalidOperationException("PayPal:ClientId is missing in configuration."); ;
+            string clientSecret = _config["PayPal:Secret"] 
+                ?? throw new InvalidOperationException("PayPal:Secret is missing in configuration."); ;
 
             var client = _clientFactory.CreateClient();
 
@@ -91,7 +93,7 @@ namespace Bourse.Controllers
 
     public class PaymentRequest
     {
-        public string Description { get; set; }
-        public string Amount { get; set; }
+        public string? Description { get; set; }
+        public string? Amount { get; set; }
     }
 }

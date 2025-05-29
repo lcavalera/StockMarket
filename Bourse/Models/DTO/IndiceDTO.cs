@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 
 namespace Bourse.Models.DTO
 {
@@ -67,8 +69,20 @@ namespace Bourse.Models.DTO
         [DisplayName("Prob.")]
         public float Probability { get; set; }
 
-        [DisplayName("Analysis")]
+        [DisplayName("Racc.")]
         public string? Raccomandation { get; set; }
+
+        public string? AnalysisJson { get; set; }
+
+        [NotMapped]
+        public IDictionary<string, int>? Analysis
+        {
+            get => string.IsNullOrEmpty(AnalysisJson)
+                ? new Dictionary<string, int>()
+                : JsonSerializer.Deserialize<Dictionary<string, int>>(AnalysisJson!);
+
+            set => AnalysisJson = JsonSerializer.Serialize(value);
+        }
 
         [DisplayName("Update")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

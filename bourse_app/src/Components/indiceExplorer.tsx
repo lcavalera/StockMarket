@@ -270,6 +270,7 @@ const IndiceExplorer: React.FC<Props> = ({ fetchData, returnUrl, getCachedData, 
                 {role === 'premium' && (
                   <>
                     <th >{t('list.table.recommendation')}</th>
+                    <th>{t('list.table.analysis')}</th>
                   </>
                 )}
                 <th id='update'>{t('list.table.updated')}</th>
@@ -338,6 +339,30 @@ const IndiceExplorer: React.FC<Props> = ({ fetchData, returnUrl, getCachedData, 
               {role === 'premium' && (
                 <>
                   <td className={`rec-cell ${getRecommendationClass(indice.raccomandation)}`}>{indice.raccomandation}</td>
+                  <td>
+                    {indice.analysis ? (
+                      <ul style={{ paddingLeft: 0, margin: -10 }}>
+                        {Object.entries(indice.analysis).map(([key, value]) => (
+
+                            <li 
+                              key={index}
+                              style={{ listStyle: "none", padding: 0, margin: 0 }}
+                            >
+                              <span 
+                                style={{
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                <strong className={`rec-cell ${getRecommendationClass(key)}`}>{key}: {value}</strong>
+                              </span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    ) : (
+                      <span>N/A</span>
+                    )}
+                  </td>
                 </>
               )}
               <td>{new Date(indice.dateUpdated).toDateString()}</td>

@@ -85,9 +85,10 @@
             "exchange" : "Bourse",
             "volume" : "Volume",
             "label" : "Tendance",
-            "recommendation" : "Analyses",
+            "recommendation" : "Recom.",
+            "analysis" : "Analyses",
             "updated" : "Mis à jour",
-            "probability" : "Probabilité"
+            "probability" : "Prob."
         },
         "resultat" : "Aucun résultat",
         "loading" : "Chargement liste..."

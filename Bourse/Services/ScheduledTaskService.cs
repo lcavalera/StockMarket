@@ -9,30 +9,35 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.ML;
+using Microsoft.Playwright;
 using System.Data;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using Tesseract;
 
 public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 {
     private readonly IServiceScopeFactory _scopeFactory;
-    //private readonly IConfiguration _config;
+    private readonly IConfiguration _config;
     //private CookieContainer _cookies;
     private readonly MLContext _mlContext;
     private readonly string[] _filePath;
     private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 5);
+    private List<Indice>? _indices;
     //private readonly string _apiKey;
 
-    public ScheduledTaskService(IServiceScopeFactory scopeFactory, MLContext mlContext)
+    public ScheduledTaskService(IServiceScopeFactory scopeFactory, MLContext mlContext, IConfiguration config)
     {
         _mlContext = mlContext;
         //_cookies = new CookieContainer();
         _scopeFactory = scopeFactory;
         _filePath = ["TSX.txt", "NASDAQ.txt", "AMEX.txt", "NYSE.txt"]; //Ajouter autres bourse si necessaire
+        _indices = new List<Indice>();
         //_config = config;
-        //_apiKey = "JLQRQLBRERE2WPSA"; // Remplacez par votre clé API Alpha Vantage
+        //_apiKey = _config["ApiSettings:ApiKey"]; // Remplacez par votre clé API Alpha Vantage
     }
 
     // NOTE : AJOUTER JOURNALISATION SERILOG ou NLOG
@@ -54,8 +59,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         //    var page = await context.NewPageAsync();
 
-        // Chaque bourse est gérée dans une tâche dédiée via Task.Run
-        var tasks = _filePath.Select(async bourse =>
+            // Chaque bourse est gérée dans une tâche dédiée via Task.Run
+            var tasks = _filePath.Select(async bourse =>
             {
                 try
                 {
@@ -89,23 +94,23 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 BourseContext dbContext = scope.ServiceProvider.GetRequiredService<BourseContext>();
 
                 // Charger les indices
-                var indices = await dbContext.Indices
+                _indices = await dbContext.Indices
                     .Include(i => i.TrainingData)
                     .AsNoTracking()
                     .Where(i => i.Bourse == nomBourse)
                     .ToListAsync();
 
-                if (!indices.Any())
+                if (!_indices.Any())
                 {
                     Console.WriteLine($"Aucun indice trouvé pour {nomBourse}. Récupération des symboles...");
-                    indices = (await ObtenirSymbols(bourse))?.ToList() ?? new List<Indice>();
+                    _indices = (ObtenirSymbols(bourse))?.ToList() ?? new List<Indice>();
 
-                    if (!indices.Any())
+                    if (!_indices.Any())
                     {
                         Console.WriteLine($"Aucun symbole récupéré pour {nomBourse}. Utilisation d'une liste vide.");
                     }
 
-                    await Parallel.ForEachAsync(indices, stoppingToken, async (indice, token) =>
+                    await Parallel.ForEachAsync(_indices, stoppingToken, async (indice, token) =>
                     {
                         await UpdateDatabase(indice, nomBourse, stoppingToken);
                     });
@@ -114,9 +119,18 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 while (!stoppingToken.IsCancellationRequested)
                 {
                     // Charger les horaires de la bourse
-                    FuseHoraire fuseHoraire = GetHoraireOverture(nomBourse.ToLower());
+                    FuseHoraire? fuseHoraire = GetHoraireOverture(nomBourse.ToLower());
+
+                    if (fuseHoraire?.TimeZoneInfo == null)
+                    {
+                        Console.WriteLine($"Fuseau horaire introuvable pour la bourse : {nomBourse}");
+                        return; // Ou une autre gestion d'erreur appropriée
+                    }
+
                     // Convertir la date donnée dans le fuseau horaire de la bourse
                     DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
+
+                    long usedMemoryMB;
 
                     if (EstDansLesHorairesBourse(nomBourse.ToLower()))
                     {
@@ -128,10 +142,9 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             await UpdateEarningDates(nomBourse, stoppingToken);
 
                             // Liberer la memoire
-                            var usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
+                            usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
                             Console.WriteLine($"Mémoire utilisée avant attente : {usedMemoryMB} MB");
 
-                            indices = null;
                             GC.Collect();
                             GC.WaitForPendingFinalizers();
                             GC.Collect();
@@ -146,8 +159,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         Console.WriteLine($"Attente de la fermeture du marché pour {nomBourse}...");
                         await WaitForEndOfDay(stoppingToken, fuseHoraire);
                     }
-                    else
-                    {
+
                         // 🔹 Étape 2 : Attendre la fin de la journée si on est dans un jour boursiere
 
                         // Vérifier si c'est un jour ouvré (lundi à vendredi) et non un jour férié
@@ -166,7 +178,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             }
                         }
 
-                        DateTime dateLastClose = await GetLastDateHistory(nomBourse);
+                        DateTime dateLastClose = GetLastDateHistory(nomBourse);
 
                         //if (dateLastClose.DayOfWeek != DayOfWeek.Friday &&
                         //    (dateDansLeFuseau.DayOfWeek == DayOfWeek.Saturday ||
@@ -174,44 +186,43 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         //    dateDansLeFuseau.DayOfWeek == DayOfWeek.Monday
                         //    ))
                         //{
-                            if (indices.Any())
-                            {
-                                // 🔹 Étape 3 : Sauvegarde de l'historique manquant
-                                Console.WriteLine($"Sauvegarde des données historiques pour {nomBourse}...");
-                                await SauvegarderHistoriqueManquant(nomBourse, fuseHoraire, stoppingToken);
-                            }
+                        if (_indices != null && _indices.Any())
+                        {
+                            // 🔹 Étape 3 : Sauvegarde de l'historique manquant
+                            Console.WriteLine($"Sauvegarde des données historiques pour {nomBourse}...");
+                            await SauvegarderHistoriqueManquant(nomBourse, fuseHoraire, stoppingToken);
+                        }
 
-                            // 🔹 Étape 4 : Bourse fermée, on gère les indices
-                            Console.WriteLine($"Bourse {nomBourse} fermée. Lancement de la gestion des indices...");
+                        // 🔹 Étape 4 : Bourse fermée, on gère les indices
+                        Console.WriteLine($"Bourse {nomBourse} fermée. Lancement de la gestion des indices...");
 
-                            if (dateDansLeFuseau.DayOfWeek != DayOfWeek.Saturday && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday && !fuseHoraire.JoursFeries.Contains(dateDansLeFuseau))
-                            {
-                                await Parallel.ForEachAsync(indices, stoppingToken, async (indice, token) =>
+                    if (_indices != null && _indices.Any() && fuseHoraire.JoursFeries != null && dateDansLeFuseau.DayOfWeek != DayOfWeek.Sunday && !fuseHoraire.JoursFeries.Contains(dateDansLeFuseau))
+                        {
+                            await Parallel.ForEachAsync(_indices, stoppingToken, async (indice, token) =>
                                 {
                                     if (indice.DateUpdated == null || indice.DateUpdated < dateDansLeFuseau)
                                     {
                                         await GérerIndice(indice, nomBourse, fuseHoraire, token);
                                     }
                                 });
-                            }
+                        }
 
-                            var usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
-                            Console.WriteLine($"Mémoire utilisée apres Gestion des indices : {usedMemoryMB} MB");
+                        usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
+                        Console.WriteLine($"Mémoire utilisée apres Gestion des indices : {usedMemoryMB} MB");
 
-                            // ✅ Ajout après traitement pour liberer la memoire
-                            indices = null;
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            GC.Collect();
+                        // ✅ Ajout après traitement pour liberer la memoire
+                        _indices = null;
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
+                        GC.Collect();
 
-                            usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
-                            Console.WriteLine($"Mémoire utilisée apres liberation de la mémoire : {usedMemoryMB} MB");
+                        usedMemoryMB = GC.GetTotalMemory(false) / 1024 / 1024;
+                        Console.WriteLine($"Mémoire utilisée apres liberation de la mémoire : {usedMemoryMB} MB");
                         //}
 
                         // 🔹 Étape 5 : Attendre l'ouverture de la bourse
                         Console.WriteLine($"Marché fermé pour {nomBourse}. En attente de l'ouverture...");
                         await WaitUntilMarketOpens(stoppingToken, fuseHoraire);
-                    }
                 }
             }
         }
@@ -247,9 +258,9 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     // 🔹 Mettre à jour l'historique de l'indice
                     Console.WriteLine($"Mise à jour de l'historique pour {indice.Name}...");
 
-                    await UpdateHistorique(indice, nomBourse, stoppingToken);
+                await UpdateHistorique(indice, nomBourse, stoppingToken);
 
-                    await UpdatePrediction(indice, nomBourse, stoppingToken);
+                await UpdatePrediction(indice, nomBourse, fuseHoraire, stoppingToken);
                 //}
                 // ✅ Une fois terminé, on sort de la boucle
                 break;
@@ -315,6 +326,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     private async Task WaitUntilMarketCloses(CancellationToken stoppingToken, FuseHoraire fuseHoraire)
     {
+        if (fuseHoraire.TimeZoneInfo == null)
+        {
+            Console.WriteLine($"Erreur : Fuseau horaire introuvable");
+            return;
+        }
+
         // Heure actuelle dans le fuseau horaire de la bourse
         DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
@@ -325,7 +342,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         while (now > marketCloseTime ||
                marketCloseTime.DayOfWeek == DayOfWeek.Saturday ||
                marketCloseTime.DayOfWeek == DayOfWeek.Sunday ||
-               fuseHoraire.JoursFeries.Any(j => j.Date == marketCloseTime.Date))
+               fuseHoraire.JoursFeries != null && fuseHoraire.JoursFeries.Any(j => j.Date == marketCloseTime.Date))
         {
             // Avancer au prochain jour
             marketCloseTime = marketCloseTime.AddDays(1);
@@ -363,6 +380,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     private async Task WaitUntilMarketOpens(CancellationToken stoppingToken, FuseHoraire fuseHoraire)
     {
+        if (fuseHoraire.TimeZoneInfo == null)
+        {
+            Console.WriteLine($"Erreur : Fuseau horaire introuvable");
+            return;
+        }
+
         // Obtenir l'heure actuelle dans le fuseau horaire de la bourse
         DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
@@ -372,7 +395,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         // Si l'heure actuelle est déjà après l'ouverture ou un week-end, calculer le prochain jour ouvré
         while (now > marketOpenTime || marketOpenTime.DayOfWeek == DayOfWeek.Saturday
                                     || marketOpenTime.DayOfWeek == DayOfWeek.Sunday
-                                    || fuseHoraire.JoursFeries.Any(holiday => holiday.Date == marketOpenTime.Date))
+                                    || fuseHoraire.JoursFeries != null && fuseHoraire.JoursFeries.Any(holiday => holiday.Date == marketOpenTime.Date))
         {
             // Ajouter un jour
             marketOpenTime = marketOpenTime.AddDays(1);
@@ -400,6 +423,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
     static async Task WaitForEndOfDay(CancellationToken cancellationToken, FuseHoraire fuseHoraire)
     {
+        if (fuseHoraire.TimeZoneInfo == null)
+        {
+            Console.WriteLine($"Erreur : Fuseau horaire introuvable");
+            return;
+        }
+
         // Obtenir l'heure actuelle
         DateTime now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
@@ -437,7 +466,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
         Console.WriteLine("La journée est terminée.");
     }
 
-    private async Task<IEnumerable<Indice>> ObtenirSymbols(string bourse)
+    private IEnumerable<Indice> ObtenirSymbols(string bourse)
     {
         List<Indice> result = new List<Indice>();
         using (var reader = new StreamReader(bourse))
@@ -495,7 +524,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             var validDates = filePaths
                 .Select(file => ExtractDateFromFileName(file)) // Extraire la date
                 .Where(date => date.HasValue) // Garder uniquement les dates valides
-                .Select(date => date.Value) // Retirer le Nullable<DateTime>
+                .Select(date => date!.Value) // Retirer le Nullable<DateTime>
                 .ToList();
 
             if (!validDates.Any())
@@ -665,6 +694,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             // Vérifier si `trainingData` doit être mis à jour
                             if (indice.TrainingData != null)
                             {
+                                existingIndice.TrainingData ??= new List<StockData>();
                                 // Suppression des anciennes valeurs si nécessaire
                                 existingIndice.TrainingData.Clear();
 
@@ -720,7 +750,14 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             }
 
             // Charger les horaires de la bourse
-            FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+            string bourseLower = indice?.Bourse?.ToLower() ?? string.Empty;
+            FuseHoraire fuseHoraire = GetHoraireOverture(bourseLower);
+            
+            if (fuseHoraire.TimeZoneInfo == null)
+            {
+                Console.WriteLine($"Erreur : Fuseau horaire introuvable");
+                return;
+            }
 
             // Convertir la date donnée dans le fuseau horaire de la bourse
             DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
@@ -728,7 +765,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             try
             {
                 float[] closePrices = dbContext.StockDatas
-                    .Where(i => i.IndiceId == indice.Id)
+                    .Where(i => i.IndiceId == indice!.Id)
                     .Select(d => d.CurrentPrice)
                     .ToArray();
 
@@ -736,9 +773,9 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 string directoryPath = @$"Data/{nomBourse}"; // Remplacez par votre répertoire
 
                 // Verifier si il y a dejà l'historique dans la DB pour l'indice
-                if (!dbContext.StockDatas.Any(s => s.IndiceId == indice.Id))
+                if (!dbContext.StockDatas.Any(s => s.IndiceId == indice!.Id))
                 {
-                    Console.WriteLine($"Aucun historique trouvé pour {indice.Name}, récupération des données...");
+                    Console.WriteLine($"Aucun historique trouvé pour {indice!.Name}, récupération des données...");
 
                     try
                     {
@@ -785,7 +822,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     // 🔹 Vérifier s'il existe des fichiers plus récents
 
                     DateTime? lastDateInStockDatas = dbContext.StockDatas
-                        .Where(i => i.IndiceId == indice.Id)
+                        .Where(i => i.IndiceId == indice!.Id)
                         .OrderByDescending(i => i.Date)
                         .Select(i => i.Date)
                         .FirstOrDefault();
@@ -820,8 +857,13 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             .OrderBy(file => file) // Optionnel : Trier par nom de fichier
                             .ToList();
 
-                        if (!string.IsNullOrEmpty(indice.Symbol) && newFiles.Count > 0)
+                        if (!string.IsNullOrEmpty(indice!.Symbol) && newFiles.Count > 0)
                         {
+                            if (indice.TrainingData == null)
+                            {
+                                indice.TrainingData = new List<StockData>();
+                            }
+
                             // Ajout les historiques manquantes dans StockDatas
                             indice.TrainingData.AddRange(AjoutStockData(newFiles, indice.Symbol, closePrices));
 
@@ -855,7 +897,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     try
                     {
                         // Vérifie si l'indice a un ID valide
-                        if (indice.Id == 0)
+                        if (indice!.Id == 0)
                         {
                             Console.WriteLine("Erreur : Indice.Id est 0, impossible de l'ajouter !");
                             break;
@@ -878,6 +920,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                             // Vérifier si `trainingData` doit être mis à jour
                             if (indice.TrainingData != null)
                             {
+                                existingIndice.TrainingData ??= new List<StockData>();
+
                                 // Suppression des anciennes valeurs si nécessaire
                                 existingIndice.TrainingData.Clear();
 
@@ -911,12 +955,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             catch (Exception ex)
             {
                 Console.WriteLine($"Une erreur s'est produite : {ex.Message}");
-                Console.WriteLine($"Error querying Yahoo Finance API for symbol: {indice.Symbol}");
+                Console.WriteLine($"Error querying Yahoo Finance API for symbol: {indice!.Symbol}");
             }
         }
     }
 
-    private async Task UpdatePrediction(Indice indice, string nomBourse, CancellationToken stoppingToken)
+    private async Task UpdatePrediction(Indice indice, string nomBourse, FuseHoraire fuseHoraire, CancellationToken stoppingToken)
     {
         using (var scope = _scopeFactory.CreateScope())
         {
@@ -928,65 +972,87 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 return;
             }
 
-            // Charger les horaires de la bourse
-            FuseHoraire fuseHoraire = GetHoraireOverture(indice.Bourse.ToLower());
+            if (fuseHoraire.TimeZoneInfo == null)
+            {
+                Console.WriteLine($"Erreur : Fuseau horaire introuvable pour la bourse {nomBourse}");
+                return;
+            }
 
             // Convertir la date donnée dans le fuseau horaire de la bourse
             DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
             try
             {
-                var latestTrainingData = indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault();
+                var latestTrainingData = (indice.TrainingData != null && indice.TrainingData.Any())
+                    ? indice.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault()
+                    : null;
 
                 if (latestTrainingData != null)
                 {
 
-                        decimal rsi = 50;
-                        string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
+                    decimal rsi = 50;
+                    string date = DateOnly.FromDateTime(dateDansLeFuseau).ToString();
 
-                        // Si des données d'entraînement existent, utiliser les données les plus récentes
-                        if (indice.TrainingData?.Count > 0)
+                    // Si des données d'entraînement existent, utiliser les données les plus récentes
+                    if (indice.TrainingData?.Count > 0)
+                    {
+
+                        if (latestTrainingData != null)
                         {
-
-                            if (latestTrainingData != null)
+                            if (latestTrainingData?.RSI_14 != null &&
+                                !float.IsNaN(latestTrainingData.RSI_14) &&
+                                !float.IsInfinity(latestTrainingData.RSI_14))
                             {
-                                if (latestTrainingData?.RSI_14 != null &&
-                                    !float.IsNaN(latestTrainingData.RSI_14) &&
-                                    !float.IsInfinity(latestTrainingData.RSI_14))
+                                try
                                 {
-                                    try
-                                    {
-                                        rsi = Convert.ToDecimal(latestTrainingData.RSI_14);
-                                    }
-                                    catch (OverflowException)
-                                    {
-                                        Console.WriteLine($"⚠️ RSI_14 dépasse les limites du Decimal : {latestTrainingData.RSI_14}");
-                                        rsi = 50; // Valeur par défaut en cas d'erreur
-                                    }
+                                    rsi = Convert.ToDecimal(latestTrainingData.RSI_14);
                                 }
-                                else
+                                catch (OverflowException)
                                 {
-                                    Console.WriteLine("⚠️ RSI_14 est invalide ou null, valeur par défaut utilisée.");
+                                    Console.WriteLine($"⚠️ RSI_14 dépasse les limites du Decimal : {latestTrainingData.RSI_14}");
+                                    rsi = 50; // Valeur par défaut en cas d'erreur
                                 }
-
-                                date = DateOnly.FromDateTime(latestTrainingData.Date).ToString();
                             }
-                            indice.RegularMarketPrice = latestTrainingData.CurrentPrice;
-                            indice.RegularMarketPreviousClose = latestTrainingData.PrevPrice;
-                            indice.RegularMarketOpen = latestTrainingData.Open;
-                            indice.RegularMarketDayLow = latestTrainingData.Low;
-                            indice.RegularMarketDayHigh = latestTrainingData.High;
-                            indice.RegularMarketVolume = latestTrainingData.Volume;
+                            else
+                            {
+                                Console.WriteLine("⚠️ RSI_14 est invalide ou null, valeur par défaut utilisée.");
+                            }
+
+                            date = latestTrainingData != null
+                                    ? DateOnly.FromDateTime(latestTrainingData.Date).ToString()
+                                    : "";
+
                         }
+                        indice.RegularMarketPrice = latestTrainingData?.CurrentPrice ?? 0;
+                        indice.RegularMarketPreviousClose = latestTrainingData?.PrevPrice ?? 0;
+                        indice.RegularMarketOpen = latestTrainingData?.Open ?? 0;
+                        indice.RegularMarketDayLow = latestTrainingData?.Low ?? 0;
+                        indice.RegularMarketDayHigh = latestTrainingData?.High ?? 0;
+                        indice.RegularMarketVolume = latestTrainingData?.Volume ?? 0;
+                    }
+
+                    if (dateDansLeFuseau.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        var service = new AnalystRecommendationService();
+                        var symbol = indice.Symbol ?? "";
+                        var dict = await service.FetchRecommendationsAsync(symbol);
 
                         // Générer une recommandation basée sur RSI
-                        string recommendation = await GetRecommendationBasedOnRSI(rsi);
+                        //string recommendation = await GetRecommendationBasedOnRSI(rsi);
 
-                        // Mise à jour de l'indice dans la base de données
-                        indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        // Générer une recommandation basée sur Analysis Yahoo
+                        string recommendation = GetFinalRecommendation(dict);
                         indice.Raccomandation = recommendation;
-                        latestTrainingData.Raccomandation = recommendation;
+                        indice.Analysis = dict;
+                    }
 
+                    // Mise à jour de l'indice dans la base de données
+                    indice.DateUpdated = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+                    if (latestTrainingData != null)
+                    {
+                        latestTrainingData.Raccomandation = indice.Raccomandation;
+                    }
                     Console.WriteLine($"DatePrevision={indice.DatePrevision}, DateDansLeFuseau={DateOnly.FromDateTime(dateDansLeFuseau)}");
 
                     if (indice.DatePrevision != DateOnly.FromDateTime(dateDansLeFuseau))
@@ -1004,7 +1070,12 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                                 prediction.Probability = 0; // Mets une valeur par défaut ou un calcul de secours
                             }
                             indice.Probability = prediction.Probability;
-                            latestTrainingData.Probability = prediction.Probability;
+
+                            if (latestTrainingData != null)
+                            {
+                                latestTrainingData.Probability = prediction.Probability;
+                            }
+                            
                         }
                         indice.DatePrevision = DateOnly.FromDateTime(dateDansLeFuseau);
                     }
@@ -1044,6 +1115,8 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                                 // Vérifier si `trainingData` doit être mis à jour
                                 if (indice.TrainingData != null)
                                 {
+                                    existingIndice.TrainingData ??= new List<StockData>();
+
                                     // Suppression des anciennes valeurs si nécessaire
                                     existingIndice.TrainingData.Clear();
 
@@ -1082,6 +1155,33 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             }
         }
     }
+    public string GetFinalRecommendation(IDictionary<string, int> recommendations)
+    {
+        if (recommendations.Values.All(v => v == 0))
+            return "Hold";
+
+        // Priorité : plus à gauche = plus prioritaire en cas d'égalité
+        string[] priorityOrder = { "Strong Buy", "Buy", "Hold", "Sell", "Strong Sell" };
+
+        // Trouver la valeur max
+        int maxValue = recommendations.Values.Max();
+
+        // Filtrer les clés ayant cette valeur
+        var maxKeys = recommendations
+            .Where(kv => kv.Value == maxValue)
+            .Select(kv => kv.Key)
+            .ToHashSet();
+
+        // Retourner la première clé selon l'ordre de priorité
+        foreach (var key in priorityOrder)
+        {
+            if (maxKeys.Contains(key))
+                return key;
+        }
+
+        return "Hold"; // Fallback (ne devrait pas arriver)
+    }
+
 
     private List<StockData> AjoutStockData(List<string> files, string symbol, float[] closePrices)
     {
@@ -1191,6 +1291,18 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                 int macdIndex = SafeIndex(macd.Length, prices.Count, i);
                 int averageVolumeIndex = SafeIndex(averageVolume.Length, prices.Count, i);
 
+                DateTime dateValue;
+                if (!string.IsNullOrEmpty(prices[i].Date) &&
+                    DateTime.TryParseExact(prices[i].Date, "yyyyMMdd", null, System.Globalization.DateTimeStyles.None, out dateValue))
+                {
+                    // dateValue est valide
+                }
+                else
+                {
+                    // Valeur par défaut ou gérer le cas d’erreur
+                    dateValue = DateTime.MinValue; // ou une autre valeur selon contexte
+                }
+
                 var stockData = new StockData
                 {
                     CurrentPrice = currentPrice,
@@ -1205,7 +1317,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     MACD = macd.Length > 0 ? macd[macdIndex] : 0,
                     AverageVolume = averageVolume.Length > 0 ? averageVolume[averageVolumeIndex] : 0,
                     FuturePrice = futurePrice,
-                    Date = DateTime.ParseExact(prices[i].Date, "yyyyMMdd", null),
+                    Date = DateTime.ParseExact(prices[i].Date ?? "", "yyyyMMdd", null),
                     PrevPrice = prevPrice,
                     Volume = prices[i].Volume
                 };
@@ -1289,7 +1401,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     MACD = 0,
                     AverageVolume = 0,
                     FuturePrice = futurePrice,
-                    Date = DateTime.ParseExact(prices[i].Date, "yyyyMMdd", null),
+                    Date = DateTime.ParseExact(prices[i].Date ?? "", "yyyyMMdd", null),
                     PrevPrice = prevPrice,
                     Volume = prices[i].Volume
                 };
@@ -1517,10 +1629,10 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
 
         var sampleData = new StockDataForTraining
         {
-            CurrentPrice = (float)indice.RegularMarketPrice,
-            Open = (float)indice.RegularMarketOpen,
-            High = (float)indice.RegularMarketDayHigh,
-            Low = (float)indice.RegularMarketDayLow,
+            CurrentPrice = indice.RegularMarketPrice !=null ? (float)indice.RegularMarketPrice  : 0,
+            Open = indice.RegularMarketOpen != null ? (float)indice.RegularMarketOpen : 0,
+            High = indice.RegularMarketDayHigh != null ? (float)indice.RegularMarketDayHigh : 0,
+            Low = indice.RegularMarketDayLow != null ? (float)indice.RegularMarketDayLow : 0,
             RSI_14 = lastData.RSI_14,
             SMA_14 = lastData.SMA_14,
             EMA_14 = lastData.EMA_14,
@@ -1661,9 +1773,14 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     #region saveHistory
     private async Task SauvegarderHistoriqueManquant(string nomBourse, FuseHoraire fuseHoraire, CancellationToken stoppingToken)
     {
-        DateTime dateLastClose = await GetLastDateHistory(nomBourse);
+        DateTime dateLastClose = GetLastDateHistory(nomBourse);
         DateTime dateNext = dateLastClose.AddDays(1);
 
+        if (fuseHoraire?.TimeZoneInfo == null)
+        {
+            Console.WriteLine($"Fuseau horaire introuvable pour la bourse : {nomBourse}");
+            return; // Ou une autre gestion d'erreur appropriée
+        }
         // Convertir la date donnée dans le fuseau horaire de la bourse
         DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
 
@@ -1674,6 +1791,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
             // Ignore les week-ends
             if (dateNext.DayOfWeek != DayOfWeek.Saturday
                 && dateNext.DayOfWeek != DayOfWeek.Sunday
+                && fuseHoraire.JoursFeries != null
                 && !fuseHoraire.JoursFeries.Any(holiday => holiday.Date == dateNext.Date))
             {
                 string filePath = $"Data/{nomBourse}/{nomBourse}_{dateNext:yyyyMMdd}.txt";
@@ -1745,14 +1863,15 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                         name = newName.ToString();
                     }
 
-                    string? symbolCut = indice.Symbol?.EndsWith(".TO") == true ? indice.Symbol[..^3] : indice.Symbol;
-                    string? bourse = indice.Bourse switch
+                    string symbol = indice.Symbol ?? string.Empty;
+                    string symbolCut = symbol.EndsWith(".TO") == true ? symbol[..^3] : symbol;
+                    string bourse = indice.Bourse switch
                     {
                         "TSX" => "Toronto",
                         "NASDAQ" => "Nasdaq",
                         "AMEX" => "Nyse",
                         "NYSE" => "Nyse",
-                        _ => indice.Bourse
+                        _ => indice.Bourse ?? "Unknown"
                     };
 
                     string urlCompanyName = "";
@@ -2365,12 +2484,18 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //    }
     //}
 
-    private async Task<DateTime> GetLastDateHistory(string bourse)
+    private DateTime GetLastDateHistory(string bourse)
     {
         string nomBourse = Path.GetFileNameWithoutExtension(bourse);
 
         // Charger les horaires de la bourse
         FuseHoraire fuseHoraire = GetHoraireOverture(nomBourse.ToLower());
+
+        if (fuseHoraire?.TimeZoneInfo == null)
+        {
+            Console.WriteLine($"Fuseau horaire introuvable pour la bourse : {nomBourse}");
+            return DateTime.MinValue;
+        }
 
         // Convertir la date donnée dans le fuseau horaire de la bourse
         DateTime dateDansLeFuseau = TimeZoneInfo.ConvertTime(DateTime.UtcNow, fuseHoraire.TimeZoneInfo);
@@ -2554,7 +2679,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
                     var parsedDates = dates
                         .Select(date => DateTime.TryParseExact(date, format, culture, DateTimeStyles.None, out var d) ? d : (DateTime?)null)
                         .Where(d => d.HasValue)
-                        .Select(d => d.Value)
+                        .Select(d => d!.Value)
                         .ToArray();
 
                     indice.DatesExercicesFinancieres = parsedDates;
@@ -2799,7 +2924,7 @@ public class ScheduledTaskService : BackgroundService, IScheduledTaskService
     //}
 
     // Méthode pour déduire une recommandation basée sur RSI
-    private async Task<string> GetRecommendationBasedOnRSI(decimal rsi)
+    private string GetRecommendationBasedOnRSI(decimal rsi)
     {
         //// Calcul inversé
         //return rsi switch

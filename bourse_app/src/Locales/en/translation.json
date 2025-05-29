@@ -85,9 +85,10 @@
             "dates" : "Financ. Dates",
             "exchange" : "Exchange",
             "label" : "Trend",
-            "recommendation" : "Analysis",
+            "recommendation" : "Recom.",
+            "analysis" : "Analysis",
             "updated" : "Updated",
-            "probability" : "Probability"
+            "probability" : "Prob."
         },
         "resultat" : "No results",
         "loading" : "Loading list..."

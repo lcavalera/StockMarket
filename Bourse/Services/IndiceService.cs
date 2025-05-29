@@ -22,37 +22,68 @@ namespace Bourse.Services
             _mapper = mapper;
         }
 
-        public async Task<IQueryable<Indice>> ObtenirTout()
+        public IQueryable<Indice> ObtenirTout()
         {
             return _context.Indices.Include(i => i.TrainingData)
                 .AsSplitQuery()
                 .AsQueryable();
         }
 
-        public async Task<IQueryable<IndiceDTO>> ObtenirToutDTO()
+        public async Task<List<IndiceDTO>> ObtenirToutDTO()
         {
-            return _context.Indices
+            var fullEntities = await _context.Indices
                 .Include(i => i.TrainingData)
-                .AsSplitQuery()
-                .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
+                .ToListAsync();
+
+            var dtos = fullEntities
+                .AsQueryable()
+                .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            AjouterTrainingData(dtos, fullEntities);
+
+            return dtos;
+            //return _context.Indices
+            //    .Include(i => i.TrainingData)
+            //    .AsSplitQuery()
+            //    .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
         }
 
-        public async Task<IQueryable<Indice>> ObtenirSelonName(string name)
+        public IQueryable<Indice> ObtenirSelonName(string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Search term cannot be null or empty.", nameof(name));
+
             return _context.Indices
                 .Include(i => i.TrainingData)
-                .Where(i => i.Symbol.ToUpper().Contains(name.ToUpper()) || i.Name.ToLower().Contains(name.ToLower()))
+                .Where(i => (i.Symbol != null && i.Symbol.ToUpper().Contains(name.ToUpper())) ||
+                            (i.Name != null && i.Name.ToLower().Contains(name.ToLower())))
                 .AsSplitQuery()
                 .AsQueryable();
         }
 
-        public async Task<IQueryable<IndiceDTO>> ObtenirSelonNameDTO(string name)
+        public async Task<List<IndiceDTO>> ObtenirSelonNameDTO(string name)
         {
-            return _context.Indices
+            var fullEntities = await _context.Indices
                 .Include(i => i.TrainingData)
-                .Where(i => i.Symbol.ToUpper().Contains(name.ToUpper()) || i.Name.ToLower().Contains(name.ToLower()))
-                .AsSplitQuery()
-                .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
+                .Where(i => (i.Symbol != null && i.Symbol.ToUpper().Contains(name.ToUpper())) ||
+                            (i.Name != null && i.Name.ToLower().Contains(name.ToLower())))
+                .ToListAsync();
+
+            var dtos = fullEntities
+                .AsQueryable()
+                .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            AjouterTrainingData(dtos, fullEntities);
+
+            return dtos;
+            //return _context.Indices
+            //    .Include(i => i.TrainingData)
+            //    .Where(i => (i.Symbol != null && i.Symbol.ToUpper().Contains(name.ToUpper())) || 
+            //                (i.Name != null && i.Name.ToLower().Contains(name.ToLower())))
+            //    .AsSplitQuery()
+            //    .ProjectTo<IndiceDTO>(_mapper.ConfigurationProvider);
         }
 
         public async Task<Indice?> ObtenirSelonSymbol(string symbol)
@@ -94,6 +125,20 @@ namespace Bourse.Services
                 .ToList();
 
             return _mapper.Map<List<IndiceDTO>>(filtered);
+        }
+        private void AjouterTrainingData(List<IndiceDTO> dtos, List<Indice> fullEntities)
+        {
+            foreach (var dto in dtos)
+            {
+                var full = fullEntities.FirstOrDefault(x => x.Id == dto.Id);
+                if (full?.TrainingData != null)
+                {
+                    dto.TrainingData = full.TrainingData
+                        .OrderByDescending(td => td.Date)
+                        .Take(20)
+                        .ToList();
+                }
+            }
         }
 
 

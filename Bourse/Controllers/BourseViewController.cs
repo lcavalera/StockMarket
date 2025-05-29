@@ -8,25 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bourse.Controllers
 {
     [Route("/")]
-    public class BourseViewController : Controller
+    public class BourseViewController(ILogger<BourseController> logger, IIndiceService service, IScheduledTaskService scheduledTaskService, IWebHostEnvironment webHostEnvironment) : Controller
     {
-        private readonly ILogger<BourseController> _logger;
-        private readonly IIndiceService _service;
-        private IQueryable<Indice> _indices;
-        private IQueryable<IndiceDTO> _indicesDTO;
+        private readonly ILogger<BourseController> _logger = logger;
+        private readonly IIndiceService _service = service;
+        private List<Indice>? _indices;
+        private List<IndiceDTO>? _indicesDTO;
         private DateTime _dateHistorique;
         private string _cheminFichier = "date.csv";
-        private readonly IScheduledTaskService _scheduledTaskService;
+        private readonly IScheduledTaskService _scheduledTaskService = scheduledTaskService;
         private readonly HttpClient client = new HttpClient();
-        private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public BourseViewController(ILogger<BourseController> logger, IIndiceService service, IScheduledTaskService scheduledTaskService, IWebHostEnvironment webHostEnvironment)
-        {
-            _logger = logger;
-            _service = service;
-            _scheduledTaskService = scheduledTaskService;
-            _webHostEnvironment = webHostEnvironment;
-        }
+        private readonly IWebHostEnvironment _webHostEnvironment = webHostEnvironment;
 
         // GET: BourseController
         [HttpGet("IndexDTO")]
@@ -36,7 +28,7 @@ namespace Bourse.Controllers
             {
                 using (StreamWriter sw = new StreamWriter(_cheminFichier))
                 {
-                    sw.WriteLineAsync(DateTime.Now.ToString());
+                    await sw.WriteLineAsync(DateTime.Now.ToString());
                 }
 
                 //await _service.DeleteHistoriqueRealPrices();
@@ -60,7 +52,7 @@ namespace Bourse.Controllers
                 {
                     while (!sr.EndOfStream)
                     {
-                        string ligne = await sr.ReadLineAsync();
+                        string? ligne = await sr.ReadLineAsync();
                         if (!string.IsNullOrEmpty(ligne))
                         {
                             //while (ligne != null)
@@ -87,11 +79,11 @@ namespace Bourse.Controllers
             {
                 if (exchangeFiltre == "TOR")
                 {
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == exchangeFiltre);
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == exchangeFiltre).ToList();
                 }
                 else
                 {
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR");
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR").ToList();
                 }
 
             }
@@ -101,53 +93,53 @@ namespace Bourse.Controllers
             switch (sortOrder)
             {
                 case "symbol_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Symbol);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Symbol).ToList();
                     break;
                 case "price_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketPrice);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketPrice).ToList();
                     break;
                 case "price_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketPrice);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketPrice).ToList();
                     break;
                 case "change_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketChange);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketChange).ToList();
                     break;
                 case "change_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketChange);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketChange).ToList();
                     break;
                 case "exercfinanc_asc":
                     _indicesDTO = _indicesDTO
                         .OrderBy(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MaxValue); // les sans dates vont tout en bas
+                            : DateTime.MaxValue).ToList(); // les sans dates vont tout en bas
                     break;
 
                 case "exercfinanc_desc":
                     _indicesDTO = _indicesDTO
                         .OrderByDescending(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MinValue); // les sans dates vont tout en bas en descendant
+                            : DateTime.MinValue).ToList(); // les sans dates vont tout en bas en descendant
                     break;
                 case "bourse_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Exchange);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Exchange).ToList();
                     break;
                 case "bourse_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Exchange);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Exchange).ToList();
                     break;
                 case "label_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Label);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Label).ToList();
                     break;
                 case "label_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Label);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Label).ToList();
                     break;
                 case "prob_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Probability);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Probability).ToList();
                     break;
                 case "prob_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Probability);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Probability).ToList();
                     break;
                 default:
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Symbol);  // Par défaut, tri croissant sur le prix
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Symbol).ToList();  // Par défaut, tri croissant sur le prix
                     break;
             }
 
@@ -169,7 +161,7 @@ namespace Bourse.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
 
-            IndiceDTO indiceDTO = await _service.ObtenirSelonSymbolDTO(item);
+            IndiceDTO? indiceDTO = await _service.ObtenirSelonSymbolDTO(item);
             if (indiceDTO == null)
             {
                 _logger.LogError($"Une erreur c'est produite lors de la récupération d'une indice. Symbol = {item}");
@@ -187,7 +179,7 @@ namespace Bourse.Controllers
             {
                 using (StreamWriter sw = new StreamWriter(_cheminFichier))
                 {
-                    sw.WriteLineAsync(DateTime.Now.ToString());
+                    await sw.WriteLineAsync(DateTime.Now.ToString());
                 }
 
                 //await _service.DeleteHistoriqueRealPrices();
@@ -211,7 +203,7 @@ namespace Bourse.Controllers
                 {
                     while (!sr.EndOfStream)
                     {
-                        string ligne = await sr.ReadLineAsync();
+                        string? ligne = await sr.ReadLineAsync();
                         if (!string.IsNullOrEmpty(ligne))
                         {
                             //while (ligne != null)
@@ -238,11 +230,11 @@ namespace Bourse.Controllers
             {
                 if (exchangeFiltre == "TOR")
                 {
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == exchangeFiltre);
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == exchangeFiltre).ToList();
                 }
                 else
                 {
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR");
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR").ToList();
                 }
 
             }
@@ -262,8 +254,9 @@ namespace Bourse.Controllers
                     //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() < DateTime.Now.AddDays(90) &&
                     //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() != DateTime.MinValue) &&
                     //i.QuoteType != "ETF" &&
+                    i.DatesExercicesFinancieres != null &&
+                    i.DatesExercicesFinancieres.Length > 0 &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
-                    (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
                     //(i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy" ||
                     //i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell" ||
                     ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.45 && i.Probability != 0) ||
@@ -284,7 +277,7 @@ namespace Bourse.Controllers
                 .OrderBy(i => i.RecommendationOrder) // Trier par recommandation
                 .ThenByDescending(i => i.Indice.Probability)
                 .ThenBy(i => i.FirstDate)
-                .Select(i => i.Indice);
+                .Select(i => i.Indice).ToList();
 
             //_indicesDTO = _indicesDTO
             //    .Where(i =>
@@ -305,50 +298,50 @@ namespace Bourse.Controllers
             switch (sortOrder)
             {
                 case "symbol_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Symbol);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Symbol).ToList();
                     break;
                 case "price_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketPrice);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketPrice).ToList();
                     break;
                 case "price_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketPrice);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketPrice).ToList();
                     break;
                 case "change_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketChange);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.RegularMarketChange).ToList();
                     break;
                 case "change_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketChange);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.RegularMarketChange).ToList();
                     break;
                 case "exercfinanc_asc":
                     _indicesDTO = _indicesDTO
                         .OrderBy(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MaxValue); // les sans dates vont tout en bas
+                            : DateTime.MaxValue).ToList(); // les sans dates vont tout en bas
                     break;
 
                 case "exercfinanc_desc":
                     _indicesDTO = _indicesDTO
                         .OrderByDescending(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MinValue); // les sans dates vont tout en bas en descendant
+                            : DateTime.MinValue).ToList(); // les sans dates vont tout en bas en descendant
                     break;
                 case "bourse_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Exchange);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Exchange).ToList();
                     break;
                 case "bourse_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Exchange);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Exchange).ToList();
                     break;
                 case "label_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Label);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Label).ToList();
                     break;
                 case "label_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Label);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Label).ToList();
                     break;
                 case "prob_asc":
-                    _indicesDTO = _indicesDTO.OrderBy(i => i.Probability);
+                    _indicesDTO = _indicesDTO.OrderBy(i => i.Probability).ToList();
                     break;
                 case "prob_desc":
-                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Probability);
+                    _indicesDTO = _indicesDTO.OrderByDescending(i => i.Probability).ToList();
                     break;
             }
 
@@ -371,7 +364,7 @@ namespace Bourse.Controllers
             {
                 using (StreamWriter sw = new StreamWriter(_cheminFichier))
                 {
-                    sw.WriteLineAsync(DateTime.Now.ToString());
+                    await sw.WriteLineAsync(DateTime.Now.ToString());
                 }
 
                 //await _service.DeleteHistoriqueRealPrices();
@@ -395,7 +388,7 @@ namespace Bourse.Controllers
                 {
                     while (!sr.EndOfStream)
                     {
-                        string ligne = await sr.ReadLineAsync();
+                        string? ligne = await sr.ReadLineAsync();
                         if (!string.IsNullOrEmpty(ligne))
                         {
                             //while (ligne != null)
@@ -406,13 +399,13 @@ namespace Bourse.Controllers
                     }
                 }
 
-                _indices = await _service.ObtenirTout();
+                _indices = _service.ObtenirTout().ToList();
 
             }
             else
             {
                 ViewData["actifFiltre"] = filtre;
-                _indices = await _service.ObtenirSelonName(filtre);
+                _indices = _service.ObtenirSelonName(filtre).ToList();
             }
 
             // Stocker le filtre actif
@@ -422,11 +415,11 @@ namespace Bourse.Controllers
             {
                 if (exchangeFiltre == "TOR")
                 {
-                    _indices = _indices.Where(i => i.Exchange == exchangeFiltre);
+                    _indices = _indices.Where(i => i.Exchange == exchangeFiltre).ToList();
                 }
                 else
                 {
-                    _indices = _indices.Where(i => i.Exchange != "TOR");
+                    _indices = _indices.Where(i => i.Exchange != "TOR").ToList();
                 }
 
             }
@@ -436,59 +429,59 @@ namespace Bourse.Controllers
             switch (sortOrder)
             {
                 case "symbol_desc":
-                    _indices = _indices.OrderByDescending(i => i.Symbol);
+                    _indices = _indices.OrderByDescending(i => i.Symbol).ToList();
                     break;
                 case "price_asc":
-                    _indices = _indices.OrderBy(i => i.RegularMarketPrice);
+                    _indices = _indices.OrderBy(i => i.RegularMarketPrice).ToList();
                     break;
                 case "price_desc":
-                    _indices = _indices.OrderByDescending(i => i.RegularMarketPrice);
+                    _indices = _indices.OrderByDescending(i => i.RegularMarketPrice).ToList();
                     break;
                 case "change_asc":
-                    _indices = _indices.OrderBy(i => i.RegularMarketChange);
+                    _indices = _indices.OrderBy(i => i.RegularMarketChange).ToList();
                     break;
                 case "change_desc":
-                    _indices = _indices.OrderByDescending(i => i.RegularMarketChange);
+                    _indices = _indices.OrderByDescending(i => i.RegularMarketChange).ToList();
                     break;
                 case "exercfinanc_asc":
                     _indices = _indices
                         .OrderBy(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MaxValue); // les sans dates vont tout en bas
+                            : DateTime.MaxValue).ToList(); // les sans dates vont tout en bas
                     break;
 
                 case "exercfinanc_desc":
                     _indices = _indices
                         .OrderByDescending(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MinValue); // les sans dates vont tout en bas en descendant
+                            : DateTime.MinValue).ToList(); // les sans dates vont tout en bas en descendant
                     break;
                 case "bourse_asc":
-                    _indices = _indices.OrderBy(i => i.Exchange);
+                    _indices = _indices.OrderBy(i => i.Exchange).ToList();
                     break;
                 case "bourse_desc":
-                    _indices = _indices.OrderByDescending(i => i.Exchange);
+                    _indices = _indices.OrderByDescending(i => i.Exchange).ToList();
                     break;
                 case "label_asc":
-                    _indices = _indices.OrderBy(i => i.Label);
+                    _indices = _indices.OrderBy(i => i.Label).ToList();
                     break;
                 case "label_desc":
-                    _indices = _indices.OrderByDescending(i => i.Label);
+                    _indices = _indices.OrderByDescending(i => i.Label).ToList();
                     break;
                 case "action_asc":
-                    _indices = _indices.OrderBy(i => i.IsIncreasing);
+                    _indices = _indices.OrderBy(i => i.IsIncreasing).ToList();
                     break;
                 case "action_desc":
-                    _indices = _indices.OrderByDescending(i => i.IsIncreasing);
+                    _indices = _indices.OrderByDescending(i => i.IsIncreasing).ToList();
                     break;
                 case "prob_asc":
-                    _indices = _indices.OrderBy(i => i.Probability);
+                    _indices = _indices.OrderBy(i => i.Probability).ToList();
                     break;
                 case "prob_desc":
-                    _indices = _indices.OrderByDescending(i => i.Probability);
+                    _indices = _indices.OrderByDescending(i => i.Probability).ToList();
                     break;
                 default:
-                    _indices = _indices.OrderBy(i => i.Symbol);
+                    _indices = _indices.OrderBy(i => i.Symbol).ToList();
                     //_indices = _indices.OrderBy(i => i.Symbol).ToList();  // Par défaut, tri croissant sur le prix
                     break;
             }
@@ -511,7 +504,7 @@ namespace Bourse.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
 
-            Indice indice = await _service.ObtenirSelonSymbol(item);
+            Indice? indice = await _service.ObtenirSelonSymbol(item);
             if (indice == null)
             {
                 _logger.LogError($"Une erreur c'est produite lors de la récupération d'une indice. Symbol = {item}");
@@ -529,7 +522,7 @@ namespace Bourse.Controllers
             {
                 using (StreamWriter sw = new StreamWriter(_cheminFichier))
                 {
-                    sw.WriteLineAsync(DateTime.Now.ToString());
+                    await sw.WriteLineAsync(DateTime.Now.ToString());
                 }
 
                 //await _service.DeleteHistoriqueRealPrices();
@@ -553,7 +546,7 @@ namespace Bourse.Controllers
                 {
                     while (!sr.EndOfStream)
                     {
-                        string ligne = await sr.ReadLineAsync();
+                        string? ligne = await sr.ReadLineAsync();
                         if (!string.IsNullOrEmpty(ligne))
                         {
                             //while (ligne != null)
@@ -564,13 +557,13 @@ namespace Bourse.Controllers
                     }
                 }
 
-                _indices = await _service.ObtenirTout();
+                _indices = _service.ObtenirTout().ToList();
 
             }
             else
             {
                 ViewData["actifFiltre"] = filtre;
-                _indices = await _service.ObtenirSelonName(filtre);
+                _indices = _service.ObtenirSelonName(filtre).ToList();
             }
 
             // Stocker le filtre actif
@@ -580,11 +573,11 @@ namespace Bourse.Controllers
             {
                 if (exchangeFiltre == "TOR")
                 {
-                    _indices = _indices.Where(i => i.Exchange == exchangeFiltre);
+                    _indices = _indices.Where(i => i.Exchange == exchangeFiltre).ToList();
                 }
                 else
                 {
-                    _indices = _indices.Where(i => i.Exchange != "TOR");
+                    _indices = _indices.Where(i => i.Exchange != "TOR").ToList();
                 }
 
             }
@@ -604,8 +597,9 @@ namespace Bourse.Controllers
                     //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() < DateTime.Now.AddDays(90) &&
                     //i.DatesExercicesFinancieres.OrderBy(d => d.Date).FirstOrDefault() != DateTime.MinValue) &&
                     //i.QuoteType != "ETF" &&
+                    i.DatesExercicesFinancieres != null &&
+                    i.DatesExercicesFinancieres.Length > 0 &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
-                    (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
                     //(i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy" ||
                     //i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell" ||
                     ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && (i.Probability > 0.45 && i.Probability != 0) ||
@@ -626,63 +620,64 @@ namespace Bourse.Controllers
                 .OrderBy(i => i.RecommendationOrder) // Trier par recommandation
                 .ThenByDescending(i => i.Indice.Probability)
                 .ThenBy(i => i.FirstDate)
-                .Select(i => i.Indice);
+                .Select(i => i.Indice)
+                .ToList();
 
             ViewData["DateReset"] = _dateHistorique.ToString("yyyy-MM-dd");
 
             switch (sortOrder)
             {
                 case "symbol_desc":
-                    _indices = _indices.OrderByDescending(i => i.Symbol);
+                    _indices = _indices.OrderByDescending(i => i.Symbol).ToList();
                     break;
                 case "price_asc":
-                    _indices = _indices.OrderBy(i => i.RegularMarketPrice);
+                    _indices = _indices.OrderBy(i => i.RegularMarketPrice).ToList();
                     break;
                 case "price_desc":
-                    _indices = _indices.OrderByDescending(i => i.RegularMarketPrice);
+                    _indices = _indices.OrderByDescending(i => i.RegularMarketPrice).ToList();
                     break;
                 case "change_asc":
-                    _indices = _indices.OrderBy(i => i.RegularMarketChange);
+                    _indices = _indices.OrderBy(i => i.RegularMarketChange).ToList();
                     break;
                 case "change_desc":
-                    _indices = _indices.OrderByDescending(i => i.RegularMarketChange);
+                    _indices = _indices.OrderByDescending(i => i.RegularMarketChange).ToList();
                     break;
                 case "exercfinanc_asc":
                     _indices = _indices
                         .OrderBy(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MaxValue); // les sans dates vont tout en bas
+                            : DateTime.MaxValue).ToList(); // les sans dates vont tout en bas
                     break;
 
                 case "exercfinanc_desc":
                     _indices = _indices
                         .OrderByDescending(i => i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                             ? i.DatesExercicesFinancieres.Min(d => d)
-                            : DateTime.MinValue); // les sans dates vont tout en bas en descendant
+                            : DateTime.MinValue).ToList(); // les sans dates vont tout en bas en descendant
                     break;
                 case "bourse_asc":
-                    _indices = _indices.OrderBy(i => i.Exchange);
+                    _indices = _indices.OrderBy(i => i.Exchange).ToList();
                     break;
                 case "bourse_desc":
-                    _indices = _indices.OrderByDescending(i => i.Exchange);
+                    _indices = _indices.OrderByDescending(i => i.Exchange).ToList();
                     break;
                 case "label_asc":
-                    _indices = _indices.OrderBy(i => i.Label);
+                    _indices = _indices.OrderBy(i => i.Label).ToList();
                     break;
                 case "label_desc":
-                    _indices = _indices.OrderByDescending(i => i.Label);
+                    _indices = _indices.OrderByDescending(i => i.Label).ToList();
                     break;
                 case "action_asc":
-                    _indices = _indices.OrderBy(i => i.IsIncreasing);
+                    _indices = _indices.OrderBy(i => i.IsIncreasing).ToList();
                     break;
                 case "action_desc":
-                    _indices = _indices.OrderByDescending(i => i.IsIncreasing);
+                    _indices = _indices.OrderByDescending(i => i.IsIncreasing).ToList();
                     break;
                 case "prob_asc":
-                    _indices = _indices.OrderBy(i => i.Probability);
+                    _indices = _indices.OrderBy(i => i.Probability).ToList();
                     break;
                 case "prob_desc":
-                    _indices = _indices.OrderByDescending(i => i.Probability);
+                    _indices = _indices.OrderByDescending(i => i.Probability).ToList();
                     break;
                     //default:
                     //    _indices = _indices.OrderBy(i => i.Symbol).ToList();  // Par défaut, tri croissant sur le prix

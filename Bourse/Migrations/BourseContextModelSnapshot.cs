@@ -23,6 +23,9 @@ namespace Bourse.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("AnalysisJson")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Bourse")
                         .HasColumnType("TEXT");
 

@@ -70,7 +70,7 @@
     }
 
   .color-negative {
-    color: lightcoral;
+    color: firebrick;
     font-weight: bold;
   }
 
@@ -84,19 +84,19 @@
   }
 
   .text-buy {
-    color: darkgreen;
+    color: mediumseagreen;
     font-weight: bold;
   }
   .text-sell {
-    color: darkred;
+    color: orange;
     font-weight: bold;
   }
   .text-strong-sell {
-    color: red;
+    color: firebrick;
     font-weight: bold;
   }
   .text-hold {
-    color: gray;
+    color: steelblue;
     font-weight: bold;
   }
   

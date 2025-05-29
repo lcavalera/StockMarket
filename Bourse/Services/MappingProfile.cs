@@ -17,11 +17,7 @@ namespace Bourse.Mappings
                     (src.Raccomandation == "Strong Sell" || src.Raccomandation == "Sell") && src.Probability >= 0.35 && src.Probability < 0.65 ? "Sell" :
                     "Hold"
                 ))
-                .ForMember(dest => dest.TrainingData, opt => opt.MapFrom(src =>
-                    src.TrainingData
-                        .OrderByDescending(td => td.Date)
-                        .Take(20)
-                ));
+                .ForMember(dest => dest.TrainingData, opt => opt.Ignore()); // important
         }
 
         //// Méthode pour appliquer la logique de Raccomandation

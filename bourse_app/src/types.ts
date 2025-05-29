@@ -50,6 +50,7 @@ export interface IndiceDTO {
   isIncreasing: boolean;
   probability: number;
   raccomandation: string;
+  analysis: Record<string, number>;
   dateUpdated: Date;
   datePrevision: Date;
   trainingData: StockData[];

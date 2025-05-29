@@ -58,12 +58,13 @@
 
 @if (ViewData["TotalPages"] != null)
 {
-    var currentPage = (int)ViewData["CurrentPage"];
-    var totalPages = (int)ViewData["TotalPages"];
-    var pageSize = (int)ViewData["PageSize"];
-    string sortOrder = ViewData["CurrentSort"]?.ToString();
-    string filtre = ViewData["actifFiltre"]?.ToString();
-    string exchangeFiltre = ViewData["ExchangeFiltre"]?.ToString();
+    int currentPage = ViewData["CurrentPage"] as int? ?? 1;
+    int totalPages = ViewData["TotalPages"] as int? ?? 1;
+    int pageSize = ViewData["PageSize"] as int? ?? 50;
+
+    string sortOrder = ViewData["CurrentSort"]?.ToString() ?? "";
+    string filtre = ViewData["actifFiltre"]?.ToString() ?? "";
+    string exchangeFiltre = ViewData["ExchangeFiltre"]?.ToString() ?? "";
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
@@ -142,6 +143,9 @@
                 @Html.DisplayNameFor(model => model.Raccomandation)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Analysis)
+            </th>
+            <th>
                 RSI_14
             </th>
             <th>
@@ -209,15 +213,37 @@
                     @Html.DisplayFor(modelItem => item.Raccomandation)
                 </td>
                 <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.OrderByDescending(t=> t.Date).FirstOrDefault().RSI_14Display
-                        : "0 %")
+                    @if (item.Analysis != null && item.Analysis.Any())
+                    {
+                        <ul style="padding-left: 0; margin: 0;">
+                            @foreach (var entry in item.Analysis)
+                            {
+                                <li style="list-style: none; padding: 0; margin: 0;">
+                                    <span style="color:@GetRaccomandationColor(entry.Key); white-space: nowrap">
+                                        <strong>@entry.Key: @entry.Value</strong>
+                                    </span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span>N/A</span>
+                    }
+                </td>
+                @{
+                    var latestData = item.TrainingData?
+                    .OrderByDescending(t => t.Date)
+                    .FirstOrDefault();
+                }
+
+                <td>
+                    @(latestData != null ? latestData.RSI_14Display : "0 %")
                 </td>
                 <td>
-                    @(item.TrainingData.Count > 0
-                        ? item.TrainingData.OrderByDescending(t => t.Date).FirstOrDefault().SMA_14Display
-                        : "0 %")
+                    @(latestData != null ? latestData.SMA_14Display : "0 %")
                 </td>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.DateUpdated)
                 </td>
@@ -246,7 +272,7 @@
     }
 
     .color-negative {
-    color: lightcoral;
+    color: firebrick;
     font-weight: bold;
     }
 
@@ -291,15 +317,15 @@
 }
 
 @functions {
-    public string GetRaccomandationColor(string raccomandation)
+    public string GetRaccomandationColor(string? raccomandation)
     {
         return raccomandation switch
         {
             "Strong Buy" => "green",
-            "Buy" => "lightgreen",
-            "Hold" => "lightblue",
+            "Buy" => "mediumseagreen",
+            "Hold" => "steelblue",
             "Sell" => "orange",
-            "Strong Sell" => "red",
+            "Strong Sell" => "firebrick",
             _ => "black" // Par défaut
         };
     }

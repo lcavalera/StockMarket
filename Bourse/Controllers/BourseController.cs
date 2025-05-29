@@ -9,25 +9,17 @@ namespace Bourse.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BourseController : Controller
+    public class BourseController(ILogger<BourseController> logger, IIndiceService service, IScheduledTaskService scheduledTaskService, IWebHostEnvironment webHostEnvironment) : Controller
     {
-        private readonly ILogger<BourseController> _logger;
-        private readonly IIndiceService _service;
-        private IQueryable<Indice> _indices;
-        private IQueryable<IndiceDTO> _indicesDTO;
+        private readonly ILogger<BourseController> _logger = logger;
+        private readonly IIndiceService _service = service;
+        //private IQueryable<Indice>? _indices;
+        private List<IndiceDTO>? _indicesDTO;
         private DateTime _dateHistorique;
         private string _cheminFichier = "date.csv";
-        private readonly IScheduledTaskService _scheduledTaskService;
+        private readonly IScheduledTaskService _scheduledTaskService = scheduledTaskService;
         private readonly HttpClient client = new HttpClient();
-        private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public BourseController(ILogger<BourseController> logger, IIndiceService service, IScheduledTaskService scheduledTaskService, IWebHostEnvironment webHostEnvironment)
-        {
-            _logger = logger;
-            _service = service;
-            _scheduledTaskService = scheduledTaskService;
-            _webHostEnvironment = webHostEnvironment;
-        }
+        private readonly IWebHostEnvironment _webHostEnvironment = webHostEnvironment;
 
         [HttpGet("Agenda")]
         public async Task<IActionResult> GetAgenda([FromQuery] DateTime start, [FromQuery] DateTime end)
@@ -63,35 +55,35 @@ namespace Bourse.Controllers
             if (!string.IsNullOrEmpty(exchangeFiltre))
             {
                 if (exchangeFiltre == "TOR")
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == "TOR");
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange == "TOR").ToList();
                 else
-                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR");
+                    _indicesDTO = _indicesDTO.Where(i => i.Exchange != "TOR").ToList();
             }
 
             _indicesDTO = sortOrder switch
             {
-                "symbol_desc" => _indicesDTO.OrderByDescending(i => i.Symbol),
-                "price_asc" => _indicesDTO.OrderBy(i => i.RegularMarketPrice),
-                "price_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketPrice),
-                "change_asc" => _indicesDTO.OrderBy(i => i.RegularMarketChange),
-                "change_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketChange),
+                "symbol_desc" => _indicesDTO.OrderByDescending(i => i.Symbol).ToList(),
+                "price_asc" => _indicesDTO.OrderBy(i => i.RegularMarketPrice).ToList(),
+                "price_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketPrice).ToList(),
+                "change_asc" => _indicesDTO.OrderBy(i => i.RegularMarketChange).ToList(),
+                "change_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketChange).ToList(),
                 "exercfinanc_asc" => _indicesDTO.OrderBy(i =>
                     i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                     ? i.DatesExercicesFinancieres.Min(d => d) == DateTime.MinValue ? DateTime.MaxValue : i.DatesExercicesFinancieres.Min(d => d)
-                    : DateTime.MaxValue), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
+                    : DateTime.MaxValue).ToList(), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
 
                 "exercfinanc_desc" => _indicesDTO.OrderByDescending(i =>
                     i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                         ? i.DatesExercicesFinancieres.Min(d => d) == DateTime.MinValue ? DateTime.MinValue : i.DatesExercicesFinancieres.Min(d => d)
-                        : DateTime.MinValue), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
+                        : DateTime.MinValue).ToList(), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
 
-                "bourse_asc" => _indicesDTO.OrderBy(i => i.Exchange),
-                "bourse_desc" => _indicesDTO.OrderByDescending(i => i.Exchange),
-                "label_asc" => _indicesDTO.OrderBy(i => i.Label),
-                "label_desc" => _indicesDTO.OrderByDescending(i => i.Label),
-                "prob_asc" => _indicesDTO.OrderBy(i => i.Probability),
-                "prob_desc" => _indicesDTO.OrderByDescending(i => i.Probability),
-                _ => _indicesDTO.OrderBy(i => i.Symbol)
+                "bourse_asc" => _indicesDTO.OrderBy(i => i.Exchange).ToList(),
+                "bourse_desc" => _indicesDTO.OrderByDescending(i => i.Exchange).ToList(),
+                "label_asc" => _indicesDTO.OrderBy(i => i.Label).ToList(),
+                "label_desc" => _indicesDTO.OrderByDescending(i => i.Label).ToList(),
+                "prob_asc" => _indicesDTO.OrderBy(i => i.Probability).ToList(),
+                "prob_desc" => _indicesDTO.OrderByDescending(i => i.Probability).ToList(),
+                _ => _indicesDTO.OrderBy(i => i.Symbol).ToList()
             };
 
             // Pagination
@@ -124,14 +116,15 @@ namespace Bourse.Controllers
             if (!string.IsNullOrEmpty(exchangeFiltre))
             {
                 _indicesDTO = exchangeFiltre == "TOR"
-                    ? _indicesDTO.Where(i => i.Exchange == "TOR")
-                    : _indicesDTO.Where(i => i.Exchange != "TOR");
+                    ? _indicesDTO.Where(i => i.Exchange == "TOR").ToList()
+                    : _indicesDTO.Where(i => i.Exchange != "TOR").ToList();
             }
 
             _indicesDTO = _indicesDTO
                 .Where(i =>
+                    i.DatesExercicesFinancieres != null &&
+                    i.DatesExercicesFinancieres.Length > 0 &&
                     i.DatesExercicesFinancieres.Any(d => d.Date != DateTime.MinValue) &&
-                    (i.DatesExercicesFinancieres != null || i.DatesExercicesFinancieres.Length > 0) &&
                     ((i.Raccomandation == "Strong Buy" || i.Raccomandation == "Buy") && i.Probability > 0.45 ||
                      (i.Raccomandation == "Sell" || i.Raccomandation == "Strong Sell") && i.Probability < 0.55)
                 )
@@ -148,31 +141,32 @@ namespace Bourse.Controllers
                 .OrderBy(i => i.RecommendationOrder)
                 .ThenByDescending(i => i.Indice.Probability)
                 .ThenBy(i => i.FirstDate)
-                .Select(i => i.Indice);
+                .Select(i => i.Indice)
+                .ToList();
 
             _indicesDTO = sortOrder switch
             {
-                "symbol_desc" => _indicesDTO.OrderByDescending(i => i.Symbol),
-                "price_asc" => _indicesDTO.OrderBy(i => i.RegularMarketPrice),
-                "price_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketPrice),
-                "change_asc" => _indicesDTO.OrderBy(i => i.RegularMarketChange),
-                "change_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketChange),
+                "symbol_desc" => _indicesDTO.OrderByDescending(i => i.Symbol).ToList(),
+                "price_asc" => _indicesDTO.OrderBy(i => i.RegularMarketPrice).ToList(),
+                "price_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketPrice).ToList(),
+                "change_asc" => _indicesDTO.OrderBy(i => i.RegularMarketChange).ToList(),
+                "change_desc" => _indicesDTO.OrderByDescending(i => i.RegularMarketChange).ToList(),
                 "exercfinanc_asc" => _indicesDTO.OrderBy(i =>
                     i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                     ? i.DatesExercicesFinancieres.Min(d => d) == DateTime.MinValue ? DateTime.MaxValue : i.DatesExercicesFinancieres.Min(d => d)
-                    : DateTime.MaxValue), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
+                    : DateTime.MaxValue).ToList(), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
 
                 "exercfinanc_desc" => _indicesDTO.OrderByDescending(i =>
                     i.DatesExercicesFinancieres != null && i.DatesExercicesFinancieres.Any()
                         ? i.DatesExercicesFinancieres.Max(d => d) == DateTime.MinValue ? DateTime.MaxValue : i.DatesExercicesFinancieres.Max(d => d)
-                        : DateTime.MinValue), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
+                        : DateTime.MinValue).ToList(), // Les éléments sans date et avec DateTime.MinValue seront mis en bas
 
-                "bourse_asc" => _indicesDTO.OrderBy(i => i.Exchange),
-                "bourse_desc" => _indicesDTO.OrderByDescending(i => i.Exchange),
-                "label_asc" => _indicesDTO.OrderBy(i => i.Label),
-                "label_desc" => _indicesDTO.OrderByDescending(i => i.Label),
-                "prob_asc" => _indicesDTO.OrderBy(i => i.Probability),
-                "prob_desc" => _indicesDTO.OrderByDescending(i => i.Probability),
+                "bourse_asc" => _indicesDTO.OrderBy(i => i.Exchange).ToList(),
+                "bourse_desc" => _indicesDTO.OrderByDescending(i => i.Exchange).ToList(),
+                "label_asc" => _indicesDTO.OrderBy(i => i.Label).ToList(),
+                "label_desc" => _indicesDTO.OrderByDescending(i => i.Label).ToList(),
+                "prob_asc" => _indicesDTO.OrderBy(i => i.Probability).ToList(),
+                "prob_desc" => _indicesDTO.OrderByDescending(i => i.Probability).ToList(),
                 _ => _indicesDTO
             };
 
@@ -194,7 +188,7 @@ namespace Bourse.Controllers
         //[Authorize]
         public async Task<IActionResult> DetailsDTOApi(string item, string returnUrl)
         {
-            IndiceDTO indiceDTO = await _service.ObtenirSelonSymbolDTO(item);
+            IndiceDTO? indiceDTO = await _service.ObtenirSelonSymbolDTO(item);
             if (indiceDTO == null)
             {
                 _logger.LogError($"Une erreur c'est produite lors de la récupération d'une indice. Symbol = {item}");

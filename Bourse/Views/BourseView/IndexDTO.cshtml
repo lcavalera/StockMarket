@@ -58,12 +58,14 @@
 
 @if (ViewData["TotalPages"] != null)
 {
-    var currentPage = (int)ViewData["CurrentPage"];
-    var totalPages = (int)ViewData["TotalPages"];
-    var pageSize = (int)ViewData["PageSize"];
-    string sortOrder = ViewData["CurrentSort"]?.ToString();
-    string filtre = ViewData["actifFiltre"]?.ToString();
-    string exchangeFiltre = ViewData["ExchangeFiltre"]?.ToString();
+    int currentPage = ViewData["CurrentPage"] as int? ?? 1;
+    int totalPages = ViewData["TotalPages"] as int? ?? 1;
+    int pageSize = ViewData["PageSize"] as int? ?? 50;
+
+    string sortOrder = ViewData["CurrentSort"]?.ToString() ?? "";
+    string filtre = ViewData["actifFiltre"]?.ToString() ?? "";
+    string exchangeFiltre = ViewData["ExchangeFiltre"]?.ToString() ?? "";
+
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
@@ -133,6 +135,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Raccomandation)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Analysis)
+            </th>
             <th style="width:100px">
                 @Html.DisplayNameFor(model => model.DateUpdated)
             </th>
@@ -186,6 +191,25 @@
                     @Html.DisplayFor(modelItem => item.Raccomandation)
                 </td>
                 <td>
+                    @if (item.Analysis != null && item.Analysis.Any())
+                    {
+                        <ul style="padding-left: 0; margin: 0;">
+                            @foreach (var entry in item.Analysis)
+                            {
+                                <li style="list-style: none; padding: 0; margin: 0;">
+                                    <span style="color:@GetRaccomandationColor(entry.Key); white-space: nowrap">
+                                        <strong>@entry.Key: @entry.Value</strong>
+                                    </span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span>N/A</span>
+                    }
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.DateUpdated)
                 </td>
                 <td class="@(item.Probability > 0.49 ? "color-positive" : "color-negative")">
@@ -210,7 +234,7 @@
     }
 
     .color-negative {
-    color: lightcoral;
+    color: firebrick;
     font-weight: bold;
     }
 
@@ -245,15 +269,15 @@
 }
 
 @functions {
-    public string GetRaccomandationColor(string raccomandation)
+    public string GetRaccomandationColor(string? raccomandation)
     {
         return raccomandation switch
         {
             "Strong Buy" => "green",
-            "Buy" => "lightgreen",
-            "Hold" => "lightblue",
+            "Buy" => "mediumseagreen",
+            "Hold" => "steelblue",
             "Sell" => "orange",
-            "Strong Sell" => "red",
+            "Strong Sell" => "firebrick",
             _ => "black" // Par défaut
         };
     }
