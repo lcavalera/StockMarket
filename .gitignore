@@ -403,3 +403,7 @@ FodyWeavers.xsd
 /Bourse/Bourse.db-wal
 /IdentityServer/Bourse.db
 /IdentityServer/Identity.db
+/Bourse/Data/AMEX
+/Bourse/Data/NASDAQ
+/Bourse/Data/NYSE
+/Bourse/Data/TSX
